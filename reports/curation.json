@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "seed": 2026,
+  "sources": {
+    "uci_sms": {
+      "sha256": "1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3",
+      "raw_counts": {
+        "ham": 4827,
+        "spam": 747
+      },
+      "curated_counts": {
+        "ham": 4517,
+        "spam": 642
+      },
+      "license": "CC BY 4.0",
+      "attribution": "Almeida & Hidalgo; UCI SMS Spam Collection; DOI 10.24432/C5CC84"
+    }
+  },
+  "audit": {
+    "raw_rows": 5574,
+    "retained_rows": 5159,
+    "empty_removed": 0,
+    "exact_duplicates_removed": 415,
+    "conflicting_rows_removed": 0,
+    "near_duplicate_edges": 176,
+    "groups": 5003,
+    "largest_group": 12
+  },
+  "splits": {
+    "train": {
+      "sms_en_ham": 2710,
+      "sms_en_spam": 385
+    },
+    "val": {
+      "sms_en_ham": 903,
+      "sms_en_spam": 129
+    },
+    "test": {
+      "sms_en_ham": 904,
+      "sms_en_spam": 128
+    }
+  },
+  "split_sha256": "736fa663167d010da3829d2149d7e6e849beeaa57ab4477201533bfec11ffdbf",
+  "grouping": "Global normalized exact dedup; all conflicting exact labels excluded; URL/email/number-normalized templates; char 3-5 cosine >=0.90; transitive union plus thread IDs; five stratified group folds 60/20/20.",
+  "sample_audit": [
+    {
+      "row_id": "uci_sms:1",
+      "label": "ham",
+      "note": "Informal conversational English SMS; no email headers."
+    },
+    {
+      "row_id": "uci_sms:3",
+      "label": "spam",
+      "note": "Prize/premium-call promotion SMS; original spam label retained."
+    }
+  ],
+  "language_policy": "Source-level en designation; informal English/mixed varieties, not individually verified monolingual English. Indonesian unvalidated.",
+  "email": {
+    "status": "unavailable",
+    "reason": "Official SpamAssassin HTTP retrieval command denied by user/tool approval layer. Not retried, not bypassed. No local email data; no email training."
+  },
+  "independent_source_test": "Not performed: only one eligible accessible source, with unavailable component source IDs.",
+  "privacy": "Raw and processed data local/ignored; no full messages or phone numbers in reports."
+}
