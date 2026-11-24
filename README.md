@@ -1,2 +1,2 @@
-# SMS SPAM DETECTOR
+# V1 SMS SPAM DETECTOR
 For teaching
