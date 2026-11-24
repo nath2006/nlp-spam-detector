@@ -1,0 +1,4 @@
+# Optional: installs OCR dependencies; EasyOCR may download model weights on first use.
+-r requirements.txt
+easyocr>=1.7,<2
+opencv-python-headless>=4.8,<5

@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "seed": 2026,
+  "sklearn_version": "1.9.1",
+  "split_sha256": "736fa663167d010da3829d2149d7e6e849beeaa57ab4477201533bfec11ffdbf",
+  "score_semantics": "Uncalibrated classifier scores, NOT calibrated probabilities.",
+  "selection": "Maximize validation F0.5 subject to empirical validation ham FPR <=1%; tie-break recall, lower FPR, higher threshold. Select model only using validation. Threshold fixed before test; no refit on validation/test.",
+  "baseline": "Algorithmic reproduction only: original lowercase URL/digit/punctuation removal + word TFIDF(1,2), min_df=2 + MultinomialNB on SAME SMS split. Feature cap 20000 is resource adaptation. Not reproduction of original app accuracy; standalone original failed cv2 import in parent verification.",
+  "experiments": {
+    "sms_baseline_nb": {
+      "validation": {
+        "precision": 0.98989898989899,
+        "recall": 0.7596899224806202,
+        "f1": 0.8596491228070176,
+        "f0_5": 0.9333333333333333,
+        "confusion_matrix": [
+          [
+            902,
+            1
+          ],
+          [
+            31,
+            98
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 903,
+          "spam": 129
+        },
+        "false_positives": 1,
+        "false_positive_rate": 0.0011074197120708748
+      },
+      "threshold": 0.21736577179058864,
+      "train_support": {
+        "ham": 2710,
+        "spam": 385
+      },
+      "feature_count": 7246,
+      "test": {
+        "precision": 0.9895833333333334,
+        "recall": 0.7421875,
+        "f1": 0.8482142857142857,
+        "f0_5": 0.927734375,
+        "confusion_matrix": [
+          [
+            903,
+            1
+          ],
+          [
+            33,
+            95
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 904,
+          "spam": 128
+        },
+        "false_positives": 1,
+        "false_positive_rate": 0.0011061946902654867
+      },
+      "test_default_0_5": {
+        "precision": 1.0,
+        "recall": 0.6328125,
+        "f1": 0.7751196172248804,
+        "f0_5": 0.8960176991150443,
+        "confusion_matrix": [
+          [
+            904,
+            0
+          ],
+          [
+            47,
+            81
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 904,
+          "spam": 128
+        },
+        "false_positives": 0,
+        "false_positive_rate": 0.0
+      }
+    },
+    "sms_word_lr": {
+      "validation": {
+        "precision": 0.990909090909091,
+        "recall": 0.8449612403100775,
+        "f1": 0.9121338912133892,
+        "f0_5": 0.9578207381370826,
+        "confusion_matrix": [
+          [
+            902,
+            1
+          ],
+          [
+            20,
+            109
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 903,
+          "spam": 129
+        },
+        "false_positives": 1,
+        "false_positive_rate": 0.0011074197120708748
+      },
+      "threshold": 0.47080778536071166,
+      "train_support": {
+        "ham": 2710,
+        "spam": 385
+      },
+      "feature_count": 7632,
+      "test": {
+        "precision": 0.9907407407407407,
+        "recall": 0.8359375,
+        "f1": 0.9067796610169492,
+        "f0_5": 0.9553571428571429,
+        "confusion_matrix": [
+          [
+            903,
+            1
+          ],
+          [
+            21,
+            107
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 904,
+          "spam": 128
+        },
+        "false_positives": 1,
+        "false_positive_rate": 0.0011061946902654867
+      }
+    },
+    "sms_word_char_lr": {
+      "validation": {
+        "precision": 0.9912280701754386,
+        "recall": 0.875968992248062,
+        "f1": 0.9300411522633745,
+        "f0_5": 0.9658119658119658,
+        "confusion_matrix": [
+          [
+            902,
+            1
+          ],
+          [
+            16,
+            113
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 903,
+          "spam": 129
+        },
+        "false_positives": 1,
+        "false_positive_rate": 0.0011074197120708748
+      },
+      "threshold": 0.4432732053189189,
+      "train_support": {
+        "ham": 2710,
+        "spam": 385
+      },
+      "feature_count": 27632,
+      "test": {
+        "precision": 0.990990990990991,
+        "recall": 0.859375,
+        "f1": 0.9205020920502092,
+        "f0_5": 0.9615384615384616,
+        "confusion_matrix": [
+          [
+            903,
+            1
+          ],
+          [
+            18,
+            110
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 904,
+          "spam": 128
+        },
+        "false_positives": 1,
+        "false_positive_rate": 0.0011061946902654867
+      }
+    }
+  },
+  "selected": {
+    "sms": {
+      "name": "word_char_lr",
+      "threshold": 0.4432732053189189
+    }
+  },
+  "by_channel_language": {
+    "sms_en": {
+      "precision": 0.990990990990991,
+      "recall": 0.859375,
+      "f1": 0.9205020920502092,
+      "f0_5": 0.9615384615384616,
+      "confusion_matrix": [
+        [
+          903,
+          1
+        ],
+        [
+          18,
+          110
+        ]
+      ],
+      "confusion_order": [
+        "ham",
+        "spam"
+      ],
+      "support": {
+        "ham": 904,
+        "spam": 128
+      },
+      "false_positives": 1,
+      "false_positive_rate": 0.0011061946902654867,
+      "false_positive_row_ids": [
+        "uci_sms:2380"
+      ]
+    }
+  },
+  "indonesian": {
+    "status": "unvalidated",
+    "support": 0,
+    "reason": "No eligible licensed real Indonesian test set."
+  },
+  "independent_source_test": "Not performed: only one eligible accessible source, with unavailable component source IDs.",
+  "combined_vs_per_channel": "Not performed: only SMS has eligible accessible data; comparing combined/per-channel would be identical, not evidence of transfer.",
+  "limitations": [
+    "Historical single-source SMS data; source-level English designation includes informal/mixed varieties.",
+    "No eligible accessible email corpus; official request blocked by approval layer and not retried.",
+    "Grouping is heuristic, not proof all semantic template leakage is eliminated.",
+    "Empirical validation FPR constraint is not a production guarantee; no calibration or prospective evaluation.",
+    "No cross-source/temporal/Indonesian validation."
+  ],
+  "artifact_contract_status": "BLOCKED: required email pipeline cannot be honestly trained. Artifact intentionally contains only a genuine SMS entry; consumers must handle absent email. Never relabel SMS as email.",
+  "metrics_sha256": "9a76b865385a67358df842f1c8684836c64c797f2ce67832f4ffbd969ae44084"
+}

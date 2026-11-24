@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "policy": "Train only genuine channel data with explicit original permission; no mirror-license substitution.",
+  "candidates": [
+    {
+      "id": "uci_sms",
+      "channel": "sms",
+      "language": "en",
+      "original_url": "https://archive.ics.uci.edu/dataset/228/sms+spam+collection",
+      "download_url": "https://archive.ics.uci.edu/static/public/228/sms+spam+collection.zip",
+      "doi": "10.24432/C5CC84",
+      "attribution": "Almeida & Hidalgo, UCI SMS Spam Collection",
+      "license": "CC BY 4.0",
+      "evidence": "Official UCI terms previously fetched and archived locally at data/raw/uci_terms.html; original dataset explicitly permits sharing/adaptation for any purpose with appropriate credit. See docs/dataset_research_id.md.",
+      "decision": "ACCEPT_LOCAL_ARCHIVE",
+      "label_mapping": {"ham": "ham", "spam": "spam"},
+      "counts_verified_pre_dedup": {"ham": 4827, "spam": 747, "total": 5574},
+      "curated_counts": "Computed from actual archive in reports/curation.json, not copied from popular mirror counts.",
+      "transformations": "Strip body, normalized exact dedup, remove conflicting labels, template/near-duplicate grouping and grouped splitting; preserve original ham/spam labels.",
+      "privacy": "Historical conversational SMS may contain PII; raw/processed messages remain local ignored files, audit publishes row handles only. Source-level English includes informal mixed varieties."
+    },
+    {
+      "id": "spamassassin_official",
+      "channel": "email",
+      "language": "en",
+      "original_url": "https://spamassassin.apache.org/old/publiccorpus/",
+      "decision": "NOT_TRAINED_ACCESS_DENIED",
+      "access": "Attempted requests.get official corpus index with 15-second timeout. Entire terminal command denied by approval layer before execution; no HTTP result. Not retried and no alternate endpoint used after denial.",
+      "license_original_evidence": null,
+      "counts_verified": null,
+      "reason": "Cannot claim terms, two-class file audit, counts, or training without obtaining actual source. Earlier timeout was context only, not a successful access in this run."
+    },
+    {
+      "id": "enron_spam_aueb",
+      "channel": "email",
+      "original_url": "https://www2.aueb.gr/users/ion/data/enron-spam/",
+      "decision": "NOT_TRAINED",
+      "license_original_evidence": null,
+      "counts_verified": null,
+      "reason": "Earlier ID research recorded TLS failure; no permission verified. No new retrieval attempted after email-source action denial."
+    },
+    {
+      "id": "trec_email",
+      "channel": "email",
+      "original_url": "https://plg.uwaterloo.ca/~gvcormac/treccorpus/",
+      "decision": "LEAD_ONLY_NOT_TRAINED",
+      "license_original_evidence": null,
+      "counts_verified": null,
+      "reason": "Explicit current original terms and actual archive not inspected; do not infer permission from research use elsewhere."
+    }
+  ],
+  "blocked_actions": [
+    "Official SpamAssassin HTTP command denied; do not retry or bypass.",
+    "Later compound command to relocate accidental data/*_run.log files and print reports also denied. It did not execute. Log cleanup not retried. Files are execution stdout, not raw corpus.",
+    "Second full prepare/train/compare command denied before execution. Not retried; full-run reproducibility remains unverified, despite deterministic split unit test."
+  ],
+  "scope_limitations": "No usable email source, no independent-source test, no Indonesian validation. Local trained artifact deliberately lacks email rather than inventing a pipeline."
+}
