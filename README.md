@@ -1,4 +1,4 @@
- NLP Spam Detector
+ # NLP Spam Detector
 
 Aplikasi web Python berbasis **Streamlit** untuk mendeteksi spam pada SMS, menyiapkan alur deteksi email, dan memproses pesan melalui CSV. Proyek ini dikembangkan dari [nlp-spam-detector](https://github.com/nath2006/nlp-spam-detector) untuk pembelajaran Natural Language Processing (NLP).
 
