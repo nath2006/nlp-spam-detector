@@ -1,0 +1,102 @@
+{
+  "created_utc": "2026-11-24T11:26:41.602463+00:00",
+  "active_sha256": "817d81044bce4b5e80d402159324334321b9567296a0a371052e1b873f3cbfe0",
+  "frozen_sha256": "28d9ee62dc8e5a9bd22163d77122bdd587e984810420652e8395c3a82e95d957",
+  "dataset_sha256": "b3e0629b3c7670632936071eff8a353043fc3d23f75f884b58e8d0d5c74bad33",
+  "protected_sha256": {
+    "app.py": "579f683c0d1dd062bb7f8dc8847c5fa95e66da42e2a90598ca299d5c13ac5bc2",
+    "spamdet/inference.py": "65418c57a73622e943228b9acc6da98ec2b1bf534cbd13725469999cf64f984f",
+    "tests/test_real_artifact.py": "5c6793128337d4c8ae5c163ad7c3353fad7c114378bb35295f206db75c9c1679",
+    "examples/diagnostic_messages.json": "d601506c42bc000eebd17bd9ed0a1d27b25783f27c12574a5597b2a516d23d71"
+  },
+  "objective": "One SMS threshold; per-language validation ham FPR <=3% for >=100 ham and >=30 spam. Threshold maximizes macro F2 (existing selector). Candidate ranking: macro recall, minimum language recall, macro F2, fewer FP. No manual or test-based selection.",
+  "promotion_policy": "Selected candidate only: same support on all SMS test cohorts; FPR <=3% each, no additional FN on any cohort, strict FN reduction on at least one. No fallback to another candidate after tests. Manual examples only smoke after locked evaluation.",
+  "variants": [
+    {
+      "C": 1,
+      "synthetic_weight": 0.1,
+      "balance_language_label": false,
+      "wide": false
+    },
+    {
+      "C": 1,
+      "synthetic_weight": 0.1,
+      "balance_language_label": true,
+      "wide": false
+    },
+    {
+      "C": 1,
+      "synthetic_weight": 1.0,
+      "balance_language_label": false,
+      "wide": false
+    },
+    {
+      "C": 1,
+      "synthetic_weight": 1.0,
+      "balance_language_label": true,
+      "wide": false
+    },
+    {
+      "C": 4,
+      "synthetic_weight": 0.1,
+      "balance_language_label": false,
+      "wide": false
+    },
+    {
+      "C": 4,
+      "synthetic_weight": 0.1,
+      "balance_language_label": true,
+      "wide": false
+    },
+    {
+      "C": 4,
+      "synthetic_weight": 1.0,
+      "balance_language_label": false,
+      "wide": false
+    },
+    {
+      "C": 4,
+      "synthetic_weight": 1.0,
+      "balance_language_label": true,
+      "wide": false
+    },
+    {
+      "C": 16,
+      "synthetic_weight": 0.1,
+      "balance_language_label": false,
+      "wide": false
+    },
+    {
+      "C": 16,
+      "synthetic_weight": 0.1,
+      "balance_language_label": true,
+      "wide": false
+    },
+    {
+      "C": 16,
+      "synthetic_weight": 1.0,
+      "balance_language_label": false,
+      "wide": false
+    },
+    {
+      "C": 16,
+      "synthetic_weight": 1.0,
+      "balance_language_label": true,
+      "wide": false
+    },
+    {
+      "C": 4,
+      "synthetic_weight": 0.1,
+      "balance_language_label": false,
+      "wide": true
+    },
+    {
+      "C": 4,
+      "synthetic_weight": 0.1,
+      "balance_language_label": true,
+      "wide": true
+    }
+  ],
+  "new_indonesian_holdout": "No eligible new original licensed source verified; use frozen historical ID and label it reused. English external test also inspected in previous round, not fresh blind.",
+  "forbidden_inputs": "No examples/diagnostic_messages.json read for fitting, threshold choice or candidate ranking. No email training or feature changes."
+}

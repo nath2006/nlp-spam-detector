@@ -1,0 +1,1138 @@
+{
+  "schema_version": 2,
+  "seed": 2026,
+  "sklearn_version": "1.9.1",
+  "split_sha256": "446879ccc725f2d3a9b919318417c3f08b51b680b685137d98b935eb5af760c3",
+  "score_semantics": "Classifier scores in [0,1], not validated confidence. SVM sigmoid calibration uses training CV only.",
+  "selection": "Maximize validation F2 subject to empirical validation ham FPR <=3%; tie-break recall, lower FPR, higher threshold. Model selected on validation only; no refit on validation/test.",
+  "experiments": {
+    "email_baseline_nb": {
+      "validation": {
+        "precision": 0.9893617021276596,
+        "recall": 0.9893617021276596,
+        "f1": 0.9893617021276596,
+        "f2": 0.9893617021276596,
+        "f0_5": 0.9893617021276596,
+        "confusion_matrix": [
+          [
+            481,
+            1
+          ],
+          [
+            1,
+            93
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 482,
+          "spam": 94
+        },
+        "false_positives": 1,
+        "false_negatives": 1,
+        "false_positive_rate": 0.002074688796680498
+      },
+      "threshold": 0.15696158048574338,
+      "train_support": {
+        "ham": 1444,
+        "spam": 674
+      },
+      "feature_count": 20000,
+      "test": {
+        "precision": 0.967741935483871,
+        "recall": 0.9574468085106383,
+        "f1": 0.9625668449197861,
+        "f2": 0.9594882729211087,
+        "f0_5": 0.9656652360515021,
+        "confusion_matrix": [
+          [
+            479,
+            3
+          ],
+          [
+            4,
+            90
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 482,
+          "spam": 94
+        },
+        "false_positives": 3,
+        "false_negatives": 4,
+        "false_positive_rate": 0.006224066390041493
+      },
+      "by_language": {
+        "en": {
+          "precision": 0.967741935483871,
+          "recall": 0.9574468085106383,
+          "f1": 0.9625668449197861,
+          "f2": 0.9594882729211087,
+          "f0_5": 0.9656652360515021,
+          "confusion_matrix": [
+            [
+              479,
+              3
+            ],
+            [
+              4,
+              90
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 482,
+            "spam": 94
+          },
+          "false_positives": 3,
+          "false_negatives": 4,
+          "false_positive_rate": 0.006224066390041493
+        }
+      }
+    },
+    "email_word_lr": {
+      "validation": {
+        "precision": 1.0,
+        "recall": 0.9893617021276596,
+        "f1": 0.9946524064171123,
+        "f2": 0.9914712153518124,
+        "f0_5": 0.9978540772532188,
+        "confusion_matrix": [
+          [
+            482,
+            0
+          ],
+          [
+            1,
+            93
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 482,
+          "spam": 94
+        },
+        "false_positives": 0,
+        "false_negatives": 1,
+        "false_positive_rate": 0.0
+      },
+      "threshold": 0.2911714376418702,
+      "train_support": {
+        "ham": 1444,
+        "spam": 674
+      },
+      "feature_count": 20000,
+      "test": {
+        "precision": 0.9787234042553191,
+        "recall": 0.9787234042553191,
+        "f1": 0.9787234042553191,
+        "f2": 0.9787234042553191,
+        "f0_5": 0.9787234042553191,
+        "confusion_matrix": [
+          [
+            480,
+            2
+          ],
+          [
+            2,
+            92
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 482,
+          "spam": 94
+        },
+        "false_positives": 2,
+        "false_negatives": 2,
+        "false_positive_rate": 0.004149377593360996
+      },
+      "by_language": {
+        "en": {
+          "precision": 0.9787234042553191,
+          "recall": 0.9787234042553191,
+          "f1": 0.9787234042553191,
+          "f2": 0.9787234042553191,
+          "f0_5": 0.9787234042553191,
+          "confusion_matrix": [
+            [
+              480,
+              2
+            ],
+            [
+              2,
+              92
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 482,
+            "spam": 94
+          },
+          "false_positives": 2,
+          "false_negatives": 2,
+          "false_positive_rate": 0.004149377593360996
+        }
+      }
+    },
+    "email_word_char_lr": {
+      "validation": {
+        "precision": 1.0,
+        "recall": 0.9893617021276596,
+        "f1": 0.9946524064171123,
+        "f2": 0.9914712153518124,
+        "f0_5": 0.9978540772532188,
+        "confusion_matrix": [
+          [
+            482,
+            0
+          ],
+          [
+            1,
+            93
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 482,
+          "spam": 94
+        },
+        "false_positives": 0,
+        "false_negatives": 1,
+        "false_positive_rate": 0.0
+      },
+      "threshold": 0.3348474699621317,
+      "train_support": {
+        "ham": 1444,
+        "spam": 674
+      },
+      "feature_count": 40000,
+      "test": {
+        "precision": 0.989247311827957,
+        "recall": 0.9787234042553191,
+        "f1": 0.983957219251337,
+        "f2": 0.9808102345415778,
+        "f0_5": 0.9871244635193133,
+        "confusion_matrix": [
+          [
+            481,
+            1
+          ],
+          [
+            2,
+            92
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 482,
+          "spam": 94
+        },
+        "false_positives": 1,
+        "false_negatives": 2,
+        "false_positive_rate": 0.002074688796680498
+      },
+      "by_language": {
+        "en": {
+          "precision": 0.989247311827957,
+          "recall": 0.9787234042553191,
+          "f1": 0.983957219251337,
+          "f2": 0.9808102345415778,
+          "f0_5": 0.9871244635193133,
+          "confusion_matrix": [
+            [
+              481,
+              1
+            ],
+            [
+              2,
+              92
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 482,
+            "spam": 94
+          },
+          "false_positives": 1,
+          "false_negatives": 2,
+          "false_positive_rate": 0.002074688796680498
+        }
+      }
+    },
+    "email_word_char_svm": {
+      "validation": {
+        "precision": 0.9690721649484536,
+        "recall": 1.0,
+        "f1": 0.9842931937172775,
+        "f2": 0.9936575052854123,
+        "f0_5": 0.975103734439834,
+        "confusion_matrix": [
+          [
+            479,
+            3
+          ],
+          [
+            0,
+            94
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 482,
+          "spam": 94
+        },
+        "false_positives": 3,
+        "false_negatives": 0,
+        "false_positive_rate": 0.006224066390041493
+      },
+      "threshold": 0.17166622963704584,
+      "train_support": {
+        "ham": 1444,
+        "spam": 674
+      },
+      "feature_count": 40000,
+      "test": {
+        "precision": 0.9494949494949495,
+        "recall": 1.0,
+        "f1": 0.9740932642487047,
+        "f2": 0.9894736842105263,
+        "f0_5": 0.9591836734693877,
+        "confusion_matrix": [
+          [
+            477,
+            5
+          ],
+          [
+            0,
+            94
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 482,
+          "spam": 94
+        },
+        "false_positives": 5,
+        "false_negatives": 0,
+        "false_positive_rate": 0.01037344398340249
+      },
+      "by_language": {
+        "en": {
+          "precision": 0.9494949494949495,
+          "recall": 1.0,
+          "f1": 0.9740932642487047,
+          "f2": 0.9894736842105263,
+          "f0_5": 0.9591836734693877,
+          "confusion_matrix": [
+            [
+              477,
+              5
+            ],
+            [
+              0,
+              94
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 482,
+            "spam": 94
+          },
+          "false_positives": 5,
+          "false_negatives": 0,
+          "false_positive_rate": 0.01037344398340249
+        }
+      }
+    },
+    "sms_baseline_nb": {
+      "validation": {
+        "precision": 0.9150943396226415,
+        "recall": 0.8818181818181818,
+        "f1": 0.8981481481481481,
+        "f2": 0.8882783882783882,
+        "f0_5": 0.9082397003745318,
+        "confusion_matrix": [
+          [
+            1095,
+            27
+          ],
+          [
+            39,
+            291
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1122,
+          "spam": 330
+        },
+        "false_positives": 27,
+        "false_negatives": 39,
+        "false_positive_rate": 0.02406417112299465
+      },
+      "threshold": 0.2368809631186994,
+      "train_support": {
+        "ham": 3372,
+        "spam": 1033
+      },
+      "feature_count": 12140,
+      "test": {
+        "precision": 0.91,
+        "recall": 0.8452012383900929,
+        "f1": 0.8764044943820225,
+        "f2": 0.8574120603015075,
+        "f0_5": 0.8962573867367039,
+        "confusion_matrix": [
+          [
+            1088,
+            27
+          ],
+          [
+            50,
+            273
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1115,
+          "spam": 323
+        },
+        "false_positives": 27,
+        "false_negatives": 50,
+        "false_positive_rate": 0.0242152466367713
+      },
+      "by_language": {
+        "en": {
+          "precision": 0.9647058823529412,
+          "recall": 0.7699530516431925,
+          "f1": 0.856396866840731,
+          "f2": 0.8023483365949119,
+          "f0_5": 0.9182530795072789,
+          "confusion_matrix": [
+            [
+              996,
+              6
+            ],
+            [
+              49,
+              164
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1002,
+            "spam": 213
+          },
+          "false_positives": 6,
+          "false_negatives": 49,
+          "false_positive_rate": 0.005988023952095809
+        },
+        "id": {
+          "precision": 0.8384615384615385,
+          "recall": 0.990909090909091,
+          "f1": 0.9083333333333333,
+          "f2": 0.956140350877193,
+          "f0_5": 0.8650793650793651,
+          "confusion_matrix": [
+            [
+              92,
+              21
+            ],
+            [
+              1,
+              109
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 113,
+            "spam": 110
+          },
+          "false_positives": 21,
+          "false_negatives": 1,
+          "false_positive_rate": 0.18584070796460178
+        }
+      }
+    },
+    "sms_word_lr": {
+      "validation": {
+        "precision": 0.9190751445086706,
+        "recall": 0.9636363636363636,
+        "f1": 0.9408284023668639,
+        "f2": 0.9543817527010804,
+        "f0_5": 0.9276546091015169,
+        "confusion_matrix": [
+          [
+            1094,
+            28
+          ],
+          [
+            12,
+            318
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1122,
+          "spam": 330
+        },
+        "false_positives": 28,
+        "false_negatives": 12,
+        "false_positive_rate": 0.024955436720142603
+      },
+      "threshold": 0.2626658047344436,
+      "train_support": {
+        "ham": 3372,
+        "spam": 1033
+      },
+      "feature_count": 13160,
+      "test": {
+        "precision": 0.9363636363636364,
+        "recall": 0.9566563467492261,
+        "f1": 0.9464012251148545,
+        "f2": 0.9525277435265105,
+        "f0_5": 0.9403530127814973,
+        "confusion_matrix": [
+          [
+            1094,
+            21
+          ],
+          [
+            14,
+            309
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1115,
+          "spam": 323
+        },
+        "false_positives": 21,
+        "false_negatives": 14,
+        "false_positive_rate": 0.01883408071748879
+      },
+      "by_language": {
+        "en": {
+          "precision": 0.943127962085308,
+          "recall": 0.9342723004694836,
+          "f1": 0.9386792452830188,
+          "f2": 0.9360301034807149,
+          "f0_5": 0.9413434247871334,
+          "confusion_matrix": [
+            [
+              990,
+              12
+            ],
+            [
+              14,
+              199
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1002,
+            "spam": 213
+          },
+          "false_positives": 12,
+          "false_negatives": 14,
+          "false_positive_rate": 0.011976047904191617
+        },
+        "id": {
+          "precision": 0.9243697478991597,
+          "recall": 1.0,
+          "f1": 0.9606986899563319,
+          "f2": 0.9838998211091234,
+          "f0_5": 0.9385665529010239,
+          "confusion_matrix": [
+            [
+              104,
+              9
+            ],
+            [
+              0,
+              110
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 113,
+            "spam": 110
+          },
+          "false_positives": 9,
+          "false_negatives": 0,
+          "false_positive_rate": 0.07964601769911504
+        }
+      }
+    },
+    "sms_word_char_lr": {
+      "validation": {
+        "precision": 0.9277456647398844,
+        "recall": 0.9727272727272728,
+        "f1": 0.9497041420118343,
+        "f2": 0.9633853541416567,
+        "f0_5": 0.9364060676779463,
+        "confusion_matrix": [
+          [
+            1097,
+            25
+          ],
+          [
+            9,
+            321
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1122,
+          "spam": 330
+        },
+        "false_positives": 25,
+        "false_negatives": 9,
+        "false_positive_rate": 0.022281639928698752
+      },
+      "threshold": 0.20695755664226165,
+      "train_support": {
+        "ham": 3372,
+        "spam": 1033
+      },
+      "feature_count": 33160,
+      "test": {
+        "precision": 0.9404761904761905,
+        "recall": 0.978328173374613,
+        "f1": 0.9590288315629742,
+        "f2": 0.9705159705159705,
+        "f0_5": 0.9478104379124175,
+        "confusion_matrix": [
+          [
+            1095,
+            20
+          ],
+          [
+            7,
+            316
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1115,
+          "spam": 323
+        },
+        "false_positives": 20,
+        "false_negatives": 7,
+        "false_positive_rate": 0.017937219730941704
+      },
+      "by_language": {
+        "en": {
+          "precision": 0.958139534883721,
+          "recall": 0.9671361502347418,
+          "f1": 0.9626168224299065,
+          "f2": 0.9653233364573571,
+          "f0_5": 0.9599254426840633,
+          "confusion_matrix": [
+            [
+              993,
+              9
+            ],
+            [
+              7,
+              206
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1002,
+            "spam": 213
+          },
+          "false_positives": 9,
+          "false_negatives": 7,
+          "false_positive_rate": 0.008982035928143712
+        },
+        "id": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1": 0.9523809523809523,
+          "f2": 0.9803921568627451,
+          "f0_5": 0.9259259259259259,
+          "confusion_matrix": [
+            [
+              102,
+              11
+            ],
+            [
+              0,
+              110
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 113,
+            "spam": 110
+          },
+          "false_positives": 11,
+          "false_negatives": 0,
+          "false_positive_rate": 0.09734513274336283
+        }
+      }
+    },
+    "sms_word_char_svm": {
+      "validation": {
+        "precision": 0.9552238805970149,
+        "recall": 0.9696969696969697,
+        "f1": 0.9624060150375939,
+        "f2": 0.9667673716012085,
+        "f0_5": 0.9580838323353293,
+        "confusion_matrix": [
+          [
+            1107,
+            15
+          ],
+          [
+            10,
+            320
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1122,
+          "spam": 330
+        },
+        "false_positives": 15,
+        "false_negatives": 10,
+        "false_positive_rate": 0.013368983957219251
+      },
+      "threshold": 0.42144362248621786,
+      "train_support": {
+        "ham": 3372,
+        "spam": 1033
+      },
+      "feature_count": 33160,
+      "test": {
+        "precision": 0.9546827794561934,
+        "recall": 0.978328173374613,
+        "f1": 0.9663608562691132,
+        "f2": 0.973505853357979,
+        "f0_5": 0.9593199757134183,
+        "confusion_matrix": [
+          [
+            1100,
+            15
+          ],
+          [
+            7,
+            316
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1115,
+          "spam": 323
+        },
+        "false_positives": 15,
+        "false_negatives": 7,
+        "false_positive_rate": 0.013452914798206279
+      },
+      "by_language": {
+        "en": {
+          "precision": 0.9809523809523809,
+          "recall": 0.9671361502347418,
+          "f1": 0.9739952718676123,
+          "f2": 0.9698681732580038,
+          "f0_5": 0.9781576448243114,
+          "confusion_matrix": [
+            [
+              998,
+              4
+            ],
+            [
+              7,
+              206
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1002,
+            "spam": 213
+          },
+          "false_positives": 4,
+          "false_negatives": 7,
+          "false_positive_rate": 0.003992015968063872
+        },
+        "id": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1": 0.9523809523809523,
+          "f2": 0.9803921568627451,
+          "f0_5": 0.9259259259259259,
+          "confusion_matrix": [
+            [
+              102,
+              11
+            ],
+            [
+              0,
+              110
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 113,
+            "spam": 110
+          },
+          "false_positives": 11,
+          "false_negatives": 0,
+          "false_positive_rate": 0.09734513274336283
+        }
+      }
+    }
+  },
+  "selected": {
+    "email": {
+      "name": "word_char_svm",
+      "threshold": 0.17166622963704584
+    },
+    "sms": {
+      "name": "word_char_svm",
+      "threshold": 0.42144362248621786
+    }
+  },
+  "by_channel_language": {
+    "email_en": {
+      "precision": 0.9494949494949495,
+      "recall": 1.0,
+      "f1": 0.9740932642487047,
+      "f2": 0.9894736842105263,
+      "f0_5": 0.9591836734693877,
+      "confusion_matrix": [
+        [
+          477,
+          5
+        ],
+        [
+          0,
+          94
+        ]
+      ],
+      "confusion_order": [
+        "ham",
+        "spam"
+      ],
+      "support": {
+        "ham": 482,
+        "spam": 94
+      },
+      "false_positives": 5,
+      "false_negatives": 0,
+      "false_positive_rate": 0.01037344398340249,
+      "false_positive_row_ids": [
+        "lingspam:lingspam_public/bare/part10/9-966msg1.txt",
+        "lingspam:lingspam_public/bare/part2/5-1496msg3.txt",
+        "lingspam:lingspam_public/bare/part3/6-107msg3.txt",
+        "lingspam:lingspam_public/bare/part7/9-211msg1.txt",
+        "lingspam:lingspam_public/bare/part8/8-1051msg1.txt"
+      ],
+      "false_negative_row_ids": []
+    },
+    "sms_en": {
+      "precision": 0.9809523809523809,
+      "recall": 0.9671361502347418,
+      "f1": 0.9739952718676123,
+      "f2": 0.9698681732580038,
+      "f0_5": 0.9781576448243114,
+      "confusion_matrix": [
+        [
+          998,
+          4
+        ],
+        [
+          7,
+          206
+        ]
+      ],
+      "confusion_order": [
+        "ham",
+        "spam"
+      ],
+      "support": {
+        "ham": 1002,
+        "spam": 213
+      },
+      "false_positives": 4,
+      "false_negatives": 7,
+      "false_positive_rate": 0.003992015968063872,
+      "false_positive_row_ids": [
+        "mishra_sms:177",
+        "mishra_sms:746",
+        "mishra_sms:2302",
+        "mishra_sms:5800"
+      ],
+      "false_negative_row_ids": [
+        "mishra_sms:3016",
+        "mishra_sms:3627",
+        "mishra_sms:4032",
+        "mishra_sms:4494",
+        "mishra_sms:5297",
+        "mishra_sms:5526",
+        "uci_sms:2824"
+      ]
+    },
+    "sms_id": {
+      "precision": 0.9090909090909091,
+      "recall": 1.0,
+      "f1": 0.9523809523809523,
+      "f2": 0.9803921568627451,
+      "f0_5": 0.9259259259259259,
+      "confusion_matrix": [
+        [
+          102,
+          11
+        ],
+        [
+          0,
+          110
+        ]
+      ],
+      "confusion_order": [
+        "ham",
+        "spam"
+      ],
+      "support": {
+        "ham": 113,
+        "spam": 110
+      },
+      "false_positives": 11,
+      "false_negatives": 0,
+      "false_positive_rate": 0.09734513274336283,
+      "false_positive_row_ids": [
+        "yudi_sms:588",
+        "yudi_sms:596",
+        "yudi_sms:613",
+        "yudi_sms:633",
+        "yudi_sms:802",
+        "yudi_sms:843",
+        "yudi_sms:1011",
+        "yudi_sms:1030",
+        "yudi_sms:1034",
+        "yudi_sms:1079",
+        "yudi_sms:1099"
+      ],
+      "false_negative_row_ids": []
+    }
+  },
+  "independent_source_test": "No independent-source holdout: grouped within-source holdouts only. Bopbi and Nazario are supplemental genuine training-only sources.",
+  "limitations": [
+    "Email Indonesian unvalidated: no eligible original holdout.",
+    "Historical and topic-specific corpora; no prospective/independent-source evaluation.",
+    "Grouped splitting is heuristic, not proof of zero semantic leakage.",
+    "Promo labels do not encode recipient consent; OTP/invoice/refund coverage not established.",
+    "Validation FPR cap is not a production guarantee."
+  ],
+  "old_new_common_test": {
+    "scope": "New test rows excluding every new group touching old train or validation text. Same rows for old/new; old has no email pipeline.",
+    "by_channel_language": {
+      "sms_en": {
+        "old": {
+          "precision": 1.0,
+          "recall": 0.7073170731707317,
+          "f1": 0.8285714285714286,
+          "f2": 0.7512953367875648,
+          "f0_5": 0.9235668789808917,
+          "confusion_matrix": [
+            [
+              266,
+              0
+            ],
+            [
+              24,
+              58
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 266,
+            "spam": 82
+          },
+          "false_positives": 0,
+          "false_negatives": 24,
+          "false_positive_rate": 0.0
+        },
+        "new": {
+          "precision": 0.9873417721518988,
+          "recall": 0.9512195121951219,
+          "f1": 0.968944099378882,
+          "f2": 0.9582309582309583,
+          "f0_5": 0.9798994974874372,
+          "confusion_matrix": [
+            [
+              265,
+              1
+            ],
+            [
+              4,
+              78
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 266,
+            "spam": 82
+          },
+          "false_positives": 1,
+          "false_negatives": 4,
+          "false_positive_rate": 0.0037593984962406013
+        }
+      },
+      "sms_id": {
+        "old": {
+          "precision": 1.0,
+          "recall": 0.045454545454545456,
+          "f1": 0.08695652173913043,
+          "f2": 0.056179775280898875,
+          "f0_5": 0.19230769230769232,
+          "confusion_matrix": [
+            [
+              113,
+              0
+            ],
+            [
+              105,
+              5
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 113,
+            "spam": 110
+          },
+          "false_positives": 0,
+          "false_negatives": 105,
+          "false_positive_rate": 0.0
+        },
+        "new": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1": 0.9523809523809523,
+          "f2": 0.9803921568627451,
+          "f0_5": 0.9259259259259259,
+          "confusion_matrix": [
+            [
+              102,
+              11
+            ],
+            [
+              0,
+              110
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 113,
+            "spam": 110
+          },
+          "false_positives": 11,
+          "false_negatives": 0,
+          "false_positive_rate": 0.09734513274336283
+        }
+      }
+    }
+  },
+  "artifact_sha256": "2a134b92955326fab0f926a9d1d38c944bfae0710f05a981c811fbb2742e1176",
+  "metrics_sha256": "451fdd3565e8f3db662c5524e69e40818a5b1e7db76dc0876d73a6384fe65ec7"
+}

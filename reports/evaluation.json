@@ -1,112 +1,553 @@
 {
-  "schema_version": 1,
-  "seed": 2026,
-  "sklearn_version": "1.9.1",
-  "split_sha256": "736fa663167d010da3829d2149d7e6e849beeaa57ab4477201533bfec11ffdbf",
-  "score_semantics": "Uncalibrated classifier scores, NOT calibrated probabilities.",
-  "selection": "Maximize validation F0.5 subject to empirical validation ham FPR <=1%; tie-break recall, lower FPR, higher threshold. Select model only using validation. Threshold fixed before test; no refit on validation/test.",
-  "baseline": "Algorithmic reproduction only: original lowercase URL/digit/punctuation removal + word TFIDF(1,2), min_df=2 + MultinomialNB on SAME SMS split. Feature cap 20000 is resource adaptation. Not reproduction of original app accuracy; standalone original failed cv2 import in parent verification.",
-  "experiments": {
-    "sms_baseline_nb": {
-      "validation": {
-        "precision": 0.98989898989899,
-        "recall": 0.7596899224806202,
-        "f1": 0.8596491228070176,
-        "f0_5": 0.9333333333333333,
-        "confusion_matrix": [
-          [
-            902,
-            1
-          ],
-          [
-            31,
-            98
-          ]
+  "schema_version": 3,
+  "selection": "One SMS threshold; per-language validation ham FPR <=3% for >=100 ham and >=30 spam. Threshold maximizes macro F2 (existing selector). Candidate ranking: macro recall, minimum language recall, macro F2, fewer FP. No manual or test-based selection. Email selection unchanged.",
+  "selected": {
+    "sms": {
+      "name": "sms_recall_lr_13",
+      "threshold": 0.5990758319506397
+    },
+    "email": {
+      "name": "current_retuned",
+      "threshold": 0.17166622963704584
+    }
+  },
+  "by_channel_language": {
+    "sms_en": {
+      "precision": 0.9947368421052631,
+      "recall": 0.9174757281553398,
+      "f1": 0.9545454545454546,
+      "f2": 0.9319526627218935,
+      "f0_5": 0.9782608695652174,
+      "confusion_matrix": [
+        [
+          999,
+          1
         ],
-        "confusion_order": [
-          "ham",
-          "spam"
-        ],
-        "support": {
-          "ham": 903,
-          "spam": 129
-        },
-        "false_positives": 1,
-        "false_positive_rate": 0.0011074197120708748
+        [
+          17,
+          189
+        ]
+      ],
+      "confusion_order": [
+        "ham",
+        "spam"
+      ],
+      "support": {
+        "ham": 1000,
+        "spam": 206
       },
-      "threshold": 0.21736577179058864,
-      "train_support": {
-        "ham": 2710,
-        "spam": 385
+      "false_positives": 1,
+      "false_negatives": 17,
+      "false_positive_rate": 0.001,
+      "constraint_eligible": true,
+      "target_met_empirical": true,
+      "evaluation_scope": "historical_reuse"
+    },
+    "sms_id": {
+      "precision": 0.9907407407407407,
+      "recall": 0.9727272727272728,
+      "f1": 0.981651376146789,
+      "f2": 0.9762773722627737,
+      "f0_5": 0.9870848708487084,
+      "confusion_matrix": [
+        [
+          112,
+          1
+        ],
+        [
+          3,
+          107
+        ]
+      ],
+      "confusion_order": [
+        "ham",
+        "spam"
+      ],
+      "support": {
+        "ham": 113,
+        "spam": 110
       },
-      "feature_count": 7246,
-      "test": {
-        "precision": 0.9895833333333334,
-        "recall": 0.7421875,
-        "f1": 0.8482142857142857,
-        "f0_5": 0.927734375,
-        "confusion_matrix": [
-          [
-            903,
-            1
-          ],
-          [
-            33,
-            95
-          ]
+      "false_positives": 1,
+      "false_negatives": 3,
+      "false_positive_rate": 0.008849557522123894,
+      "constraint_eligible": true,
+      "target_met_empirical": true,
+      "evaluation_scope": "historical_reuse"
+    },
+    "email_en": {
+      "precision": 0.9333333333333333,
+      "recall": 1.0,
+      "f1": 0.9655172413793104,
+      "f2": 0.9859154929577465,
+      "f0_5": 0.9459459459459459,
+      "confusion_matrix": [
+        [
+          439,
+          4
         ],
-        "confusion_order": [
-          "ham",
-          "spam"
-        ],
-        "support": {
-          "ham": 904,
-          "spam": 128
-        },
-        "false_positives": 1,
-        "false_positive_rate": 0.0011061946902654867
+        [
+          0,
+          56
+        ]
+      ],
+      "confusion_order": [
+        "ham",
+        "spam"
+      ],
+      "support": {
+        "ham": 443,
+        "spam": 56
       },
-      "test_default_0_5": {
-        "precision": 1.0,
-        "recall": 0.6328125,
-        "f1": 0.7751196172248804,
-        "f0_5": 0.8960176991150443,
-        "confusion_matrix": [
-          [
-            904,
-            0
-          ],
-          [
-            47,
-            81
-          ]
-        ],
-        "confusion_order": [
-          "ham",
-          "spam"
-        ],
-        "support": {
-          "ham": 904,
-          "spam": 128
+      "false_positives": 4,
+      "false_negatives": 0,
+      "false_positive_rate": 0.009029345372460496,
+      "constraint_eligible": true,
+      "target_met_empirical": true,
+      "evaluation_scope": "historical_reuse"
+    }
+  },
+  "validation": {
+    "policy": "One SMS threshold; per-language validation ham FPR <=3% for >=100 ham and >=30 spam. Threshold maximizes macro F2 (existing selector). Candidate ranking: macro recall, minimum language recall, macro F2, fewer FP. No manual or test-based selection. Email selection unchanged.",
+    "selected": {
+      "sms": "sms/recall_active",
+      "email": "email/current_retuned"
+    },
+    "candidates": {
+      "sms/current_retuned": {
+        "threshold": 0.8963677007261465,
+        "by_group": {
+          "sms_en": {
+            "precision": 0.9867109634551495,
+            "recall": 0.8092643051771117,
+            "f1": 0.8892215568862275,
+            "f2": 0.8394573205200678,
+            "f0_5": 0.9452577975811585,
+            "confusion_matrix": [
+              [
+                1285,
+                4
+              ],
+              [
+                70,
+                297
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 1289,
+              "spam": 367
+            },
+            "false_positives": 4,
+            "false_negatives": 70,
+            "false_positive_rate": 0.0031031807602792862,
+            "constraint_eligible": true,
+            "target_met_empirical": true
+          },
+          "sms_id": {
+            "precision": 0.9719626168224299,
+            "recall": 0.8813559322033898,
+            "f1": 0.9244444444444444,
+            "f2": 0.8981001727115717,
+            "f0_5": 0.9523809523809523,
+            "confusion_matrix": [
+              [
+                111,
+                3
+              ],
+              [
+                14,
+                104
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 114,
+              "spam": 118
+            },
+            "false_positives": 3,
+            "false_negatives": 14,
+            "false_positive_rate": 0.02631578947368421,
+            "constraint_eligible": true,
+            "target_met_empirical": true
+          }
         },
-        "false_positives": 0,
-        "false_positive_rate": 0.0
+        "macro_f2": 0.8687787466158198,
+        "macro_recall": 0.8453101186902507
+      },
+      "sms/word_char_lr_aug": {
+        "threshold": 0.7172193110759366,
+        "by_group": {
+          "sms_en": {
+            "precision": 0.9939024390243902,
+            "recall": 0.888283378746594,
+            "f1": 0.9381294964028777,
+            "f2": 0.9075723830734966,
+            "f0_5": 0.9708159618820726,
+            "confusion_matrix": [
+              [
+                1287,
+                2
+              ],
+              [
+                41,
+                326
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 1289,
+              "spam": 367
+            },
+            "false_positives": 2,
+            "false_negatives": 41,
+            "false_positive_rate": 0.0015515903801396431,
+            "constraint_eligible": true,
+            "target_met_empirical": true
+          },
+          "sms_id": {
+            "precision": 0.9734513274336283,
+            "recall": 0.9322033898305084,
+            "f1": 0.9523809523809523,
+            "f2": 0.9401709401709402,
+            "f0_5": 0.9649122807017544,
+            "confusion_matrix": [
+              [
+                111,
+                3
+              ],
+              [
+                8,
+                110
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 114,
+              "spam": 118
+            },
+            "false_positives": 3,
+            "false_negatives": 8,
+            "false_positive_rate": 0.02631578947368421,
+            "constraint_eligible": true,
+            "target_met_empirical": true
+          }
+        },
+        "macro_f2": 0.9238716616222185,
+        "macro_recall": 0.9102433842885512
+      },
+      "sms/word_char_svm_aug": {
+        "threshold": 0.7036307173202644,
+        "by_group": {
+          "sms_en": {
+            "precision": 0.9969135802469136,
+            "recall": 0.8801089918256131,
+            "f1": 0.934876989869754,
+            "f2": 0.9012276785714286,
+            "f0_5": 0.9711365003006615,
+            "confusion_matrix": [
+              [
+                1288,
+                1
+              ],
+              [
+                44,
+                323
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 1289,
+              "spam": 367
+            },
+            "false_positives": 1,
+            "false_negatives": 44,
+            "false_positive_rate": 0.0007757951900698216,
+            "constraint_eligible": true,
+            "target_met_empirical": true
+          },
+          "sms_id": {
+            "precision": 0.972972972972973,
+            "recall": 0.9152542372881356,
+            "f1": 0.9432314410480349,
+            "f2": 0.9262435677530018,
+            "f0_5": 0.9608540925266904,
+            "confusion_matrix": [
+              [
+                111,
+                3
+              ],
+              [
+                10,
+                108
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 114,
+              "spam": 118
+            },
+            "false_positives": 3,
+            "false_negatives": 10,
+            "false_positive_rate": 0.02631578947368421,
+            "constraint_eligible": true,
+            "target_met_empirical": true
+          }
+        },
+        "macro_f2": 0.9137356231622151,
+        "macro_recall": 0.8976816145568743
+      },
+      "sms/baseline_fixed": {
+        "threshold": 0.42144362248621786,
+        "by_group": {
+          "sms_en": {
+            "precision": 0.9405405405405406,
+            "recall": 0.9482288828337875,
+            "f1": 0.9443690637720489,
+            "f2": 0.9466811751904244,
+            "f0_5": 0.9420682187330807,
+            "confusion_matrix": [
+              [
+                1267,
+                22
+              ],
+              [
+                19,
+                348
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 1289,
+              "spam": 367
+            },
+            "false_positives": 22,
+            "false_negatives": 19,
+            "false_positive_rate": 0.017067494181536073,
+            "constraint_eligible": true,
+            "target_met_empirical": true
+          },
+          "sms_id": {
+            "precision": 0.921875,
+            "recall": 1.0,
+            "f1": 0.959349593495935,
+            "f2": 0.9833333333333333,
+            "f0_5": 0.9365079365079365,
+            "confusion_matrix": [
+              [
+                104,
+                10
+              ],
+              [
+                0,
+                118
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 114,
+              "spam": 118
+            },
+            "false_positives": 10,
+            "false_negatives": 0,
+            "false_positive_rate": 0.08771929824561403,
+            "constraint_eligible": true,
+            "target_met_empirical": false
+          }
+        },
+        "macro_f2": 0.9650072542618788,
+        "macro_recall": 0.9741144414168937
+      },
+      "email/current_retuned": {
+        "threshold": 0.17166622963704584,
+        "by_group": {
+          "email_en": {
+            "precision": 0.967741935483871,
+            "recall": 1.0,
+            "f1": 0.9836065573770492,
+            "f2": 0.9933774834437086,
+            "f0_5": 0.974025974025974,
+            "confusion_matrix": [
+              [
+                474,
+                3
+              ],
+              [
+                0,
+                90
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 477,
+              "spam": 90
+            },
+            "false_positives": 3,
+            "false_negatives": 0,
+            "false_positive_rate": 0.006289308176100629,
+            "constraint_eligible": true,
+            "target_met_empirical": true
+          }
+        },
+        "macro_f2": 0.9933774834437086,
+        "macro_recall": 1.0
+      },
+      "email/baseline_fixed": {
+        "threshold": 0.17166622963704584,
+        "by_group": {
+          "email_en": {
+            "precision": 0.967741935483871,
+            "recall": 1.0,
+            "f1": 0.9836065573770492,
+            "f2": 0.9933774834437086,
+            "f0_5": 0.974025974025974,
+            "confusion_matrix": [
+              [
+                474,
+                3
+              ],
+              [
+                0,
+                90
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 477,
+              "spam": 90
+            },
+            "false_positives": 3,
+            "false_negatives": 0,
+            "false_positive_rate": 0.006289308176100629,
+            "constraint_eligible": true,
+            "target_met_empirical": true
+          }
+        },
+        "macro_f2": 0.9933774834437086,
+        "macro_recall": 1.0
+      },
+      "sms/recall_active": {
+        "spec": {
+          "C": 4,
+          "synthetic_weight": 0.1,
+          "balance_language_label": true,
+          "wide": true
+        },
+        "threshold": 0.5990758319506397,
+        "by_group": {
+          "sms_en": {
+            "precision": 0.9831932773109243,
+            "recall": 0.9564032697547684,
+            "f1": 0.9696132596685083,
+            "f2": 0.9616438356164384,
+            "f0_5": 0.9777158774373259,
+            "confusion_matrix": [
+              [
+                1283,
+                6
+              ],
+              [
+                16,
+                351
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 1289,
+              "spam": 367
+            },
+            "false_positives": 6,
+            "false_negatives": 16,
+            "false_positive_rate": 0.004654771140418929,
+            "constraint_eligible": true,
+            "target_met_empirical": true
+          },
+          "sms_id": {
+            "precision": 0.9747899159663865,
+            "recall": 0.9830508474576272,
+            "f1": 0.9789029535864979,
+            "f2": 0.9813874788494078,
+            "f0_5": 0.9764309764309764,
+            "confusion_matrix": [
+              [
+                111,
+                3
+              ],
+              [
+                2,
+                116
+              ]
+            ],
+            "confusion_order": [
+              "ham",
+              "spam"
+            ],
+            "support": {
+              "ham": 114,
+              "spam": 118
+            },
+            "false_positives": 3,
+            "false_negatives": 2,
+            "false_positive_rate": 0.02631578947368421,
+            "constraint_eligible": true,
+            "target_met_empirical": true
+          }
+        }
       }
     },
-    "sms_word_lr": {
-      "validation": {
-        "precision": 0.990909090909091,
-        "recall": 0.8449612403100775,
-        "f1": 0.9121338912133892,
-        "f0_5": 0.9578207381370826,
+    "frozen_sha256": "28d9ee62dc8e5a9bd22163d77122bdd587e984810420652e8395c3a82e95d957",
+    "created_utc": "2026-11-24T11:02:37.564152+00:00",
+    "test_read_for_selection": false,
+    "candidates_sha256": "ece1466e33f4e6895bbaf60d8026549e6f8ccb875b6b2d1a2309e0382be825a9"
+  },
+  "new_holdout": {
+    "sms/baseline_fixed": {
+      "sms_en": {
+        "precision": 0.8571428571428571,
+        "recall": 0.9310344827586207,
+        "f1": 0.8925619834710744,
+        "f2": 0.9152542372881356,
+        "f0_5": 0.8709677419354839,
         "confusion_matrix": [
           [
-            902,
-            1
+            461,
+            45
           ],
           [
             20,
-            109
+            270
           ]
         ],
         "confusion_order": [
@@ -114,59 +555,31 @@
           "spam"
         ],
         "support": {
-          "ham": 903,
-          "spam": 129
+          "ham": 506,
+          "spam": 290
         },
-        "false_positives": 1,
-        "false_positive_rate": 0.0011074197120708748
-      },
-      "threshold": 0.47080778536071166,
-      "train_support": {
-        "ham": 2710,
-        "spam": 385
-      },
-      "feature_count": 7632,
-      "test": {
-        "precision": 0.9907407407407407,
-        "recall": 0.8359375,
-        "f1": 0.9067796610169492,
-        "f0_5": 0.9553571428571429,
-        "confusion_matrix": [
-          [
-            903,
-            1
-          ],
-          [
-            21,
-            107
-          ]
-        ],
-        "confusion_order": [
-          "ham",
-          "spam"
-        ],
-        "support": {
-          "ham": 904,
-          "spam": 128
-        },
-        "false_positives": 1,
-        "false_positive_rate": 0.0011061946902654867
+        "false_positives": 45,
+        "false_negatives": 20,
+        "false_positive_rate": 0.08893280632411067,
+        "constraint_eligible": true,
+        "target_met_empirical": false
       }
     },
-    "sms_word_char_lr": {
-      "validation": {
-        "precision": 0.9912280701754386,
-        "recall": 0.875968992248062,
-        "f1": 0.9300411522633745,
-        "f0_5": 0.9658119658119658,
+    "sms/current_retuned": {
+      "sms_en": {
+        "precision": 0.9834254143646409,
+        "recall": 0.6137931034482759,
+        "f1": 0.7558386411889597,
+        "f2": 0.6636838180462341,
+        "f0_5": 0.8777120315581854,
         "confusion_matrix": [
           [
-            902,
-            1
+            503,
+            3
           ],
           [
-            16,
-            113
+            112,
+            178
           ]
         ],
         "confusion_order": [
@@ -174,30 +587,158 @@
           "spam"
         ],
         "support": {
-          "ham": 903,
-          "spam": 129
+          "ham": 506,
+          "spam": 290
         },
-        "false_positives": 1,
-        "false_positive_rate": 0.0011074197120708748
-      },
-      "threshold": 0.4432732053189189,
-      "train_support": {
-        "ham": 2710,
-        "spam": 385
-      },
-      "feature_count": 27632,
-      "test": {
-        "precision": 0.990990990990991,
-        "recall": 0.859375,
-        "f1": 0.9205020920502092,
-        "f0_5": 0.9615384615384616,
+        "false_positives": 3,
+        "false_negatives": 112,
+        "false_positive_rate": 0.005928853754940711,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      }
+    },
+    "sms/word_char_lr_aug": {
+      "sms_en": {
+        "precision": 1.0,
+        "recall": 0.9379310344827586,
+        "f1": 0.9679715302491103,
+        "f2": 0.9497206703910615,
+        "f0_5": 0.9869375907111756,
         "confusion_matrix": [
           [
-            903,
-            1
+            506,
+            0
           ],
           [
             18,
+            272
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 506,
+          "spam": 290
+        },
+        "false_positives": 0,
+        "false_negatives": 18,
+        "false_positive_rate": 0.0,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      }
+    },
+    "sms/word_char_svm_aug": {
+      "sms_en": {
+        "precision": 1.0,
+        "recall": 0.7896551724137931,
+        "f1": 0.882466281310212,
+        "f2": 0.8243340532757379,
+        "f0_5": 0.9494195688225538,
+        "confusion_matrix": [
+          [
+            506,
+            0
+          ],
+          [
+            61,
+            229
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 506,
+          "spam": 290
+        },
+        "false_positives": 0,
+        "false_negatives": 61,
+        "false_positive_rate": 0.0,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      }
+    },
+    "sms/recall_active": {
+      "sms_en": {
+        "precision": 0.9965397923875432,
+        "recall": 0.993103448275862,
+        "f1": 0.9948186528497409,
+        "f2": 0.9937888198757764,
+        "f0_5": 0.995850622406639,
+        "confusion_matrix": [
+          [
+            505,
+            1
+          ],
+          [
+            2,
+            288
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 506,
+          "spam": 290
+        },
+        "false_positives": 1,
+        "false_negatives": 2,
+        "false_positive_rate": 0.001976284584980237,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      }
+    }
+  },
+  "historical_comparison": {
+    "sms/baseline_fixed": {
+      "sms_en": {
+        "precision": 0.9802955665024631,
+        "recall": 0.9660194174757282,
+        "f1": 0.9731051344743277,
+        "f2": 0.9688412852969815,
+        "f0_5": 0.9774066797642437,
+        "confusion_matrix": [
+          [
+            996,
+            4
+          ],
+          [
+            7,
+            199
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1000,
+          "spam": 206
+        },
+        "false_positives": 4,
+        "false_negatives": 7,
+        "false_positive_rate": 0.004,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      },
+      "sms_id": {
+        "precision": 0.9090909090909091,
+        "recall": 1.0,
+        "f1": 0.9523809523809523,
+        "f2": 0.9803921568627451,
+        "f0_5": 0.9259259259259259,
+        "confusion_matrix": [
+          [
+            102,
+            11
+          ],
+          [
+            0,
             110
           ]
         ],
@@ -206,65 +747,563 @@
           "spam"
         ],
         "support": {
-          "ham": 904,
-          "spam": 128
+          "ham": 113,
+          "spam": 110
+        },
+        "false_positives": 11,
+        "false_negatives": 0,
+        "false_positive_rate": 0.09734513274336283,
+        "constraint_eligible": true,
+        "target_met_empirical": false
+      }
+    },
+    "sms/current_retuned": {
+      "sms_en": {
+        "precision": 0.9941176470588236,
+        "recall": 0.8203883495145631,
+        "f1": 0.898936170212766,
+        "f2": 0.8501006036217303,
+        "f0_5": 0.95372460496614,
+        "confusion_matrix": [
+          [
+            999,
+            1
+          ],
+          [
+            37,
+            169
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1000,
+          "spam": 206
         },
         "false_positives": 1,
-        "false_positive_rate": 0.0011061946902654867
+        "false_negatives": 37,
+        "false_positive_rate": 0.001,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      },
+      "sms_id": {
+        "precision": 1.0,
+        "recall": 0.7909090909090909,
+        "f1": 0.883248730964467,
+        "f2": 0.825426944971537,
+        "f0_5": 0.9497816593886463,
+        "confusion_matrix": [
+          [
+            113,
+            0
+          ],
+          [
+            23,
+            87
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 113,
+          "spam": 110
+        },
+        "false_positives": 0,
+        "false_negatives": 23,
+        "false_positive_rate": 0.0,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      }
+    },
+    "sms/word_char_lr_aug": {
+      "sms_en": {
+        "precision": 1.0,
+        "recall": 0.7815533980582524,
+        "f1": 0.8773841961852861,
+        "f2": 0.817258883248731,
+        "f0_5": 0.9470588235294117,
+        "confusion_matrix": [
+          [
+            1000,
+            0
+          ],
+          [
+            45,
+            161
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1000,
+          "spam": 206
+        },
+        "false_positives": 0,
+        "false_negatives": 45,
+        "false_positive_rate": 0.0,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      },
+      "sms_id": {
+        "precision": 1.0,
+        "recall": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "f2": 0.9259259259259259,
+        "f0_5": 0.9803921568627451,
+        "confusion_matrix": [
+          [
+            113,
+            0
+          ],
+          [
+            10,
+            100
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 113,
+          "spam": 110
+        },
+        "false_positives": 0,
+        "false_negatives": 10,
+        "false_positive_rate": 0.0,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      }
+    },
+    "sms/word_char_svm_aug": {
+      "sms_en": {
+        "precision": 1.0,
+        "recall": 0.8349514563106796,
+        "f1": 0.91005291005291,
+        "f2": 0.8634538152610441,
+        "f0_5": 0.9619686800894854,
+        "confusion_matrix": [
+          [
+            1000,
+            0
+          ],
+          [
+            34,
+            172
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1000,
+          "spam": 206
+        },
+        "false_positives": 0,
+        "false_negatives": 34,
+        "false_positive_rate": 0.0,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      },
+      "sms_id": {
+        "precision": 1.0,
+        "recall": 0.8272727272727273,
+        "f1": 0.9054726368159204,
+        "f2": 0.8568738229755178,
+        "f0_5": 0.959915611814346,
+        "confusion_matrix": [
+          [
+            113,
+            0
+          ],
+          [
+            19,
+            91
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 113,
+          "spam": 110
+        },
+        "false_positives": 0,
+        "false_negatives": 19,
+        "false_positive_rate": 0.0,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      }
+    },
+    "email/baseline_fixed": {
+      "email_en": {
+        "precision": 0.9333333333333333,
+        "recall": 1.0,
+        "f1": 0.9655172413793104,
+        "f2": 0.9859154929577465,
+        "f0_5": 0.9459459459459459,
+        "confusion_matrix": [
+          [
+            439,
+            4
+          ],
+          [
+            0,
+            56
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 443,
+          "spam": 56
+        },
+        "false_positives": 4,
+        "false_negatives": 0,
+        "false_positive_rate": 0.009029345372460496,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      }
+    },
+    "email/current_retuned": {
+      "email_en": {
+        "precision": 0.9333333333333333,
+        "recall": 1.0,
+        "f1": 0.9655172413793104,
+        "f2": 0.9859154929577465,
+        "f0_5": 0.9459459459459459,
+        "confusion_matrix": [
+          [
+            439,
+            4
+          ],
+          [
+            0,
+            56
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 443,
+          "spam": 56
+        },
+        "false_positives": 4,
+        "false_negatives": 0,
+        "false_positive_rate": 0.009029345372460496,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      }
+    },
+    "sms/recall_active": {
+      "sms_en": {
+        "precision": 0.9947368421052631,
+        "recall": 0.9174757281553398,
+        "f1": 0.9545454545454546,
+        "f2": 0.9319526627218935,
+        "f0_5": 0.9782608695652174,
+        "confusion_matrix": [
+          [
+            999,
+            1
+          ],
+          [
+            17,
+            189
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1000,
+          "spam": 206
+        },
+        "false_positives": 1,
+        "false_negatives": 17,
+        "false_positive_rate": 0.001,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      },
+      "sms_id": {
+        "precision": 0.9907407407407407,
+        "recall": 0.9727272727272728,
+        "f1": 0.981651376146789,
+        "f2": 0.9762773722627737,
+        "f0_5": 0.9870848708487084,
+        "confusion_matrix": [
+          [
+            112,
+            1
+          ],
+          [
+            3,
+            107
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 113,
+          "spam": 110
+        },
+        "false_positives": 1,
+        "false_negatives": 3,
+        "false_positive_rate": 0.008849557522123894,
+        "constraint_eligible": true,
+        "target_met_empirical": true
       }
     }
   },
-  "selected": {
-    "sms": {
-      "name": "word_char_lr",
-      "threshold": 0.4432732053189189
-    }
-  },
-  "by_channel_language": {
-    "sms_en": {
-      "precision": 0.990990990990991,
-      "recall": 0.859375,
-      "f1": 0.9205020920502092,
-      "f0_5": 0.9615384615384616,
-      "confusion_matrix": [
-        [
-          903,
-          1
-        ],
-        [
-          18,
-          110
-        ]
-      ],
-      "confusion_order": [
-        "ham",
-        "spam"
-      ],
-      "support": {
-        "ham": 904,
-        "spam": 128
-      },
-      "false_positives": 1,
-      "false_positive_rate": 0.0011061946902654867,
-      "false_positive_row_ids": [
-        "uci_sms:2380"
-      ]
-    }
-  },
-  "indonesian": {
-    "status": "unvalidated",
-    "support": 0,
-    "reason": "No eligible licensed real Indonesian test set."
-  },
-  "independent_source_test": "Not performed: only one eligible accessible source, with unavailable component source IDs.",
-  "combined_vs_per_channel": "Not performed: only SMS has eligible accessible data; comparing combined/per-channel would be identical, not evidence of transfer.",
+  "frozen_sha256": "28d9ee62dc8e5a9bd22163d77122bdd587e984810420652e8395c3a82e95d957",
+  "split_sha256": "b3e0629b3c7670632936071eff8a353043fc3d23f75f884b58e8d0d5c74bad33",
+  "evaluation_scope": "Historical grouped test reuse for by_channel_language; new external SMS English/Hinglish is separate. No original new SMS-ID/email-EN/email-ID holdout.",
+  "new_holdout_scope": "New external original SMS English/Hinglish only. SMS-ID/email-EN are historical reuse, not new independent holdouts. Email-ID absent.",
   "limitations": [
-    "Historical single-source SMS data; source-level English designation includes informal/mixed varieties.",
-    "No eligible accessible email corpus; official request blocked by approval layer and not retried.",
-    "Grouping is heuristic, not proof all semantic template leakage is eliminated.",
-    "Empirical validation FPR constraint is not a production guarantee; no calibration or prospective evaluation.",
-    "No cross-source/temporal/Indonesian validation."
+    "Empirical per-group validation cap is not a population/production guarantee.",
+    "Historical SMS-ID and email-EN tests were inspected in earlier development; not fresh blind evaluation.",
+    "Transactional augmentation is synthetic SMS, not real email or original Indonesian test data.",
+    "Consent of individual source promotional messages is not annotated."
   ],
-  "artifact_contract_status": "BLOCKED: required email pipeline cannot be honestly trained. Artifact intentionally contains only a genuine SMS entry; consumers must handle absent email. Never relabel SMS as email.",
-  "metrics_sha256": "9a76b865385a67358df842f1c8684836c64c797f2ce67832f4ffbd969ae44084"
+  "source_audit": {
+    "india_sms": {
+      "raw_count": 2267,
+      "raw_label_counts": {
+        "spam": 745,
+        "ham": 1522
+      },
+      "eligible_before_grouping": 2240,
+      "selected_label_counts": {
+        "spam": 745,
+        "ham": 1495
+      },
+      "selected_language_counts": {
+        "en": 2240
+      },
+      "license": "MIT, explicitly applied to dataset in original README; Copyright 2024 JuniorAlive",
+      "sha256": "e6a28126d1c4ec9d805a10cd89f2de2bb63650532102e9f35ab05c909c3a79f3"
+    },
+    "ots_legit_augmentation": {
+      "raw_count": 15027,
+      "raw_label_counts": {
+        "ham": 12000,
+        "phishing": 3027
+      },
+      "eligible_before_grouping": 1903,
+      "selected_label_counts": {
+        "ham": 1088,
+        "spam": 815
+      },
+      "selected_language_counts": {
+        "en": 1550,
+        "id": 353
+      },
+      "license": "MIT, original in-house template/generator source and accompanying published synthetic fixture; Copyright 2024 TelecomsXChange. Not a license substitution for third-party real corpora.",
+      "sha256": "b7b0e15986fda28fb79606af220c7661f48931999cb9bd8a3f5a9a7a3f3ebe28"
+    }
+  },
+  "artifact_sha256": "f8545bf00c72d11bbf5aabba358d5697091b6dbd1d8146c753f98e41186c2445",
+  "sms_recall": {
+    "selected": "lr_13",
+    "results": {
+      "historical_test/sms_en": {
+        "precision": 0.9947368421052631,
+        "recall": 0.9174757281553398,
+        "f1": 0.9545454545454546,
+        "f2": 0.9319526627218935,
+        "f0_5": 0.9782608695652174,
+        "confusion_matrix": [
+          [
+            999,
+            1
+          ],
+          [
+            17,
+            189
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1000,
+          "spam": 206
+        },
+        "false_positives": 1,
+        "false_negatives": 17,
+        "false_positive_rate": 0.001,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      },
+      "historical_test/sms_id": {
+        "precision": 0.9907407407407407,
+        "recall": 0.9727272727272728,
+        "f1": 0.981651376146789,
+        "f2": 0.9762773722627737,
+        "f0_5": 0.9870848708487084,
+        "confusion_matrix": [
+          [
+            112,
+            1
+          ],
+          [
+            3,
+            107
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 113,
+          "spam": 110
+        },
+        "false_positives": 1,
+        "false_negatives": 3,
+        "false_positive_rate": 0.008849557522123894,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      },
+      "new_test/sms_en": {
+        "precision": 0.9965397923875432,
+        "recall": 0.993103448275862,
+        "f1": 0.9948186528497409,
+        "f2": 0.9937888198757764,
+        "f0_5": 0.995850622406639,
+        "confusion_matrix": [
+          [
+            505,
+            1
+          ],
+          [
+            2,
+            288
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 506,
+          "spam": 290
+        },
+        "false_positives": 1,
+        "false_negatives": 2,
+        "false_positive_rate": 0.001976284584980237,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      }
+    },
+    "active_before": {
+      "historical_test/sms_en": {
+        "precision": 1.0,
+        "recall": 0.7815533980582524,
+        "f1": 0.8773841961852861,
+        "f2": 0.817258883248731,
+        "f0_5": 0.9470588235294117,
+        "confusion_matrix": [
+          [
+            1000,
+            0
+          ],
+          [
+            45,
+            161
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 1000,
+          "spam": 206
+        },
+        "false_positives": 0,
+        "false_negatives": 45,
+        "false_positive_rate": 0.0,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      },
+      "historical_test/sms_id": {
+        "precision": 1.0,
+        "recall": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "f2": 0.9259259259259259,
+        "f0_5": 0.9803921568627451,
+        "confusion_matrix": [
+          [
+            113,
+            0
+          ],
+          [
+            10,
+            100
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 113,
+          "spam": 110
+        },
+        "false_positives": 0,
+        "false_negatives": 10,
+        "false_positive_rate": 0.0,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      },
+      "new_test/sms_en": {
+        "precision": 1.0,
+        "recall": 0.9379310344827586,
+        "f1": 0.9679715302491103,
+        "f2": 0.9497206703910615,
+        "f0_5": 0.9869375907111756,
+        "confusion_matrix": [
+          [
+            506,
+            0
+          ],
+          [
+            18,
+            272
+          ]
+        ],
+        "confusion_order": [
+          "ham",
+          "spam"
+        ],
+        "support": {
+          "ham": 506,
+          "spam": 290
+        },
+        "false_positives": 0,
+        "false_negatives": 18,
+        "false_positive_rate": 0.0,
+        "constraint_eligible": true,
+        "target_met_empirical": true
+      }
+    },
+    "scope": "All tests reused from previous round, not fresh independent validation; no eligible new ID holdout."
+  }
 }

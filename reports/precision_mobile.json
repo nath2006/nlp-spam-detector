@@ -1,0 +1,25 @@
+{
+  "viewport": {
+    "url": "http://127.0.0.1:8501/",
+    "title": "Detektor Spam SMS & Email",
+    "w": 390,
+    "h": 844,
+    "sx": 0,
+    "sy": 0,
+    "pw": 390,
+    "ph": 844
+  },
+  "dimensions": {
+    "viewport": 390,
+    "width": 390
+  },
+  "evaluation_headings": [
+    "Test historis \u2014 bukan holdout baru",
+    "Holdout eksternal baru \u2014 SMS Inggris/Hinglish",
+    "Pemilihan pada validation per kelompok",
+    "Tambahan sumber precision",
+    "Sumber dataset yang digunakan"
+  ],
+  "physical_phone_tested": false,
+  "ocr_code_horizontal_scroll": "OCR line is contained in its scrollable code block; no document overflow"
+}

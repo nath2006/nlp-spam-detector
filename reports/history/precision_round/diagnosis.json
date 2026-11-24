@@ -1,0 +1,210 @@
+{
+  "artifact": "C:\\Users\\ikbar\\Documents\\kuliah\\kuliah_semester5\\pemrosesan_bahasa_alami\\nlp-spam-detector\\artifacts\\model.joblib",
+  "artifact_sha256": "2a134b92955326fab0f926a9d1d38c944bfae0710f05a981c811fbb2742e1176",
+  "metadata": {
+    "schema_version": 2,
+    "seed": 2026,
+    "languages": [
+      "en",
+      "id",
+      "und"
+    ],
+    "languages_by_channel": {
+      "email": [
+        "en"
+      ],
+      "sms": [
+        "en",
+        "id"
+      ]
+    },
+    "unavailable_channels": [],
+    "score_semantics": "Classifier scores in [0,1], not validated confidence. SVM sigmoid calibration uses training CV only.",
+    "split_sha256": "446879ccc725f2d3a9b919318417c3f08b51b680b685137d98b935eb5af760c3",
+    "training_counts": {
+      "sms_en_ham": 3031,
+      "sms_en_spam": 638,
+      "sms_id_spam": 395,
+      "sms_id_ham": 341,
+      "email_en_ham": 1444,
+      "email_en_spam": 280,
+      "email_und_spam": 394
+    },
+    "sources": {
+      "mishra_sms": "9bbf3188fdad81495d8e82825648b9b63b53fc86841a3d26c02629990b233cc3",
+      "uci_sms": "1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3",
+      "yudi_sms": "8f666e86de36fc840f53303414c45399099c17358b30b4531c46a434d31f1f18",
+      "bopbi": "b4bdd97aab38d31546feae2e68bf1073b495ac2539a22883c78e1fb162045ef0",
+      "lingspam": "e3a0bb61dff2f1e47c368d1c376c27f79319cd600a8784ea3872e4b77d22c148",
+      "nazario_2023": "5007f1c1dc91b15e93e988afa3a1cf402e15c88f765d3057be8bfec50dae1fe8"
+    },
+    "selection": "Maximize validation F2 subject to empirical validation ham FPR <=3%; tie-break recall, lower FPR, higher threshold. Model selected on validation only; no refit on validation/test.",
+    "sklearn_version": "1.9.1"
+  },
+  "models": {
+    "email": {
+      "name": "word_char_svm",
+      "threshold": 0.17166622963704584,
+      "classes": [
+        "ham",
+        "spam"
+      ],
+      "spam_index": 1
+    },
+    "sms": {
+      "name": "word_char_svm",
+      "threshold": 0.42144362248621786,
+      "classes": [
+        "ham",
+        "spam"
+      ],
+      "spam_index": 1
+    }
+  },
+  "manual_only": true,
+  "results": [
+    {
+      "id": "A",
+      "language": "id",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.9886704644260647,
+      "threshold": 0.42144362248621786,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "B",
+      "language": "id",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.9253798516467809,
+      "threshold": 0.42144362248621786,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "C",
+      "language": "en",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.7391663331238182,
+      "threshold": 0.42144362248621786,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "D",
+      "language": "en",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.9885139230347001,
+      "threshold": 0.42144362248621786,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "order_id",
+      "language": "id",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.8656971340237906,
+      "threshold": 0.42144362248621786,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "refund_id",
+      "language": "id",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.9054274600480814,
+      "threshold": 0.42144362248621786,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "newsletter_en",
+      "language": "en",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.7957116116903284,
+      "threshold": 0.42144362248621786,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "order_en",
+      "language": "en",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "ham",
+      "display": "BUKAN SPAM",
+      "score_model": 0.40548460330261055,
+      "threshold": 0.42144362248621786,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "refund_email",
+      "language": "en",
+      "channel": "email",
+      "expected": "ham",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.9932036197019789,
+      "threshold": 0.17166622963704584,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "newsletter_email",
+      "language": "en",
+      "channel": "email",
+      "expected": "ham",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.9970339795636614,
+      "threshold": 0.17166622963704584,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "credential_email",
+      "language": "en",
+      "channel": "email",
+      "expected": "spam",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.9972745702697292,
+      "threshold": 0.17166622963704584,
+      "error": null,
+      "ui_direct_parity": true
+    }
+  ]
+}

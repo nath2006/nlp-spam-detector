@@ -126,3 +126,24 @@ def test_missing_model(app, monkeypatch, tmp_path):
     app.button(key='sms_detect').click().run()
     assert not app.exception
     assert any('tidak ditemukan' in e.value for e in app.error)
+
+
+def test_model_provenance_and_coverage_visible(app):
+    assert any('SHA-256' in item.value for item in app.caption)
+    assert any('Email Indonesia' in item.value and 'belum tervalidasi' in item.value for item in app.warning)
+
+
+def test_precision_evaluation_separates_new_and_historical(app):
+    app.radio[0].set_value('Evaluasi Model').run()
+    headings=[x.value for x in app.subheader]
+    assert 'Holdout eksternal baru — SMS Inggris/Hinglish' in headings
+    assert 'Test historis — bukan holdout baru' in headings
+    assert 'Pemilihan pada validation per kelompok' in headings
+    assert any('B, C, D' in item.value for item in app.warning)
+    assert any('FPR ham' in table.value.columns for table in app.dataframe)
+
+
+def test_sms_recall_evaluation_does_not_repeat_old_regression_claim(app):
+    app.radio[0].set_value('Evaluasi Model').run()
+    assert any('newsletter SMS' in item.value for item in app.warning)
+    assert not any('B, C, D kini lolos' in item.value for item in app.warning)

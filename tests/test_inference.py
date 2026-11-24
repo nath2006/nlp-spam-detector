@@ -138,6 +138,22 @@ def test_channel_status(artifact):
     assert 'belum tersedia' in model_status('email', artifact)['message']
 
 
+def test_status_identifies_actual_artifact_and_reloads_replacement(artifact):
+    import hashlib
+    from spamdet.inference import model_status
+    status = model_status('sms', artifact)
+    assert status['artifact_path'] == str(artifact.resolve())
+    assert status['artifact_sha256'] == hashlib.sha256(artifact.read_bytes()).hexdigest()
+    assert status['classes'] == ['ham','spam'] and status['spam_index'] == 1
+    assert status['threshold'] == .6
+    bundle = joblib.load(artifact)
+    bundle['models']['sms']['threshold'] = .75
+    joblib.dump(bundle, artifact)
+    updated = model_status('sms', artifact)
+    assert updated['threshold'] == .75
+    assert updated['artifact_sha256'] != status['artifact_sha256']
+
+
 def test_export_all_strings():
     row = {key: value for key, value in zip(('row','label','display','score_model','threshold','error'), ['=1','+cmd','-cmd','@SUM(1)','\t=1','  =1'])}
     exported = list(csv.DictReader(io.StringIO(export_csv([row]))))[0]

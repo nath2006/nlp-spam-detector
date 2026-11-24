@@ -1,0 +1,18 @@
+{
+  "fixture": "examples/ocr_smoke.png",
+  "fixture_is_synthetic": true,
+  "real_easyocr": true,
+  "languages": [
+    "id",
+    "en"
+  ],
+  "text": "Besok rapat pukul 10 pagi. Please bring the meeting agenda.",
+  "prediction": {
+    "row": 1,
+    "label": "ham",
+    "display": "BUKAN SPAM",
+    "score_model": 0.012240417568353612,
+    "threshold": 0.7172193110759366,
+    "error": null
+  }
+}

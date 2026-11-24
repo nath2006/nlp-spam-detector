@@ -1,0 +1,13 @@
+[
+  {"id":"A","channel":"sms","language":"id","expected":"spam","body":"SELAMAT! Nomor Anda terpilih mendapat hadiah Rp5.000.000. Klaim sebelum pukul 18.00 di hadiah-demo.example."},
+  {"id":"B","channel":"sms","language":"id","expected":"spam","body":"Butuh dana cepat? Cair hingga 10 juta tanpa survei. Balas MAU hari ini untuk penawaran khusus."},
+  {"id":"C","channel":"sms","language":"en","expected":"spam","body":"Congrats! You’ve won a $500 shopping voucher. Claim it today at rewards-demo.example."},
+  {"id":"D","channel":"sms","language":"en","expected":"spam","body":"LAST CHANCE: Get instant cash with zero credit checks. Reply YES to apply now."},
+  {"id":"order_id","channel":"sms","language":"id","expected":"ham","body":"Pesanan Anda nomor 12345 sudah dikirim. Lihat status pengiriman di aplikasi toko tempat Anda berbelanja."},
+  {"id":"refund_id","channel":"sms","language":"id","expected":"ham","body":"Pengembalian dana untuk pesanan yang Anda batalkan telah diproses ke metode pembayaran semula. Tidak perlu mengirim OTP atau data rekening."},
+  {"id":"newsletter_en","channel":"sms","language":"en","expected":"ham","body":"Here is the weekly offers newsletter you subscribed to. View this week's shopping discounts in your account. Unsubscribe in settings."},
+  {"id":"order_en","channel":"sms","language":"en","expected":"ham","body":"Your order 12345 has shipped. Track delivery in the store app where you placed your order."},
+  {"id":"refund_email","channel":"email","language":"en","expected":"ham","subject":"Refund for your cancelled order","body":"As requested, we have refunded your cancelled order to your original payment method. No action or account credentials are required."},
+  {"id":"newsletter_email","channel":"email","language":"en","expected":"ham","subject":"Your subscribed weekly newsletter","body":"You are receiving this newsletter because you subscribed to our weekly updates. Here are this week's offers. Manage your subscription or unsubscribe in your account settings."},
+  {"id":"credential_email","channel":"email","language":"en","expected":"spam","subject":"Urgent account verification","body":"Your account will be suspended today. Send your password and verification code immediately to keep access to your mailbox."}
+]

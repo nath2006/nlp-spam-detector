@@ -1,0 +1,183 @@
+{
+  "status": "PARTIAL_QUALITY_REGRESSIONS",
+  "artifact_sha256": "817d81044bce4b5e80d402159324334321b9567296a0a371052e1b873f3cbfe0",
+  "baseline_sha256": "2a134b92955326fab0f926a9d1d38c944bfae0710f05a981c811fbb2742e1176",
+  "frozen_sha256": "28d9ee62dc8e5a9bd22163d77122bdd587e984810420652e8395c3a82e95d957",
+  "new_holdout_count": 796,
+  "group_split_integrity": true,
+  "manual_excluded": true,
+  "browser_checks": [
+    {
+      "id": "A",
+      "channel": "sms",
+      "subject": null,
+      "parity": true,
+      "label": "spam"
+    },
+    {
+      "id": "B",
+      "channel": "sms",
+      "subject": null,
+      "parity": true,
+      "label": "ham"
+    },
+    {
+      "id": "C",
+      "channel": "sms",
+      "subject": null,
+      "parity": true,
+      "label": "ham"
+    },
+    {
+      "id": "D",
+      "channel": "sms",
+      "subject": null,
+      "parity": true,
+      "label": "ham"
+    },
+    {
+      "id": "order_id",
+      "channel": "sms",
+      "subject": null,
+      "parity": true,
+      "label": "ham"
+    },
+    {
+      "id": "refund_id",
+      "channel": "sms",
+      "subject": null,
+      "parity": true,
+      "label": "ham"
+    },
+    {
+      "id": "newsletter_en",
+      "channel": "sms",
+      "subject": null,
+      "parity": true,
+      "label": "ham"
+    },
+    {
+      "id": "order_en",
+      "channel": "sms",
+      "subject": null,
+      "parity": true,
+      "label": "ham"
+    },
+    {
+      "id": "refund_email",
+      "channel": "email",
+      "subject": "",
+      "parity": true,
+      "label": "spam"
+    },
+    {
+      "id": "refund_email",
+      "channel": "email",
+      "subject": "Refund for your cancelled order",
+      "parity": true,
+      "label": "spam"
+    },
+    {
+      "id": "newsletter_email",
+      "channel": "email",
+      "subject": "",
+      "parity": true,
+      "label": "spam"
+    },
+    {
+      "id": "newsletter_email",
+      "channel": "email",
+      "subject": "Your subscribed weekly newsletter",
+      "parity": true,
+      "label": "spam"
+    },
+    {
+      "id": "credential_email",
+      "channel": "email",
+      "subject": "",
+      "parity": true,
+      "label": "spam"
+    },
+    {
+      "id": "credential_email",
+      "channel": "email",
+      "subject": "Urgent account verification",
+      "parity": true,
+      "label": "spam"
+    }
+  ],
+  "csv_rows_verified": 8,
+  "ocr_real": true,
+  "ocr_browser_direct_parity": true,
+  "mobile": {
+    "viewport": {
+      "url": "http://127.0.0.1:8501/",
+      "title": "Detektor Spam SMS & Email",
+      "w": 390,
+      "h": 844,
+      "sx": 0,
+      "sy": 0,
+      "pw": 390,
+      "ph": 844
+    },
+    "dimensions": {
+      "viewport": 390,
+      "width": 390
+    },
+    "evaluation_headings": [
+      "Test historis \u2014 bukan holdout baru",
+      "Holdout eksternal baru \u2014 SMS Inggris/Hinglish",
+      "Pemilihan pada validation per kelompok",
+      "Tambahan sumber precision",
+      "Sumber dataset yang digunakan"
+    ],
+    "physical_phone_tested": false,
+    "ocr_code_horizontal_scroll": "OCR line is contained in its scrollable code block; no document overflow"
+  },
+  "health": {
+    "/": {
+      "status": 200,
+      "body": "HTML shell"
+    },
+    "/_stcore/health": {
+      "status": 200,
+      "body": "ok"
+    }
+  },
+  "tests": {
+    "total": 86,
+    "passed": 83,
+    "failed": [
+      "test_manual_sms_regression_and_real_ui_parity[1]",
+      "test_manual_sms_regression_and_real_ui_parity[2]",
+      "test_manual_sms_regression_and_real_ui_parity[3]"
+    ],
+    "exit_code": 1
+  },
+  "source_usage": {
+    "india_sms": {
+      "excluded_overlap": {
+        "ham": 19,
+        "spam": 6
+      },
+      "new_test": {
+        "ham": 506,
+        "spam": 290
+      },
+      "train": {
+        "spam": 284,
+        "ham": 509
+      },
+      "val": {
+        "spam": 156,
+        "ham": 281
+      }
+    },
+    "ots_legit_augmentation": {
+      "train": {
+        "spam": 815,
+        "ham": 1088
+      }
+    }
+  }
+}

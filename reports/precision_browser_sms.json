@@ -1,0 +1,82 @@
+[
+  {
+    "id": "A",
+    "headings": [
+      "SPAM"
+    ],
+    "metrics": [
+      "0.7696",
+      "0.7172"
+    ]
+  },
+  {
+    "id": "B",
+    "headings": [
+      "BUKAN SPAM"
+    ],
+    "metrics": [
+      "0.6296",
+      "0.7172"
+    ]
+  },
+  {
+    "id": "C",
+    "headings": [
+      "BUKAN SPAM"
+    ],
+    "metrics": [
+      "0.6656",
+      "0.7172"
+    ]
+  },
+  {
+    "id": "D",
+    "headings": [
+      "BUKAN SPAM"
+    ],
+    "metrics": [
+      "0.4771",
+      "0.7172"
+    ]
+  },
+  {
+    "id": "order_id",
+    "headings": [
+      "BUKAN SPAM"
+    ],
+    "metrics": [
+      "0.1265",
+      "0.7172"
+    ]
+  },
+  {
+    "id": "refund_id",
+    "headings": [
+      "BUKAN SPAM"
+    ],
+    "metrics": [
+      "0.6904",
+      "0.7172"
+    ]
+  },
+  {
+    "id": "newsletter_en",
+    "headings": [
+      "BUKAN SPAM"
+    ],
+    "metrics": [
+      "0.4327",
+      "0.7172"
+    ]
+  },
+  {
+    "id": "order_en",
+    "headings": [
+      "BUKAN SPAM"
+    ],
+    "metrics": [
+      "0.1272",
+      "0.7172"
+    ]
+  }
+]

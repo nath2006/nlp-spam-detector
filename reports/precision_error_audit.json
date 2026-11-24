@@ -1,0 +1,136 @@
+{
+  "cases": [
+    {
+      "row_id": "yudi_sms:588",
+      "label": "ham",
+      "cause_group": "housing_price_context",
+      "old_score": 0.4240805522381337,
+      "text_sha256": "42814eea35ec12ae4a136895f0288c3c6b1d829fab3931e20403583548506297",
+      "contains_mixed_language": false,
+      "new_score": 0.06548494852901082,
+      "new_label": "ham",
+      "still_false_positive": false
+    },
+    {
+      "row_id": "yudi_sms:596",
+      "label": "ham",
+      "cause_group": "group_coordination",
+      "old_score": 0.53953874472323,
+      "text_sha256": "3cf313bd35c7878c61316e817294fdf500c0458f5df42ae867f5f859f7bcc1ad",
+      "contains_mixed_language": false,
+      "new_score": 0.2163562886224917,
+      "new_label": "ham",
+      "still_false_positive": false
+    },
+    {
+      "row_id": "yudi_sms:613",
+      "label": "ham",
+      "cause_group": "short_personal_or_work",
+      "old_score": 0.5180202020576092,
+      "text_sha256": "f091e4907f5a011929476de427fb04fbbd1688fbb08d9b87de7c1152ec2a2113",
+      "contains_mixed_language": false,
+      "new_score": 0.15348206759011554,
+      "new_label": "ham",
+      "still_false_positive": false
+    },
+    {
+      "row_id": "yudi_sms:633",
+      "label": "ham",
+      "cause_group": "group_coordination",
+      "old_score": 0.4745053515261357,
+      "text_sha256": "50dec4e84928d8a56cea5615a33b1a3c05a7956bacacde386dffc8bb8426c8a1",
+      "contains_mixed_language": false,
+      "new_score": 0.1705016498498445,
+      "new_label": "ham",
+      "still_false_positive": false
+    },
+    {
+      "row_id": "yudi_sms:802",
+      "label": "ham",
+      "cause_group": "legitimate_service_or_transaction",
+      "old_score": 0.8398883052785467,
+      "text_sha256": "63dec273315df94ad8fcf2f9c8c19ea360eb3b81c5760c2162d029dd24c3b9be",
+      "contains_mixed_language": false,
+      "new_score": 0.29007805053401176,
+      "new_label": "ham",
+      "still_false_positive": false
+    },
+    {
+      "row_id": "yudi_sms:843",
+      "label": "ham",
+      "cause_group": "legitimate_service_or_transaction",
+      "old_score": 0.8646008307592629,
+      "text_sha256": "f11344383a7fc34ca665d8f915c9891105d7eaf0b17f4c3d7418a8bdac5ee4f5",
+      "contains_mixed_language": false,
+      "new_score": 0.47670615900564756,
+      "new_label": "ham",
+      "still_false_positive": false
+    },
+    {
+      "row_id": "yudi_sms:1011",
+      "label": "ham",
+      "cause_group": "legitimate_service_or_transaction",
+      "old_score": 0.6717677995222737,
+      "text_sha256": "b227aa4bc62ee515e1edd44935f5ebad877fc25e4a748c4e89aa722f2c750fc7",
+      "contains_mixed_language": false,
+      "new_score": 0.36114007000317816,
+      "new_label": "ham",
+      "still_false_positive": false
+    },
+    {
+      "row_id": "yudi_sms:1030",
+      "label": "ham",
+      "cause_group": "short_personal_or_work",
+      "old_score": 0.4363986026179239,
+      "text_sha256": "da98d6cbb32e0479e234ad34cdd4e267c4b6c35df187dbd632824557c52b66d3",
+      "contains_mixed_language": false,
+      "new_score": 0.1966061402521163,
+      "new_label": "ham",
+      "still_false_positive": false
+    },
+    {
+      "row_id": "yudi_sms:1034",
+      "label": "ham",
+      "cause_group": "technical_discussion",
+      "old_score": 0.486565733681733,
+      "text_sha256": "41664145949d0f0c52c734a18670db594e18e84304cf3a77282c6502b807252f",
+      "contains_mixed_language": false,
+      "new_score": 0.4416066914360089,
+      "new_label": "ham",
+      "still_false_positive": false
+    },
+    {
+      "row_id": "yudi_sms:1079",
+      "label": "ham",
+      "cause_group": "legitimate_service_or_transaction",
+      "old_score": 0.5738297018815518,
+      "text_sha256": "520797e0041fb099fe6e0e92f1a322da8be7bff18a833f0bf2c231c3eb6096a6",
+      "contains_mixed_language": false,
+      "new_score": 0.18299521470566393,
+      "new_label": "ham",
+      "still_false_positive": false
+    },
+    {
+      "row_id": "yudi_sms:1099",
+      "label": "ham",
+      "cause_group": "legitimate_service_or_transaction",
+      "old_score": 0.7596274809788085,
+      "text_sha256": "650b12e33f25ef341d5c67331030b6c65dca8c20a253d36f8398af105075805d",
+      "contains_mixed_language": true,
+      "new_score": 0.19275758392648765,
+      "new_label": "ham",
+      "still_false_positive": false
+    }
+  ],
+  "counts": {
+    "housing_price_context": 1,
+    "group_coordination": 2,
+    "short_personal_or_work": 2,
+    "legitimate_service_or_transaction": 5,
+    "technical_discussion": 1
+  },
+  "source_consent_field_available": false,
+  "source_label_policy": "0 normal; 1 fraud; 2 promo. No subscribed/unsolicited or recipient-consent annotation. Do not automatically relabel promo as ham.",
+  "private_bodies_published": false,
+  "remaining_false_positives": 0
+}

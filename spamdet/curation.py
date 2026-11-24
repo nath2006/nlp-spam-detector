@@ -18,6 +18,12 @@ ROOT = Path(__file__).resolve().parents[1]
 SEED = 2026
 
 
+def read_jsonl(path):
+    # JSON strings may legally contain U+2028/U+0085; str.splitlines() splits them.
+    with Path(path).open(encoding='utf-8') as handle:
+        return [json.loads(line) for line in handle if line.strip()]
+
+
 def canonical_text(row):
     body = row['body'].strip()
     return row['subject'].strip() + '\n\n' + body if row['channel'] == 'email' else body
@@ -86,6 +92,7 @@ def curate(rows):
         duplicates += len(batch)-1
         r = dict(batch[0])
         r['duplicate_source_ids'] = sorted({x['source_id'] for x in batch})
+        r['train_only'] = any(x.get('train_only', False) or x.get('synthetic', False) for x in batch)
         r['thread_ids'] = sorted({x for b in batch for x in b.get('thread_ids', [])})
         r['text_hash'] = digest(key)
         retained.append(r)
@@ -98,12 +105,23 @@ def curate(rows):
     def union(i,j):
         a,b = root(i), root(j)
         parent[max(a,b)] = min(a,b)
-    templates, threads = {}, {}
+    templates, threads, bodies, subjects = {}, {}, {}, {}
     for i,r in enumerate(retained):
         key = template(canonical_text(r))
         if key in templates:
             union(i,templates[key])
         templates[key] = i
+        if r['channel'] == 'email':
+            body_key = template(r['body'])
+            if body_key in bodies:
+                union(i, bodies[body_key])
+            bodies[body_key] = i
+            subject_key = re.sub(r'^(?:(?:re|fw|fwd)\s*:\s*)+', '', normalized(r['subject']))
+            # Conservative subject-thread heuristic; generic/short subjects excluded.
+            if len(subject_key) >= 15:
+                if subject_key in subjects:
+                    union(i, subjects[subject_key])
+                subjects[subject_key] = i
         for t in r.get('thread_ids', []):
             if t in threads:
                 union(i, threads[t])
@@ -141,38 +159,45 @@ def assign_splits(rows):
     for fold, (_, held) in enumerate(splitter.split(np.zeros(len(rows)),y,groups)):
         for i in held:
             assignments[int(i)] = 'test' if fold == 0 else 'val' if fold == 1 else 'train'
-    return [dict(r, split=assignments[i]) for i,r in enumerate(rows)]
+    training_groups = {r['group'] for r in rows if r.get('train_only') or r.get('synthetic')}
+    return [dict(r, split='train' if r['group'] in training_groups else assignments[i]) for i,r in enumerate(rows)]
 
 
 def prepare():
-    source = ROOT/'data/raw/uci_sms.zip'
-    with zipfile.ZipFile(source) as archive:
-        lines = archive.read('SMSSpamCollection').decode('utf-8').splitlines()
-    rows = []
-    for i,line in enumerate(lines):
-        label, body = line.split('\t',1)
-        rows.append(dict(channel='sms', language='en', label={'ham':'ham','spam':'spam'}[label],
-                         subject='', body=body, source_id='uci_sms', row_id=f'uci_sms:{i+1}',thread_ids=[]))
-    # Optional official email corpus is intentionally not fabricated when access is denied.
+    from spamdet.sources import read_source
+    manifest = json.loads((ROOT/'data/sources.json').read_text(encoding='utf-8'))
+    rows, sources = [], {}
+    for source in manifest['sources']:
+        path = ROOT / source['path']
+        actual = hashlib.sha256(path.read_bytes()).hexdigest()
+        if actual != source['sha256']:
+            raise ValueError('Checksum mismatch: ' + source['id'])
+        batch = read_source(path, source)
+        rows.extend(batch)
+        sources[source['id']] = dict(source, raw_counts=dict(Counter(r['label'] for r in batch)))
     result, audit = curate(rows)
     result = assign_splits(result)
-    report = dict(schema_version=1, seed=SEED, sources={'uci_sms':{
-        'sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
-        'raw_counts':dict(Counter(r['label'] for r in rows)),
-        'curated_counts':dict(Counter(r['label'] for r in result)),
-        'license':'CC BY 4.0','attribution':'Almeida & Hidalgo; UCI SMS Spam Collection; DOI 10.24432/C5CC84'}},
+    for key, details in sources.items():
+        details['curated_counts'] = dict(Counter(r['label'] for r in result if r['source_id'] == key))
+        details['split_counts'] = {s: dict(Counter(r['label'] for r in result if r['source_id'] == key and r['split'] == s)) for s in ('train','val','test')}
+    group_splits = defaultdict(set)
+    for row in result:
+        group_splits[row['group']].add(row['split'])
+    assert all(len(splits) == 1 for splits in group_splits.values())
+    assert all(r['split'] == 'train' for r in result if r.get('synthetic') or r.get('train_only'))
+    report = dict(schema_version=2, seed=SEED, sources=sources,
         audit=audit, splits={s:dict(Counter(r['channel']+'_'+r['language']+'_'+r['label'] for r in result if r['split']==s)) for s in ['train','val','test']},
         split_sha256=digest('\n'.join(r['row_id']+':'+r['group']+':'+r['split'] for r in result)),
-        grouping='Global normalized exact dedup; all conflicting exact labels excluded; URL/email/number-normalized templates; char 3-5 cosine >=0.90; transitive union plus thread IDs; five stratified group folds 60/20/20.',
+        grouping='Global normalized exact dedup; conflicts excluded; URL/email/number templates; char 3-5 cosine >=0.90; transitive union, email body template, descriptive normalized subject and RFC thread IDs; five grouped stratified folds 60/20/20, then supplemental-source groups forced training-only.',
         sample_audit=[{'row_id':next(r['row_id'] for r in result if r['label']==label), 'label':label,
-                       'note':note} for label,note in [('ham','Informal conversational English SMS; no email headers.'),('spam','Prize/premium-call promotion SMS; original spam label retained.')]],
-        language_policy='Source-level en designation; informal English/mixed varieties, not individually verified monolingual English. Indonesian unvalidated.',
-        email={'status':'unavailable','reason':'Official SpamAssassin HTTP retrieval command denied by user/tool approval layer. Not retried, not bypassed. No local email data; no email training.'},
-        independent_source_test='Not performed: only one eligible accessible source, with unavailable component source IDs.',
+                       'note':'Original source label preserved, no diagnostic/manual relabeling.'} for label in ('ham','spam')],
+        language_policy='UCI/Mishra predominantly English corpus designation (informal/mixed rows, not per-row language gold); Rahmi/Wibisono and bopbi Indonesian; Ling-Spam English. Nazario mixed/unverified language und and training-only, never language evaluation.',
+        email={'status':'english_available','indonesian':'No verified original Indonesian email holdout; not evaluated.'},
+        independent_source_test='No independent-source holdout: grouped within-source holdouts only. Bopbi and Nazario are supplemental genuine training-only sources.',
         privacy='Raw and processed data local/ignored; no full messages or phone numbers in reports.')
     for path in [ROOT/'data/processed',ROOT/'reports']:
         path.mkdir(parents=True,exist_ok=True)
-    (ROOT/'data/processed/curated.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in result))
-    (ROOT/'reports/curation.json').write_text(json.dumps(report,indent=2)+'\n')
+    (ROOT/'data/processed/curated.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in result), encoding='utf-8')
+    (ROOT/'reports/curation.json').write_text(json.dumps(report,indent=2)+'\n', encoding='utf-8')
     print(json.dumps(report,indent=2))
     return report

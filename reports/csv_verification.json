@@ -1,0 +1,66 @@
+[
+  {
+    "row": 2,
+    "label": "ham",
+    "display": "BUKAN SPAM",
+    "score_model": 0.10608131323731346,
+    "threshold": 0.42144362248621786,
+    "error": null
+  },
+  {
+    "row": 3,
+    "label": "spam",
+    "display": "SPAM",
+    "score_model": 0.8879803927674041,
+    "threshold": 0.42144362248621786,
+    "error": null
+  },
+  {
+    "row": 4,
+    "label": "ham",
+    "display": "BUKAN SPAM",
+    "score_model": 0.010746994228366212,
+    "threshold": 0.42144362248621786,
+    "error": null
+  },
+  {
+    "row": 5,
+    "label": "spam",
+    "display": "SPAM",
+    "score_model": 0.9998552336322,
+    "threshold": 0.42144362248621786,
+    "error": null
+  },
+  {
+    "row": 6,
+    "label": "spam",
+    "display": "SPAM",
+    "score_model": 0.4918119576793938,
+    "threshold": 0.17166622963704584,
+    "error": null
+  },
+  {
+    "row": 7,
+    "label": "spam",
+    "display": "SPAM",
+    "score_model": 0.439400667844569,
+    "threshold": 0.17166622963704584,
+    "error": null
+  },
+  {
+    "row": 8,
+    "label": "spam",
+    "display": "SPAM",
+    "score_model": 0.7302592670358865,
+    "threshold": 0.17166622963704584,
+    "error": null
+  },
+  {
+    "row": 9,
+    "label": "spam",
+    "display": "SPAM",
+    "score_model": 0.9933375886016488,
+    "threshold": 0.17166622963704584,
+    "error": null
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "subject": "",
+    "body": "Your account will be suspended. Send your password and verification code immediately.",
+    "row": 1,
+    "label": "spam",
+    "display": "SPAM",
+    "score_model": 0.9970602455357156,
+    "threshold": 0.17166622963704584,
+    "error": null
+  },
+  {
+    "subject": "Account verification",
+    "body": "Your account will be suspended. Send your password and verification code immediately.",
+    "row": 1,
+    "label": "spam",
+    "display": "SPAM",
+    "score_model": 0.9959208777287737,
+    "threshold": 0.17166622963704584,
+    "error": null
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "id_vernanda",
+    "url": "https://tinyurl.com/datasetTA",
+    "status": 403,
+    "final_url": "https://tinyurl.com/datasetTA",
+    "bytes": 5439
+  },
+  {
+    "id": "id_uii",
+    "url": "https://journal.uii.ac.id/AUTOMATA/article/view/19514",
+    "status": 403,
+    "final_url": "https://journal.uii.ac.id/AUTOMATA/article/view/19514",
+    "bytes": 5659
+  },
+  {
+    "id": "id_2024",
+    "url": "https://accesson.kr/kjai/assets/pdf/46934/journal-12-4-9.pdf",
+    "status": 200,
+    "final_url": "https://accesson.kr/kjai/assets/pdf/46934/journal-12-4-9.pdf",
+    "bytes": 1103536
+  },
+  {
+    "id": "uci_terms",
+    "url": "https://archive.ics.uci.edu/dataset/228/sms+spam+collection",
+    "status": 200,
+    "final_url": "https://archive.ics.uci.edu/dataset/228/sms+spam+collection",
+    "bytes": 93904
+  },
+  {
+    "id": "kaggle_email_card",
+    "url": "https://www.kaggle.com/datasets/gevabriel/indonesian-email-spam",
+    "status": 404,
+    "final_url": "https://www.kaggle.com/datasets/gevabriel/indonesian-email-spam",
+    "bytes": 0
+  }
+]

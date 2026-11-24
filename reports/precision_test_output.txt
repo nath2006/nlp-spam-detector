@@ -1,0 +1,59 @@
+................................................................FFF..... [ 83%]
+..............                                                           [100%]
+================================== FAILURES ===================================
+______________ test_manual_sms_regression_and_real_ui_parity[1] _______________
+
+case_index = 1
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000020D06779590>
+
+    @pytest.mark.parametrize('case_index', range(4))
+    def test_manual_sms_regression_and_real_ui_parity(case_index, monkeypatch):
+        monkeypatch.setenv('SPAM_MODEL_PATH', str(ARTIFACT))
+        case = json.loads((ROOT/'examples/diagnostic_messages.json').read_text(encoding='utf-8'))[case_index]
+        direct = predict('sms', case['body'], artifact_path=ARTIFACT)
+>       assert direct['label'] == 'spam'
+E       AssertionError: assert 'ham' == 'spam'
+E         
+E         - spam
+E         + ham
+
+tests\test_real_artifact.py:36: AssertionError
+______________ test_manual_sms_regression_and_real_ui_parity[2] _______________
+
+case_index = 2
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000020D06174EF0>
+
+    @pytest.mark.parametrize('case_index', range(4))
+    def test_manual_sms_regression_and_real_ui_parity(case_index, monkeypatch):
+        monkeypatch.setenv('SPAM_MODEL_PATH', str(ARTIFACT))
+        case = json.loads((ROOT/'examples/diagnostic_messages.json').read_text(encoding='utf-8'))[case_index]
+        direct = predict('sms', case['body'], artifact_path=ARTIFACT)
+>       assert direct['label'] == 'spam'
+E       AssertionError: assert 'ham' == 'spam'
+E         
+E         - spam
+E         + ham
+
+tests\test_real_artifact.py:36: AssertionError
+______________ test_manual_sms_regression_and_real_ui_parity[3] _______________
+
+case_index = 3
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000020D0678EC50>
+
+    @pytest.mark.parametrize('case_index', range(4))
+    def test_manual_sms_regression_and_real_ui_parity(case_index, monkeypatch):
+        monkeypatch.setenv('SPAM_MODEL_PATH', str(ARTIFACT))
+        case = json.loads((ROOT/'examples/diagnostic_messages.json').read_text(encoding='utf-8'))[case_index]
+        direct = predict('sms', case['body'], artifact_path=ARTIFACT)
+>       assert direct['label'] == 'spam'
+E       AssertionError: assert 'ham' == 'spam'
+E         
+E         - spam
+E         + ham
+
+tests\test_real_artifact.py:36: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_real_artifact.py::test_manual_sms_regression_and_real_ui_parity[1]
+FAILED tests/test_real_artifact.py::test_manual_sms_regression_and_real_ui_parity[2]
+FAILED tests/test_real_artifact.py::test_manual_sms_regression_and_real_ui_parity[3]
+3 failed, 83 passed in 10.97s

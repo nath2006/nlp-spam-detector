@@ -1,0 +1,101 @@
+{
+  "artifact_sha256": "f8545bf00c72d11bbf5aabba358d5697091b6dbd1d8146c753f98e41186c2445",
+  "cases": [
+    {
+      "id": "A",
+      "headings": [
+        "SPAM"
+      ],
+      "metrics": [
+        "0.8765",
+        "0.5991"
+      ],
+      "parity": true,
+      "click_attempts": 1
+    },
+    {
+      "id": "B",
+      "headings": [
+        "SPAM"
+      ],
+      "metrics": [
+        "0.7996",
+        "0.5991"
+      ],
+      "parity": true,
+      "click_attempts": 1
+    },
+    {
+      "id": "C",
+      "headings": [
+        "SPAM"
+      ],
+      "metrics": [
+        "0.7781",
+        "0.5991"
+      ],
+      "parity": true,
+      "click_attempts": 1
+    },
+    {
+      "id": "D",
+      "headings": [
+        "SPAM"
+      ],
+      "metrics": [
+        "0.7935",
+        "0.5991"
+      ],
+      "parity": true,
+      "click_attempts": 1
+    },
+    {
+      "id": "order_id",
+      "headings": [
+        "BUKAN SPAM"
+      ],
+      "metrics": [
+        "0.2192",
+        "0.5991"
+      ],
+      "parity": true,
+      "click_attempts": 1
+    },
+    {
+      "id": "refund_id",
+      "headings": [
+        "BUKAN SPAM"
+      ],
+      "metrics": [
+        "0.5058",
+        "0.5991"
+      ],
+      "parity": true,
+      "click_attempts": 1
+    },
+    {
+      "id": "newsletter_en",
+      "headings": [
+        "SPAM"
+      ],
+      "metrics": [
+        "0.6924",
+        "0.5991"
+      ],
+      "parity": true,
+      "click_attempts": 1
+    },
+    {
+      "id": "order_en",
+      "headings": [
+        "BUKAN SPAM"
+      ],
+      "metrics": [
+        "0.4070",
+        "0.5991"
+      ],
+      "parity": true,
+      "click_attempts": 1
+    }
+  ]
+}

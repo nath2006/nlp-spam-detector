@@ -1,0 +1,68 @@
+[
+  {
+    "id": "refund_email",
+    "subject": "",
+    "headings": [
+      "SPAM"
+    ],
+    "metrics": [
+      "0.9939",
+      "0.1717"
+    ]
+  },
+  {
+    "id": "refund_email",
+    "subject": "Refund for your cancelled order",
+    "headings": [
+      "SPAM"
+    ],
+    "metrics": [
+      "0.9932",
+      "0.1717"
+    ]
+  },
+  {
+    "id": "newsletter_email",
+    "subject": "",
+    "headings": [
+      "SPAM"
+    ],
+    "metrics": [
+      "0.9981",
+      "0.1717"
+    ]
+  },
+  {
+    "id": "newsletter_email",
+    "subject": "Your subscribed weekly newsletter",
+    "headings": [
+      "SPAM"
+    ],
+    "metrics": [
+      "0.9970",
+      "0.1717"
+    ]
+  },
+  {
+    "id": "credential_email",
+    "subject": "",
+    "headings": [
+      "SPAM"
+    ],
+    "metrics": [
+      "0.9985",
+      "0.1717"
+    ]
+  },
+  {
+    "id": "credential_email",
+    "subject": "Urgent account verification",
+    "headings": [
+      "SPAM"
+    ],
+    "metrics": [
+      "0.9973",
+      "0.1717"
+    ]
+  }
+]

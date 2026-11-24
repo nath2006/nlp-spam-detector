@@ -1,0 +1,158 @@
+{
+  "artifact": "C:\\Users\\ikbar\\Documents\\kuliah\\kuliah_semester5\\pemrosesan_bahasa_alami\\nlp-spam-detector\\artifacts\\model.joblib",
+  "artifact_sha256": "3f81d8df8a087c9c548f2d83b8820e87fa210eeccfd0c0f1a6a5fc8a0bf867df",
+  "metadata": {
+    "schema_version": 1,
+    "seed": 2026,
+    "languages": [
+      "en"
+    ],
+    "unavailable_channels": [
+      "email"
+    ],
+    "score_semantics": "Uncalibrated classifier scores, NOT calibrated probabilities.",
+    "split_sha256": "736fa663167d010da3829d2149d7e6e849beeaa57ab4477201533bfec11ffdbf"
+  },
+  "models": {
+    "sms": {
+      "name": "word_char_lr",
+      "threshold": 0.43029628761132255,
+      "classes": [
+        "ham",
+        "spam"
+      ],
+      "spam_index": 1
+    }
+  },
+  "manual_only": true,
+  "results": [
+    {
+      "id": "A",
+      "language": "id",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "ham",
+      "display": "BUKAN SPAM",
+      "score_model": 0.1580167642368106,
+      "threshold": 0.43029628761132255,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "B",
+      "language": "id",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "ham",
+      "display": "BUKAN SPAM",
+      "score_model": 0.03181184198740864,
+      "threshold": 0.43029628761132255,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "C",
+      "language": "en",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "ham",
+      "display": "BUKAN SPAM",
+      "score_model": 0.26999987797626,
+      "threshold": 0.43029628761132255,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "D",
+      "language": "en",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.7363236253543477,
+      "threshold": 0.43029628761132255,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "order_id",
+      "language": "id",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "ham",
+      "display": "BUKAN SPAM",
+      "score_model": 0.0334371610419287,
+      "threshold": 0.43029628761132255,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "refund_id",
+      "language": "id",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "ham",
+      "display": "BUKAN SPAM",
+      "score_model": 0.025317738389184222,
+      "threshold": 0.43029628761132255,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "newsletter_en",
+      "language": "en",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "ham",
+      "display": "BUKAN SPAM",
+      "score_model": 0.35041426028095524,
+      "threshold": 0.43029628761132255,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "order_en",
+      "language": "en",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "ham",
+      "display": "BUKAN SPAM",
+      "score_model": 0.17525511481626085,
+      "threshold": 0.43029628761132255,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "refund_email",
+      "language": "en",
+      "channel": "email",
+      "expected": "ham",
+      "error": "Model email belum tersedia. Tidak menggunakan model SMS untuk email.",
+      "ui_direct_parity": true
+    },
+    {
+      "id": "newsletter_email",
+      "language": "en",
+      "channel": "email",
+      "expected": "ham",
+      "error": "Model email belum tersedia. Tidak menggunakan model SMS untuk email.",
+      "ui_direct_parity": true
+    },
+    {
+      "id": "credential_email",
+      "language": "en",
+      "channel": "email",
+      "expected": "spam",
+      "error": "Model email belum tersedia. Tidak menggunakan model SMS untuk email.",
+      "ui_direct_parity": true
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "artifact": "C:\\Users\\ikbar\\Documents\\kuliah\\kuliah_semester5\\pemrosesan_bahasa_alami\\nlp-spam-detector\\artifacts\\model.joblib",
+  "artifact_sha256": "f8545bf00c72d11bbf5aabba358d5697091b6dbd1d8146c753f98e41186c2445",
+  "metadata": {
+    "schema_version": 3,
+    "seed": 2026,
+    "languages": [
+      "en",
+      "id",
+      "und"
+    ],
+    "languages_by_channel": {
+      "email": [
+        "en"
+      ],
+      "sms": [
+        "en",
+        "id"
+      ]
+    },
+    "unavailable_channels": [],
+    "score_semantics": "Classifier scores in [0,1], not validated confidence. SVM sigmoid calibration uses training CV only.",
+    "split_sha256": "b3e0629b3c7670632936071eff8a353043fc3d23f75f884b58e8d0d5c74bad33",
+    "training_counts": {
+      "sms_id_spam": 460,
+      "sms_en_spam": 1670,
+      "sms_en_ham": 4339,
+      "sms_id_ham": 629,
+      "email_en_ham": 1444,
+      "email_en_spam": 280,
+      "email_und_spam": 394
+    },
+    "sources": {
+      "mishra_sms": "9bbf3188fdad81495d8e82825648b9b63b53fc86841a3d26c02629990b233cc3",
+      "uci_sms": "1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3",
+      "yudi_sms": "8f666e86de36fc840f53303414c45399099c17358b30b4531c46a434d31f1f18",
+      "bopbi": "b4bdd97aab38d31546feae2e68bf1073b495ac2539a22883c78e1fb162045ef0",
+      "lingspam": "e3a0bb61dff2f1e47c368d1c376c27f79319cd600a8784ea3872e4b77d22c148",
+      "nazario_2023": "5007f1c1dc91b15e93e988afa3a1cf402e15c88f765d3057be8bfec50dae1fe8"
+    },
+    "selection": "One threshold/channel; maximize macro validation F2, ham FPR <=3% in each group with >=100 ham and >=30 spam; no inferred-language routing.",
+    "sklearn_version": "1.9.1",
+    "baseline_sha256": "2a134b92955326fab0f926a9d1d38c944bfae0710f05a981c811fbb2742e1176",
+    "frozen_sha256": "28d9ee62dc8e5a9bd22163d77122bdd587e984810420652e8395c3a82e95d957",
+    "refinement_sources": {
+      "india_sms": "e6a28126d1c4ec9d805a10cd89f2de2bb63650532102e9f35ab05c909c3a79f3",
+      "ots_legit_augmentation": "b7b0e15986fda28fb79606af220c7661f48931999cb9bd8a3f5a9a7a3f3ebe28"
+    },
+    "threshold_routing": "one per channel; no language detector",
+    "indonesian_email_validated": false,
+    "sms_recall": {
+      "validation_sha256": "78337ad3e8089ac0aabbf690179ca7b2f17514b470db86f0520f2c9de1540873",
+      "selected": "lr_13",
+      "active_before_sha256": "817d81044bce4b5e80d402159324334321b9567296a0a371052e1b873f3cbfe0",
+      "policy": "One SMS threshold; per-language validation ham FPR <=3% for >=100 ham and >=30 spam. Threshold maximizes macro F2 (existing selector). Candidate ranking: macro recall, minimum language recall, macro F2, fewer FP. No manual or test-based selection."
+    }
+  },
+  "models": {
+    "sms": {
+      "name": "sms_recall_lr_13",
+      "threshold": 0.5990758319506397,
+      "classes": [
+        "ham",
+        "spam"
+      ],
+      "spam_index": 1
+    },
+    "email": {
+      "name": "current_retuned",
+      "threshold": 0.17166622963704584,
+      "classes": [
+        "ham",
+        "spam"
+      ],
+      "spam_index": 1
+    }
+  },
+  "manual_only": true,
+  "results": [
+    {
+      "id": "A",
+      "language": "id",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.876500389973066,
+      "threshold": 0.5990758319506397,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "B",
+      "language": "id",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.7995843693131162,
+      "threshold": 0.5990758319506397,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "C",
+      "language": "en",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.7781209729274194,
+      "threshold": 0.5990758319506397,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "D",
+      "language": "en",
+      "channel": "sms",
+      "expected": "spam",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.7935195449679188,
+      "threshold": 0.5990758319506397,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "order_id",
+      "language": "id",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "ham",
+      "display": "BUKAN SPAM",
+      "score_model": 0.21920836265283006,
+      "threshold": 0.5990758319506397,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "refund_id",
+      "language": "id",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "ham",
+      "display": "BUKAN SPAM",
+      "score_model": 0.5058048177195562,
+      "threshold": 0.5990758319506397,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "newsletter_en",
+      "language": "en",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.6924270622508569,
+      "threshold": 0.5990758319506397,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "order_en",
+      "language": "en",
+      "channel": "sms",
+      "expected": "ham",
+      "row": 1,
+      "label": "ham",
+      "display": "BUKAN SPAM",
+      "score_model": 0.4070361471853019,
+      "threshold": 0.5990758319506397,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "refund_email",
+      "language": "en",
+      "channel": "email",
+      "expected": "ham",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.9932036197019789,
+      "threshold": 0.17166622963704584,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "newsletter_email",
+      "language": "en",
+      "channel": "email",
+      "expected": "ham",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.9970339795636614,
+      "threshold": 0.17166622963704584,
+      "error": null,
+      "ui_direct_parity": true
+    },
+    {
+      "id": "credential_email",
+      "language": "en",
+      "channel": "email",
+      "expected": "spam",
+      "row": 1,
+      "label": "spam",
+      "display": "SPAM",
+      "score_model": 0.9972745702697292,
+      "threshold": 0.17166622963704584,
+      "error": null,
+      "ui_direct_parity": true
+    }
+  ]
+}

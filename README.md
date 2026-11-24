@@ -1,383 +1,199 @@
- # NLP Spam Detector
+# NLP Spam Detector
 
-Aplikasi web Python berbasis **Streamlit** untuk mendeteksi spam pada SMS, menyiapkan alur deteksi email, dan memproses pesan melalui CSV. Proyek ini dikembangkan dari [nlp-spam-detector](https://github.com/nath2006/nlp-spam-detector) untuk pembelajaran Natural Language Processing (NLP).
+Aplikasi Python **Streamlit** untuk deteksi SMS, email, dan CSV campuran. Dikembangkan dari [nlp-spam-detector](https://github.com/nath2006/nlp-spam-detector) untuk pembelajaran NLP. Startup **tidak mengunduh dataset atau melatih model**.
 
-UI, inferensi, kurasi dataset, dan training dipisahkan. Aplikasi menggunakan artefak model lokal; **tidak mengunduh dataset atau melatih model saat startup**.
+## Status: PARTIAL
 
-## Status proyek
+Upgrade lokal diverifikasi pada **24 November 2026**. Model nyata SMS dan email tersedia, tetapi email Indonesia belum tervalidasi dan cakupan pesan transaksi sah masih kurang.
 
-**PARTIAL** — model SMS Inggris tersedia pada lingkungan pengembangan, tetapi target dua kanal dan dua bahasa belum sepenuhnya terpenuhi.
-
-| Kanal / bahasa | Status |
+| Kanal/bahasa | Cakupan |
 | --- | --- |
-| SMS Inggris | Model dilatih dan dievaluasi menggunakan data asli UCI |
-| SMS Indonesia | Input dapat diproses oleh model SMS yang sama, tetapi kinerjanya belum tervalidasi dan belum dilatih dengan korpus Indonesia |
-| Email Inggris | Form dan validasi tersedia; model email belum tersedia |
-| Email Indonesia | Form dan validasi tersedia; model email dan evaluasi data asli belum tersedia |
+| SMS Inggris | UCI + Mishra/Soni + India SMS, dominan Inggris/Hinglish dengan ragam informal/campuran; bukan anotasi bahasa per baris |
+| SMS Indonesia | Rahmi/Wibisono, bopbi dan augmentasi SMS sintetis training-only; belum ada holdout asli baru Indonesia |
+| Email Inggris | Ling-Spam, tambahan phishing Nazario training-only |
+| Email Indonesia | **Belum tervalidasi**; menerima input bukan bukti dukungan bahasa |
 
-Aplikasi tidak menggunakan model SMS sebagai pengganti model email. Jika model kanal tidak tersedia, UI menampilkan pesan yang jelas, bukan prediksi buatan.
+**Status SMS terbaru:** recall dipulihkan dengan `sms_recall_lr_13`, threshold `0.5990758319506397`. B/C/D kembali SPAM dan tiga tes regresi tetap utuh; **90 tes lulus**. SMS Indonesia historis: FP 0→1, FN 10→3, recall 90,91%→97,27%; seluruh cohort SMS memiliki FPR test <1%. Pesanan/refund SMS tetap ham, tetapi newsletter SMS Inggris berlangganan kini salah SPAM. Email tidak diubah. Jangan gunakan sebagai pemblokir otomatis; skor bukan kepastian.
 
-## Fitur
+Laporan aktif: [docs/sms_recall_report.md](docs/sms_recall_report.md), bukti `reports/sms_recall/`. SHA-256 artefak `f8545bf00c72d11bbf5aabba358d5697091b6dbd1d8146c753f98e41186c2445`. Tabel/model/test pada bagian **Riwayat precision** di bawah menggambarkan putaran sebelumnya, bukan artefak aktif. Belum ada holdout Indonesia asli baru yang lolos verifikasi; seluruh test putaran recall merupakan reuse, bukan blind baru.
 
-### 1. Deteksi SMS
+Riwayat precision: [docs/precision_report.md](docs/precision_report.md). Riwayat upgrade awal: [docs/upgrade_report.md](docs/upgrade_report.md). Manifest dasar: [data/sources.json](data/sources.json); tambahan precision: [data/precision_sources.json](data/precision_sources.json), termasuk URL asli/unduhan, SHA-256, izin, dan pemetaan label. Riset `docs/dataset_research_*.md` dan inventaris `data/candidates_*.json` adalah catatan **historis**, bukan status terbaru.
 
-- Input teks SMS dengan hasil `SPAM` atau `BUKAN SPAM`.
-- Skor model dan ambang keputusan.
-- Penjelasan kontribusi fitur linear yang berasal dari model.
-- Contoh sintetis Bahasa Indonesia dan Inggris untuk mencoba antarmuka.
-- Unggah screenshot melalui OCR opsional. Dependensi OCR hanya dimuat ketika pengguna menekan **Ekstrak & deteksi**; kegagalan OCR tidak memblokir deteksi teks.
+## Instalasi checkout baru — Windows PowerShell
 
-### 2. Deteksi Email
+Jalankan dari root proyek yang berisi `app.py`. Environment teruji: **Windows 11, Python 3.14.3**, Streamlit 1.67.0, scikit-learn 1.9.1. Perlu internet untuk instalasi/unduhan, dan `curl.exe` untuk download dengan verifikasi TLS.
 
-- Subjek opsional dan isi email wajib.
-- Pemilihan model berdasarkan kanal, tanpa fallback ke model SMS.
-- Contoh sintetis Indonesia dan Inggris.
-- Isi diproses sebagai teks, bukan HTML aktif; aplikasi tidak otomatis membuka tautan atau mengambil gambar dari email.
-- Pada versi ini, prediksi email menampilkan status model belum tersedia.
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
+.\.venv\Scripts\python.exe -X utf8 scripts/download_data.py
+.\.venv\Scripts\python.exe -X utf8 scripts/prepare_data.py
+.\.venv\Scripts\python.exe -X utf8 scripts/train.py
+.\.venv\Scripts\python.exe -X utf8 scripts/download_data.py --manifest data/precision_sources.json
+.\.venv\Scripts\python.exe -X utf8 scripts/refine_model.py snapshot
+.\.venv\Scripts\python.exe -X utf8 scripts/refine_model.py freeze
+.\.venv\Scripts\python.exe -X utf8 scripts/refine_model.py train
+.\.venv\Scripts\python.exe -X utf8 scripts/refine_model.py evaluate
+.\.venv\Scripts\python.exe -X utf8 scripts/recover_sms_recall.py train
+.\.venv\Scripts\python.exe -X utf8 scripts/recover_sms_recall.py evaluate
+.\.venv\Scripts\python.exe -X utf8 scripts/recover_sms_recall.py promote
+.\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501 --server.headless true --browser.gatherUsageStats false
+```
 
-### 3. Deteksi Massal
+Buka **http://127.0.0.1:8501**. Biarkan terminal terbuka; **Ctrl+C** menghentikan server. Ganti `--server.port 8501` menjadi `--server.port 8502` jika port terpakai, lalu buka `http://127.0.0.1:8502`. Server hanya diikat ke localhost.
 
-- Unggah CSV UTF-8 dengan kolom `channel`, `body`, dan `subject` opsional.
-- Unduh template sintetis atau gunakan template langsung dari UI.
-- Hasil prediksi dan alasan kegagalan per baris.
-- Unduh hasil tanpa menyertakan isi dan subjek pesan.
+Tidak perlu mengaktifkan environment atau mengubah execution policy. Environment lama `venv` tidak dihapus; upgrade memakai **`.venv`**, jangan mencampur interpreter. `requirements-lock.txt` merekam versi yang diuji; `requirements.txt` berisi rentang versi. Jangan memakai berkas lama salah eja `requiretments.txt` untuk instalasi baru.
 
-### 4. Evaluasi Model
+Urutan instalasi di atas untuk checkout baru tanpa snapshot/holdout. Pada checkout yang sudah berjalan, cukup perintah startup berikutnya. Jangan menjalankan ulang `prepare_data.py`/`train.py` dasar karena akan mengganti artefak/laporan aktif dengan baseline. `snapshot` mempertahankan dan memverifikasi snapshot lama, tidak memperbaruinya; `freeze` menolak perubahan dataset/manifest yang sudah dibekukan. Model pembanding tersimpan di `artifacts/history/precision_round/`. Tahap `evaluate` memasang kandidat terpilih dan menulis laporan. Reproduksi seluruh pipeline precision dari checkout kosong belum diuji; verifikasi fresh-checkout terdahulu hanya berlaku untuk baseline.
 
-- Menampilkan sumber dataset, komposisi kelas, precision, recall, dan F1 dari laporan evaluasi offline.
-- Menandai kelompok yang belum tervalidasi.
-- Menyediakan laporan lengkap, termasuk confusion matrix.
+Putaran recall juga menyimpan snapshot di `artifacts/sms_recall/before/`; `train` menolak jika plan putaran sudah ada. `evaluate` hanya mengevaluasi pilihan validation; `promote` memasang SMS hanya jika gate per-cohort lolos dan email tetap identik. Jangan menghapus lock untuk mengulang tuning pada test yang sama. Checkout ini sudah selesai menjalankannya; cukup startup biasa.
 
-## Stack dan persyaratan
+### Startup berikutnya — tidak perlu training ulang
 
-- Python; lingkungan pengembangan telah menjalankan tes menggunakan Python 3.11.
-- Streamlit, scikit-learn, pandas, NumPy, dan joblib.
-- Beautiful Soup untuk parsing HTML email pada pipeline kurasi.
-- EasyOCR dan OpenCV sebagai dependensi opsional.
-- pytest dan Streamlit AppTest untuk pengujian.
+```powershell
+.\.venv\Scripts\python.exe -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501 --server.headless true --browser.gatherUsageStats false
+```
 
-Perintah berikut dijalankan dari root proyek pada Linux/macOS. Pada sistem yang hanya menyediakan `python3`, gunakan `python3` untuk membuat virtual environment.
+Artefak default `artifacts/model.joblib` ditemukan relatif terhadap modul proyek, bukan direktori kerja. UI menunjukkan path, SHA-256, kelas, indeks spam, threshold, dan bahasa test. Inferensi memuat artefak dari disk, bukan cache model lama.
 
-## Setup
+Override lokasi model:
+
+```powershell
+$env:SPAM_MODEL_PATH = "C:\lokasi\tepercaya\model.joblib"
+```
+
+Hapus override dengan `Remove-Item Env:SPAM_MODEL_PATH -ErrorAction SilentlyContinue`. **Muat hanya joblib tepercaya**: deserialisasi dapat mengeksekusi kode.
+
+### Git Bash dan Linux/macOS
+
+Di Windows Git Bash, ganti `.\.venv\Scripts\python.exe` dengan `.venv/Scripts/python.exe` pada seluruh perintah di atas. Perintah awal tetap `python -m venv .venv`.
+
+Linux/macOS (belum diuji dalam upgrade ini):
 
 ```bash
-cd ~/documents/kuliah/nlp-spam-detector
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
+python -X utf8 scripts/download_data.py
+python -X utf8 scripts/prepare_data.py
+python -X utf8 scripts/train.py
+python -X utf8 scripts/download_data.py --manifest data/precision_sources.json
+python -X utf8 scripts/refine_model.py snapshot
+python -X utf8 scripts/refine_model.py freeze
+python -X utf8 scripts/refine_model.py train
+python -X utf8 scripts/refine_model.py evaluate
+python -X utf8 scripts/recover_sms_recall.py train
+python -X utf8 scripts/recover_sms_recall.py evaluate
+python -X utf8 scripts/recover_sms_recall.py promote
+python -m streamlit run app.py --server.address 127.0.0.1 --server.port 8501 --server.headless true --browser.gatherUsageStats false
 ```
 
-Alternatif jika menggunakan `uv`:
+Override POSIX: `export SPAM_MODEL_PATH=/lokasi/tepercaya/model.joblib`. Platform/Python lain belum diverifikasi; perubahan versi dependency dapat mengubah metrik dan kompatibilitas artefak. Gunakan lock pada environment Windows yang sesuai untuk reproduksi.
 
-```bash
-uv venv .venv
-source .venv/bin/activate
-uv pip install -r requirements.txt
+## Dataset dan alur offline
+
+`scripts/download_data.py` membaca enam sumber dalam manifest, mengunduh dengan curl melalui TLS terverifikasi, dan memeriksa SHA-256. Cache valid dilewati; cache rusak ditolak tanpa ditimpa. Jangan menonaktifkan verifikasi TLS/hash. Pada lingkungan ini curl Windows berhasil mengakses AUEB ketika chain sertifikat tidak dikenali `requests` Python.
+
+| Sumber asli | Pesan sebelum kurasi | Izin/catatan |
+| --- | ---: | --- |
+| UCI SMS | 5.574 | CC BY 4.0.[14] |
+| Mishra/Soni SMS phishing | 5.971 | CC BY 4.0; banyak overlap UCI.[4] |
+| Rahmi/Wibisono SMS Indonesia | 1.143 | CC BY-SA 4.0 dari `penjelasan.txt` ZIP asli.[2][13] |
+| bopbi SMS | 50 | CC0 1.0; satu kelas, training-only.[19] |
+| Ling-Spam `bare` | 2.893 | Ketentuan asli: atribusi dan pemberitahuan untuk karya yang dipublikasikan; bukan lisensi CC/Apache baru.[8] |
+| Nazario phishing 2023 | 419 | CC BY 4.0; bahasa campuran/tidak diverifikasi (`und`), training-only.[9][18] |
+
+Atribusi lengkap dan ketentuan ada di manifest/laporan. Tugas ini lokal, tidak mempublikasikan atau mengirim pemberitahuan kepada pembuat Ling-Spam. Pertahankan atribusi, tautan lisensi, dan catatan perubahan sebelum membagikan karya. Lisensi artikel/kode/mirror tidak otomatis menjadi izin korpus asli. Raw/processed data dan artefak diabaikan Git; clone baru memerlukan pipeline offline di atas.
+
+`prepare_data.py` hanya membaca arsip lokal:
+
+1. Pemetaan label eksplisit: UCI ham/spam; Mishra ham versus spam/Smishing (case-insensitive); Rahmi/Wibisono 0→ham, 1/2→spam; Ling-Spam `spmsg*.txt`→spam dan file `bare` lain→ham; kategori bopbi dan phishing Nazario→spam.
+2. Exact dedup global, membuang konflik label; grouping template URL/email/angka dan near-duplicate cosine karakter ≥0,90.
+3. Email juga dikelompokkan menurut body template, subjek deskriptif tanpa awalan balasan, dan RFC thread IDs jika tersedia.
+4. Grouped split seed 2026 sekitar 60/20/20; grup training-only tidak masuk holdout. Ini tetap heuristik, bukan jaminan bebas seluruh duplikasi semantik.
+
+Urutan manifest menentukan pemilik baris duplikat; sumber duplikat tetap dicatat. Mishra berada lebih dulu, sehingga banyak pesan UCI dihitung pada Mishra, bukan dijumlahkan dua kali. Tidak ada SMS yang diberi ulang kanal email.
+
+Model SMS/email terpisah. Email memakai `subject.strip() + '\n\n' + body.strip()` yang sama pada training dan prediksi, tanpa header label/alamat pengirim sebagai fitur. Kurasi MIME memilih teks/plain atau mengubah HTML menjadi teks; tidak menjalankan script, attachment, tautan, atau gambar.
+
+## Riwayat precision — model dan evaluasi sebelum pemulihan recall
+
+Empat kandidat per kanal: TF-IDF kata + MultinomialNB (`baseline_nb`, dengan pembersihan URL/angka/tanda baca), kata + Logistic Regression, kata+karakter + Logistic Regression, dan kata+karakter + Linear SVM dengan sigmoid calibration dari CV training saja.
+
+Putaran dasar sebelumnya menggunakan FPR gabungan. Putaran precision kini memilih **hanya dari validation**: maksimum rata-rata F2 per kelompok, dengan FPR ham ≤3% pada **setiap** kelompok yang memiliki ≥100 ham dan ≥30 spam. Satu threshold per kanal; tidak ada detektor bahasa atau routing threshold per bahasa. Kelompok kecil dilaporkan tanpa klaim memenuhi constraint. Classifier/vectorizer di-fit pada training saja; vectorizer grouping tidak dipakai classifier. Contoh diagnosis/manual di `examples/` **tidak masuk training, tuning, atau benchmark**. Augmentasi sintetis dari sumber terpisah ditandai training-only, bukan evaluasi asli.
+
+Holdout baru yang dibekukan sebelum tuning: **506 ham + 290 spam SMS Inggris/Hinglish** dari India SMS. Ini split berkelompok dari sumber tambahan yang juga memasok train/validation, **bukan unseen-source test**. Bahasa bukan anotasi per baris.
+
+| Model SMS pada holdout baru yang sama | Precision | Recall | F1 | FPR ham | FP | FN |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Baseline tetap | 0,8571 | 0,9310 | 0,8926 | 8,89% | 45 | 20 |
+| Baseline threshold dituning ulang | 0,9834 | 0,6138 | 0,7558 | 0,59% | 3 | 112 |
+| LR kata+karakter + augmentasi (terpilih) | 1,0000 | 0,9379 | 0,9680 | 0% | 0 | 18 |
+| SVM kata+karakter + augmentasi | 1,0000 | 0,7897 | 0,8825 | 0% | 0 | 61 |
+
+Artefak historis putaran precision: SMS `word_char_lr_aug`, threshold `0.7172193110759366`; email mempertahankan pipeline SVM lama (`current_retuned`) dan threshold `0.17166622963704584`. SHA-256 `817d81044bce4b5e80d402159324334321b9567296a0a371052e1b873f3cbfe0`. Artefak aktif terbaru tercantum di atas dan laporan recall.
+
+**Trade-off test historis (bukan holdout baru):** SMS Indonesia, 113 ham/110 spam: FP 11→0, FN 0→10, recall 100%→90,91%. SMS Inggris, 1.000 ham/206 spam: FP 4→0, FN 7→45, recall 96,60%→78,16%. Email Inggris, 443 ham/56 spam: tetap FP 4/FN 0. Support berkurang dari laporan lama karena grup gabungan yang melintasi split dikarantina; baseline dan kandidat dibandingkan pada baris identik. Hasil penuh per kelompok/validation ada di laporan precision. Belum ada holdout asli baru SMS Indonesia atau email Inggris/Indonesia. FPR empiris nol bukan jaminan produksi.
+
+Tambahan data: India SMS 2.267 pesan (ham 1.522/spam 745), MIT yang dinyatakan berlaku untuk dataset; setelah kurasi dipakai train 793, validation 437, test baru 796, overlap dikeluarkan 25.[21][22]
+
+OpenTextShield 15.027 pesan **sintetis**, MIT; subset Inggris/Indonesia 1.903 (ham 1.088/spam 815), seluruhnya training-only.[25][26]
+
+Metadata, pembatasan sampel, atribusi, dan URL ada di manifest tambahan serta laporan precision. Label sumber tidak menyediakan consent per penerima; promo berlangganan tidak otomatis dapat dibedakan dari promosi tanpa izin.
+
+Training menulis artefak setelah load-back berhasil, serta `reports/evaluation.json`. Kurasi menulis `data/processed/curated.jsonl` dan `reports/curation.json`. Training ulang memperbarui laporan; startup biasa tidak.
+
+## Menggunakan UI dan CSV
+
+- **SMS:** masukkan isi pesan lalu Deteksi; OCR opsional.
+- **Email:** isi wajib, subjek opsional; pipeline email asli, tidak fallback SMS. Input Indonesia tetap belum tervalidasi.
+- **Massal:** CSV UTF-8 berheader `channel,body`, `subject` opsional; kanal persis `sms`/`email`. Template: [examples/batch_template.csv](examples/batch_template.csv).
+- **Evaluasi:** sumber dataset, support, precision/recall/F1, FP/FN, dan laporan lengkap.
+
+Batas: SMS 10.000 karakter, email 100.000 karakter isi, subjek 1.000 karakter; CSV 2 MiB/1.000 baris. Isi kosong ditolak. CSV rusak ditolak; kesalahan baris dilaporkan per baris. Ekspor `row,label,display,score_model,threshold,error` tidak berisi isi/subjek pesan dan menetralkan formula spreadsheet. Row dimulai dari 2, setelah header.
+
+## Tes dan bukti UI
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest tests/ -q
+.\.venv\Scripts\python.exe -m pip check
+.\.venv\Scripts\python.exe -X utf8 scripts/diagnose.py --output reports/sms_recall/diagnosis.json
 ```
 
-Berkas lama `requiretments.txt` dipertahankan untuk kompatibilitas, tetapi instalasi baru sebaiknya memakai `requirements.txt`.
+Verifikasi aktif terbaru: **90 tes lulus**, exit code pytest **0**, tiga assertion B/C/D tetap utuh. Smoke browser SMS memakai artefak baru; seluruh 8 label/skor cocok dengan inferensi langsung, termasuk newsletter sah yang salah SPAM. Bukti `reports/sms_recall/browser_sms.json` dan `reports/sms_recall/tests.xml`; pip check bersih.
 
-### OCR opsional
+Riwayat precision sebelumnya: **83 tes lulus, 3 gagal (86 total)**; exit code pytest **1**. Assertion kualitas `test_manual_sms_regression_and_real_ui_parity[1/2/3]` saat itu menandai regresi B/C/D dan tidak dihapus/dilonggarkan. Tes `test_real_artifact.py` memakai model nyata dan dilewati pada clone yang belum dilatih; fixture sintetis lain menguji integrasi, bukan kualitas deteksi.
 
-Instal hanya jika memerlukan ekstraksi screenshot:
+Riwayat verifikasi precision: setelah restart, browser menguji 8 SMS, 6 variasi email (dengan/tanpa subjek), serta unggahan 8 baris CSV campuran. Label/skor sama dengan inferensi langsung. EasyOCR asli dan unggahan gambar `examples/ocr_smoke.png` menghasilkan teks Indonesia/Inggris, prediksi ham `0.0122`; parity UI/direct lulus. Emulasi viewport **390×844** menguji OCR, navigasi, dan Evaluasi Model tanpa overflow horizontal dokumen; tabel/kode punya scroll internal. Bukan tes HP fisik. Bukti: `reports/precision_verification.json`, `reports/precision_browser_*.json`, `reports/precision_mobile.json`, `reports/ocr_smoke.json`, dan `reports/screenshots/precision_*.png`. Root dan health HTTP 200.
 
-```bash
-python -m pip install -r requirements-ocr.txt
-```
+**Riwayat saja:** reproduksi baseline terdahulu di direktori sementara berhasil dengan 79 tes, split/model/metrik identik, memakai `.venv` yang sudah terpasang. `reports/fresh_checkout_verification.json` bukan bukti reproduksi putaran precision terbaru atau instalasi pada mesin baru.
 
-EasyOCR dapat mengunduh bobot model pada penggunaan pertama dan membutuhkan koneksi internet serta ruang disk tambahan. Tanpa dependensi/bobot OCR, deteksi teks tetap dapat digunakan selama artefak model SMS tersedia.
+## OCR, troubleshooting, dan privasi
 
-## Menjalankan aplikasi
+OCR opsional: `.\.venv\Scripts\python.exe -m pip install -r requirements-ocr.txt`. Bobot pertama dapat diunduh; instalasi dan smoke test EasyOCR CPU sudah diverifikasi pada environment ini (ada warning deprecation PyTorch/pin-memory, bukan kegagalan). Batas gambar 10 MiB/20 juta piksel. Deteksi teks tidak memerlukan OCR.
 
-Aktifkan `.venv`, lalu jalankan:
+- Model hilang: jalankan download → prepare → train; periksa path/SHA dan `SPAM_MODEL_PATH`.
+- Email belum tersedia: artefak lama SMS-only/path override dapat menjadi penyebab. Jalankan pipeline aktif dan restart, bukan fallback SMS.
+- Hash berbeda: hentikan dan verifikasi perubahan sumber, jangan mengganti hash sembarangan.
+- Unduhan gagal: catat sumber yang gagal; jangan mengklaim dataset berhasil dipakai. Unduhan manual hanya sah bila izin dan hash cocok.
+- Artefak tidak kompatibel: gunakan environment yang sesuai dan latih ulang; jangan memuat joblib sembarang.
+- Prediksi salah: audit kanal, data, kelas, skor, threshold, FP/FN; jangan menyesuaikan threshold berdasarkan satu contoh.
 
-```bash
-python -m streamlit run app.py --server.address 127.0.0.1
-```
+Pesan pengguna diproses di memori sesi, tidak secara default ditulis ke disk/log. Widget bisa mempertahankan input selama sesi aktif. Bukti diagnosis/screenshot hanya menggunakan contoh manual/sintetis, bukan pesan pribadi pengguna. Dataset publik dapat mengandung informasi pribadi: jangan mempublikasikan raw/processed data atau artefak tanpa peninjauan izin/privasi.
 
-Buka **http://127.0.0.1:8501**. Jika port tersebut sudah dipakai:
+Tidak ada commit, push, deployment, atau penetapan lisensi kode baru dalam upgrade ini.
 
-```bash
-python -m streamlit run app.py --server.address 127.0.0.1 --server.port 8502
-```
+## Sources
 
-Pilih halaman melalui sidebar. Artefak default berada di:
-
-```text
-artifacts/model.joblib
-```
-
-Direktori `artifacts/` diabaikan Git, sehingga hasil clone baru tidak otomatis memiliki model. Ikuti langkah persiapan dataset dan training di bawah jika artefak belum tersedia.
-
-Untuk memakai lokasi artefak lain:
-
-```bash
-export SPAM_MODEL_PATH=/lokasi/tepercaya/model.joblib
-python -m streamlit run app.py --server.address 127.0.0.1
-```
-
-**Keamanan:** muat hanya artefak joblib yang dibuat sendiri atau berasal dari sumber tepercaya. Deserialisasi joblib dapat menjalankan kode; jangan memakai unggahan model dari pihak yang tidak dipercaya.
-
-## Contoh penggunaan
-
-### SMS
-
-1. Buka **Deteksi SMS**.
-2. Masukkan isi pesan atau pilih contoh lalu tekan **Isi contoh**.
-3. Opsional: aktifkan kontribusi fitur.
-4. Tekan **Deteksi**.
-
-Contoh buatan:
-
-```text
-Indonesia: Besok kita bertemu di perpustakaan pukul sembilan.
-English: Congratulations! Claim your fictional prize at https://example.com/claim.
-```
-
-Contoh hanya untuk mencoba alur, bukan data evaluasi atau jaminan label tertentu. Model saat ini dilatih pada SMS Inggris, sehingga keluaran untuk Indonesia tidak boleh dianggap tervalidasi.
-
-### Email
-
-Buka **Deteksi Email**, isi subjek jika diperlukan, lalu isi badan email dan tekan **Deteksi**. Isi tetap wajib meskipun subjek sudah diisi. Jika artefak tidak memiliki model email, aplikasi menampilkan status belum tersedia.
-
-### CSV
-
-Template lengkap: [examples/batch_template.csv](examples/batch_template.csv).
-
-```csv
-channel,body,subject
-sms,"Besok kita bertemu di kampus.",
-sms,"Please call me after class.",
-email,"Please review the attached meeting agenda.","Meeting agenda"
-email,"Terima kasih, jadwal rapat sudah saya terima.",
-```
-
-Ketentuan:
-
-| Input | Batas / aturan |
-| --- | --- |
-| `channel` | Nilai persis `sms` atau `email` |
-| `body` | Teks wajib, tidak boleh kosong atau hanya whitespace |
-| SMS | Maksimal 10.000 karakter |
-| Email | Maksimal 100.000 karakter isi |
-| `subject` | Opsional, maksimal 1.000 karakter |
-| CSV | UTF-8, maksimal 2 MiB dan 1.000 baris data |
-| Screenshot OCR | Maksimal 10 MiB dan 20 juta piksel |
-
-Gunakan tanda kutip CSV jika teks berisi koma atau baris baru. Baris dengan kanal tidak valid, isi kosong, panjang berlebih, jumlah kolom salah, atau model kanal yang tidak tersedia menghasilkan alasan kegagalan per baris. CSV yang rusak secara keseluruhan ditolak.
-
-Hasil unduhan memuat `row`, `label`, `display`, `score_model`, `threshold`, dan `error`. Nomor `row` dimulai dari 2 karena baris pertama adalah header. Nilai string berisiko formula spreadsheet dinetralkan pada ekspor.
-
-## Dataset dan izin penggunaan
-
-Inventaris dan catatan riset:
-
-- [Riset dataset Indonesia](docs/dataset_research_id.md)
-- [Tindak lanjut sumber Indonesia](docs/dataset_research_id_followup.md)
-- [Riset dan eksekusi dataset Inggris](docs/dataset_research_en.md)
-- Metadata: [candidates_id.json](data/candidates_id.json), [candidates_id_followup.json](data/candidates_id_followup.json), dan [candidates_en.json](data/candidates_en.json)
-
-| Kelompok | Sumber / kandidat | Keputusan |
-| --- | --- | --- |
-| SMS Inggris | UCI SMS Spam Collection, Almeida & Hidalgo, DOI [10.24432/C5CC84](https://doi.org/10.24432/C5CC84) | Dipakai; sumber resmi menyatakan CC BY 4.0 |
-| SMS Indonesia | Dataset Yudi Wibisono / gist agtbaskara dan alternatif terkait | Tidak dipakai; varian/versi izin sumber asli belum terverifikasi lengkap |
-| Email Inggris | SpamAssassin dan kandidat alternatif dalam inventaris | Tidak dipakai; akses/verifikasi korpus belum terselesaikan |
-| Email Indonesia | Kandidat paper Vernanda dkk., UII, dan MDP | Tidak dipakai; berkas, asal, label, atau izin data belum terverifikasi lengkap |
-
-Lisensi artikel, kode repositori, atau mirror tidak otomatis menjadi lisensi dataset asli. Angka yang dikutip dari paper dibedakan dari jumlah yang dihitung langsung dari berkas. Tidak ada SMS yang diberi ulang kanal email untuk mengisi kekurangan data. Data sintetis pada contoh/fixture tidak dipakai sebagai test set kualitas model.
-
-### Menyiapkan SMS UCI
-
-Sumber resmi: [UCI SMS Spam Collection](https://archive.ics.uci.edu/dataset/228/sms+spam+collection), lisensi [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-```bash
-mkdir -p data/raw
-curl --fail --location --max-time 120 \
-  'https://archive.ics.uci.edu/static/public/228/sms+spam+collection.zip' \
-  --output data/raw/uci_sms.zip
-python scripts/prepare_data.py
-```
-
-Jika `data/raw/uci_sms.zip` sudah tersedia, tidak perlu mengunduh ulang. Skrip kurasi membaca arsip lokal dan tidak mengakses jaringan.
-
-SHA-256 arsip yang dipakai pada laporan saat ini:
-
-```text
-1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3
-```
-
-Verifikasi lokal bila diperlukan:
-
-```bash
-sha256sum data/raw/uci_sms.zip
-```
-
-Pertahankan atribusi Almeida & Hidalgo, tautan sumber/DOI, lisensi, dan catatan perubahan berupa deduplikasi, grouping, serta pembagian data. Data mentah dan terkurasi diabaikan Git karena potensi informasi pribadi; jangan mempublikasikannya tanpa peninjauan izin dan privasi.
-
-### Kurasi dan pembagian data
-
-Skema utama: `channel`, `language`, `label`, `subject`, `body`, dan `source_id`. Metadata tambahan mencakup identitas baris, grup, dan split. Label UCI dipetakan eksplisit: `ham → ham`, `spam → spam`.
-
-Pipeline melakukan:
-
-1. Normalisasi teks untuk deduplikasi exact dan penghapusan kelompok label konflik.
-2. Grouping template dengan normalisasi URL, alamat email, dan angka.
-3. Grouping near-duplicate menggunakan cosine karakter ≥ 0,90 untuk teks minimal 40 karakter, serta pengelompokan thread ketika metadata tersedia.
-4. Pembagian grup deterministik sekitar 60% training, 20% validation, dan 20% test dengan seed `2026`.
-
-Vectorizer grouping hanya digunakan untuk membentuk kelompok sebelum split, bukan sebagai fitur classifier. Preprocessing dan classifier untuk prediksi di-fit pada training saja. Grouping tetap heuristik, bukan jaminan seluruh duplikasi semantik telah ditemukan.
-
-Hasil kurasi yang tercatat di [reports/curation.json](reports/curation.json):
-
-| Tahap | Ham | Spam |
-| --- | ---: | ---: |
-| Mentah | 4.827 | 747 |
-| Lolos kurasi | 4.517 | 642 |
-| Training | 2.710 | 385 |
-| Validation | 903 | 129 |
-| Test | 904 | 128 |
-
-Sebanyak 415 duplikasi exact dibuang. Data terkurasi disimpan lokal pada `data/processed/curated.jsonl`.
-
-**Batas implementasi:** `prepare_data.py` saat ini hanya memasukkan UCI SMS. Menaruh arsip email atau Indonesia di `data/raw/` tidak otomatis mengikutsertakannya; perlu adapter sumber, verifikasi izin, audit label/bahasa, dan integrasi kurasi terlebih dahulu.
-
-## Training dan evaluasi
-
-```bash
-source .venv/bin/activate
-python scripts/prepare_data.py
-python scripts/train.py
-```
-
-Training sekaligus membandingkan model, memilih threshold dari validation, mengevaluasi test set, dan menyimpan:
-
-- `artifacts/model.joblib` — pipeline dan threshold per kanal yang benar-benar dilatih.
-- `reports/evaluation.json` — hasil eksperimen, metrik, confusion matrix, serta keterbatasan.
-- `reports/curation.json` — komposisi sumber, audit kurasi, dan identitas split.
-
-Tidak ada perintah evaluasi terpisah yang diperlukan: `scripts/train.py` menjalankan training dan evaluasi offline dalam satu alur. Eksekusi ulang akan memperbarui artefak dan laporan tersebut.
-
-Model pembanding:
-
-- **Baseline algoritmik:** pembersihan URL/angka/tanda baca + TF-IDF kata + Multinomial Naive Bayes.
-- TF-IDF kata + Logistic Regression.
-- **Model terpilih:** TF-IDF kata dan karakter + Logistic Regression.
-
-Model dan threshold dipilih dari validation dengan memaksimalkan F0.5, dengan batas false-positive rate ham empiris ≤ 1%. Test set tidak dipakai untuk memilih model. Batas validation ini bukan jaminan false-positive rate di produksi.
-
-### Hasil test SMS Inggris
-
-Angka berikut berasal dari `reports/evaluation.json`, dengan spam sebagai kelas positif. Seluruh model memakai test set yang sama: **904 ham dan 128 spam**.
-
-| Model | Precision | Recall | F1 |
-| --- | ---: | ---: | ---: |
-| Baseline Naive Bayes, threshold validation | 0,9896 | 0,7422 | 0,8482 |
-| TF-IDF kata + Logistic Regression | 0,9907 | 0,8359 | 0,9068 |
-| TF-IDF kata + karakter + Logistic Regression | **0,9910** | **0,8594** | **0,9205** |
-
-Threshold model terpilih: `0.4432732053189189`.
-
-Confusion matrix model terpilih, urutan aktual/prediksi `[ham, spam]`:
-
-```text
-                  Prediksi ham   Prediksi spam
-Aktual ham                 903               1
-Aktual spam                 18             110
-```
-
-Baseline di atas mereproduksi pendekatan algoritmik pada split pembanding baru; **bukan** bukti akurasi aplikasi awal pada dataset Indonesia. Startup baseline sebelumnya gagal karena dependensi `cv2` tidak tersedia.
-
-SMS Indonesia, email Inggris, dan email Indonesia belum memiliki hasil evaluasi yang layak pada versi ini. Tidak ada klaim akurasi 98%, validasi lintas sumber, kalibrasi probabilitas, atau keunggulan model gabungan SMS/email. Laporan mencatat satu run training yang berhasil; pengulangan penuh untuk membuktikan reproduksibilitas hasil dua run belum terverifikasi.
-
-### Makna skor dan penjelasan
-
-Skor model berasal dari keluaran classifier pada rentang 0–1, tetapi **belum dikalibrasi sebagai probabilitas**. Skor bukan persentase kepastian, akurasi, maupun bukti bahwa pesan aman.
-
-Penjelasan linear menghitung kontribusi fitur dari TF-IDF dan koefisien classifier, bukan daftar kata kunci buatan. Kontribusi positif mendukung spam dan negatif mendukung ham. Penjelasan tidak membuktikan niat pengirim.
-
-## Menggunakan inferensi dari Python
-
-```python
-from spamdet.inference import ModelError, predict, predict_csv
-
-result = predict("sms", "Please call me after class.", explain=True)
-print(result["display"], result["score_model"])
-
-rows = predict_csv("channel,body\nsms,Please call me after class.\n")
-print(rows)
-
-try:
-    result = predict("email", "Please review the meeting agenda.", subject="Meeting")
-except ModelError as exc:
-    print(exc)  # Model email belum tersedia pada artefak saat ini.
-```
-
-`predict` juga menerima `artifact_path` jika lokasi model perlu ditentukan secara eksplisit. Input tidak valid menghasilkan `ValueError`; model hilang/rusak/tidak tersedia menghasilkan `ModelError`.
-
-## Pengujian
-
-```bash
-python -m pytest tests/ -q
-```
-
-Tes terarah:
-
-```bash
-python -m pytest tests/test_curation.py tests/test_training.py -q
-python -m pytest tests/test_inference.py tests/test_ocr.py -q
-python -m pytest tests/test_app.py -q
-```
-
-Verifikasi saat pembaruan README: **55 tes lulus** melalui `.venv/bin/python -m pytest tests/ -q`.
-
-Tes mencakup kurasi/split, logika training, validasi SMS/email/CSV, penjelasan fitur, penanganan OCR, dan alur UI melalui Streamlit AppTest. Tes yang menggunakan model fixture sintetis memverifikasi integrasi dan perilaku aplikasi, **bukan** kualitas deteksi pada pesan asli. Kualitas model pada data asli dilaporkan terpisah di `reports/evaluation.json`.
-
-AppTest bukan pengganti pengujian layout desktop/HP di browser. README ini tidak mengklaim smoke test browser, keberhasilan OCR dengan bobot asli, atau uptime server hanya berdasarkan kelulusan tes unit/AppTest.
-
-## Struktur proyek
-
-```text
-app.py                          Entry point dan navigasi Streamlit
-spamdet/
-  inference.py                  Validasi, prediksi, penjelasan, dan CSV
-  ocr.py                        Ekstraksi screenshot opsional
-  curation.py                   Parsing sumber, deduplikasi, grouping, dan split
-  training.py                   Perbandingan model, threshold, dan evaluasi
-scripts/
-  prepare_data.py                Kurasi dari dataset lokal
-  train.py                       Training dan evaluasi offline
-examples/batch_template.csv      Contoh sintetis aman dibagikan
-data/
-  candidates_*.json              Inventaris kandidat dataset
-  raw/                          Arsip lokal; diabaikan Git
-  processed/                    Data terkurasi; diabaikan Git
-artifacts/model.joblib          Model lokal; diabaikan Git
-reports/                        Statistik kurasi dan hasil evaluasi
-```
-
-Dokumen riset berada di `docs/`; seluruh tes berada di `tests/`. Tidak diperlukan frontend JavaScript terpisah atau API eksternal saat inferensi.
-
-## Privasi dan keterbatasan
-
-- Pesan pengguna diproses di memori sesi; aplikasi tidak secara default menulis isi pesan ke disk atau log. Widget dapat mempertahankan nilai selama sesi aktif.
-- Hasil ekspor CSV tidak memuat isi/subjek pesan, tetapi berkas unduhan yang disimpan pengguna tetap perlu dijaga.
-- EasyOCR dapat menyimpan bobot model pada cache dependensinya; ini berbeda dari penyimpanan pesan/screenshot oleh aplikasi.
-- Korpus UCI bersifat historis dan penetapan bahasa mengikuti sumber, termasuk ragam informal/campuran; hasilnya bukan bukti generalisasi ke semua bahasa atau spam modern.
-- Riset email dan izin dataset Indonesia belum tuntas, termasuk tindakan jaringan yang ditolak lapisan persetujuan sebagaimana dicatat di dokumen riset.
-- Model dapat salah menandai pesan sah atau melewatkan spam. Gunakan sebagai alat bantu, bukan pemblokir otomatis atau pengganti pemeriksaan keamanan.
-
-## Pemecahan masalah
-
-| Masalah | Tindakan |
-| --- | --- |
-| Model tidak ditemukan | Jalankan persiapan dataset dan training; periksa `artifacts/model.joblib` atau `SPAM_MODEL_PATH` |
-| Model email belum tersedia | Ini batas versi saat ini; jangan menggantinya dengan model SMS |
-| Artefak tidak kompatibel | Gunakan environment dependency yang sesuai lalu latih ulang; jangan memuat joblib sembarang |
-| `data/raw/uci_sms.zip` tidak ditemukan | Unduh ZIP resmi UCI sesuai langkah persiapan dataset |
-| OCR tidak tersedia atau unduhan bobot gagal | Instal dependency OCR/periksa koneksi; gunakan input teks sementara |
-| CSV gagal divalidasi | Periksa UTF-8, header, quoting, nilai kanal, batas ukuran, dan pesan kesalahan |
-| Port Streamlit terpakai | Pilih port lain melalui `--server.port` |
-
-## Catatan lisensi
-
-UCI SMS Spam Collection memiliki ketentuan data CC BY 4.0 sebagaimana dijelaskan di atas. Status lisensi kandidat lain tercantum pada inventaris dan tidak boleh diasumsikan sama. Repositori saat ini tidak memiliki berkas lisensi kode terpisah; README ini tidak menetapkan lisensi baru atas kode atau data pihak lain.
+[2] https://yudiwbs.wordpress.com/2018/08/05/dataset-klasifikasi-bahasa-indonesia-sms-spam-klasifikasi-teks-dengan-scikit-learn
+[4] https://data.mendeley.com/datasets/f45bkkt8pr/1
+[8] https://www2.aueb.gr/users/ion/data/lingspam_public.tar.gz
+[9] https://monkey.org/~jose/phishing/README.txt
+[13] https://drive.google.com/file/d/1-stKadfTgJLtYsHWqXhGO3nTjKVFxm_Q/view?usp=sharing
+[14] https://archive.ics.uci.edu/dataset/228/sms+spam+collection
+[18] https://monkey.org/~jose/phishing/LICENSE.txt
+[19] https://github.com/bopbi/indonesia-sms-spam-dataset/blob/main/LICENSE.txt
+[21] https://github.com/junioralive/india-spam-sms-classification
+[22] https://raw.githubusercontent.com/junioralive/india-spam-sms-classification/main/LICENSE
+[25] https://github.com/TelecomsXChangeAPi/OpenTextShield
+[26] https://raw.githubusercontent.com/TelecomsXChangeAPi/OpenTextShield/main/evals/generate_legit_notices.py

@@ -1,6 +1,7 @@
 """Private, in-memory inference. Load only trusted, locally trained joblib artifacts."""
 import csv
 import io
+import hashlib
 import math
 import os
 from pathlib import Path
@@ -92,7 +93,14 @@ def model_status(channel, artifact_path=None):
         return {'available': False, 'message': str(exc)}
     if channel not in bundle['models']:
         return {'available': False, 'message': f'Model {channel} belum tersedia. Persiapkan korpus berizin dan latih model kanal ini secara offline.'}
-    return {'available': True, 'message': f"Model {channel} tersedia: {bundle['models'][channel]['name']}."}
+    entry = bundle['models'][channel]
+    path = Path(artifact_path or os.environ.get('SPAM_MODEL_PATH') or DEFAULT_ARTIFACT).resolve()
+    classes = [str(value) for value in entry['pipeline'].classes_]
+    return {'available': True, 'message': f"Model {channel} tersedia: {entry['name']}.",
+            'artifact_path': str(path), 'artifact_sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+            'classes': classes, 'spam_index': classes.index('spam'), 'threshold': float(entry['threshold']),
+            'evaluated_languages': bundle['metadata'].get('languages_by_channel', {}).get(channel, []),
+            'split_sha256': bundle['metadata'].get('split_sha256')}
 
 
 def _predict(bundle, channel, text, row=1, explain=False):

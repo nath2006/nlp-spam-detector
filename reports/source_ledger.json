@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://spamassassin.apache.org/old/publiccorpus/readme.html",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 2,
+      "url": "https://yudiwbs.wordpress.com/2018/08/05/dataset-klasifikasi-bahasa-indonesia-sms-spam-klasifikasi-teks-dengan-scikit-learn",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 3,
+      "url": "https://github.com/bopbi/indonesia-sms-spam-dataset",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 4,
+      "url": "https://data.mendeley.com/datasets/f45bkkt8pr/1",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 5,
+      "url": "https://www.kaggle.com/datasets/gevabriel/indonesian-email-spam",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 6,
+      "url": "https://www2.aueb.gr/users/ion/data/enron-spam",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 7,
+      "url": "https://www2.aueb.gr/users/ion/publications.html",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 8,
+      "url": "https://www2.aueb.gr/users/ion/data/lingspam_public.tar.gz",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 9,
+      "url": "https://monkey.org/~jose/phishing/README.txt",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 10,
+      "url": "https://monkey.org/~jose/phishing",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 11,
+      "url": "https://trec.nist.gov/data/spam.html",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 12,
+      "url": "https://data.mendeley.com/datasets/shj94nrczy/1",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 13,
+      "url": "https://drive.google.com/file/d/1-stKadfTgJLtYsHWqXhGO3nTjKVFxm_Q/view?usp=sharing",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 14,
+      "url": "https://archive.ics.uci.edu/dataset/228/sms+spam+collection",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 15,
+      "url": "https://accesson.kr/kjai/assets/pdf/46934/journal-12-4-9.pdf",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 16,
+      "url": "https://tinyurl.com/datasetTA",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 17,
+      "url": "https://journal.uii.ac.id/AUTOMATA/article/view/19514",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 18,
+      "url": "https://monkey.org/~jose/phishing/LICENSE.txt",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 19,
+      "url": "https://github.com/bopbi/indonesia-sms-spam-dataset/blob/main/LICENSE.txt",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 20,
+      "url": "https://data.mendeley.com/datasets/vmg875v4xs/1",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 21,
+      "url": "https://github.com/junioralive/india-spam-sms-classification",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 22,
+      "url": "https://raw.githubusercontent.com/junioralive/india-spam-sms-classification/main/LICENSE",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 23,
+      "url": "https://huggingface.co/datasets/chairulridjal/high-accuracy-email-classifier-indonesian/raw/main/README.md",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 24,
+      "url": "https://trec.nist.gov/data/spam/trec05p-1.tgz.README.txt",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 25,
+      "url": "https://github.com/TelecomsXChangeAPi/OpenTextShield",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 26,
+      "url": "https://raw.githubusercontent.com/TelecomsXChangeAPi/OpenTextShield/main/evals/generate_legit_notices.py",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 27,
+      "url": "https://raw.githubusercontent.com/TelecomsXChangeAPi/OpenTextShield/main/docs/LABELING_GUIDE.md",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 28,
+      "url": "https://huggingface.co/datasets/M-Arjun/SpamShield-Datasets",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 29,
+      "url": "https://www.kaggle.com/datasets/crystalbaby/indonesian-english-sms-spamham-dataset",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 30,
+      "url": "https://arxiv.org/html/2610.40544",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 31,
+      "url": "https://raw.githubusercontent.com/Andikazidanef15/Sentiment-Analysis-on-Indonesian-SMS-Dataset/main/penjelasan.txt",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 32,
+      "url": "https://www.kaggle.com/datasets/gevabriel/indonesian-sms-spam",
+      "title": "",
+      "accessed": "2026-11-24"
+    },
+    {
+      "id": 33,
+      "url": "http://www.icicelb.org/ellb/contents/2022/10/elb-13-10-12.pdf",
+      "title": "",
+      "accessed": "2026-11-24"
+    }
+  ]
+}

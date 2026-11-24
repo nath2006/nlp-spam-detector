@@ -1,0 +1,355 @@
+{
+  "policy": "One threshold/channel; maximize macro validation F2, ham FPR <=3% in each group with >=100 ham and >=30 spam; no inferred-language routing.",
+  "selected": {
+    "sms": "sms/word_char_lr_aug",
+    "email": "email/current_retuned"
+  },
+  "candidates": {
+    "sms/current_retuned": {
+      "threshold": 0.8963677007261465,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9867109634551495,
+          "recall": 0.8092643051771117,
+          "f1": 0.8892215568862275,
+          "f2": 0.8394573205200678,
+          "f0_5": 0.9452577975811585,
+          "confusion_matrix": [
+            [
+              1285,
+              4
+            ],
+            [
+              70,
+              297
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 4,
+          "false_negatives": 70,
+          "false_positive_rate": 0.0031031807602792862,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9719626168224299,
+          "recall": 0.8813559322033898,
+          "f1": 0.9244444444444444,
+          "f2": 0.8981001727115717,
+          "f0_5": 0.9523809523809523,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              14,
+              104
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 14,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      },
+      "macro_f2": 0.8687787466158198,
+      "macro_recall": 0.8453101186902507
+    },
+    "sms/word_char_lr_aug": {
+      "threshold": 0.7172193110759366,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9939024390243902,
+          "recall": 0.888283378746594,
+          "f1": 0.9381294964028777,
+          "f2": 0.9075723830734966,
+          "f0_5": 0.9708159618820726,
+          "confusion_matrix": [
+            [
+              1287,
+              2
+            ],
+            [
+              41,
+              326
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 2,
+          "false_negatives": 41,
+          "false_positive_rate": 0.0015515903801396431,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9734513274336283,
+          "recall": 0.9322033898305084,
+          "f1": 0.9523809523809523,
+          "f2": 0.9401709401709402,
+          "f0_5": 0.9649122807017544,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              8,
+              110
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 8,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      },
+      "macro_f2": 0.9238716616222185,
+      "macro_recall": 0.9102433842885512
+    },
+    "sms/word_char_svm_aug": {
+      "threshold": 0.7036307173202644,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9969135802469136,
+          "recall": 0.8801089918256131,
+          "f1": 0.934876989869754,
+          "f2": 0.9012276785714286,
+          "f0_5": 0.9711365003006615,
+          "confusion_matrix": [
+            [
+              1288,
+              1
+            ],
+            [
+              44,
+              323
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 1,
+          "false_negatives": 44,
+          "false_positive_rate": 0.0007757951900698216,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.972972972972973,
+          "recall": 0.9152542372881356,
+          "f1": 0.9432314410480349,
+          "f2": 0.9262435677530018,
+          "f0_5": 0.9608540925266904,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              10,
+              108
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 10,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      },
+      "macro_f2": 0.9137356231622151,
+      "macro_recall": 0.8976816145568743
+    },
+    "sms/baseline_fixed": {
+      "threshold": 0.42144362248621786,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9405405405405406,
+          "recall": 0.9482288828337875,
+          "f1": 0.9443690637720489,
+          "f2": 0.9466811751904244,
+          "f0_5": 0.9420682187330807,
+          "confusion_matrix": [
+            [
+              1267,
+              22
+            ],
+            [
+              19,
+              348
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 22,
+          "false_negatives": 19,
+          "false_positive_rate": 0.017067494181536073,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.921875,
+          "recall": 1.0,
+          "f1": 0.959349593495935,
+          "f2": 0.9833333333333333,
+          "f0_5": 0.9365079365079365,
+          "confusion_matrix": [
+            [
+              104,
+              10
+            ],
+            [
+              0,
+              118
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 10,
+          "false_negatives": 0,
+          "false_positive_rate": 0.08771929824561403,
+          "constraint_eligible": true,
+          "target_met_empirical": false
+        }
+      },
+      "macro_f2": 0.9650072542618788,
+      "macro_recall": 0.9741144414168937
+    },
+    "email/current_retuned": {
+      "threshold": 0.17166622963704584,
+      "by_group": {
+        "email_en": {
+          "precision": 0.967741935483871,
+          "recall": 1.0,
+          "f1": 0.9836065573770492,
+          "f2": 0.9933774834437086,
+          "f0_5": 0.974025974025974,
+          "confusion_matrix": [
+            [
+              474,
+              3
+            ],
+            [
+              0,
+              90
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 477,
+            "spam": 90
+          },
+          "false_positives": 3,
+          "false_negatives": 0,
+          "false_positive_rate": 0.006289308176100629,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      },
+      "macro_f2": 0.9933774834437086,
+      "macro_recall": 1.0
+    },
+    "email/baseline_fixed": {
+      "threshold": 0.17166622963704584,
+      "by_group": {
+        "email_en": {
+          "precision": 0.967741935483871,
+          "recall": 1.0,
+          "f1": 0.9836065573770492,
+          "f2": 0.9933774834437086,
+          "f0_5": 0.974025974025974,
+          "confusion_matrix": [
+            [
+              474,
+              3
+            ],
+            [
+              0,
+              90
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 477,
+            "spam": 90
+          },
+          "false_positives": 3,
+          "false_negatives": 0,
+          "false_positive_rate": 0.006289308176100629,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      },
+      "macro_f2": 0.9933774834437086,
+      "macro_recall": 1.0
+    }
+  },
+  "frozen_sha256": "28d9ee62dc8e5a9bd22163d77122bdd587e984810420652e8395c3a82e95d957",
+  "created_utc": "2026-11-24T11:02:37.564152+00:00",
+  "test_read_for_selection": false,
+  "candidates_sha256": "ece1466e33f4e6895bbaf60d8026549e6f8ccb875b6b2d1a2309e0382be825a9"
+}

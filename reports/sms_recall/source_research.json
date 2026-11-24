@@ -1,0 +1,35 @@
+{
+  "queries": [
+    "Indonesian SMS spam dataset original ham spam license dataset new",
+    "github Indonesian SMS spam dataset ham original license 1282"
+  ],
+  "primary_retrievals": [
+    {
+      "url": "https://raw.githubusercontent.com/Andikazidanef15/Sentiment-Analysis-on-Indonesian-SMS-Dataset/main/README.md",
+      "status": 200,
+      "evidence": "# Sentiment-Analysis-on-Indonesian-SMS-Dataset\n\nSebagian besar dari kita pasti memiliki telepon genggam/HP. Di dalamnya terdapat fitur pesan SMS yang berisi pesan-pesan penting seperti pengumuman terkait COVID-19 yang diumumkan oleh instansi Kementerian Kesehatan, iklan terkait promo dari layanan yang kita gunakan ataupun pesan dari rekan kita apabila ia tidak menggunakan WhatsApp. Namun, seiring waktu pesan spam yang masuk di SMS kita semakin banyak, pesan-pesan hadiah menggiurkan seperti jackpot Rp 100 juta, mobil gratis dan lain-lain tentu menarik perhatian pengguna dan apabila tidak cermat maka ada kemungkinan pengguna tersebut ditipu. Untungnya, dengan algoritma yang tersedia di HP kita, kemungkinan untuk mendapatkan pesan spam bisa diminimalisir. Lalu, bagaimana algoritma itu dapat memprediksi mana yang termasuk pesan spam dan mana yang tidak? Algoritma tersebut tentunya menggunakan ilmu analisis sentimen.\n\nAnalisis sentimen adalah analisis yang dilakukan untuk menentukan sentimen yang terkandung dalam suatu teks. Biasanya untuk menentukan sentimen dari suatu teks diperlukan ilmu Natural Language Processing (NLP) untuk mengubah teks menjadi bentuk yang lebih sederhana dan dapat dipahami oleh algoritma machine learning sehingga dapat menentukan prediksi sentimen yang terkandung dalam teks tersebut.\n\nDalam kesempatan kali ini, aku menggunakan dataset berisi SMS spam berbahasa Indonesia yang diperoleh dari link \nhttps://github.com/kmkurn/id-nlp-resource\n\nDi github tersebut juga tersedia beberapa dataset yang dapat kalian gunakan untuk text mining dan tugas NLP lainnya.\n\nPenjelasan label:\n\n* 0 : SMS Normal (pesan antar rekan/keluarga)\n* 1 : Pesan Spam\n* 2 : Promo/Iklan\n"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Andikazidanef15/Sentiment-Analysis-on-Indonesian-SMS-Dataset/main/penjelasan.txt",
+      "status": 200,
+      "evidence": "Lisensi: https://creativecommons.org/licenses/by-sa/4.0/\r\nversi: 1.0 (Agt 2018)\r\n\r\n\r\nPenjelasan Label \r\n0: sms normal \r\n1: fraud atau penipuan \r\n2: promo\r\n\r\nCatatan: \r\nData dibersihkan dari  informasi pribadi. Nama diganti dengan \"nama1\"\r\n\r\nJumlah data: 1143\r\nJumlah per kelas:\r\n0: 569\r\n1: 335\r\n2: 239\r\n\r\nCara mensitasi:\r\n\"Rahmi, F. and Wibisono, Y.  (2016). Aplikasi SMS Spam Filtering pada Android menggunakan Naive Bayes, Unpublished manuscript.\"\r\n\r\nMenerima sumbangan data spam SMS, silakan kontak yudi@upi.edu"
+    }
+  ],
+  "candidates": [
+    {
+      "url": "https://www.kaggle.com/datasets/crystalbaby/indonesian-english-sms-spamham-dataset",
+      "decision": "Not a new original holdout: card identifies existing UCI and agtbaskara dataset_sms_spam_v2 sources; mirror license not substituted for originals."
+    },
+    {
+      "url": "https://www.kaggle.com/datasets/gevabriel/indonesian-sms-spam",
+      "decision": "Card explicitly says fork of Yudi; not independent new original holdout."
+    },
+    {
+      "url": "http://www.icicelb.org/ellb/contents/2022/10/elb-13-10-12.pdf",
+      "decision": "Search surfaced paper reporting 4125 SMS; downloadable original corpus and data license not verified. Not admitted; reported counts are not verified files."
+    }
+  ],
+  "new_id_holdout_accepted": false,
+  "training_data_changed": false,
+  "scope": "Bounded discovery, not an exhaustive claim that no original corpus exists. Existing frozen tests reused."
+}

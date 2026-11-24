@@ -1,64 +1,293 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "seed": 2026,
   "sources": {
+    "mishra_sms": {
+      "id": "mishra_sms",
+      "path": "data/raw/mishra_sms.zip",
+      "format": "mishra_zip",
+      "channel": "sms",
+      "language": "en",
+      "original_url": "https://data.mendeley.com/datasets/f45bkkt8pr/1",
+      "download_url": "https://data.mendeley.com/public-files/datasets/f45bkkt8pr/files/edb361de-918d-469f-9106-e84823830665/file_downloaded",
+      "sha256": "9bbf3188fdad81495d8e82825648b9b63b53fc86841a3d26c02629990b233cc3",
+      "license": "CC BY 4.0 (original Mendeley record)",
+      "attribution": "Sandhya Mishra and Devpriya Soni (2022), SMS PHISHING DATASET FOR MACHINE LEARNING AND PATTERN RECOGNITION, Mendeley Data V1, DOI 10.17632/f45bkkt8pr.1",
+      "original_count": 5971,
+      "label_mapping": {
+        "ham": "ham",
+        "spam": "spam",
+        "Spam": "spam",
+        "Smishing": "spam",
+        "smishing": "spam"
+      },
+      "caveat": "Predominantly English corpus-level designation from content inspection; informal/mixed-language rows exist, not per-row language gold. Contains UCI-derived messages: global dedup/grouping required. Original URL/EMAIL/PHONE attributes excluded from features. Rare ham OTP/invoice/refund words are not proof of transactional coverage.",
+      "raw_counts": {
+        "ham": 4844,
+        "spam": 1127
+      },
+      "curated_counts": {
+        "ham": 4834,
+        "spam": 997
+      },
+      "split_counts": {
+        "train": {
+          "ham": 2905,
+          "spam": 598
+        },
+        "val": {
+          "ham": 966,
+          "spam": 203
+        },
+        "test": {
+          "ham": 963,
+          "spam": 196
+        }
+      }
+    },
     "uci_sms": {
+      "id": "uci_sms",
+      "path": "data/raw/uci_sms.zip",
+      "format": "uci_sms_zip",
+      "channel": "sms",
+      "language": "en",
+      "original_url": "https://archive.ics.uci.edu/dataset/228/sms+spam+collection",
+      "download_url": "https://archive.ics.uci.edu/static/public/228/sms+spam+collection.zip",
       "sha256": "1587ea43e58e82b14ff1f5425c88e17f8496bfcdb67a583dbff9eefaf9963ce3",
+      "license": "CC BY 4.0",
+      "attribution": "Almeida & Hidalgo; UCI SMS Spam Collection; DOI 10.24432/C5CC84",
+      "label_mapping": {
+        "ham": "ham",
+        "spam": "spam"
+      },
+      "original_count": 5574,
       "raw_counts": {
         "ham": 4827,
         "spam": 747
       },
       "curated_counts": {
-        "ham": 4517,
-        "spam": 642
+        "ham": 207,
+        "spam": 66
       },
-      "license": "CC BY 4.0",
-      "attribution": "Almeida & Hidalgo; UCI SMS Spam Collection; DOI 10.24432/C5CC84"
+      "split_counts": {
+        "train": {
+          "ham": 126,
+          "spam": 40
+        },
+        "val": {
+          "ham": 42,
+          "spam": 9
+        },
+        "test": {
+          "spam": 17,
+          "ham": 39
+        }
+      }
+    },
+    "yudi_sms": {
+      "id": "yudi_sms",
+      "path": "data/raw/yudi_sms.zip",
+      "format": "yudi_sms_zip",
+      "channel": "sms",
+      "language": "id",
+      "original_url": "https://yudiwbs.wordpress.com/2018/08/05/dataset-klasifikasi-bahasa-indonesia-sms-spam-klasifikasi-teks-dengan-scikit-learn/",
+      "download_url": "https://drive.usercontent.google.com/download?id=1-stKadfTgJLtYsHWqXhGO3nTjKVFxm_Q&export=download",
+      "sha256": "8f666e86de36fc840f53303414c45399099c17358b30b4531c46a434d31f1f18",
+      "license": "CC BY-SA 4.0 (penjelasan.txt in original archive)",
+      "attribution": "Rahmi, F. and Wibisono, Y. (2016). Aplikasi SMS Spam Filtering pada Android menggunakan Naive Bayes, Unpublished manuscript. Dataset v1 August 2018.",
+      "label_mapping": {
+        "0": "ham",
+        "1": "spam",
+        "2": "spam"
+      },
+      "original_count": 1143,
+      "label_caveat": "Original promo class maps to spam; permission/consent to a promotion is not represented.",
+      "raw_counts": {
+        "spam": 574,
+        "ham": 569
+      },
+      "curated_counts": {
+        "spam": 574,
+        "ham": 568
+      },
+      "split_counts": {
+        "train": {
+          "spam": 346,
+          "ham": 341
+        },
+        "val": {
+          "spam": 118,
+          "ham": 114
+        },
+        "test": {
+          "spam": 110,
+          "ham": 113
+        }
+      }
+    },
+    "bopbi": {
+      "id": "bopbi",
+      "path": "data/raw/bopbi.tar.gz",
+      "format": "bopbi_tar",
+      "channel": "sms",
+      "language": "id",
+      "original_url": "https://github.com/bopbi/indonesia-sms-spam-dataset",
+      "download_url": "https://api.github.com/repos/bopbi/indonesia-sms-spam-dataset/tarball/d15d5cd59c0502e71163031cf3dcafca99db8848",
+      "sha256": "b4bdd97aab38d31546feae2e68bf1073b495ac2539a22883c78e1fb162045ef0",
+      "license": "CC0 1.0 Universal (LICENSE.txt)",
+      "attribution": "bopbi, Indonesia SMS Spam Dataset",
+      "original_count": 50,
+      "label_mapping": {
+        "loan": "spam",
+        "prize": "spam",
+        "premium-sms": "spam",
+        "evil-service": "spam",
+        "non-provider-promo": "spam"
+      },
+      "train_only": true,
+      "reason": "Single-class supplemental corpus, no independent two-class quality evaluation.",
+      "raw_counts": {
+        "spam": 50
+      },
+      "curated_counts": {
+        "spam": 49
+      },
+      "split_counts": {
+        "train": {
+          "spam": 49
+        },
+        "val": {},
+        "test": {}
+      }
+    },
+    "lingspam": {
+      "id": "lingspam",
+      "path": "data/raw/lingspam_public.tar.gz",
+      "format": "lingspam_tar",
+      "channel": "email",
+      "language": "en",
+      "original_url": "https://www2.aueb.gr/users/ion/publications.html",
+      "download_url": "https://www2.aueb.gr/users/ion/data/lingspam_public.tar.gz",
+      "sha256": "e3a0bb61dff2f1e47c368d1c376c27f79319cd600a8784ea3872e4b77d22c148",
+      "license": "Original corpus readme: use permitted with acknowledgment and notification for published work; no blanket CC license claimed",
+      "attribution": "I. Androutsopoulos, J. Koutsias, K.V. Chandrinos, G. Paliouras, C.D. Spyropoulos (2000), An Evaluation of Naive Bayesian Anti-Spam Filtering, ECML workshop, pp.9-17. Ling-Spam updated July 17, 2000; readme July 30, 2003.",
+      "original_count": 2893,
+      "label_mapping": {
+        "bare/**/spmsg*.txt": "spam",
+        "other bare/**/*.txt": "ham"
+      },
+      "caveat": "Only bare version; whitespace/token preprocessing already applied by source. Ham topic-specific Linguist mailing list; modern transaction/OTP coverage not established. Acknowledge and notify author before publishing work; no notification sent by this local task.",
+      "raw_counts": {
+        "ham": 2412,
+        "spam": 481
+      },
+      "curated_counts": {
+        "ham": 2408,
+        "spam": 468
+      },
+      "split_counts": {
+        "train": {
+          "ham": 1444,
+          "spam": 280
+        },
+        "val": {
+          "ham": 482,
+          "spam": 94
+        },
+        "test": {
+          "ham": 482,
+          "spam": 94
+        }
+      }
+    },
+    "nazario_2023": {
+      "id": "nazario_2023",
+      "path": "data/raw/nazario_2023.mbox",
+      "format": "nazario_mbox",
+      "channel": "email",
+      "language": "und",
+      "original_url": "https://monkey.org/~jose/phishing/",
+      "download_url": "https://monkey.org/~jose/phishing/phishing-2023",
+      "sha256": "5007f1c1dc91b15e93e988afa3a1cf402e15c88f765d3057be8bfec50dae1fe8",
+      "license": "CC BY 4.0 (original README.txt and LICENSE.txt)",
+      "attribution": "Jose Nazario, hand-classified phishing email corpus, 2023 mailbox",
+      "original_count": 419,
+      "label_mapping": {
+        "phishing": "spam"
+      },
+      "train_only": true,
+      "reason": "Genuine phishing messages, mixed/unverified language; training-only, no English/Indonesian evaluation claims. No attachments executed; MIME text only.",
+      "raw_counts": {
+        "spam": 419
+      },
+      "curated_counts": {
+        "spam": 394
+      },
+      "split_counts": {
+        "train": {
+          "spam": 394
+        },
+        "val": {},
+        "test": {}
+      }
     }
   },
   "audit": {
-    "raw_rows": 5574,
-    "retained_rows": 5159,
+    "raw_rows": 16050,
+    "retained_rows": 10565,
     "empty_removed": 0,
-    "exact_duplicates_removed": 415,
+    "exact_duplicates_removed": 5485,
     "conflicting_rows_removed": 0,
-    "near_duplicate_edges": 176,
-    "groups": 5003,
-    "largest_group": 12
+    "near_duplicate_edges": 2505,
+    "groups": 9308,
+    "largest_group": 77
   },
   "splits": {
     "train": {
-      "sms_en_ham": 2710,
-      "sms_en_spam": 385
+      "sms_en_ham": 3031,
+      "sms_en_spam": 638,
+      "sms_id_spam": 395,
+      "sms_id_ham": 341,
+      "email_en_ham": 1444,
+      "email_en_spam": 280,
+      "email_und_spam": 394
     },
     "val": {
-      "sms_en_ham": 903,
-      "sms_en_spam": 129
+      "sms_en_ham": 1008,
+      "sms_en_spam": 212,
+      "sms_id_spam": 118,
+      "sms_id_ham": 114,
+      "email_en_ham": 482,
+      "email_en_spam": 94
     },
     "test": {
-      "sms_en_ham": 904,
-      "sms_en_spam": 128
+      "sms_en_ham": 1002,
+      "sms_en_spam": 213,
+      "sms_id_spam": 110,
+      "sms_id_ham": 113,
+      "email_en_ham": 482,
+      "email_en_spam": 94
     }
   },
-  "split_sha256": "736fa663167d010da3829d2149d7e6e849beeaa57ab4477201533bfec11ffdbf",
-  "grouping": "Global normalized exact dedup; all conflicting exact labels excluded; URL/email/number-normalized templates; char 3-5 cosine >=0.90; transitive union plus thread IDs; five stratified group folds 60/20/20.",
+  "split_sha256": "446879ccc725f2d3a9b919318417c3f08b51b680b685137d98b935eb5af760c3",
+  "grouping": "Global normalized exact dedup; conflicts excluded; URL/email/number templates; char 3-5 cosine >=0.90; transitive union, email body template, descriptive normalized subject and RFC thread IDs; five grouped stratified folds 60/20/20, then supplemental-source groups forced training-only.",
   "sample_audit": [
     {
-      "row_id": "uci_sms:1",
+      "row_id": "mishra_sms:1",
       "label": "ham",
-      "note": "Informal conversational English SMS; no email headers."
+      "note": "Original source label preserved, no diagnostic/manual relabeling."
     },
     {
-      "row_id": "uci_sms:3",
+      "row_id": "mishra_sms:5",
       "label": "spam",
-      "note": "Prize/premium-call promotion SMS; original spam label retained."
+      "note": "Original source label preserved, no diagnostic/manual relabeling."
     }
   ],
-  "language_policy": "Source-level en designation; informal English/mixed varieties, not individually verified monolingual English. Indonesian unvalidated.",
+  "language_policy": "UCI/Mishra predominantly English corpus designation (informal/mixed rows, not per-row language gold); Rahmi/Wibisono and bopbi Indonesian; Ling-Spam English. Nazario mixed/unverified language und and training-only, never language evaluation.",
   "email": {
-    "status": "unavailable",
-    "reason": "Official SpamAssassin HTTP retrieval command denied by user/tool approval layer. Not retried, not bypassed. No local email data; no email training."
+    "status": "english_available",
+    "indonesian": "No verified original Indonesian email holdout; not evaluated."
   },
-  "independent_source_test": "Not performed: only one eligible accessible source, with unavailable component source IDs.",
+  "independent_source_test": "No independent-source holdout: grouped within-source holdouts only. Bopbi and Nazario are supplemental genuine training-only sources.",
   "privacy": "Raw and processed data local/ignored; no full messages or phone numbers in reports."
 }

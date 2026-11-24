@@ -1,0 +1,4079 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-24T10:58:14.068779+00:00",
+  "policy": "One threshold/channel; maximize macro validation F2, ham FPR <=3% in each group with >=100 ham and >=30 spam; no inferred-language routing.",
+  "baseline_sha256": "2a134b92955326fab0f926a9d1d38c944bfae0710f05a981c811fbb2742e1176",
+  "source_manifest_sha256": "27deef4ead8a6716e4d090f09cf7ff23f4111f4b775880bc2cc8d4de933feddc",
+  "dataset_sha256": "b3e0629b3c7670632936071eff8a353043fc3d23f75f884b58e8d0d5c74bad33",
+  "group_audit": {
+    "raw_rows": 14708,
+    "retained_rows": 14519,
+    "empty_removed": 0,
+    "exact_duplicates_removed": 189,
+    "conflicting_rows_removed": 0,
+    "near_duplicate_edges": 5505,
+    "groups": 12588,
+    "largest_group": 80
+  },
+  "source_audit": {
+    "india_sms": {
+      "raw_count": 2267,
+      "raw_label_counts": {
+        "spam": 745,
+        "ham": 1522
+      },
+      "eligible_before_grouping": 2240,
+      "selected_label_counts": {
+        "spam": 745,
+        "ham": 1495
+      },
+      "selected_language_counts": {
+        "en": 2240
+      },
+      "license": "MIT, explicitly applied to dataset in original README; Copyright 2024 JuniorAlive",
+      "sha256": "e6a28126d1c4ec9d805a10cd89f2de2bb63650532102e9f35ab05c909c3a79f3"
+    },
+    "ots_legit_augmentation": {
+      "raw_count": 15027,
+      "raw_label_counts": {
+        "ham": 12000,
+        "phishing": 3027
+      },
+      "eligible_before_grouping": 1903,
+      "selected_label_counts": {
+        "ham": 1088,
+        "spam": 815
+      },
+      "selected_language_counts": {
+        "en": 1550,
+        "id": 353
+      },
+      "license": "MIT, original in-house template/generator source and accompanying published synthetic fixture; Copyright 2024 TelecomsXChange. Not a license substitution for third-party real corpora.",
+      "sha256": "b7b0e15986fda28fb79606af220c7661f48931999cb9bd8a3f5a9a7a3f3ebe28"
+    }
+  },
+  "split_counts": {
+    "excluded_overlap": {
+      "sms_en_ham": 19,
+      "sms_en_spam": 6
+    },
+    "historical_test": {
+      "email_en_ham": 443,
+      "email_en_spam": 56,
+      "sms_en_ham": 1000,
+      "sms_en_spam": 206,
+      "sms_id_spam": 110,
+      "sms_id_ham": 113
+    },
+    "new_test": {
+      "sms_en_ham": 506,
+      "sms_en_spam": 290
+    },
+    "quarantine": {
+      "email_en_ham": 58,
+      "email_en_spam": 68,
+      "sms_en_spam": 10,
+      "sms_en_ham": 3
+    },
+    "train": {
+      "sms_id_spam": 460,
+      "sms_en_spam": 1670,
+      "sms_en_ham": 4339,
+      "email_en_ham": 1430,
+      "email_en_spam": 254,
+      "email_und_spam": 394,
+      "sms_id_ham": 629
+    },
+    "val": {
+      "sms_en_spam": 367,
+      "sms_en_ham": 1289,
+      "email_en_ham": 477,
+      "email_en_spam": 90,
+      "sms_id_ham": 114,
+      "sms_id_spam": 118
+    }
+  },
+  "new_test": [
+    {
+      "row_id": "india_sms:1011",
+      "group": "4cdca1dc40ad22541bbcb1bb54502e6c5bee80ebfe3c9928dbcad4d21ebd9378",
+      "text_hash": "4cdca1dc40ad22541bbcb1bb54502e6c5bee80ebfe3c9928dbcad4d21ebd9378"
+    },
+    {
+      "row_id": "india_sms:1012",
+      "group": "ce996e2be81694ded764302c6b0d4be0b4c524969761cec16d6cbb0063a316b0",
+      "text_hash": "ce996e2be81694ded764302c6b0d4be0b4c524969761cec16d6cbb0063a316b0"
+    },
+    {
+      "row_id": "india_sms:1013",
+      "group": "13b6e49948a5cb476bd023e063f9abe4bebfb815c4f1c718ebdf63931bc145c9",
+      "text_hash": "13b6e49948a5cb476bd023e063f9abe4bebfb815c4f1c718ebdf63931bc145c9"
+    },
+    {
+      "row_id": "india_sms:1017",
+      "group": "fac5ae1b5aaed25a45a1ec01b3cdef89d459ae24756dcbd68c4f37d9512730f7",
+      "text_hash": "fac5ae1b5aaed25a45a1ec01b3cdef89d459ae24756dcbd68c4f37d9512730f7"
+    },
+    {
+      "row_id": "india_sms:1019",
+      "group": "70b7a139bab88b7319ed3d5c144bb5ae0d57610735c288b0a11ca1edb606f1b1",
+      "text_hash": "70b7a139bab88b7319ed3d5c144bb5ae0d57610735c288b0a11ca1edb606f1b1"
+    },
+    {
+      "row_id": "india_sms:102",
+      "group": "62a046bdb80418317ee7fde1db4be40dc7eb5c6537057f8c65b9e5ee75bf7ba7",
+      "text_hash": "62a046bdb80418317ee7fde1db4be40dc7eb5c6537057f8c65b9e5ee75bf7ba7"
+    },
+    {
+      "row_id": "india_sms:1020",
+      "group": "96057649f7134d1f5f2727e8dcdd8a1249e7bd7b6ed473e9de5449547c358c60",
+      "text_hash": "96057649f7134d1f5f2727e8dcdd8a1249e7bd7b6ed473e9de5449547c358c60"
+    },
+    {
+      "row_id": "india_sms:1021",
+      "group": "7c22c79f9641683609f9125b66afc6494fda67269d9083b5d9506b888f179692",
+      "text_hash": "7c22c79f9641683609f9125b66afc6494fda67269d9083b5d9506b888f179692"
+    },
+    {
+      "row_id": "india_sms:1022",
+      "group": "d903129e224982ec6e2cdd80d4bb4e8fbbb05ab3734f16665bf942432ec3c4b9",
+      "text_hash": "d903129e224982ec6e2cdd80d4bb4e8fbbb05ab3734f16665bf942432ec3c4b9"
+    },
+    {
+      "row_id": "india_sms:1023",
+      "group": "a188eac6e0d2fb3b469ccd41eda82c4a966b2993a0560ffa7d71a7ba4a33d03a",
+      "text_hash": "a188eac6e0d2fb3b469ccd41eda82c4a966b2993a0560ffa7d71a7ba4a33d03a"
+    },
+    {
+      "row_id": "india_sms:1026",
+      "group": "2e05e5bb1d0f95a5b475547313c63443d463ce8c0b445f806c64ab813897420b",
+      "text_hash": "2e05e5bb1d0f95a5b475547313c63443d463ce8c0b445f806c64ab813897420b"
+    },
+    {
+      "row_id": "india_sms:1027",
+      "group": "b481206856b2c5e490e1c132f4e2aad86bd02e2f0f6f82d0e62d58bc57483388",
+      "text_hash": "b481206856b2c5e490e1c132f4e2aad86bd02e2f0f6f82d0e62d58bc57483388"
+    },
+    {
+      "row_id": "india_sms:103",
+      "group": "e8cd07a89fa18459ac58315a2b06ec3d0ee40c39aa406948c5e4863107ed562f",
+      "text_hash": "e8cd07a89fa18459ac58315a2b06ec3d0ee40c39aa406948c5e4863107ed562f"
+    },
+    {
+      "row_id": "india_sms:1031",
+      "group": "574e659d3a954c03ef54ee2d327a67bfb1389d296eb8141e41dfc39ba82bf7a9",
+      "text_hash": "574e659d3a954c03ef54ee2d327a67bfb1389d296eb8141e41dfc39ba82bf7a9"
+    },
+    {
+      "row_id": "india_sms:1032",
+      "group": "7ad083c391117ffa9175adb88c9800179393c8d4f3db8a28063f01ba84a0bd97",
+      "text_hash": "639f2e35886eef7bed5097348de5b4ec5f4a29ad20b4ef7680c03a369b93de74"
+    },
+    {
+      "row_id": "india_sms:1033",
+      "group": "d8411d028c7978dda03bd0fcbef4783393a38d02f3d110c8f0ddc65339cc8089",
+      "text_hash": "d8411d028c7978dda03bd0fcbef4783393a38d02f3d110c8f0ddc65339cc8089"
+    },
+    {
+      "row_id": "india_sms:1043",
+      "group": "8ff7123ab4fd1c01d583db352f50dffeff6a5042aef9876fa3ceed5a617a5f6c",
+      "text_hash": "8ff7123ab4fd1c01d583db352f50dffeff6a5042aef9876fa3ceed5a617a5f6c"
+    },
+    {
+      "row_id": "india_sms:1044",
+      "group": "2ddef2188cf1b5a833fb92ff9c87d4ebc8d65343d26e78765fe6972c65252539",
+      "text_hash": "2ddef2188cf1b5a833fb92ff9c87d4ebc8d65343d26e78765fe6972c65252539"
+    },
+    {
+      "row_id": "india_sms:1050",
+      "group": "9fd15ad00d6363dbd5aada5d87421e9e1565e8d72688ba8444b9c1a81ec3fe3e",
+      "text_hash": "9fd15ad00d6363dbd5aada5d87421e9e1565e8d72688ba8444b9c1a81ec3fe3e"
+    },
+    {
+      "row_id": "india_sms:1052",
+      "group": "54b7f47a309c2a734640bfdbe5a2f84999cce11b81dc6da48adc61862e59771e",
+      "text_hash": "54b7f47a309c2a734640bfdbe5a2f84999cce11b81dc6da48adc61862e59771e"
+    },
+    {
+      "row_id": "india_sms:1054",
+      "group": "405f547d98f60b144a64dd5605b454025dcfce58331b7e1b0996e5bd3a7035d8",
+      "text_hash": "405f547d98f60b144a64dd5605b454025dcfce58331b7e1b0996e5bd3a7035d8"
+    },
+    {
+      "row_id": "india_sms:1056",
+      "group": "02948fec90e6f0f8a27fb28549f953ceadd53397a09f9e82b6474967947b21e2",
+      "text_hash": "02948fec90e6f0f8a27fb28549f953ceadd53397a09f9e82b6474967947b21e2"
+    },
+    {
+      "row_id": "india_sms:1059",
+      "group": "36dfbdf8a7982f8426a18113af1d9c374631263418fb26d7be0de1f7c557c6f4",
+      "text_hash": "36dfbdf8a7982f8426a18113af1d9c374631263418fb26d7be0de1f7c557c6f4"
+    },
+    {
+      "row_id": "india_sms:106",
+      "group": "e74e7fb9ae473a2b41088d893bdf74f3941b666e455e159a57d594d077128dcf",
+      "text_hash": "e74e7fb9ae473a2b41088d893bdf74f3941b666e455e159a57d594d077128dcf"
+    },
+    {
+      "row_id": "india_sms:1065",
+      "group": "931c0c056b886d62beb32cdb791428c05ec824022b3b3e87b872238333a4b873",
+      "text_hash": "931c0c056b886d62beb32cdb791428c05ec824022b3b3e87b872238333a4b873"
+    },
+    {
+      "row_id": "india_sms:1067",
+      "group": "42a48b67e3a04fc495ab4e106eaf7376f85295006506038aed695596ef27fef4",
+      "text_hash": "42a48b67e3a04fc495ab4e106eaf7376f85295006506038aed695596ef27fef4"
+    },
+    {
+      "row_id": "india_sms:1068",
+      "group": "1d7a23a5380657f72cb11a1ccffc183eabab76e7692d249cbffd1efe6aad333a",
+      "text_hash": "1d7a23a5380657f72cb11a1ccffc183eabab76e7692d249cbffd1efe6aad333a"
+    },
+    {
+      "row_id": "india_sms:1069",
+      "group": "58d6cd8c429a7ac59ad5d812e1d84d076f8d1ac9d57e59d8f4c1c42e9a99e6fa",
+      "text_hash": "58d6cd8c429a7ac59ad5d812e1d84d076f8d1ac9d57e59d8f4c1c42e9a99e6fa"
+    },
+    {
+      "row_id": "india_sms:107",
+      "group": "43f39f1da2c074ea573a202c879587ee7ad4692658ef9d4c9da22c071e8e320a",
+      "text_hash": "43f39f1da2c074ea573a202c879587ee7ad4692658ef9d4c9da22c071e8e320a"
+    },
+    {
+      "row_id": "india_sms:1073",
+      "group": "d78e3c38d98d17d7355ec4a989e477bace56a6fa2508121a520146cd0a23ec80",
+      "text_hash": "d78e3c38d98d17d7355ec4a989e477bace56a6fa2508121a520146cd0a23ec80"
+    },
+    {
+      "row_id": "india_sms:1077",
+      "group": "f554049f2051e03086cfcdf2dc215de4f7ba79f4d90aeae6760e5e3ab665a05b",
+      "text_hash": "f554049f2051e03086cfcdf2dc215de4f7ba79f4d90aeae6760e5e3ab665a05b"
+    },
+    {
+      "row_id": "india_sms:108",
+      "group": "b13173f67673a235d0e7f582273f3665582d0b511233fc8ae453adc421298968",
+      "text_hash": "b13173f67673a235d0e7f582273f3665582d0b511233fc8ae453adc421298968"
+    },
+    {
+      "row_id": "india_sms:1083",
+      "group": "6c372d42fc898d3e0edd35ffbc1732438023b74c0172c8a6605a0b9c05a094c0",
+      "text_hash": "6c372d42fc898d3e0edd35ffbc1732438023b74c0172c8a6605a0b9c05a094c0"
+    },
+    {
+      "row_id": "india_sms:1088",
+      "group": "29af8c520a4d62fa2daf15da4bbd72535ac6fef46cc3be6c0f1a1973fe2bc55f",
+      "text_hash": "29af8c520a4d62fa2daf15da4bbd72535ac6fef46cc3be6c0f1a1973fe2bc55f"
+    },
+    {
+      "row_id": "india_sms:1090",
+      "group": "1b0739966140cb92bf17db55c5b48dc6c814b1520469676945f55470a7d56209",
+      "text_hash": "1b0739966140cb92bf17db55c5b48dc6c814b1520469676945f55470a7d56209"
+    },
+    {
+      "row_id": "india_sms:1091",
+      "group": "c7ed96fae8b733ad58e617e8b623edb194501501cf4a46496de8dab3a193c897",
+      "text_hash": "c7ed96fae8b733ad58e617e8b623edb194501501cf4a46496de8dab3a193c897"
+    },
+    {
+      "row_id": "india_sms:1092",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "b920f0c23914acb052245bdce28c526a09d0941ee9c037ec1b53c99806287b7e"
+    },
+    {
+      "row_id": "india_sms:1093",
+      "group": "62a8a7b871986a90023fe2f3815f48e57865106a3eaaef99234054f3e274d993",
+      "text_hash": "62a8a7b871986a90023fe2f3815f48e57865106a3eaaef99234054f3e274d993"
+    },
+    {
+      "row_id": "india_sms:1096",
+      "group": "e153da5acda6a92a7eac1edc1892d0b11d2ecf1ed899affbf760671bc4022765",
+      "text_hash": "e153da5acda6a92a7eac1edc1892d0b11d2ecf1ed899affbf760671bc4022765"
+    },
+    {
+      "row_id": "india_sms:1098",
+      "group": "e53355b151d4a8e02577668415c7badbaea84b3b4ce2e73f8f40fefc2a27ebe2",
+      "text_hash": "e53355b151d4a8e02577668415c7badbaea84b3b4ce2e73f8f40fefc2a27ebe2"
+    },
+    {
+      "row_id": "india_sms:1101",
+      "group": "a1cf248b77bc4e7ba79b2a2c55a1c322614c649b31d0edb127e8130458f5f399",
+      "text_hash": "a1cf248b77bc4e7ba79b2a2c55a1c322614c649b31d0edb127e8130458f5f399"
+    },
+    {
+      "row_id": "india_sms:1104",
+      "group": "e160727589333d5859c7b55ba36ed3488927c292bddcb0f2b6135d08c611acb7",
+      "text_hash": "e160727589333d5859c7b55ba36ed3488927c292bddcb0f2b6135d08c611acb7"
+    },
+    {
+      "row_id": "india_sms:1107",
+      "group": "560b1222166b64822fef03c6daf9f7f4633591dece6610f4ae506c823d919092",
+      "text_hash": "560b1222166b64822fef03c6daf9f7f4633591dece6610f4ae506c823d919092"
+    },
+    {
+      "row_id": "india_sms:1115",
+      "group": "50ef54f664a14cc69efe463a262de4894bf9e519585e7e33cd5fab5342941bec",
+      "text_hash": "50ef54f664a14cc69efe463a262de4894bf9e519585e7e33cd5fab5342941bec"
+    },
+    {
+      "row_id": "india_sms:1116",
+      "group": "93ce8b162742390185a135e0f4dbbf4acb7cc2ce3729163d856c32888e3c802f",
+      "text_hash": "93ce8b162742390185a135e0f4dbbf4acb7cc2ce3729163d856c32888e3c802f"
+    },
+    {
+      "row_id": "india_sms:1119",
+      "group": "5f867226d6d28fd1684e4b0bcc2b6ce63da421c6f2c429d329fe8904d33b3066",
+      "text_hash": "5f867226d6d28fd1684e4b0bcc2b6ce63da421c6f2c429d329fe8904d33b3066"
+    },
+    {
+      "row_id": "india_sms:1120",
+      "group": "748a1c675a50c8ee25e568eb1515b96807c041affaf8aa8d1c63d7e2bad23602",
+      "text_hash": "748a1c675a50c8ee25e568eb1515b96807c041affaf8aa8d1c63d7e2bad23602"
+    },
+    {
+      "row_id": "india_sms:1121",
+      "group": "6666979441d54c8744e6261fd6ac098d0cc8f07cabc923c12a360879118bcdc6",
+      "text_hash": "6666979441d54c8744e6261fd6ac098d0cc8f07cabc923c12a360879118bcdc6"
+    },
+    {
+      "row_id": "india_sms:1122",
+      "group": "d5ea5f94004907256023f34d3fb90d3afcdc7b6f7292133c41536ac3a7b4e675",
+      "text_hash": "d5ea5f94004907256023f34d3fb90d3afcdc7b6f7292133c41536ac3a7b4e675"
+    },
+    {
+      "row_id": "india_sms:1124",
+      "group": "d5efdb7452cf1d8564cc7a46796c3590d5492ea8db2c629107f22fc0b80f23e9",
+      "text_hash": "4933e7bb79842d7a2832fbee6d7ecb56f944ba539e22dff4957b6ae035698325"
+    },
+    {
+      "row_id": "india_sms:1127",
+      "group": "da0e92b6aa6d6191b0f120ccc56d18d547e9e513e2de217ca099917f64428185",
+      "text_hash": "da0e92b6aa6d6191b0f120ccc56d18d547e9e513e2de217ca099917f64428185"
+    },
+    {
+      "row_id": "india_sms:1128",
+      "group": "7d413083e5b10c77c407be8d6a3fea75b7d7d92ac36a87d9fa8732045133bc4f",
+      "text_hash": "7d413083e5b10c77c407be8d6a3fea75b7d7d92ac36a87d9fa8732045133bc4f"
+    },
+    {
+      "row_id": "india_sms:1130",
+      "group": "e62794ed3ee446c04fe63c6ec70c1b71c6c93dced2cb4939ab575a246ed14c62",
+      "text_hash": "e62794ed3ee446c04fe63c6ec70c1b71c6c93dced2cb4939ab575a246ed14c62"
+    },
+    {
+      "row_id": "india_sms:1131",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "c9d3f9a6d4420033036a23998ae908c6da1e1155c80daad314b68acf465f4852"
+    },
+    {
+      "row_id": "india_sms:1132",
+      "group": "4aa207e3f8bf2b245917aaca1267027ead08668aa37bac9eab1f457f84a53b66",
+      "text_hash": "efbf25cc19ce7e2de1e9ab5c2df21f041d98bc480eeff168e0b00c0fe20a1d86"
+    },
+    {
+      "row_id": "india_sms:1133",
+      "group": "5ddf1a0af8f8c4c9a2b393041706a0b0f093f8dd0538e8957b193baa9e1d3382",
+      "text_hash": "5ddf1a0af8f8c4c9a2b393041706a0b0f093f8dd0538e8957b193baa9e1d3382"
+    },
+    {
+      "row_id": "india_sms:1134",
+      "group": "d91288d967c40572b3e99c968150a0570aff47e65cde02c1e66f0763285b5bce",
+      "text_hash": "d91288d967c40572b3e99c968150a0570aff47e65cde02c1e66f0763285b5bce"
+    },
+    {
+      "row_id": "india_sms:1135",
+      "group": "e0d6f1fe93d97b72da715ce552e434bbae3b0ead18be075e7aada47570500e43",
+      "text_hash": "e0d6f1fe93d97b72da715ce552e434bbae3b0ead18be075e7aada47570500e43"
+    },
+    {
+      "row_id": "india_sms:1136",
+      "group": "85b989a37df277985afb03253bd19e2c48a092c987ae3f0f611bc4b209ee1db4",
+      "text_hash": "85b989a37df277985afb03253bd19e2c48a092c987ae3f0f611bc4b209ee1db4"
+    },
+    {
+      "row_id": "india_sms:1142",
+      "group": "836b6aaa71d54bc33c2b8bbb49f112a05431a61c231c045ef9b7509609523c41",
+      "text_hash": "836b6aaa71d54bc33c2b8bbb49f112a05431a61c231c045ef9b7509609523c41"
+    },
+    {
+      "row_id": "india_sms:1155",
+      "group": "59ca02274cba5b7ad4904d00c92efcce104ad122f3ab85f8a164d993eb45e1b6",
+      "text_hash": "59ca02274cba5b7ad4904d00c92efcce104ad122f3ab85f8a164d993eb45e1b6"
+    },
+    {
+      "row_id": "india_sms:1159",
+      "group": "bc7d9370cc33f983236783a37b98a282902f1dd92d0886ff907964f283de4adc",
+      "text_hash": "b77f5c52949de35b2e4a0082f7839c7b57c9ab7a0026324bef3504930a790fe3"
+    },
+    {
+      "row_id": "india_sms:116",
+      "group": "2be7abb3a53851b2ba92d1b75d111158cabd93280badcc154d342584deb1fec6",
+      "text_hash": "2be7abb3a53851b2ba92d1b75d111158cabd93280badcc154d342584deb1fec6"
+    },
+    {
+      "row_id": "india_sms:1161",
+      "group": "0bc01f98c26ef599b8f87796778d8fd0024f29ff5284d32434663150aa0ad32f",
+      "text_hash": "0bc01f98c26ef599b8f87796778d8fd0024f29ff5284d32434663150aa0ad32f"
+    },
+    {
+      "row_id": "india_sms:1162",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "857b6f88cee3a0bd36229f8d84c3c0892f72e95a15cdf5d56c9972a6d8ec74bc"
+    },
+    {
+      "row_id": "india_sms:117",
+      "group": "19751f402d35340879948f45eb1853d5f8a98679cc3ad2f70c4ef70c84f3cf10",
+      "text_hash": "19751f402d35340879948f45eb1853d5f8a98679cc3ad2f70c4ef70c84f3cf10"
+    },
+    {
+      "row_id": "india_sms:1191",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "2775cbde671a4b3807e81dc55c7ffc6f655cd018b46d329898d5abf4640b83a3"
+    },
+    {
+      "row_id": "india_sms:1192",
+      "group": "d297c008921e41876b6b0604bfe4f506579ef2b32c89c3f44bd18b92e58a5c4b",
+      "text_hash": "d297c008921e41876b6b0604bfe4f506579ef2b32c89c3f44bd18b92e58a5c4b"
+    },
+    {
+      "row_id": "india_sms:1193",
+      "group": "850110d6cbb17a4b38f5f4bbec9fa28dd764766971e8c7170043876a931deeff",
+      "text_hash": "850110d6cbb17a4b38f5f4bbec9fa28dd764766971e8c7170043876a931deeff"
+    },
+    {
+      "row_id": "india_sms:1197",
+      "group": "c06d65e565b70e92c93fb8dc1265fff39ac7950fe32679cbbb423b53c88d69ad",
+      "text_hash": "c06d65e565b70e92c93fb8dc1265fff39ac7950fe32679cbbb423b53c88d69ad"
+    },
+    {
+      "row_id": "india_sms:1198",
+      "group": "a06c4eb34161e5aa19c8d290bab2063865fdc4631433c5cb9cbf31d0d57ebeb5",
+      "text_hash": "a06c4eb34161e5aa19c8d290bab2063865fdc4631433c5cb9cbf31d0d57ebeb5"
+    },
+    {
+      "row_id": "india_sms:12",
+      "group": "ce999312c09dce2663411c55d7a189d57d5601aedbb75072c04c67cbf8736af1",
+      "text_hash": "ce999312c09dce2663411c55d7a189d57d5601aedbb75072c04c67cbf8736af1"
+    },
+    {
+      "row_id": "india_sms:1205",
+      "group": "43956508d625709db8b559d7a9ea7ae39d6a26ea0b10ded3b0ed95d82c75496f",
+      "text_hash": "43956508d625709db8b559d7a9ea7ae39d6a26ea0b10ded3b0ed95d82c75496f"
+    },
+    {
+      "row_id": "india_sms:121",
+      "group": "9d41eecafd56cfddafa6d6bf1a5a976d37e6fc7b6bf47783abc87a385c2c4df2",
+      "text_hash": "9d41eecafd56cfddafa6d6bf1a5a976d37e6fc7b6bf47783abc87a385c2c4df2"
+    },
+    {
+      "row_id": "india_sms:1211",
+      "group": "3a7ef1f377c8efdc51927164dc3129562b8a565f57bd39b2962ddbdba8aa036b",
+      "text_hash": "3a7ef1f377c8efdc51927164dc3129562b8a565f57bd39b2962ddbdba8aa036b"
+    },
+    {
+      "row_id": "india_sms:1212",
+      "group": "50f462b7aa92f2eb460a1adf7b1d4420083394437f79ad36ed91c86d0bcf8e40",
+      "text_hash": "50f462b7aa92f2eb460a1adf7b1d4420083394437f79ad36ed91c86d0bcf8e40"
+    },
+    {
+      "row_id": "india_sms:1214",
+      "group": "0f14cbf5f8bbeaf169aeb914b038b3cebdd9e87ee8d21dbde0f75383f0900c14",
+      "text_hash": "0f14cbf5f8bbeaf169aeb914b038b3cebdd9e87ee8d21dbde0f75383f0900c14"
+    },
+    {
+      "row_id": "india_sms:1215",
+      "group": "ad5aff37e0270da7dade0a5fe8e896132c788ecdc878d0bad01d9c723192f479",
+      "text_hash": "ad5aff37e0270da7dade0a5fe8e896132c788ecdc878d0bad01d9c723192f479"
+    },
+    {
+      "row_id": "india_sms:1218",
+      "group": "1bcc78f303f528cda888628658456aa356287825e46bd45dc310eb2da10e604e",
+      "text_hash": "1bcc78f303f528cda888628658456aa356287825e46bd45dc310eb2da10e604e"
+    },
+    {
+      "row_id": "india_sms:122",
+      "group": "ee161e168d2298f27919ba5efe6be14caa3e32a5acca298ee87ff94f523db636",
+      "text_hash": "ee161e168d2298f27919ba5efe6be14caa3e32a5acca298ee87ff94f523db636"
+    },
+    {
+      "row_id": "india_sms:1224",
+      "group": "381ad55051be2b92437410b209817f2477a54fb6298413f35b5a645d8af44b4b",
+      "text_hash": "03b58348a313b0a237ea4dcef89e2bc3f61bbb91862e9d346d5a392065ac49d2"
+    },
+    {
+      "row_id": "india_sms:1226",
+      "group": "bf7741d4204f29692e5a21ef688ab2e93eef2f43a78ee37fb5b535f04aa6367f",
+      "text_hash": "bf7741d4204f29692e5a21ef688ab2e93eef2f43a78ee37fb5b535f04aa6367f"
+    },
+    {
+      "row_id": "india_sms:1228",
+      "group": "42fa4cf5d05959b4ecdf94bde0198e438390ab1510f8aa040d1fb54f44653e71",
+      "text_hash": "42fa4cf5d05959b4ecdf94bde0198e438390ab1510f8aa040d1fb54f44653e71"
+    },
+    {
+      "row_id": "india_sms:1230",
+      "group": "278677488bc1f96381443e648616dd8f6dfac1a8074fd395fa78348f17039487",
+      "text_hash": "278677488bc1f96381443e648616dd8f6dfac1a8074fd395fa78348f17039487"
+    },
+    {
+      "row_id": "india_sms:1231",
+      "group": "cac0e2b22e4fbd0ec797f37db160f2c78e1c1c14c3559991bec3d346e851f891",
+      "text_hash": "cac0e2b22e4fbd0ec797f37db160f2c78e1c1c14c3559991bec3d346e851f891"
+    },
+    {
+      "row_id": "india_sms:1234",
+      "group": "4e867c7997fd05782718c123aa232b6e3031bb32ee9761b6ae851aa3ee82e77a",
+      "text_hash": "4e867c7997fd05782718c123aa232b6e3031bb32ee9761b6ae851aa3ee82e77a"
+    },
+    {
+      "row_id": "india_sms:1241",
+      "group": "bc9e3026143294a91a87ef9830f76b1762cad827b8b2d14ff0cb6dbe6ed64bb9",
+      "text_hash": "f9733e7c98e0d944d83e095b3a1d3a38d6e50b5e553db2d99c6af24b25c724c1"
+    },
+    {
+      "row_id": "india_sms:1245",
+      "group": "fc931b04601c078e625de03bf7abc7accf0054aeeac40a483d8f5c0f6a39b04e",
+      "text_hash": "fc931b04601c078e625de03bf7abc7accf0054aeeac40a483d8f5c0f6a39b04e"
+    },
+    {
+      "row_id": "india_sms:125",
+      "group": "17b80ca9b9595cc4a20b64c0dcb9a55e29b97c56fa3dccc0d1b3f3ea6f6dd7a8",
+      "text_hash": "17b80ca9b9595cc4a20b64c0dcb9a55e29b97c56fa3dccc0d1b3f3ea6f6dd7a8"
+    },
+    {
+      "row_id": "india_sms:1254",
+      "group": "e52d643d8367d44d61d7baba6607d6e84471effb680da7a7f2deb50e258575a5",
+      "text_hash": "e52d643d8367d44d61d7baba6607d6e84471effb680da7a7f2deb50e258575a5"
+    },
+    {
+      "row_id": "india_sms:1255",
+      "group": "26a30ba0ac11b065a88b60422ee48165546c4cf21c8e58e53b5f5a4a7f4c1151",
+      "text_hash": "26a30ba0ac11b065a88b60422ee48165546c4cf21c8e58e53b5f5a4a7f4c1151"
+    },
+    {
+      "row_id": "india_sms:1263",
+      "group": "1049e6fc7fc6c79551f727bbfa2cfe87f4ee0e230eda6ac596ca96e078bc1131",
+      "text_hash": "1049e6fc7fc6c79551f727bbfa2cfe87f4ee0e230eda6ac596ca96e078bc1131"
+    },
+    {
+      "row_id": "india_sms:1265",
+      "group": "c5f15091ff9204d7dadc4d105ceda241b5df24c8b82dca840ae9732d65ec0a53",
+      "text_hash": "c5f15091ff9204d7dadc4d105ceda241b5df24c8b82dca840ae9732d65ec0a53"
+    },
+    {
+      "row_id": "india_sms:127",
+      "group": "ef9cd658d7cae6cb6f25782bc75e7c9470e43b59574279651c75fa97a7b77694",
+      "text_hash": "ef9cd658d7cae6cb6f25782bc75e7c9470e43b59574279651c75fa97a7b77694"
+    },
+    {
+      "row_id": "india_sms:1270",
+      "group": "979d5afbd962a66362b88d07beffc3cc2ae4d75edf69279fdbd71bd5b944096d",
+      "text_hash": "979d5afbd962a66362b88d07beffc3cc2ae4d75edf69279fdbd71bd5b944096d"
+    },
+    {
+      "row_id": "india_sms:1272",
+      "group": "21d63267fca86cb889650907816fd6befb59932469b94cd6a7133618ba37f1dc",
+      "text_hash": "21d63267fca86cb889650907816fd6befb59932469b94cd6a7133618ba37f1dc"
+    },
+    {
+      "row_id": "india_sms:1275",
+      "group": "ec83f4e50ff04cae54d706eb4be85869bdfad9e73a60722108ff13f1da115f41",
+      "text_hash": "ec83f4e50ff04cae54d706eb4be85869bdfad9e73a60722108ff13f1da115f41"
+    },
+    {
+      "row_id": "india_sms:1277",
+      "group": "afa98a3aac020f495dcd37b6eaf2598e04cff799d03b60a5e0e0a471a0aefd6c",
+      "text_hash": "afa98a3aac020f495dcd37b6eaf2598e04cff799d03b60a5e0e0a471a0aefd6c"
+    },
+    {
+      "row_id": "india_sms:128",
+      "group": "0acec51b2293dcbc7214f1b093ec19e6fd90cb019017ae5dd374ebdb932b88b1",
+      "text_hash": "0acec51b2293dcbc7214f1b093ec19e6fd90cb019017ae5dd374ebdb932b88b1"
+    },
+    {
+      "row_id": "india_sms:1281",
+      "group": "a9de25ab606a50a1a74f37c1fed5290f231754a640b1811cb4bf09aebcfc360e",
+      "text_hash": "9ba70227d21dc5ebb8a9a1a103ce8dd48f9c2a035b042f47ce9379c1fbbdf8ef"
+    },
+    {
+      "row_id": "india_sms:1283",
+      "group": "0c356c2451e1875bf96ceb3ff446b1ad1e91577e5d2907b547ad6571257c043d",
+      "text_hash": "0c356c2451e1875bf96ceb3ff446b1ad1e91577e5d2907b547ad6571257c043d"
+    },
+    {
+      "row_id": "india_sms:1285",
+      "group": "9a005a463f03c16450c0ab0dbaa8e2d2011d7fd7f043d11634e11f1710f6e329",
+      "text_hash": "9a005a463f03c16450c0ab0dbaa8e2d2011d7fd7f043d11634e11f1710f6e329"
+    },
+    {
+      "row_id": "india_sms:1287",
+      "group": "337079f00ebed3039f38b946006f7c5fd60f223fac778cbc20c7d5af475bfb26",
+      "text_hash": "337079f00ebed3039f38b946006f7c5fd60f223fac778cbc20c7d5af475bfb26"
+    },
+    {
+      "row_id": "india_sms:1289",
+      "group": "8eec84a570b4f59c5b5dd0985d40711c1e23e7dc7a4f84b36e76bbfaae3dea2a",
+      "text_hash": "8eec84a570b4f59c5b5dd0985d40711c1e23e7dc7a4f84b36e76bbfaae3dea2a"
+    },
+    {
+      "row_id": "india_sms:1291",
+      "group": "efb6868c1ef271b84c99208756b5413d33f8815bae8f9b7436a972a2c7b94869",
+      "text_hash": "efb6868c1ef271b84c99208756b5413d33f8815bae8f9b7436a972a2c7b94869"
+    },
+    {
+      "row_id": "india_sms:1292",
+      "group": "c992c1b6e72a891e86b759a9fac39326a053e81549122ba48ed407c01b065a2f",
+      "text_hash": "c992c1b6e72a891e86b759a9fac39326a053e81549122ba48ed407c01b065a2f"
+    },
+    {
+      "row_id": "india_sms:1294",
+      "group": "6b9a8e7074b13610bef9ea137ae6154ed92223e7a17e59ff19670c7960170efb",
+      "text_hash": "6b9a8e7074b13610bef9ea137ae6154ed92223e7a17e59ff19670c7960170efb"
+    },
+    {
+      "row_id": "india_sms:1299",
+      "group": "de4d5be4f78eced65bb3d44a6608551b49091f00eb2604a79a15d4e335b69e3a",
+      "text_hash": "de4d5be4f78eced65bb3d44a6608551b49091f00eb2604a79a15d4e335b69e3a"
+    },
+    {
+      "row_id": "india_sms:1300",
+      "group": "c7eb6b5e7b200962dd7469e4270b589dc2562caa7821452d6300f5f5e01fe21c",
+      "text_hash": "c7eb6b5e7b200962dd7469e4270b589dc2562caa7821452d6300f5f5e01fe21c"
+    },
+    {
+      "row_id": "india_sms:1305",
+      "group": "0349deb8124d89f7e51a3d2858f7d312319b7a6ef46e3f73afa7c92c1292ab6d",
+      "text_hash": "0349deb8124d89f7e51a3d2858f7d312319b7a6ef46e3f73afa7c92c1292ab6d"
+    },
+    {
+      "row_id": "india_sms:1306",
+      "group": "0c7484e2eb608c8195ca9f9cb697569b11f1dfea2cec7c7c1c215a03a12c50f6",
+      "text_hash": "0c7484e2eb608c8195ca9f9cb697569b11f1dfea2cec7c7c1c215a03a12c50f6"
+    },
+    {
+      "row_id": "india_sms:1310",
+      "group": "82c919af9db07c4e93186995e83c618db9b51dad1b965e5d5b7da2cdf33aa86d",
+      "text_hash": "82c919af9db07c4e93186995e83c618db9b51dad1b965e5d5b7da2cdf33aa86d"
+    },
+    {
+      "row_id": "india_sms:1312",
+      "group": "6382489857c58306f30dd3692fe126adc1a749a551dfbcc8d816c4a759bc355a",
+      "text_hash": "6382489857c58306f30dd3692fe126adc1a749a551dfbcc8d816c4a759bc355a"
+    },
+    {
+      "row_id": "india_sms:1317",
+      "group": "b4585ba74bceb12ebcbad1102a745cd447d47bcd5e2cfa8fe4e7df1ebdce27ff",
+      "text_hash": "b4585ba74bceb12ebcbad1102a745cd447d47bcd5e2cfa8fe4e7df1ebdce27ff"
+    },
+    {
+      "row_id": "india_sms:1318",
+      "group": "0ef976fb600f911e3b9f083defe67652d6fcca0ce3bb955e9e1f1a6e9686216f",
+      "text_hash": "0ef976fb600f911e3b9f083defe67652d6fcca0ce3bb955e9e1f1a6e9686216f"
+    },
+    {
+      "row_id": "india_sms:1320",
+      "group": "45449a40e80d1a424d9093b68f61c8a38ccc70738ea09eed4a00800d78406213",
+      "text_hash": "45449a40e80d1a424d9093b68f61c8a38ccc70738ea09eed4a00800d78406213"
+    },
+    {
+      "row_id": "india_sms:1322",
+      "group": "fbdb2fb84c9eac55fd4cd5ac9e2669b7f2ac6bab25e1db66c3171fc0b27b3a96",
+      "text_hash": "fbdb2fb84c9eac55fd4cd5ac9e2669b7f2ac6bab25e1db66c3171fc0b27b3a96"
+    },
+    {
+      "row_id": "india_sms:1325",
+      "group": "97ae832da993cd13c64f1bac83de4bc6d732cc5742ccbb70ce3cc30e145774d4",
+      "text_hash": "97ae832da993cd13c64f1bac83de4bc6d732cc5742ccbb70ce3cc30e145774d4"
+    },
+    {
+      "row_id": "india_sms:1329",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "dc0bc77eebaac8e665cd6762a016983e3bb03dd00f70149c0ce47f5b020e341a"
+    },
+    {
+      "row_id": "india_sms:133",
+      "group": "0d8b38f32b931df76760f4d4b519623d76584d11e61c35b97b605e17946d6e26",
+      "text_hash": "0d8b38f32b931df76760f4d4b519623d76584d11e61c35b97b605e17946d6e26"
+    },
+    {
+      "row_id": "india_sms:1333",
+      "group": "cd4383cf59c1c00fe47bfd3e01f548bbb4b0b196a21732accdf2191c20d25dd5",
+      "text_hash": "cd4383cf59c1c00fe47bfd3e01f548bbb4b0b196a21732accdf2191c20d25dd5"
+    },
+    {
+      "row_id": "india_sms:1334",
+      "group": "f01400ed1b966398c3a51330f2b784df795ddfb1e349d513abca22f1d21d15e3",
+      "text_hash": "f01400ed1b966398c3a51330f2b784df795ddfb1e349d513abca22f1d21d15e3"
+    },
+    {
+      "row_id": "india_sms:134",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "9ea03a0ede9c5ef505df4694cdc1d07d1efb5616c54f7c338335cc66f9f6dd67"
+    },
+    {
+      "row_id": "india_sms:1341",
+      "group": "0704c4d83811053a0b3f46aea61225d5dda0221d399d0a73055867d16ae65568",
+      "text_hash": "0704c4d83811053a0b3f46aea61225d5dda0221d399d0a73055867d16ae65568"
+    },
+    {
+      "row_id": "india_sms:1342",
+      "group": "8eec84a570b4f59c5b5dd0985d40711c1e23e7dc7a4f84b36e76bbfaae3dea2a",
+      "text_hash": "eacfff3cc3234acb94aa7cc2b548752dd2a664d4e471626d84e00cdbfc86efe2"
+    },
+    {
+      "row_id": "india_sms:1346",
+      "group": "429733333cf4dd6b5b060ba9bf14b7b826f43dfd6d02efff12cc1ab1a5e43ea7",
+      "text_hash": "429733333cf4dd6b5b060ba9bf14b7b826f43dfd6d02efff12cc1ab1a5e43ea7"
+    },
+    {
+      "row_id": "india_sms:1347",
+      "group": "381ad55051be2b92437410b209817f2477a54fb6298413f35b5a645d8af44b4b",
+      "text_hash": "7fad47456e6d504ecde00d9a04e4795733e3054837e807fb2cc5a2341dc6edea"
+    },
+    {
+      "row_id": "india_sms:135",
+      "group": "1a57633ff1ec17772ca55352dc62bdfce955a4b73812ea304e4a5ffdf12b8965",
+      "text_hash": "3965b644c57bd2871c3fc4d5b9555c4b06f2bd8dea9232685370519cb2e73d70"
+    },
+    {
+      "row_id": "india_sms:1354",
+      "group": "09feadf69f03706cc209f0f78886205d931342c8018c575a88fc7d85d8e226a8",
+      "text_hash": "09feadf69f03706cc209f0f78886205d931342c8018c575a88fc7d85d8e226a8"
+    },
+    {
+      "row_id": "india_sms:1355",
+      "group": "66eb3315c24b05cf02d90e19f5a98793d90abf42da0acfdeb14d303b9c06d65e",
+      "text_hash": "66eb3315c24b05cf02d90e19f5a98793d90abf42da0acfdeb14d303b9c06d65e"
+    },
+    {
+      "row_id": "india_sms:1358",
+      "group": "a604e15902f28eff00985db7b887e96d335ad6a90a9aaa0b7122298cd89bce0c",
+      "text_hash": "a604e15902f28eff00985db7b887e96d335ad6a90a9aaa0b7122298cd89bce0c"
+    },
+    {
+      "row_id": "india_sms:136",
+      "group": "22ab2f151e031f3f6fca20f4eb08494a3980051100fab265d641e835fa0e032d",
+      "text_hash": "22ab2f151e031f3f6fca20f4eb08494a3980051100fab265d641e835fa0e032d"
+    },
+    {
+      "row_id": "india_sms:1361",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "9b7a8f3a8ba666fd1cad7af5220d867be1a916946224610f7552edc67ec42d12"
+    },
+    {
+      "row_id": "india_sms:1363",
+      "group": "0cf005d93114a69d880935c371db20b333752d1df2a6512d098145206abba38d",
+      "text_hash": "0cf005d93114a69d880935c371db20b333752d1df2a6512d098145206abba38d"
+    },
+    {
+      "row_id": "india_sms:1364",
+      "group": "79097fa7de43c465e854bbd2d69032c67e3bc3a12ebc1d587ba8bf7016833577",
+      "text_hash": "79097fa7de43c465e854bbd2d69032c67e3bc3a12ebc1d587ba8bf7016833577"
+    },
+    {
+      "row_id": "india_sms:1366",
+      "group": "5d089e25a492fa4c7088b70f8c96af029e7f1e4ab4d727107041d32bc65066dc",
+      "text_hash": "5d089e25a492fa4c7088b70f8c96af029e7f1e4ab4d727107041d32bc65066dc"
+    },
+    {
+      "row_id": "india_sms:1370",
+      "group": "cac92f40e3acc91039d5304f23d4d4e1f9ca79ff08336bd62cd2879e79a10f5e",
+      "text_hash": "cac92f40e3acc91039d5304f23d4d4e1f9ca79ff08336bd62cd2879e79a10f5e"
+    },
+    {
+      "row_id": "india_sms:1374",
+      "group": "b867e27a2dbbe545db73ecf147a74c1d84f934d6b7aadefdf8ee548594318d87",
+      "text_hash": "8d40154c83529d2601f828720f78ea2e4181a9ee9876ccc92d78158870f6390a"
+    },
+    {
+      "row_id": "india_sms:1376",
+      "group": "e5972cc10655e3a9d6a81355865e4dc8961fb7915c93b80f6304aa112cc05261",
+      "text_hash": "e5972cc10655e3a9d6a81355865e4dc8961fb7915c93b80f6304aa112cc05261"
+    },
+    {
+      "row_id": "india_sms:1377",
+      "group": "d39ae00a08d4e56e39ed2d906ad4e77a30ad8a3d38da6de6e4a5d6660ace9a64",
+      "text_hash": "d39ae00a08d4e56e39ed2d906ad4e77a30ad8a3d38da6de6e4a5d6660ace9a64"
+    },
+    {
+      "row_id": "india_sms:1379",
+      "group": "33b474e913a8c93150c9595a61860b5f8f782b682b561140593bdb8fe3024d35",
+      "text_hash": "33b474e913a8c93150c9595a61860b5f8f782b682b561140593bdb8fe3024d35"
+    },
+    {
+      "row_id": "india_sms:138",
+      "group": "02766f41334923eaa31c2c39c13242cb871560b0939f7d9e8e7ef15095666d96",
+      "text_hash": "02766f41334923eaa31c2c39c13242cb871560b0939f7d9e8e7ef15095666d96"
+    },
+    {
+      "row_id": "india_sms:1380",
+      "group": "2d5fe8ecf75bbc818416d087cfe086cedbf9eb1a7b440d19afad8199f60a567f",
+      "text_hash": "2d5fe8ecf75bbc818416d087cfe086cedbf9eb1a7b440d19afad8199f60a567f"
+    },
+    {
+      "row_id": "india_sms:1383",
+      "group": "267db26fc1a3ac76c42680d70fe80b8d86221ba513c9163d35d65c27d3d522be",
+      "text_hash": "267db26fc1a3ac76c42680d70fe80b8d86221ba513c9163d35d65c27d3d522be"
+    },
+    {
+      "row_id": "india_sms:1385",
+      "group": "0acec51b2293dcbc7214f1b093ec19e6fd90cb019017ae5dd374ebdb932b88b1",
+      "text_hash": "846850c262e7672a719ff653777f8554466c18281cc313bb3cc1b1e441f97089"
+    },
+    {
+      "row_id": "india_sms:1387",
+      "group": "160db21a9a7007f22a1e31f3e8e643a13d528b92d0f0389cc2f8b83326dc09a4",
+      "text_hash": "160db21a9a7007f22a1e31f3e8e643a13d528b92d0f0389cc2f8b83326dc09a4"
+    },
+    {
+      "row_id": "india_sms:1391",
+      "group": "9c46a621209530c068e3f97c6c4be2dec4cfd8280a6fcb45eb55c74c90927362",
+      "text_hash": "9c46a621209530c068e3f97c6c4be2dec4cfd8280a6fcb45eb55c74c90927362"
+    },
+    {
+      "row_id": "india_sms:1397",
+      "group": "9c3b26861954a94f7baaf87d1a49c7d05e72c095c5090da79ed45d0db4a2c37c",
+      "text_hash": "9c3b26861954a94f7baaf87d1a49c7d05e72c095c5090da79ed45d0db4a2c37c"
+    },
+    {
+      "row_id": "india_sms:1399",
+      "group": "98e14bef3a643350b60ad4b571bae526179879431394919c0cd806dcc50e836c",
+      "text_hash": "98e14bef3a643350b60ad4b571bae526179879431394919c0cd806dcc50e836c"
+    },
+    {
+      "row_id": "india_sms:1402",
+      "group": "1f8ff81df10c2ec85f728ebc67d77eadbe5418423e40361f871f71455b34a29f",
+      "text_hash": "1f8ff81df10c2ec85f728ebc67d77eadbe5418423e40361f871f71455b34a29f"
+    },
+    {
+      "row_id": "india_sms:1404",
+      "group": "4c4def2515537585f8e03820941730663882bf58e4a4320970cfb93279a2a8e8",
+      "text_hash": "c6481296c8a4b3eb8bf6909bb6ef2ab8369443b8db1e35bc40424a0c266e7e14"
+    },
+    {
+      "row_id": "india_sms:141",
+      "group": "2c7d2c2571979cd571a8d81654928ced4817d80331f60db2f3f337aa62dadb0e",
+      "text_hash": "2c7d2c2571979cd571a8d81654928ced4817d80331f60db2f3f337aa62dadb0e"
+    },
+    {
+      "row_id": "india_sms:1416",
+      "group": "0bc871143f56e3874cfcc43d3cba2b39b7b1cf9390f387329ac21360059a1373",
+      "text_hash": "0bc871143f56e3874cfcc43d3cba2b39b7b1cf9390f387329ac21360059a1373"
+    },
+    {
+      "row_id": "india_sms:1417",
+      "group": "f3d1762b49092216817606263c908c5da14f309b29ad04e73199fdd5fbcfe034",
+      "text_hash": "f3d1762b49092216817606263c908c5da14f309b29ad04e73199fdd5fbcfe034"
+    },
+    {
+      "row_id": "india_sms:1422",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "11c1fdcd5ae492870bbe8572802149929e1312a8ad6796e57d2fa394b95c9ade"
+    },
+    {
+      "row_id": "india_sms:1423",
+      "group": "eefaa6fc0b2ce079e3f69134e57912a7ddda42d1c46fa8892abb33b201ba0d62",
+      "text_hash": "eefaa6fc0b2ce079e3f69134e57912a7ddda42d1c46fa8892abb33b201ba0d62"
+    },
+    {
+      "row_id": "india_sms:1424",
+      "group": "24541ad5c80093a6bac5b208d0721a6276ade47c843d77356d257b75fdfc6364",
+      "text_hash": "24541ad5c80093a6bac5b208d0721a6276ade47c843d77356d257b75fdfc6364"
+    },
+    {
+      "row_id": "india_sms:1425",
+      "group": "87d9a9b22df5bb39e7c98f6aed7eaa2e5fe9daee901b050c3d395945b82c6d6d",
+      "text_hash": "87d9a9b22df5bb39e7c98f6aed7eaa2e5fe9daee901b050c3d395945b82c6d6d"
+    },
+    {
+      "row_id": "india_sms:1426",
+      "group": "38bae29d116806f1116213366d7ac43a54edb3ed31ba0e7c1dd897f6773f2538",
+      "text_hash": "38bae29d116806f1116213366d7ac43a54edb3ed31ba0e7c1dd897f6773f2538"
+    },
+    {
+      "row_id": "india_sms:1429",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "db62a7debf69557e210af5e23c45f126add489a99367b19106e0a95298b8a444"
+    },
+    {
+      "row_id": "india_sms:1432",
+      "group": "b87a0a1c734178ef06539d032a14eb9d1c899bd02394791783b1d999f2d0999a",
+      "text_hash": "b87a0a1c734178ef06539d032a14eb9d1c899bd02394791783b1d999f2d0999a"
+    },
+    {
+      "row_id": "india_sms:1436",
+      "group": "62051c396dc1fecea4f8ace0a9a78b4e23566bdb113b7efdac94e1fed868f294",
+      "text_hash": "62051c396dc1fecea4f8ace0a9a78b4e23566bdb113b7efdac94e1fed868f294"
+    },
+    {
+      "row_id": "india_sms:1437",
+      "group": "6886b2a3d7291219a3dcf6f7dc10c4ba0a9053541de263afd9d15e5c29ee456b",
+      "text_hash": "6886b2a3d7291219a3dcf6f7dc10c4ba0a9053541de263afd9d15e5c29ee456b"
+    },
+    {
+      "row_id": "india_sms:1444",
+      "group": "afa0190796b06c3c64176d486e28ee8461caf07d7673d04f629640a7d26bf3c6",
+      "text_hash": "afa0190796b06c3c64176d486e28ee8461caf07d7673d04f629640a7d26bf3c6"
+    },
+    {
+      "row_id": "india_sms:1445",
+      "group": "6a581ee901185606598bbd5369794c46dcf21ebf95955a46fb4a6244bb89e79f",
+      "text_hash": "955878338e2dae12515941dba32fb8a23c9494b1be2a86fbc51bf7d8e29268dc"
+    },
+    {
+      "row_id": "india_sms:1449",
+      "group": "381ad55051be2b92437410b209817f2477a54fb6298413f35b5a645d8af44b4b",
+      "text_hash": "76ce969770574b6570ec6f4288d0ddfe4501167480a2efd110c6ec65f87f3ee1"
+    },
+    {
+      "row_id": "india_sms:1450",
+      "group": "9351be4de1ff8a5133abcd273c4610cc7214be82e7301eb90d59fe41847e3584",
+      "text_hash": "9351be4de1ff8a5133abcd273c4610cc7214be82e7301eb90d59fe41847e3584"
+    },
+    {
+      "row_id": "india_sms:1452",
+      "group": "2938fe794d44fe2ecba8d38f54adfbfc66e011e357ac9fa6dd7f34509ee448d4",
+      "text_hash": "2938fe794d44fe2ecba8d38f54adfbfc66e011e357ac9fa6dd7f34509ee448d4"
+    },
+    {
+      "row_id": "india_sms:1454",
+      "group": "e7078d3b42fff751b0342e6d46db750b3166ab1c3a98dbfe058421aa65169d5f",
+      "text_hash": "e7078d3b42fff751b0342e6d46db750b3166ab1c3a98dbfe058421aa65169d5f"
+    },
+    {
+      "row_id": "india_sms:1455",
+      "group": "b2eca7e902e45232ba373c5a73706ec6a4cd0ee0f817da29ffcb72fc64a852fc",
+      "text_hash": "b2eca7e902e45232ba373c5a73706ec6a4cd0ee0f817da29ffcb72fc64a852fc"
+    },
+    {
+      "row_id": "india_sms:1456",
+      "group": "405faba51a05b928554088ea58f8969f3e70797640bc71d517ccac165f6d7478",
+      "text_hash": "405faba51a05b928554088ea58f8969f3e70797640bc71d517ccac165f6d7478"
+    },
+    {
+      "row_id": "india_sms:146",
+      "group": "f2a0a57c5f92ea240c1136424dd5866f60a627a0710b15cee1206951498cb993",
+      "text_hash": "f2a0a57c5f92ea240c1136424dd5866f60a627a0710b15cee1206951498cb993"
+    },
+    {
+      "row_id": "india_sms:1460",
+      "group": "7c5e8662662b969cf96274dbcfa4bcd9b0f4292789674d0d57077bcceba2af7f",
+      "text_hash": "7c5e8662662b969cf96274dbcfa4bcd9b0f4292789674d0d57077bcceba2af7f"
+    },
+    {
+      "row_id": "india_sms:1462",
+      "group": "8eaa2a8d2b2609071be84e977246a2318609b54b7b11bbe74aab8a73be65a057",
+      "text_hash": "8eaa2a8d2b2609071be84e977246a2318609b54b7b11bbe74aab8a73be65a057"
+    },
+    {
+      "row_id": "india_sms:1465",
+      "group": "1269b5b0b8adc707b2c6bba9a49be8c8414e4e8ae9fc27c0fec0f5ef975084c1",
+      "text_hash": "1269b5b0b8adc707b2c6bba9a49be8c8414e4e8ae9fc27c0fec0f5ef975084c1"
+    },
+    {
+      "row_id": "india_sms:1467",
+      "group": "502233507cd40d8bc2c69b08dea646c98068fc7518178bee07ae511b761586f7",
+      "text_hash": "502233507cd40d8bc2c69b08dea646c98068fc7518178bee07ae511b761586f7"
+    },
+    {
+      "row_id": "india_sms:1471",
+      "group": "f6b45648e549a875e24fcb0f94f1af1eb46a06cd0437fa782ab0613a9cd20dbf",
+      "text_hash": "f6b45648e549a875e24fcb0f94f1af1eb46a06cd0437fa782ab0613a9cd20dbf"
+    },
+    {
+      "row_id": "india_sms:1475",
+      "group": "369ca94ec4fa5a4447769412aabf150cf0c0ff846387c628d8aa2a51c8940bfb",
+      "text_hash": "369ca94ec4fa5a4447769412aabf150cf0c0ff846387c628d8aa2a51c8940bfb"
+    },
+    {
+      "row_id": "india_sms:1478",
+      "group": "a9de25ab606a50a1a74f37c1fed5290f231754a640b1811cb4bf09aebcfc360e",
+      "text_hash": "602e3254c4bb9e7fb969e72fde9249ee200553642c9fb735b9546d05df419465"
+    },
+    {
+      "row_id": "india_sms:148",
+      "group": "f9f12d8d38d7d968c9bfa8c6f8e29c5fbf8fce038367abf0d3623ef4059bb944",
+      "text_hash": "f9f12d8d38d7d968c9bfa8c6f8e29c5fbf8fce038367abf0d3623ef4059bb944"
+    },
+    {
+      "row_id": "india_sms:1481",
+      "group": "8eec84a570b4f59c5b5dd0985d40711c1e23e7dc7a4f84b36e76bbfaae3dea2a",
+      "text_hash": "86d3778db477127742878caf4927a25e5985e22dc2703a643b080a808cb90cf4"
+    },
+    {
+      "row_id": "india_sms:1482",
+      "group": "b09c229c47f8ce9719192d5b3ae91caa6584a0a71322a91662f57f167398a5d0",
+      "text_hash": "b09c229c47f8ce9719192d5b3ae91caa6584a0a71322a91662f57f167398a5d0"
+    },
+    {
+      "row_id": "india_sms:1486",
+      "group": "a1d5ae13219e436f5cf74c80a3f5b88d6a331b802022b9c8be26b158e82cd78a",
+      "text_hash": "a1d5ae13219e436f5cf74c80a3f5b88d6a331b802022b9c8be26b158e82cd78a"
+    },
+    {
+      "row_id": "india_sms:1490",
+      "group": "d068576cd67387fcc23573367f52fe59425db2a5a2aa94a6a06c4fbd03f94018",
+      "text_hash": "d068576cd67387fcc23573367f52fe59425db2a5a2aa94a6a06c4fbd03f94018"
+    },
+    {
+      "row_id": "india_sms:1496",
+      "group": "e02b0cc9a9279211c4dae5f6f5f962fa64a720728d7115087681264cf7ba11b9",
+      "text_hash": "e02b0cc9a9279211c4dae5f6f5f962fa64a720728d7115087681264cf7ba11b9"
+    },
+    {
+      "row_id": "india_sms:1498",
+      "group": "52e37a76e2ac745664c662970b390b16e95c7b919c4b520f44d5ac07efa27ae8",
+      "text_hash": "52e37a76e2ac745664c662970b390b16e95c7b919c4b520f44d5ac07efa27ae8"
+    },
+    {
+      "row_id": "india_sms:1499",
+      "group": "d5efdb7452cf1d8564cc7a46796c3590d5492ea8db2c629107f22fc0b80f23e9",
+      "text_hash": "0c816d44a11503a416458d15db680332673165fc59ac206e826092d64daaa39d"
+    },
+    {
+      "row_id": "india_sms:15",
+      "group": "ccb7148dc4becbab83a1b99b70223db0a8b3ae80ddbf298c56b720f0fc8a482b",
+      "text_hash": "ccb7148dc4becbab83a1b99b70223db0a8b3ae80ddbf298c56b720f0fc8a482b"
+    },
+    {
+      "row_id": "india_sms:1501",
+      "group": "f11fc6df1364ed163430645a4eb8b2025a37b4d7d35eeb2026c68b87a534c26a",
+      "text_hash": "7559624721ecec2ce4c4539940eecddb106ad4c73a32b6eb4e62e47e417ee748"
+    },
+    {
+      "row_id": "india_sms:1504",
+      "group": "bbd58d5177b056e662cb0debd18e2fa38613937409b2ba975afa4615882ac404",
+      "text_hash": "bbd58d5177b056e662cb0debd18e2fa38613937409b2ba975afa4615882ac404"
+    },
+    {
+      "row_id": "india_sms:1505",
+      "group": "c345d7cf146081ea070837c265cd73f0f39b2aed903191e749dc5194ae8e19e4",
+      "text_hash": "c345d7cf146081ea070837c265cd73f0f39b2aed903191e749dc5194ae8e19e4"
+    },
+    {
+      "row_id": "india_sms:1506",
+      "group": "40b7f8ad698ef8205696bb1f5ad02e6b2cd22fa246760079777ab9779efe5223",
+      "text_hash": "40b7f8ad698ef8205696bb1f5ad02e6b2cd22fa246760079777ab9779efe5223"
+    },
+    {
+      "row_id": "india_sms:1508",
+      "group": "f29e1f870a4e1a5e58b849b7cc9146a55a4d888e59f168f4208781b736fb12af",
+      "text_hash": "f29e1f870a4e1a5e58b849b7cc9146a55a4d888e59f168f4208781b736fb12af"
+    },
+    {
+      "row_id": "india_sms:151",
+      "group": "094ec58ee001cd792deea7ebfd17c314a3ad9432176fd9b42b21fadf8840e1d5",
+      "text_hash": "094ec58ee001cd792deea7ebfd17c314a3ad9432176fd9b42b21fadf8840e1d5"
+    },
+    {
+      "row_id": "india_sms:1510",
+      "group": "eab70f06f666a26b8e62648b16304b98ae8737980dc604980c1a31a5f1bbb776",
+      "text_hash": "eab70f06f666a26b8e62648b16304b98ae8737980dc604980c1a31a5f1bbb776"
+    },
+    {
+      "row_id": "india_sms:1512",
+      "group": "bac7ed64a8471e62380ea7bec8e7edb6e6c5dd85449e2964333a447c5f2bd965",
+      "text_hash": "bac7ed64a8471e62380ea7bec8e7edb6e6c5dd85449e2964333a447c5f2bd965"
+    },
+    {
+      "row_id": "india_sms:1516",
+      "group": "9afad5ebcddd1e481f0096f8a4aa52f318f4669edc4f7d0a7de372375b0849b6",
+      "text_hash": "9afad5ebcddd1e481f0096f8a4aa52f318f4669edc4f7d0a7de372375b0849b6"
+    },
+    {
+      "row_id": "india_sms:1517",
+      "group": "240abef02c04ec581af70a235ecd828d32f0cf1b3c9d945ecde12d839c8f745d",
+      "text_hash": "240abef02c04ec581af70a235ecd828d32f0cf1b3c9d945ecde12d839c8f745d"
+    },
+    {
+      "row_id": "india_sms:152",
+      "group": "229c4517d235fa3b04be230e6af6a00e0239d3fc58143d7552f17237f82c95a0",
+      "text_hash": "229c4517d235fa3b04be230e6af6a00e0239d3fc58143d7552f17237f82c95a0"
+    },
+    {
+      "row_id": "india_sms:1521",
+      "group": "ddfccea6d201fbefc348530ed183a4a7b820c2900488dc3fce528a2f77c93bfd",
+      "text_hash": "ddfccea6d201fbefc348530ed183a4a7b820c2900488dc3fce528a2f77c93bfd"
+    },
+    {
+      "row_id": "india_sms:1525",
+      "group": "cea32332499c3329688e0f507f95b787b53e5c943c8ff4363b4f749323279b60",
+      "text_hash": "cea32332499c3329688e0f507f95b787b53e5c943c8ff4363b4f749323279b60"
+    },
+    {
+      "row_id": "india_sms:1529",
+      "group": "e0a42a820cb223a1a9c5ba5beac7ed770d9946f757b3fbf7472df132e87c4b1e",
+      "text_hash": "132204bf83476afcae5624291f210848d71b61edfdeecca3232c61fac036dc33"
+    },
+    {
+      "row_id": "india_sms:153",
+      "group": "7ad083c391117ffa9175adb88c9800179393c8d4f3db8a28063f01ba84a0bd97",
+      "text_hash": "7ad083c391117ffa9175adb88c9800179393c8d4f3db8a28063f01ba84a0bd97"
+    },
+    {
+      "row_id": "india_sms:1534",
+      "group": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "text_hash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+    },
+    {
+      "row_id": "india_sms:1536",
+      "group": "4694c3c736716fce68f1fd915c476eff4c44914026919f4d14218c242d0b4bd1",
+      "text_hash": "4694c3c736716fce68f1fd915c476eff4c44914026919f4d14218c242d0b4bd1"
+    },
+    {
+      "row_id": "india_sms:154",
+      "group": "731bd6d2a924167a0e43407a45a51fe01aea84a35bfd6a91364293f02b2a0f04",
+      "text_hash": "731bd6d2a924167a0e43407a45a51fe01aea84a35bfd6a91364293f02b2a0f04"
+    },
+    {
+      "row_id": "india_sms:1542",
+      "group": "698e062bb6387efd40836222bbce52486c2d42665e9dfef5e9aeb76ccab14ab3",
+      "text_hash": "698e062bb6387efd40836222bbce52486c2d42665e9dfef5e9aeb76ccab14ab3"
+    },
+    {
+      "row_id": "india_sms:1547",
+      "group": "e91570aa3a69f1e99029da2b728dfc81d22eb59ed8502569512472bb89867dd1",
+      "text_hash": "e91570aa3a69f1e99029da2b728dfc81d22eb59ed8502569512472bb89867dd1"
+    },
+    {
+      "row_id": "india_sms:1552",
+      "group": "2da5fc3f466f12fe7451d9cd1f2fb962d81796bbf318e23ad636a4872910a329",
+      "text_hash": "2da5fc3f466f12fe7451d9cd1f2fb962d81796bbf318e23ad636a4872910a329"
+    },
+    {
+      "row_id": "india_sms:1554",
+      "group": "396686517fe7d55cd34cfda4e05be1a0aab81fd8b4ef2e28a5e66b803d88f703",
+      "text_hash": "396686517fe7d55cd34cfda4e05be1a0aab81fd8b4ef2e28a5e66b803d88f703"
+    },
+    {
+      "row_id": "india_sms:1555",
+      "group": "0c0968af60184c9f8135209ceab2ee51dac97b8e973e1896727fbb859211b72f",
+      "text_hash": "0c0968af60184c9f8135209ceab2ee51dac97b8e973e1896727fbb859211b72f"
+    },
+    {
+      "row_id": "india_sms:1556",
+      "group": "256c46b6b667009aeca8b713bde0a5f33bda5ad7438ef782eab1bcc2c5b24453",
+      "text_hash": "256c46b6b667009aeca8b713bde0a5f33bda5ad7438ef782eab1bcc2c5b24453"
+    },
+    {
+      "row_id": "india_sms:1557",
+      "group": "d9d685fc9d5c18d4021a15c6b8d7637cabbfcad952b73d9ebb00ce787341b6eb",
+      "text_hash": "d9d685fc9d5c18d4021a15c6b8d7637cabbfcad952b73d9ebb00ce787341b6eb"
+    },
+    {
+      "row_id": "india_sms:1560",
+      "group": "c68f31e8ba2c126ec3bd0bf3ac3a221307443501250c3411d548b5deaad664dd",
+      "text_hash": "c68f31e8ba2c126ec3bd0bf3ac3a221307443501250c3411d548b5deaad664dd"
+    },
+    {
+      "row_id": "india_sms:1561",
+      "group": "e905b9d285c67f421b77683018ab71fe722b8077c84a3cf9339e393efd16aae3",
+      "text_hash": "e905b9d285c67f421b77683018ab71fe722b8077c84a3cf9339e393efd16aae3"
+    },
+    {
+      "row_id": "india_sms:1563",
+      "group": "3a52acf234ccde14592a9d07f25d1f8e17b1d8fb2cc7237251172c8610d43bbe",
+      "text_hash": "3a52acf234ccde14592a9d07f25d1f8e17b1d8fb2cc7237251172c8610d43bbe"
+    },
+    {
+      "row_id": "india_sms:1566",
+      "group": "d517f5df37a078b23b6c1573bee0c7d03f7b55898d4cde0451ceaf494f2a01b8",
+      "text_hash": "d517f5df37a078b23b6c1573bee0c7d03f7b55898d4cde0451ceaf494f2a01b8"
+    },
+    {
+      "row_id": "india_sms:1568",
+      "group": "b49f425a7e1f9cff3856329ada223f2f9d368f15a00cf48df16ca95986137fe8",
+      "text_hash": "b49f425a7e1f9cff3856329ada223f2f9d368f15a00cf48df16ca95986137fe8"
+    },
+    {
+      "row_id": "india_sms:1572",
+      "group": "b20e1e7401d69471b4f0c2cfc62c12d1396f6388a8437607a8b2ab0dcb6e3fcc",
+      "text_hash": "b20e1e7401d69471b4f0c2cfc62c12d1396f6388a8437607a8b2ab0dcb6e3fcc"
+    },
+    {
+      "row_id": "india_sms:1574",
+      "group": "3ab1fce152515c069b701d32ed1c4a13e9bc064db5b2c6806f0ad9df0ea70771",
+      "text_hash": "3ab1fce152515c069b701d32ed1c4a13e9bc064db5b2c6806f0ad9df0ea70771"
+    },
+    {
+      "row_id": "india_sms:1575",
+      "group": "2f0b3031a7cc65ebf8ef581c4b068e53e55cba1e11f7102fa68069b3aa8b80d9",
+      "text_hash": "2f0b3031a7cc65ebf8ef581c4b068e53e55cba1e11f7102fa68069b3aa8b80d9"
+    },
+    {
+      "row_id": "india_sms:1579",
+      "group": "ad40eeb4141368552925c118073a3911bab49898a5102c4224de56d3cbe19c0e",
+      "text_hash": "ad40eeb4141368552925c118073a3911bab49898a5102c4224de56d3cbe19c0e"
+    },
+    {
+      "row_id": "india_sms:1581",
+      "group": "e50ce3d7dc22c201c829b60cef59d675f577f62eae6e853fbb9ff5f44af202ab",
+      "text_hash": "e50ce3d7dc22c201c829b60cef59d675f577f62eae6e853fbb9ff5f44af202ab"
+    },
+    {
+      "row_id": "india_sms:1582",
+      "group": "3c8fc5094013b0e481fe5a4b0a7ac8e98bf439dff55049055247ee9c8a13672f",
+      "text_hash": "3c8fc5094013b0e481fe5a4b0a7ac8e98bf439dff55049055247ee9c8a13672f"
+    },
+    {
+      "row_id": "india_sms:1587",
+      "group": "aa05927f32b553718510c7bb034fee1126599db058fd9dc74884b8a0ec015064",
+      "text_hash": "aa05927f32b553718510c7bb034fee1126599db058fd9dc74884b8a0ec015064"
+    },
+    {
+      "row_id": "india_sms:1588",
+      "group": "fce82fb093f1a9c56df5dbbdfaedfeaeff79912c7e18922e3f2946f2c45532c4",
+      "text_hash": "fce82fb093f1a9c56df5dbbdfaedfeaeff79912c7e18922e3f2946f2c45532c4"
+    },
+    {
+      "row_id": "india_sms:1590",
+      "group": "2c209b218690c0dd8b1c363801fa3a0f06e549907cd484b76b3a298c3dfe8724",
+      "text_hash": "2c209b218690c0dd8b1c363801fa3a0f06e549907cd484b76b3a298c3dfe8724"
+    },
+    {
+      "row_id": "india_sms:1596",
+      "group": "b71a2ef56af5cba6d94a4e802c1b7b54197e55744c74199518283681a7bfac88",
+      "text_hash": "b71a2ef56af5cba6d94a4e802c1b7b54197e55744c74199518283681a7bfac88"
+    },
+    {
+      "row_id": "india_sms:160",
+      "group": "084c75a8e3ab61ccd19d1ac8a105a9d78423181d95aab845ae31a299e474a38d",
+      "text_hash": "084c75a8e3ab61ccd19d1ac8a105a9d78423181d95aab845ae31a299e474a38d"
+    },
+    {
+      "row_id": "india_sms:1601",
+      "group": "a1d29342790fb3c709fba3e7125c2de1c0a33827bdf4252e40e5e92fc91ef7c8",
+      "text_hash": "a1d29342790fb3c709fba3e7125c2de1c0a33827bdf4252e40e5e92fc91ef7c8"
+    },
+    {
+      "row_id": "india_sms:1603",
+      "group": "a5401750be506a9f24ca80a78670b386ca98523291b916452132184dd10c0c45",
+      "text_hash": "4f0edda1e960263e37e7f08fbca99cb23e3e52c7b0cc9680aded4dc5519fc120"
+    },
+    {
+      "row_id": "india_sms:1605",
+      "group": "381ad55051be2b92437410b209817f2477a54fb6298413f35b5a645d8af44b4b",
+      "text_hash": "93edeabaedf7c805dbd333b728bb0f5deaab3f3bf8fc4089abda8bf8819324c8"
+    },
+    {
+      "row_id": "india_sms:1606",
+      "group": "cf75c000b8035d90a7e0d85d70cb0f3b1ce669303f0f924cdbf0a61f41d310f4",
+      "text_hash": "cf75c000b8035d90a7e0d85d70cb0f3b1ce669303f0f924cdbf0a61f41d310f4"
+    },
+    {
+      "row_id": "india_sms:1607",
+      "group": "9bc29b01662446851b2365f03db4f4a3d4a4bee11de65680fad7eef0dc5a8c62",
+      "text_hash": "9bc29b01662446851b2365f03db4f4a3d4a4bee11de65680fad7eef0dc5a8c62"
+    },
+    {
+      "row_id": "india_sms:1610",
+      "group": "952976323ab187fa581bb9ba264d9d6cc0498d1bd914870b32bf75dab68f01dd",
+      "text_hash": "952976323ab187fa581bb9ba264d9d6cc0498d1bd914870b32bf75dab68f01dd"
+    },
+    {
+      "row_id": "india_sms:1611",
+      "group": "03d3aa3475b49dffec773a7329061b7e4aed069fee1274e5d37868742c6ed10c",
+      "text_hash": "03d3aa3475b49dffec773a7329061b7e4aed069fee1274e5d37868742c6ed10c"
+    },
+    {
+      "row_id": "india_sms:1613",
+      "group": "eb240e4e46150d9456d168006ac7d416034823ccd81fc9c2e0eaf5d6fb57be46",
+      "text_hash": "eb240e4e46150d9456d168006ac7d416034823ccd81fc9c2e0eaf5d6fb57be46"
+    },
+    {
+      "row_id": "india_sms:1614",
+      "group": "a4ce9d6548d960b7d1c52463abe3e051534a637a0126e4de31ac28fd764a4bcf",
+      "text_hash": "a4ce9d6548d960b7d1c52463abe3e051534a637a0126e4de31ac28fd764a4bcf"
+    },
+    {
+      "row_id": "india_sms:1618",
+      "group": "ed0672716d5a6fa985b8b7486d31d7b750117b00dacdcf4a71af9a7b7e30673d",
+      "text_hash": "ed0672716d5a6fa985b8b7486d31d7b750117b00dacdcf4a71af9a7b7e30673d"
+    },
+    {
+      "row_id": "india_sms:1620",
+      "group": "2111ff9c8651fd49f3de16df9024e2b6067b2d2d7ab7a4e4383d651db3145c39",
+      "text_hash": "2111ff9c8651fd49f3de16df9024e2b6067b2d2d7ab7a4e4383d651db3145c39"
+    },
+    {
+      "row_id": "india_sms:1621",
+      "group": "9c73618d5eaa3f3371997b71bd0a8b0f4a5933635b4df7cdd6d84e4b5b3e3e86",
+      "text_hash": "9c73618d5eaa3f3371997b71bd0a8b0f4a5933635b4df7cdd6d84e4b5b3e3e86"
+    },
+    {
+      "row_id": "india_sms:1622",
+      "group": "db28ecc6079bf319748c54251d4f09d5090a50c39e7005b2d6842643466e5d0e",
+      "text_hash": "db28ecc6079bf319748c54251d4f09d5090a50c39e7005b2d6842643466e5d0e"
+    },
+    {
+      "row_id": "india_sms:1626",
+      "group": "c3373a7d65902a21cd535236ab392c42e826d7c472ec69affdfef176d3b54427",
+      "text_hash": "c3373a7d65902a21cd535236ab392c42e826d7c472ec69affdfef176d3b54427"
+    },
+    {
+      "row_id": "india_sms:1629",
+      "group": "4ec9bb2aea958ae679384191b5c378e7237fd33053fcabca837754e77b3a5372",
+      "text_hash": "4ec9bb2aea958ae679384191b5c378e7237fd33053fcabca837754e77b3a5372"
+    },
+    {
+      "row_id": "india_sms:163",
+      "group": "7750a68c7b7b9958e5df3d7aa40542734e31c0b1df2be0b203738bd1bccf22f4",
+      "text_hash": "7750a68c7b7b9958e5df3d7aa40542734e31c0b1df2be0b203738bd1bccf22f4"
+    },
+    {
+      "row_id": "india_sms:1632",
+      "group": "281dd27fba3a0b274ff8d30a6963c821fed20605283e91c74bfb8002cc87d9b9",
+      "text_hash": "281dd27fba3a0b274ff8d30a6963c821fed20605283e91c74bfb8002cc87d9b9"
+    },
+    {
+      "row_id": "india_sms:1633",
+      "group": "33f4f4b93f1bdf6ce744018c38bfb15c4fb78b32bd5b22f3ab515a2173983bc1",
+      "text_hash": "33f4f4b93f1bdf6ce744018c38bfb15c4fb78b32bd5b22f3ab515a2173983bc1"
+    },
+    {
+      "row_id": "india_sms:1634",
+      "group": "2ac583165fcaf49531991e3886ddbdf45b80067cb903730c22c01cd21e6fdf59",
+      "text_hash": "2ac583165fcaf49531991e3886ddbdf45b80067cb903730c22c01cd21e6fdf59"
+    },
+    {
+      "row_id": "india_sms:1638",
+      "group": "bf7741d4204f29692e5a21ef688ab2e93eef2f43a78ee37fb5b535f04aa6367f",
+      "text_hash": "dbcc3fdc34b94d8e9814989a5ece092bde9c0d3ead43b98e4e17f1940d00198b"
+    },
+    {
+      "row_id": "india_sms:164",
+      "group": "d51cce068ba2cf062f1c641b7254c63794b8aff30fa7bb59a53debd5cd73d3b6",
+      "text_hash": "d51cce068ba2cf062f1c641b7254c63794b8aff30fa7bb59a53debd5cd73d3b6"
+    },
+    {
+      "row_id": "india_sms:1646",
+      "group": "594578d874bc64672afe45a5b06c207c233e129b76d3544c2e9951ad9635a04d",
+      "text_hash": "594578d874bc64672afe45a5b06c207c233e129b76d3544c2e9951ad9635a04d"
+    },
+    {
+      "row_id": "india_sms:1648",
+      "group": "c1e439c099e76cf20e6bf7aed2b6297b1bf44ee183bf7a2b25daba264fdbfd7f",
+      "text_hash": "c1e439c099e76cf20e6bf7aed2b6297b1bf44ee183bf7a2b25daba264fdbfd7f"
+    },
+    {
+      "row_id": "india_sms:1651",
+      "group": "d46616a3bc2af29a87e286d58808c524a9d0a9c8eabeb05aa3faf0d6b396cade",
+      "text_hash": "d46616a3bc2af29a87e286d58808c524a9d0a9c8eabeb05aa3faf0d6b396cade"
+    },
+    {
+      "row_id": "india_sms:1653",
+      "group": "c752ab68f1a4ea515582b9746a5dfe848c46ac375f6ab8dcf87344d0fadf439b",
+      "text_hash": "c752ab68f1a4ea515582b9746a5dfe848c46ac375f6ab8dcf87344d0fadf439b"
+    },
+    {
+      "row_id": "india_sms:1656",
+      "group": "d861220d60a54bdd3359d5eb69d3ae113d4495129e7e5ce91077c16ed3b3f22d",
+      "text_hash": "d861220d60a54bdd3359d5eb69d3ae113d4495129e7e5ce91077c16ed3b3f22d"
+    },
+    {
+      "row_id": "india_sms:1657",
+      "group": "718aefa29da872658d6242a237ad35c7ee01004b34d896a5670cf675ed01c147",
+      "text_hash": "718aefa29da872658d6242a237ad35c7ee01004b34d896a5670cf675ed01c147"
+    },
+    {
+      "row_id": "india_sms:1658",
+      "group": "c0d6bc6c41a567f95e3f808fb478cfdc0d230bd89948efcbb1097b43949cae63",
+      "text_hash": "c0d6bc6c41a567f95e3f808fb478cfdc0d230bd89948efcbb1097b43949cae63"
+    },
+    {
+      "row_id": "india_sms:1660",
+      "group": "e72c3d277cdbb884195b8693bdf296d3d75c7d12dcbc2bfcec0cdaee871a097c",
+      "text_hash": "e72c3d277cdbb884195b8693bdf296d3d75c7d12dcbc2bfcec0cdaee871a097c"
+    },
+    {
+      "row_id": "india_sms:1663",
+      "group": "2a2851bc0b0bfd31c64a5a00b90ddd9ac362ef0990d105270e54eb95b0a57440",
+      "text_hash": "2a2851bc0b0bfd31c64a5a00b90ddd9ac362ef0990d105270e54eb95b0a57440"
+    },
+    {
+      "row_id": "india_sms:1665",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "31c214e3b9d1ddaa715b65e05bc42966da6006daa15ffd443e645e3faf24241e"
+    },
+    {
+      "row_id": "india_sms:1670",
+      "group": "dd75b13ce7a8def112e7358cca48c5338574ffb8d0e8184b6b78350f5e4919a6",
+      "text_hash": "dd75b13ce7a8def112e7358cca48c5338574ffb8d0e8184b6b78350f5e4919a6"
+    },
+    {
+      "row_id": "india_sms:1672",
+      "group": "942b452772ebe84ec3d49b7b514b07ef03aec42d65803c868089779ca373f3ae",
+      "text_hash": "e84a60c1efb3e9febebbd6e96d2949137f370a10d341c19ba0fed9d6e7986b96"
+    },
+    {
+      "row_id": "india_sms:1673",
+      "group": "012a4b32a432db3d197d285a7865958be1390d01185d5e3a2fce161edd74adfa",
+      "text_hash": "012a4b32a432db3d197d285a7865958be1390d01185d5e3a2fce161edd74adfa"
+    },
+    {
+      "row_id": "india_sms:1678",
+      "group": "1b1b37e4f3050177f316febb09d52b1fd6a21b6ee6ed6000a2cf6ba91cf7d49a",
+      "text_hash": "1b1b37e4f3050177f316febb09d52b1fd6a21b6ee6ed6000a2cf6ba91cf7d49a"
+    },
+    {
+      "row_id": "india_sms:1679",
+      "group": "adc84c38935b8ff117ddb58b42f1c0ccdd14185e5bddec8e41802623018d4592",
+      "text_hash": "adc84c38935b8ff117ddb58b42f1c0ccdd14185e5bddec8e41802623018d4592"
+    },
+    {
+      "row_id": "india_sms:1684",
+      "group": "8f74a2a05e35a5bbb2c4049a760082b69292d63f7c712d5edd697b685603ab95",
+      "text_hash": "8f74a2a05e35a5bbb2c4049a760082b69292d63f7c712d5edd697b685603ab95"
+    },
+    {
+      "row_id": "india_sms:1689",
+      "group": "c987bae820bf7cf15031503cd6bf1eb3863531a5eb53678ed4b429ef35bf3a51",
+      "text_hash": "c987bae820bf7cf15031503cd6bf1eb3863531a5eb53678ed4b429ef35bf3a51"
+    },
+    {
+      "row_id": "india_sms:1690",
+      "group": "8ee7e6e92f3edac994166e5a9c10adc48dcc8d1633c7d3e2949f96b64779f532",
+      "text_hash": "8ee7e6e92f3edac994166e5a9c10adc48dcc8d1633c7d3e2949f96b64779f532"
+    },
+    {
+      "row_id": "india_sms:1692",
+      "group": "651de3316fa27e74d6a9de619ebac68e3b781e9527fdd00c5ef7143b1fa581b6",
+      "text_hash": "651de3316fa27e74d6a9de619ebac68e3b781e9527fdd00c5ef7143b1fa581b6"
+    },
+    {
+      "row_id": "india_sms:1693",
+      "group": "522440aabad3a001c61c74f4137698e3e94d99bf255a198bec3eaf75963fd8cd",
+      "text_hash": "522440aabad3a001c61c74f4137698e3e94d99bf255a198bec3eaf75963fd8cd"
+    },
+    {
+      "row_id": "india_sms:1696",
+      "group": "f7bdab6e0a2a1427c038abda497a50a299862c166d89316a28dfb8f2b61ae5e2",
+      "text_hash": "f7bdab6e0a2a1427c038abda497a50a299862c166d89316a28dfb8f2b61ae5e2"
+    },
+    {
+      "row_id": "india_sms:1698",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "930ea11ddd53de279ddbd0ec14e7994cdcc6bfcc3ef3c79192d28ef3c053eeaf"
+    },
+    {
+      "row_id": "india_sms:1699",
+      "group": "052607c78e5fdefd7d9dcf302603b945eb6468f93be8874ff6131d14316037e8",
+      "text_hash": "052607c78e5fdefd7d9dcf302603b945eb6468f93be8874ff6131d14316037e8"
+    },
+    {
+      "row_id": "india_sms:1705",
+      "group": "e501d111dd143ddc01150ab33c811c86d7ba1687bccca33a56e9b09a7a4b149e",
+      "text_hash": "e501d111dd143ddc01150ab33c811c86d7ba1687bccca33a56e9b09a7a4b149e"
+    },
+    {
+      "row_id": "india_sms:1708",
+      "group": "03257ff8b1050705934232ab4a482c85123a2c44adc8e610cfae73b11f63ef1a",
+      "text_hash": "03257ff8b1050705934232ab4a482c85123a2c44adc8e610cfae73b11f63ef1a"
+    },
+    {
+      "row_id": "india_sms:1709",
+      "group": "975c33b6747084549eb7c1017d983b44ce6b2639f14440b4951ac400370274f2",
+      "text_hash": "975c33b6747084549eb7c1017d983b44ce6b2639f14440b4951ac400370274f2"
+    },
+    {
+      "row_id": "india_sms:1712",
+      "group": "5134a5cbcd3217bce5e66cf14507b24268e9b390c4a9102b4541904bd13e797f",
+      "text_hash": "5134a5cbcd3217bce5e66cf14507b24268e9b390c4a9102b4541904bd13e797f"
+    },
+    {
+      "row_id": "india_sms:1713",
+      "group": "aa361ee9e4ef5145ac424a5293f664584c28783e247222daa88cd6124830cae4",
+      "text_hash": "aa361ee9e4ef5145ac424a5293f664584c28783e247222daa88cd6124830cae4"
+    },
+    {
+      "row_id": "india_sms:1718",
+      "group": "1a307c196199fb1cf67bb71e5f000bf7972f89a4362f6fd6edd17cdf5ea06cb3",
+      "text_hash": "1a307c196199fb1cf67bb71e5f000bf7972f89a4362f6fd6edd17cdf5ea06cb3"
+    },
+    {
+      "row_id": "india_sms:1724",
+      "group": "95fa65cceacd78964a73d2d52f53f09be6f93b6cb5b2f441c23aaf9bf841ae85",
+      "text_hash": "95fa65cceacd78964a73d2d52f53f09be6f93b6cb5b2f441c23aaf9bf841ae85"
+    },
+    {
+      "row_id": "india_sms:1726",
+      "group": "d30fb9d65cc3d1b62d2ecaf1da85ef184cdb679523d3cd3aafa02bcac5739ead",
+      "text_hash": "d30fb9d65cc3d1b62d2ecaf1da85ef184cdb679523d3cd3aafa02bcac5739ead"
+    },
+    {
+      "row_id": "india_sms:1730",
+      "group": "61ee778b65c178575f05ff726130dbfdf6e0d1a4758b3d7cc4049a993dfbd58e",
+      "text_hash": "61ee778b65c178575f05ff726130dbfdf6e0d1a4758b3d7cc4049a993dfbd58e"
+    },
+    {
+      "row_id": "india_sms:1731",
+      "group": "b2a4ad14b4b20a986b832b17b18755624abdbc4fee8ff558d8a65c167ecefa9e",
+      "text_hash": "b2a4ad14b4b20a986b832b17b18755624abdbc4fee8ff558d8a65c167ecefa9e"
+    },
+    {
+      "row_id": "india_sms:1732",
+      "group": "b018da507065f2ec9d08dad6626c9de7537c2d674839a9ebf4f36d783a52f4c5",
+      "text_hash": "b018da507065f2ec9d08dad6626c9de7537c2d674839a9ebf4f36d783a52f4c5"
+    },
+    {
+      "row_id": "india_sms:1736",
+      "group": "8557c49b41b12a28e7910138a604195666ef961b892c08943fb3f4ae7e412196",
+      "text_hash": "8557c49b41b12a28e7910138a604195666ef961b892c08943fb3f4ae7e412196"
+    },
+    {
+      "row_id": "india_sms:1742",
+      "group": "ebec96918d85ef4ac3b9ee9eef6ccfae566fde551daa9a2cc41fc3614499fb2b",
+      "text_hash": "ebec96918d85ef4ac3b9ee9eef6ccfae566fde551daa9a2cc41fc3614499fb2b"
+    },
+    {
+      "row_id": "india_sms:1743",
+      "group": "d4c0477f64eb4668b17f331b3d5498183f5e32730202d38924a1f79fa958054e",
+      "text_hash": "d4c0477f64eb4668b17f331b3d5498183f5e32730202d38924a1f79fa958054e"
+    },
+    {
+      "row_id": "india_sms:1747",
+      "group": "1049e6fc7fc6c79551f727bbfa2cfe87f4ee0e230eda6ac596ca96e078bc1131",
+      "text_hash": "18f4868ad0e6af088959146d7b4881ca9b19cf67a23bfe5a7b47fd39ec2608e0"
+    },
+    {
+      "row_id": "india_sms:1749",
+      "group": "94965937ed736ef098ca949412c356a9f50d2c6c5ff2cf4c3979385f4c5b9059",
+      "text_hash": "94965937ed736ef098ca949412c356a9f50d2c6c5ff2cf4c3979385f4c5b9059"
+    },
+    {
+      "row_id": "india_sms:175",
+      "group": "17b80ca9b9595cc4a20b64c0dcb9a55e29b97c56fa3dccc0d1b3f3ea6f6dd7a8",
+      "text_hash": "e4d67644192f4cfbe5aa5a760575d7674089110ef014ece3dd3422ad956e66cc"
+    },
+    {
+      "row_id": "india_sms:1750",
+      "group": "fcae78b4b9b7f01525647e8ad473c71f32032852e4a2f221693c1cfee4841a91",
+      "text_hash": "fcae78b4b9b7f01525647e8ad473c71f32032852e4a2f221693c1cfee4841a91"
+    },
+    {
+      "row_id": "india_sms:1751",
+      "group": "58d93afdb4afd0728ee28e58fc3985d8357810f965b01eac51cab50e1e2493e2",
+      "text_hash": "58d93afdb4afd0728ee28e58fc3985d8357810f965b01eac51cab50e1e2493e2"
+    },
+    {
+      "row_id": "india_sms:1752",
+      "group": "cf42e34777ee2208a7c65ed04678dfcf8de43a617f338f311d59cac1d449f075",
+      "text_hash": "cf42e34777ee2208a7c65ed04678dfcf8de43a617f338f311d59cac1d449f075"
+    },
+    {
+      "row_id": "india_sms:1753",
+      "group": "1950d9d2368755af573380e4ce430620120b51e11159b75c3db19d34a4464449",
+      "text_hash": "1950d9d2368755af573380e4ce430620120b51e11159b75c3db19d34a4464449"
+    },
+    {
+      "row_id": "india_sms:176",
+      "group": "7a55cbdd7260edea6786bab76c8ae969b6ba4c73ab1f7b632ec0b8fc795a3a81",
+      "text_hash": "7a55cbdd7260edea6786bab76c8ae969b6ba4c73ab1f7b632ec0b8fc795a3a81"
+    },
+    {
+      "row_id": "india_sms:1766",
+      "group": "a9de25ab606a50a1a74f37c1fed5290f231754a640b1811cb4bf09aebcfc360e",
+      "text_hash": "ed7eaf0915c9327f119d352ce27daac6a7bc123ac472a9dcd38321bdd9cdf338"
+    },
+    {
+      "row_id": "india_sms:1767",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "a7fc1b25264642b4355b5506dd35d07040fc204d1760679e234626cc0d54fb4e"
+    },
+    {
+      "row_id": "india_sms:1768",
+      "group": "2117d2d8c73dc2545c13998b2df9fba987965c46745a6d0670a098915eb530c9",
+      "text_hash": "2117d2d8c73dc2545c13998b2df9fba987965c46745a6d0670a098915eb530c9"
+    },
+    {
+      "row_id": "india_sms:1770",
+      "group": "9ed81108e653cc78a4eb7781d6378d5463bdf131295f229767c5a1af42ab4d4a",
+      "text_hash": "9ed81108e653cc78a4eb7781d6378d5463bdf131295f229767c5a1af42ab4d4a"
+    },
+    {
+      "row_id": "india_sms:1775",
+      "group": "3a14186887d98f3d3c4feafef5e306885717527d42ca4f0275c2309214eb930f",
+      "text_hash": "3a14186887d98f3d3c4feafef5e306885717527d42ca4f0275c2309214eb930f"
+    },
+    {
+      "row_id": "india_sms:1776",
+      "group": "70655e6f2020b2a49d7d639748646af325241f1a52acefc6e734b072337e2af1",
+      "text_hash": "70655e6f2020b2a49d7d639748646af325241f1a52acefc6e734b072337e2af1"
+    },
+    {
+      "row_id": "india_sms:178",
+      "group": "034332c6b1ac759e6230807f7d49f37fbf0d652ff88df8fd02d82a4aec152b4a",
+      "text_hash": "034332c6b1ac759e6230807f7d49f37fbf0d652ff88df8fd02d82a4aec152b4a"
+    },
+    {
+      "row_id": "india_sms:1780",
+      "group": "4ef9c79907a5be08bcc46560778678f74c8a14d83ed1d2c2ab495072da05454b",
+      "text_hash": "4ef9c79907a5be08bcc46560778678f74c8a14d83ed1d2c2ab495072da05454b"
+    },
+    {
+      "row_id": "india_sms:1782",
+      "group": "4e541f92465b373453ec15bfce59e710d1c487b6db7bfd808644f4460bb81bbd",
+      "text_hash": "4e541f92465b373453ec15bfce59e710d1c487b6db7bfd808644f4460bb81bbd"
+    },
+    {
+      "row_id": "india_sms:1787",
+      "group": "cb522f1293e5bb2612d94532afdd18ec4004dd96d60a04dfbb413589f98f9934",
+      "text_hash": "cb522f1293e5bb2612d94532afdd18ec4004dd96d60a04dfbb413589f98f9934"
+    },
+    {
+      "row_id": "india_sms:179",
+      "group": "6ea40b3d67ddd5cae0dd238f14917b81f302fd4df90d89b1fbf4af5c1373d818",
+      "text_hash": "6ea40b3d67ddd5cae0dd238f14917b81f302fd4df90d89b1fbf4af5c1373d818"
+    },
+    {
+      "row_id": "india_sms:1792",
+      "group": "631308ccc8e82a8e950b00e9ce4999cd1a801fa7934966d0a6372387e33e21ae",
+      "text_hash": "631308ccc8e82a8e950b00e9ce4999cd1a801fa7934966d0a6372387e33e21ae"
+    },
+    {
+      "row_id": "india_sms:1795",
+      "group": "fa19358a26ff6adb62e333830092ea44c7e631c259318bf76e9c60b10433f7a8",
+      "text_hash": "fa19358a26ff6adb62e333830092ea44c7e631c259318bf76e9c60b10433f7a8"
+    },
+    {
+      "row_id": "india_sms:18",
+      "group": "17ce50eb67461c08cf7cb5905c6698f967922cf629ac4476390f21eb147983fd",
+      "text_hash": "17ce50eb67461c08cf7cb5905c6698f967922cf629ac4476390f21eb147983fd"
+    },
+    {
+      "row_id": "india_sms:1803",
+      "group": "540a78e9ff56397d04f9335cece38bd153e39849ef349984a8c3026afd4d4128",
+      "text_hash": "540a78e9ff56397d04f9335cece38bd153e39849ef349984a8c3026afd4d4128"
+    },
+    {
+      "row_id": "india_sms:1804",
+      "group": "8f178d302cf5a43b6a609a57cd9e2f69c7b236d411e5bc5ef6b681ce48544088",
+      "text_hash": "8f178d302cf5a43b6a609a57cd9e2f69c7b236d411e5bc5ef6b681ce48544088"
+    },
+    {
+      "row_id": "india_sms:1805",
+      "group": "a7de6794fcf368837e844795c4218437c6964a24a0a679f52bbf05b0a57cafec",
+      "text_hash": "845c0d14e5f302073fe5375708804f9f358098d62d9a41d497e57b609034434d"
+    },
+    {
+      "row_id": "india_sms:1811",
+      "group": "1703e5917d6667ee0c9b9926f6219294caed9c7712fd6f3cb9f8f97ff32644a9",
+      "text_hash": "1703e5917d6667ee0c9b9926f6219294caed9c7712fd6f3cb9f8f97ff32644a9"
+    },
+    {
+      "row_id": "india_sms:1813",
+      "group": "04e69177ae9d8b3463ba915f124826fdc11c19b30b2441381ef967b1794d2d49",
+      "text_hash": "04e69177ae9d8b3463ba915f124826fdc11c19b30b2441381ef967b1794d2d49"
+    },
+    {
+      "row_id": "india_sms:1814",
+      "group": "998415d7ac67c55b5d667e844709ebe349cde2657e711c31d1ce4be7e797d0ea",
+      "text_hash": "998415d7ac67c55b5d667e844709ebe349cde2657e711c31d1ce4be7e797d0ea"
+    },
+    {
+      "row_id": "india_sms:1819",
+      "group": "d5efdb7452cf1d8564cc7a46796c3590d5492ea8db2c629107f22fc0b80f23e9",
+      "text_hash": "1f33324a1e446af79f80c1b2fb897b867fd518175474e5acb4fb8a54889ba1a8"
+    },
+    {
+      "row_id": "india_sms:1823",
+      "group": "85cfadf7cb3665ee6566c710d45ca6bc1461e482504d1e025958364fcc49917f",
+      "text_hash": "85cfadf7cb3665ee6566c710d45ca6bc1461e482504d1e025958364fcc49917f"
+    },
+    {
+      "row_id": "india_sms:1824",
+      "group": "cf8619f145555ad4a77a2ffaad1cb84bd2d57d91a88f20b8f75c907ce4f02ce3",
+      "text_hash": "cf8619f145555ad4a77a2ffaad1cb84bd2d57d91a88f20b8f75c907ce4f02ce3"
+    },
+    {
+      "row_id": "india_sms:1826",
+      "group": "3cb017c421363aba534f275dfcf08f794a96cb6bc600ed53741d4587806e971d",
+      "text_hash": "3cb017c421363aba534f275dfcf08f794a96cb6bc600ed53741d4587806e971d"
+    },
+    {
+      "row_id": "india_sms:1828",
+      "group": "353ba2a2c861f0d623f68bbe7a8464c4f0dd79845c254ddf457ee8567d99d764",
+      "text_hash": "353ba2a2c861f0d623f68bbe7a8464c4f0dd79845c254ddf457ee8567d99d764"
+    },
+    {
+      "row_id": "india_sms:1832",
+      "group": "b5d473f763cc7b9d9c8b77ef40548e328e51f0e94ac30c33cfac63eae028ad68",
+      "text_hash": "b5d473f763cc7b9d9c8b77ef40548e328e51f0e94ac30c33cfac63eae028ad68"
+    },
+    {
+      "row_id": "india_sms:1834",
+      "group": "0c62baa2f41393f87d21262801314f0ea75283d05e25ef7ee0f3077edacced4b",
+      "text_hash": "0c62baa2f41393f87d21262801314f0ea75283d05e25ef7ee0f3077edacced4b"
+    },
+    {
+      "row_id": "india_sms:1839",
+      "group": "8d121d14098994bc05dc3de9e1867599a4dd74b9bedb946ff900132ff40bbfa4",
+      "text_hash": "8d121d14098994bc05dc3de9e1867599a4dd74b9bedb946ff900132ff40bbfa4"
+    },
+    {
+      "row_id": "india_sms:1841",
+      "group": "530b3deae9440f106a791f84ce2ca045983b7ae2b25e2d04bf05e454714d81c8",
+      "text_hash": "530b3deae9440f106a791f84ce2ca045983b7ae2b25e2d04bf05e454714d81c8"
+    },
+    {
+      "row_id": "india_sms:1843",
+      "group": "c84819a5d68e4557cd6b6097118f8cf538200f2b850a947cd4ad21b67bd02c38",
+      "text_hash": "c84819a5d68e4557cd6b6097118f8cf538200f2b850a947cd4ad21b67bd02c38"
+    },
+    {
+      "row_id": "india_sms:1849",
+      "group": "b6099115b54699aaffd855d21cc74d055e93ff870eabfaed9f7f129a2d7fb90b",
+      "text_hash": "b6099115b54699aaffd855d21cc74d055e93ff870eabfaed9f7f129a2d7fb90b"
+    },
+    {
+      "row_id": "india_sms:185",
+      "group": "cfa2acc7c1671889c487c4c69a8e446752c9688c30f1f4525d355ff8705f6fa2",
+      "text_hash": "cfa2acc7c1671889c487c4c69a8e446752c9688c30f1f4525d355ff8705f6fa2"
+    },
+    {
+      "row_id": "india_sms:1850",
+      "group": "a1bb12e6b776f7e4b9da7164d1c2aa39d3eae6a2da1e8f149354b620e7629fc2",
+      "text_hash": "a1bb12e6b776f7e4b9da7164d1c2aa39d3eae6a2da1e8f149354b620e7629fc2"
+    },
+    {
+      "row_id": "india_sms:1852",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "8249fceb0b7980168f5c52b85cf1df8c494db90d2a099d03a9af85bbae2c0b67"
+    },
+    {
+      "row_id": "india_sms:1853",
+      "group": "a3a23129dade6d212444cb1c1877977f7e44162b7b2e055e38fa68af4d86c694",
+      "text_hash": "a3a23129dade6d212444cb1c1877977f7e44162b7b2e055e38fa68af4d86c694"
+    },
+    {
+      "row_id": "india_sms:1855",
+      "group": "1e0cfe7b29733f1d217b07efa353b28f0f766f8e9cdd22b00751efa4e123cbc9",
+      "text_hash": "1e0cfe7b29733f1d217b07efa353b28f0f766f8e9cdd22b00751efa4e123cbc9"
+    },
+    {
+      "row_id": "india_sms:186",
+      "group": "f7a641105d0923eec83c5841f5a533270e6a48724c7055c5fb9c9dbea08f3c53",
+      "text_hash": "f7a641105d0923eec83c5841f5a533270e6a48724c7055c5fb9c9dbea08f3c53"
+    },
+    {
+      "row_id": "india_sms:1863",
+      "group": "0acec51b2293dcbc7214f1b093ec19e6fd90cb019017ae5dd374ebdb932b88b1",
+      "text_hash": "2996a809d247c54853168caba3518ee50eed1e89cbd1cb9285e18da2b1b7d701"
+    },
+    {
+      "row_id": "india_sms:1864",
+      "group": "abb1b184d1fa85a9c095633b2134fa91916a7bee8f1787ef055ff8d3a47e3266",
+      "text_hash": "abb1b184d1fa85a9c095633b2134fa91916a7bee8f1787ef055ff8d3a47e3266"
+    },
+    {
+      "row_id": "india_sms:1869",
+      "group": "03dc0a185203431c696e0fd736b131e8a6afdf1130b1d6e4c0d1a6abdf256173",
+      "text_hash": "03dc0a185203431c696e0fd736b131e8a6afdf1130b1d6e4c0d1a6abdf256173"
+    },
+    {
+      "row_id": "india_sms:1872",
+      "group": "f30f52a1d46b1ea274321ed8ddf9b5c7e1803a4a7a0948a04666dfe60421268c",
+      "text_hash": "f30f52a1d46b1ea274321ed8ddf9b5c7e1803a4a7a0948a04666dfe60421268c"
+    },
+    {
+      "row_id": "india_sms:1877",
+      "group": "086977782914881901306ce4ef0ef2fe536a3323c280aebbb3dc992a0d321b1e",
+      "text_hash": "086977782914881901306ce4ef0ef2fe536a3323c280aebbb3dc992a0d321b1e"
+    },
+    {
+      "row_id": "india_sms:1880",
+      "group": "0dd7f2645a62776c1ac03eb49e312bc7be6ccf7fba6f8661ede691f9fdd9139d",
+      "text_hash": "f6e19c9ce776310087a6c5b6c4f2766bec504fbb6933f241aa16aeed759c83b6"
+    },
+    {
+      "row_id": "india_sms:1883",
+      "group": "addce12df7b8fe30fc776787527e31f9bef62a3d73a685178a2e5be53c0ef1c7",
+      "text_hash": "addce12df7b8fe30fc776787527e31f9bef62a3d73a685178a2e5be53c0ef1c7"
+    },
+    {
+      "row_id": "india_sms:1884",
+      "group": "429733333cf4dd6b5b060ba9bf14b7b826f43dfd6d02efff12cc1ab1a5e43ea7",
+      "text_hash": "ed26fa4232df2b8ef50275a760666f1e036861f3a1dec06d1232c2302823cbfd"
+    },
+    {
+      "row_id": "india_sms:1887",
+      "group": "7ed229b56141b520b3aa7a6b858651f6fff9e6bc10c4b5ba23e85d2ba91cf3c1",
+      "text_hash": "7ed229b56141b520b3aa7a6b858651f6fff9e6bc10c4b5ba23e85d2ba91cf3c1"
+    },
+    {
+      "row_id": "india_sms:1888",
+      "group": "3f72bc94b1e8c0d9ff32584ab3ea9ee9cbb47bda04143bbb57b22041a438da25",
+      "text_hash": "3f72bc94b1e8c0d9ff32584ab3ea9ee9cbb47bda04143bbb57b22041a438da25"
+    },
+    {
+      "row_id": "india_sms:189",
+      "group": "d6bb8c8d028ddb2c41165043f9efe096698cc5300da558db5cef2a80f486442f",
+      "text_hash": "d6bb8c8d028ddb2c41165043f9efe096698cc5300da558db5cef2a80f486442f"
+    },
+    {
+      "row_id": "india_sms:1891",
+      "group": "285aae3eafd6aba67eef65b84228eff627a24facbdba2600f9326389e7edd5bc",
+      "text_hash": "285aae3eafd6aba67eef65b84228eff627a24facbdba2600f9326389e7edd5bc"
+    },
+    {
+      "row_id": "india_sms:1893",
+      "group": "919f45a29f29b769c6daef7fabc354ea1ed6c8e6575fabe353c55b1d201930d3",
+      "text_hash": "919f45a29f29b769c6daef7fabc354ea1ed6c8e6575fabe353c55b1d201930d3"
+    },
+    {
+      "row_id": "india_sms:1897",
+      "group": "ad93d01f3ba1f986e0f9f9c0f0d9b1d512faeea4b153d79c1b8f23f4ed58fc7a",
+      "text_hash": "ad93d01f3ba1f986e0f9f9c0f0d9b1d512faeea4b153d79c1b8f23f4ed58fc7a"
+    },
+    {
+      "row_id": "india_sms:190",
+      "group": "cb663764c3fb681e89ce00f20eeb9d6ea71b510add53dc033c24283cfad63eef",
+      "text_hash": "cb663764c3fb681e89ce00f20eeb9d6ea71b510add53dc033c24283cfad63eef"
+    },
+    {
+      "row_id": "india_sms:1901",
+      "group": "e876a197caf97ef1bf771ed753db16f9c131af35bd44d2042e3d24e599c33f88",
+      "text_hash": "e876a197caf97ef1bf771ed753db16f9c131af35bd44d2042e3d24e599c33f88"
+    },
+    {
+      "row_id": "india_sms:1905",
+      "group": "d11643a63bdd4cd9b3a9a2fa827102e3a0f4d323c6f58585b0e6d30b704f330a",
+      "text_hash": "d11643a63bdd4cd9b3a9a2fa827102e3a0f4d323c6f58585b0e6d30b704f330a"
+    },
+    {
+      "row_id": "india_sms:1906",
+      "group": "11fab8dcf6a3008fa73c71a1c4c621a7b9768bb45bdc6f746534107992a81bf9",
+      "text_hash": "11fab8dcf6a3008fa73c71a1c4c621a7b9768bb45bdc6f746534107992a81bf9"
+    },
+    {
+      "row_id": "india_sms:1909",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "cf0cb21b59a2a43dafbb982022dd03bcf1f575e6cafc68762db06f28a22dc474"
+    },
+    {
+      "row_id": "india_sms:191",
+      "group": "d5efdb7452cf1d8564cc7a46796c3590d5492ea8db2c629107f22fc0b80f23e9",
+      "text_hash": "d5efdb7452cf1d8564cc7a46796c3590d5492ea8db2c629107f22fc0b80f23e9"
+    },
+    {
+      "row_id": "india_sms:1915",
+      "group": "f11fc6df1364ed163430645a4eb8b2025a37b4d7d35eeb2026c68b87a534c26a",
+      "text_hash": "9f26547ac5c96559efc40fe529e254422eb6466ceaa0be00ef967c8caf26de41"
+    },
+    {
+      "row_id": "india_sms:1919",
+      "group": "47815f8337492c231f9721dc398379e3ad79c30ce24a0f3eb449d33660e68768",
+      "text_hash": "47815f8337492c231f9721dc398379e3ad79c30ce24a0f3eb449d33660e68768"
+    },
+    {
+      "row_id": "india_sms:1923",
+      "group": "1610248f725f8cd6a994d491f0f5093e23004402bed81e4471e4ac1fc87a2120",
+      "text_hash": "1610248f725f8cd6a994d491f0f5093e23004402bed81e4471e4ac1fc87a2120"
+    },
+    {
+      "row_id": "india_sms:1927",
+      "group": "4257c1a8ff7df7a47893081172e84aa91cab5a2c0ffde14186c6b74dd5990be4",
+      "text_hash": "4257c1a8ff7df7a47893081172e84aa91cab5a2c0ffde14186c6b74dd5990be4"
+    },
+    {
+      "row_id": "india_sms:1928",
+      "group": "9a2ea771c9a507b9df4e15fb9b22bc9a75dbd6d5c99d90b88e35201d9726a8b3",
+      "text_hash": "9a2ea771c9a507b9df4e15fb9b22bc9a75dbd6d5c99d90b88e35201d9726a8b3"
+    },
+    {
+      "row_id": "india_sms:1930",
+      "group": "d1faadda14ecb0accc42ea2b646b6b95a5c3109679d2391bea2c552ab9d6e926",
+      "text_hash": "d1faadda14ecb0accc42ea2b646b6b95a5c3109679d2391bea2c552ab9d6e926"
+    },
+    {
+      "row_id": "india_sms:1933",
+      "group": "7f4a1ba37bfbf9d863199078474d2d29455b0c52c784e79b085399ee6aaf9d43",
+      "text_hash": "7f4a1ba37bfbf9d863199078474d2d29455b0c52c784e79b085399ee6aaf9d43"
+    },
+    {
+      "row_id": "india_sms:1936",
+      "group": "78dbbbaf595b32c5b8d032347860c29f5e0929595a91e3de097e2eeb1e6882aa",
+      "text_hash": "78dbbbaf595b32c5b8d032347860c29f5e0929595a91e3de097e2eeb1e6882aa"
+    },
+    {
+      "row_id": "india_sms:1937",
+      "group": "a1a3b09875f9e9acade5623e1cca680009a6c9e0452489931cfa5b0041f4d290",
+      "text_hash": "a1a3b09875f9e9acade5623e1cca680009a6c9e0452489931cfa5b0041f4d290"
+    },
+    {
+      "row_id": "india_sms:1941",
+      "group": "eefaa6fc0b2ce079e3f69134e57912a7ddda42d1c46fa8892abb33b201ba0d62",
+      "text_hash": "caa5ffadaf9d3ff4110b4e54f3e66a1e45f7a66462c24c8f52f76b29f86d3a9a"
+    },
+    {
+      "row_id": "india_sms:1943",
+      "group": "e28cccc97d2f4f0cda7a27c93fac66c107c13cbd2d83d2f5d13a3a438f09f8c7",
+      "text_hash": "e28cccc97d2f4f0cda7a27c93fac66c107c13cbd2d83d2f5d13a3a438f09f8c7"
+    },
+    {
+      "row_id": "india_sms:1949",
+      "group": "ff307d601a453a4f49b6cbd7eaecc4f540403028050af61d90d612d0a28d94fa",
+      "text_hash": "ff307d601a453a4f49b6cbd7eaecc4f540403028050af61d90d612d0a28d94fa"
+    },
+    {
+      "row_id": "india_sms:195",
+      "group": "301c2f4c8d19113ce8785b8e8392eb4808875164213214415d1a7d2781326ceb",
+      "text_hash": "301c2f4c8d19113ce8785b8e8392eb4808875164213214415d1a7d2781326ceb"
+    },
+    {
+      "row_id": "india_sms:1952",
+      "group": "6e23bc69dfe3b13738b713da21cd29feeb10fa4ddb0bfc863402db85c48a4317",
+      "text_hash": "6e23bc69dfe3b13738b713da21cd29feeb10fa4ddb0bfc863402db85c48a4317"
+    },
+    {
+      "row_id": "india_sms:1954",
+      "group": "d983b4b1c7ca8ee146cff13d7b3b0995f27745b61a3b4cf27087dec194d40e50",
+      "text_hash": "42ae6f7e1d579b6bfac7b4fdbf4477f21ae60d2548a96dc0772fc75fe9f8f8b4"
+    },
+    {
+      "row_id": "india_sms:1957",
+      "group": "f11fc6df1364ed163430645a4eb8b2025a37b4d7d35eeb2026c68b87a534c26a",
+      "text_hash": "c51e74dd40b0a45caba65dd5e5915a744802201e0bd4493671e2b66afddac607"
+    },
+    {
+      "row_id": "india_sms:1960",
+      "group": "c2271ec3cef0cc6404d35bff864cf19a1c564a3faca850f33fd712bd063abe5d",
+      "text_hash": "c2271ec3cef0cc6404d35bff864cf19a1c564a3faca850f33fd712bd063abe5d"
+    },
+    {
+      "row_id": "india_sms:1967",
+      "group": "3c8a247f013002de5876bad2d2114deae30d9a386ef9ce16b702cfd53d401b06",
+      "text_hash": "3c8a247f013002de5876bad2d2114deae30d9a386ef9ce16b702cfd53d401b06"
+    },
+    {
+      "row_id": "india_sms:1970",
+      "group": "d5efdb7452cf1d8564cc7a46796c3590d5492ea8db2c629107f22fc0b80f23e9",
+      "text_hash": "62f7c7eca3cd85b0d5a58ed96000d6c8fa4599125e3fab09d59463e8a9dac03c"
+    },
+    {
+      "row_id": "india_sms:1971",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "417ab44d4363779fa7a1ea5054c0e36e8db10fb02f00733821589592e85e2c95"
+    },
+    {
+      "row_id": "india_sms:1972",
+      "group": "eef514cf1c4d5105ff5bb819fb08fa44d4c0a181fd13ca981b9c32bc5d328493",
+      "text_hash": "eef514cf1c4d5105ff5bb819fb08fa44d4c0a181fd13ca981b9c32bc5d328493"
+    },
+    {
+      "row_id": "india_sms:1973",
+      "group": "fe59802fd31bc34f301fbdba8fb1ccc5dff135fc90850866646937b7ca7eeff5",
+      "text_hash": "fe59802fd31bc34f301fbdba8fb1ccc5dff135fc90850866646937b7ca7eeff5"
+    },
+    {
+      "row_id": "india_sms:1975",
+      "group": "5069245718ec0417c541c6cc071795c0a59e119678a2029acf8b174c0b0311df",
+      "text_hash": "5069245718ec0417c541c6cc071795c0a59e119678a2029acf8b174c0b0311df"
+    },
+    {
+      "row_id": "india_sms:1977",
+      "group": "a8e05a7f0bdd6d29c393ef4d017dd7d6a4029fac80b495105a7c3bad0812cff0",
+      "text_hash": "a8e05a7f0bdd6d29c393ef4d017dd7d6a4029fac80b495105a7c3bad0812cff0"
+    },
+    {
+      "row_id": "india_sms:1978",
+      "group": "660647911193b715f0912540d7cea3a112df66496f1506c175cc7e40a4fecf49",
+      "text_hash": "e21c29a1a5e1489628de067745208023196a6544a990965ed5d862575e248761"
+    },
+    {
+      "row_id": "india_sms:1979",
+      "group": "acf1e4aa4fa8d10dbfe147e6f17cb33c6e2ddcc4268bd34fd57edb3afb02ed64",
+      "text_hash": "acf1e4aa4fa8d10dbfe147e6f17cb33c6e2ddcc4268bd34fd57edb3afb02ed64"
+    },
+    {
+      "row_id": "india_sms:1981",
+      "group": "e0f51ff79ca1054417062d9ff77a749ff8fdd7fe6b14ef43acc2e6b92099c59a",
+      "text_hash": "e0f51ff79ca1054417062d9ff77a749ff8fdd7fe6b14ef43acc2e6b92099c59a"
+    },
+    {
+      "row_id": "india_sms:1982",
+      "group": "182f16027f68d7dda0b44d3d8b9809a9dd5d911c31b8822202f32140b7120387",
+      "text_hash": "182f16027f68d7dda0b44d3d8b9809a9dd5d911c31b8822202f32140b7120387"
+    },
+    {
+      "row_id": "india_sms:1984",
+      "group": "fa464836e801f6dd440a00a508ecc10fc6acccea46b94834c122d82fc9c3c721",
+      "text_hash": "fa464836e801f6dd440a00a508ecc10fc6acccea46b94834c122d82fc9c3c721"
+    },
+    {
+      "row_id": "india_sms:1986",
+      "group": "7f4caef151cb9a0991e55d3b06b5d2b0382f58ff2b34b71c642606cf329d31a8",
+      "text_hash": "7f4caef151cb9a0991e55d3b06b5d2b0382f58ff2b34b71c642606cf329d31a8"
+    },
+    {
+      "row_id": "india_sms:1988",
+      "group": "75db3b71e398c2cf6b7c3eb86bd851c216f714220504091808ffe86ee7852aba",
+      "text_hash": "75db3b71e398c2cf6b7c3eb86bd851c216f714220504091808ffe86ee7852aba"
+    },
+    {
+      "row_id": "india_sms:1990",
+      "group": "8e4a67127a558afb95704ecce430271e34b3b7962751343253844a9d298ddf1f",
+      "text_hash": "8e4a67127a558afb95704ecce430271e34b3b7962751343253844a9d298ddf1f"
+    },
+    {
+      "row_id": "india_sms:1993",
+      "group": "130fc500016e7252b34dbe750b610af064bbe73fe5d9af9cee556551a5232664",
+      "text_hash": "130fc500016e7252b34dbe750b610af064bbe73fe5d9af9cee556551a5232664"
+    },
+    {
+      "row_id": "india_sms:1994",
+      "group": "b51b46b18e2b4e828476b0b13b7977581d5df38dfef11ac5f56253dc3f9f2cb1",
+      "text_hash": "b51b46b18e2b4e828476b0b13b7977581d5df38dfef11ac5f56253dc3f9f2cb1"
+    },
+    {
+      "row_id": "india_sms:1995",
+      "group": "220ee49958164db16ceb3bb87179bf0363df94f03ea225a9b6c3e28b2b633e82",
+      "text_hash": "220ee49958164db16ceb3bb87179bf0363df94f03ea225a9b6c3e28b2b633e82"
+    },
+    {
+      "row_id": "india_sms:1996",
+      "group": "1fcf9b05dbef724e8c8d005672e66243fb416629acda6252a65c52cb8ad312f3",
+      "text_hash": "1fcf9b05dbef724e8c8d005672e66243fb416629acda6252a65c52cb8ad312f3"
+    },
+    {
+      "row_id": "india_sms:2",
+      "group": "e493896c60077fa32dd2e0e19667b0d26de77860c71a6676bdabc5b4f9115598",
+      "text_hash": "e493896c60077fa32dd2e0e19667b0d26de77860c71a6676bdabc5b4f9115598"
+    },
+    {
+      "row_id": "india_sms:20",
+      "group": "4aab5fdd7ea8a3629bd7dd8b4adb39ef1785320c2b583d353bebf52fdff23f3b",
+      "text_hash": "4aab5fdd7ea8a3629bd7dd8b4adb39ef1785320c2b583d353bebf52fdff23f3b"
+    },
+    {
+      "row_id": "india_sms:2001",
+      "group": "43f39f1da2c074ea573a202c879587ee7ad4692658ef9d4c9da22c071e8e320a",
+      "text_hash": "465509e72b84d285351c48a8f1b1a2568bfa82fb56001d0fc1bd1b3d5e91b13e"
+    },
+    {
+      "row_id": "india_sms:2005",
+      "group": "0424f709cb802087adb02f6d0217a0a87e06c3c9c7d16a16bfcf25207403b095",
+      "text_hash": "0424f709cb802087adb02f6d0217a0a87e06c3c9c7d16a16bfcf25207403b095"
+    },
+    {
+      "row_id": "india_sms:2008",
+      "group": "0531dc0d22c97fd88a7dc30c52a0e2df8497a1a321355998527fdb31ff44c082",
+      "text_hash": "0531dc0d22c97fd88a7dc30c52a0e2df8497a1a321355998527fdb31ff44c082"
+    },
+    {
+      "row_id": "india_sms:201",
+      "group": "fe373b69fc9334d107c6ca2f3b764bd5042af79e7979e967bbcf52946f905d0b",
+      "text_hash": "fe373b69fc9334d107c6ca2f3b764bd5042af79e7979e967bbcf52946f905d0b"
+    },
+    {
+      "row_id": "india_sms:2010",
+      "group": "a9de25ab606a50a1a74f37c1fed5290f231754a640b1811cb4bf09aebcfc360e",
+      "text_hash": "16b90d773ccde7f04c02e093be57da80c37584f4b40fbdcc46a9ccbf1b56b771"
+    },
+    {
+      "row_id": "india_sms:2016",
+      "group": "8d6b356f4ed3daa822f4b8b560be32a6af7fff462b7003ec07799e9dfd8b2fff",
+      "text_hash": "8d6b356f4ed3daa822f4b8b560be32a6af7fff462b7003ec07799e9dfd8b2fff"
+    },
+    {
+      "row_id": "india_sms:2022",
+      "group": "6a581ee901185606598bbd5369794c46dcf21ebf95955a46fb4a6244bb89e79f",
+      "text_hash": "6a4041ec00083cfa22aff85eaee2d2c1a41ee6a28edb614bf690a4f95f3afc84"
+    },
+    {
+      "row_id": "india_sms:2023",
+      "group": "cbc0f7aeea79eddc86d84f1f0162ce1675ad9029514d2e6d6456705331458d93",
+      "text_hash": "cbc0f7aeea79eddc86d84f1f0162ce1675ad9029514d2e6d6456705331458d93"
+    },
+    {
+      "row_id": "india_sms:2028",
+      "group": "bac7ed64a8471e62380ea7bec8e7edb6e6c5dd85449e2964333a447c5f2bd965",
+      "text_hash": "fd4c1ed0d6fd2f57a694e0342475a5e4c832e4c71cfc0ee64252cde2b05e3118"
+    },
+    {
+      "row_id": "india_sms:2031",
+      "group": "791f2b5f594dbaefb798243b99517fa474fb9ffcaaccfdc9894aab722b2fc45f",
+      "text_hash": "791f2b5f594dbaefb798243b99517fa474fb9ffcaaccfdc9894aab722b2fc45f"
+    },
+    {
+      "row_id": "india_sms:2033",
+      "group": "76301c4358f78f89ca33a0d81087890f21f4048e1643a5a4c724d995f88cf6fe",
+      "text_hash": "76301c4358f78f89ca33a0d81087890f21f4048e1643a5a4c724d995f88cf6fe"
+    },
+    {
+      "row_id": "india_sms:2036",
+      "group": "8fdd42fa99c6d72a8729d74e24be4b31878f30e8b6c2905b49e7db5918adf680",
+      "text_hash": "8fdd42fa99c6d72a8729d74e24be4b31878f30e8b6c2905b49e7db5918adf680"
+    },
+    {
+      "row_id": "india_sms:2039",
+      "group": "f05f17bbf827c700089ddbc675465897918f67ed42109167fcab9e7ad609f4b6",
+      "text_hash": "b0819f4801d555ed8d8d2cee454692c9db6b2c3219b2d59c6d54cc62b87f341e"
+    },
+    {
+      "row_id": "india_sms:204",
+      "group": "dbc739629d5f1d4a369b6ae6bff23a12e6050d5b6644b932ea3d7036fd902570",
+      "text_hash": "dbc739629d5f1d4a369b6ae6bff23a12e6050d5b6644b932ea3d7036fd902570"
+    },
+    {
+      "row_id": "india_sms:2041",
+      "group": "f30f52a1d46b1ea274321ed8ddf9b5c7e1803a4a7a0948a04666dfe60421268c",
+      "text_hash": "9cad6219d11fa3629ba26582566a73c0b644aae0f33f0a851299b7a8146cc31c"
+    },
+    {
+      "row_id": "india_sms:2044",
+      "group": "f8784253badc5254c089fcb42b705d963888badde643715446d189807a0b317a",
+      "text_hash": "f8784253badc5254c089fcb42b705d963888badde643715446d189807a0b317a"
+    },
+    {
+      "row_id": "india_sms:2047",
+      "group": "08b0e52e87e745f2ce7493f02a1b15b605c57ed0462eaa211d10bfe4a1f512c5",
+      "text_hash": "08b0e52e87e745f2ce7493f02a1b15b605c57ed0462eaa211d10bfe4a1f512c5"
+    },
+    {
+      "row_id": "india_sms:205",
+      "group": "964ac0a4a4e72ccb4d0c166d3876df896831820d4015f54b367fed2155e71ad5",
+      "text_hash": "964ac0a4a4e72ccb4d0c166d3876df896831820d4015f54b367fed2155e71ad5"
+    },
+    {
+      "row_id": "india_sms:2053",
+      "group": "4a76a636c3442b2e99128f3fd3a7209c3c99e9c4ca7a25e74feba6549052fb3e",
+      "text_hash": "4a76a636c3442b2e99128f3fd3a7209c3c99e9c4ca7a25e74feba6549052fb3e"
+    },
+    {
+      "row_id": "india_sms:2064",
+      "group": "bc9e3026143294a91a87ef9830f76b1762cad827b8b2d14ff0cb6dbe6ed64bb9",
+      "text_hash": "3f4a5ca8b05ca8a8f0d19643856141904a7c139366b3d1007a472cce6b59b85d"
+    },
+    {
+      "row_id": "india_sms:2066",
+      "group": "fa6e8c261c3cadd16e8049f4b1c9bf4562eadc6cc21a47f2549846e4098dcf7a",
+      "text_hash": "80c17527f9ed6564e51ee8797bc29ce288c0c78b75871589fdf3788813fe4d21"
+    },
+    {
+      "row_id": "india_sms:2069",
+      "group": "6ba228d736d0230a9bcd0f743fa94b758f10aa17645bfb0aabe6288c367eec8a",
+      "text_hash": "6ba228d736d0230a9bcd0f743fa94b758f10aa17645bfb0aabe6288c367eec8a"
+    },
+    {
+      "row_id": "india_sms:207",
+      "group": "0ac6abfb17bba14a3a6b0ccb9f0451451e945050f8e2b790092796242c63bd09",
+      "text_hash": "0ac6abfb17bba14a3a6b0ccb9f0451451e945050f8e2b790092796242c63bd09"
+    },
+    {
+      "row_id": "india_sms:2070",
+      "group": "7ee153d7e63a9e85390125a0b16b69b8cb2046a07ac78b1d8c8dbda4f9567e4a",
+      "text_hash": "7ee153d7e63a9e85390125a0b16b69b8cb2046a07ac78b1d8c8dbda4f9567e4a"
+    },
+    {
+      "row_id": "india_sms:2072",
+      "group": "7786b193a071f7107d4fbe0f75730ed49ba5aeac3622595e6f43f4938f2ff57e",
+      "text_hash": "7786b193a071f7107d4fbe0f75730ed49ba5aeac3622595e6f43f4938f2ff57e"
+    },
+    {
+      "row_id": "india_sms:2074",
+      "group": "18539260141cb12de80ada088a6b8085e1befcca69d7938884627a095503d5df",
+      "text_hash": "18539260141cb12de80ada088a6b8085e1befcca69d7938884627a095503d5df"
+    },
+    {
+      "row_id": "india_sms:2075",
+      "group": "237063c22e691f2d4aebe64c0865b7152006322b46e5a52de9748ded7183cad6",
+      "text_hash": "237063c22e691f2d4aebe64c0865b7152006322b46e5a52de9748ded7183cad6"
+    },
+    {
+      "row_id": "india_sms:2077",
+      "group": "bbaa91e241fab01737902e0a53daee1fd2e7209ed57a735ce7f68da6b67860f5",
+      "text_hash": "bbaa91e241fab01737902e0a53daee1fd2e7209ed57a735ce7f68da6b67860f5"
+    },
+    {
+      "row_id": "india_sms:2078",
+      "group": "48e2195e5edfcb14d398a1308d07cb7950fcfb390931bf20696d00f2cb8a9bd8",
+      "text_hash": "48e2195e5edfcb14d398a1308d07cb7950fcfb390931bf20696d00f2cb8a9bd8"
+    },
+    {
+      "row_id": "india_sms:208",
+      "group": "b36f0e8246f6941a5c520a5208f439de5f8b7070750323d9590888534985360b",
+      "text_hash": "b36f0e8246f6941a5c520a5208f439de5f8b7070750323d9590888534985360b"
+    },
+    {
+      "row_id": "india_sms:2083",
+      "group": "381ad55051be2b92437410b209817f2477a54fb6298413f35b5a645d8af44b4b",
+      "text_hash": "1527db5130102506d8b08712419117a12efd69a185bd25d3e27b637b5b512055"
+    },
+    {
+      "row_id": "india_sms:2087",
+      "group": "4f255a0acadca1912f7fec6c4b159fa5f8919b73b251dffbb8a09856eb3c1da1",
+      "text_hash": "4f255a0acadca1912f7fec6c4b159fa5f8919b73b251dffbb8a09856eb3c1da1"
+    },
+    {
+      "row_id": "india_sms:2088",
+      "group": "9c9a87c2f45ab3a95e000e0e4acc17bdf2afeed4c397c49c12cf0ef46a90cc65",
+      "text_hash": "9c9a87c2f45ab3a95e000e0e4acc17bdf2afeed4c397c49c12cf0ef46a90cc65"
+    },
+    {
+      "row_id": "india_sms:2089",
+      "group": "d25d17a3f2701122db953c0ac74e18b5f9162617022c69db0d31e113dd1086bc",
+      "text_hash": "d25d17a3f2701122db953c0ac74e18b5f9162617022c69db0d31e113dd1086bc"
+    },
+    {
+      "row_id": "india_sms:2092",
+      "group": "6a3b8e9583d17434ac50edc32acb37293cb93324944dadf18267a3ae6feffb1b",
+      "text_hash": "6a3b8e9583d17434ac50edc32acb37293cb93324944dadf18267a3ae6feffb1b"
+    },
+    {
+      "row_id": "india_sms:2093",
+      "group": "a4ce5967eb88af5ae8f083dc4a527c0ac9e7e2ea70db74d075701796b3d1840c",
+      "text_hash": "a4ce5967eb88af5ae8f083dc4a527c0ac9e7e2ea70db74d075701796b3d1840c"
+    },
+    {
+      "row_id": "india_sms:2094",
+      "group": "6785e08f013952f010bfd5d1b11e679476741e62bd8917802e48c4bd45094f1f",
+      "text_hash": "6785e08f013952f010bfd5d1b11e679476741e62bd8917802e48c4bd45094f1f"
+    },
+    {
+      "row_id": "india_sms:2095",
+      "group": "f38d2985159923528383e8cf69e897b364b554ec9deed3ca17128d8463ab2f0b",
+      "text_hash": "f38d2985159923528383e8cf69e897b364b554ec9deed3ca17128d8463ab2f0b"
+    },
+    {
+      "row_id": "india_sms:2099",
+      "group": "ff7772053abf7d817d6eec229a09e14f0d1552f1cb0aeedb2ac73784ac2d2e39",
+      "text_hash": "ff7772053abf7d817d6eec229a09e14f0d1552f1cb0aeedb2ac73784ac2d2e39"
+    },
+    {
+      "row_id": "india_sms:210",
+      "group": "2996fcbeeaaacf389fdbdcb8f44a8e7181be6fe869b29c3437ae6f88c5eaabc2",
+      "text_hash": "2996fcbeeaaacf389fdbdcb8f44a8e7181be6fe869b29c3437ae6f88c5eaabc2"
+    },
+    {
+      "row_id": "india_sms:2100",
+      "group": "10ab0bdf0f17fef1c573eec476f481f96f98887d8c889b6c5013292681b3e241",
+      "text_hash": "10ab0bdf0f17fef1c573eec476f481f96f98887d8c889b6c5013292681b3e241"
+    },
+    {
+      "row_id": "india_sms:2102",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "fc51d31d541fe1442de231d2362b23358bae003be0c26b2229e7be5c5eb8dbc9"
+    },
+    {
+      "row_id": "india_sms:2105",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "5bcf3eada2da6e8c3f82415a20530af5c5fb18323f1bb7d88a13e3c86b6529f6"
+    },
+    {
+      "row_id": "india_sms:2106",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "8dc42e8715ca106b01cd67cae32ac3ddb57d9661e3566ce202b8a3eeb0101a2e"
+    },
+    {
+      "row_id": "india_sms:2107",
+      "group": "88bc36233a82f209a94b51ebcf64e0b301f9e5a5ae25051ef96f765c7878f022",
+      "text_hash": "88bc36233a82f209a94b51ebcf64e0b301f9e5a5ae25051ef96f765c7878f022"
+    },
+    {
+      "row_id": "india_sms:211",
+      "group": "0dd7f2645a62776c1ac03eb49e312bc7be6ccf7fba6f8661ede691f9fdd9139d",
+      "text_hash": "0dd7f2645a62776c1ac03eb49e312bc7be6ccf7fba6f8661ede691f9fdd9139d"
+    },
+    {
+      "row_id": "india_sms:2110",
+      "group": "a9de25ab606a50a1a74f37c1fed5290f231754a640b1811cb4bf09aebcfc360e",
+      "text_hash": "c73717a1bb3287427bad31de81c87e04a64117169e177e2cd1267796b1650d23"
+    },
+    {
+      "row_id": "india_sms:2112",
+      "group": "1af041053998684a81302b9842c43dc5dbff493e55d7f419c19e43f80e9aab36",
+      "text_hash": "1af041053998684a81302b9842c43dc5dbff493e55d7f419c19e43f80e9aab36"
+    },
+    {
+      "row_id": "india_sms:2116",
+      "group": "28c7a04f15b435610d5becacc1d69a75d40a155495d78099d036b301c88965a7",
+      "text_hash": "28c7a04f15b435610d5becacc1d69a75d40a155495d78099d036b301c88965a7"
+    },
+    {
+      "row_id": "india_sms:2117",
+      "group": "7a1df264d267451e1421185a924bce2762b7205fff06a48a4c5a5c4dfa5594a8",
+      "text_hash": "7a1df264d267451e1421185a924bce2762b7205fff06a48a4c5a5c4dfa5594a8"
+    },
+    {
+      "row_id": "india_sms:212",
+      "group": "fd47358effb1cea4e06e4b0eb4dd4d6a0b3b0e1dadef2b5948ae634cfae675ae",
+      "text_hash": "fd47358effb1cea4e06e4b0eb4dd4d6a0b3b0e1dadef2b5948ae634cfae675ae"
+    },
+    {
+      "row_id": "india_sms:2120",
+      "group": "2a95e1e2b3edc244939676f05d3d36fc9e8e54b95f1bedc78a5abff86244e14c",
+      "text_hash": "2a95e1e2b3edc244939676f05d3d36fc9e8e54b95f1bedc78a5abff86244e14c"
+    },
+    {
+      "row_id": "india_sms:2123",
+      "group": "0edd06592e4ef570e874bbd0ed680b07630d7dc606c9d64759abd1eb4d14ebf1",
+      "text_hash": "0edd06592e4ef570e874bbd0ed680b07630d7dc606c9d64759abd1eb4d14ebf1"
+    },
+    {
+      "row_id": "india_sms:2127",
+      "group": "5e9b27672fb643b6d6c508444b5e1bbd0f0f7141b7bc46c6a9c228d46edaa03d",
+      "text_hash": "5e9b27672fb643b6d6c508444b5e1bbd0f0f7141b7bc46c6a9c228d46edaa03d"
+    },
+    {
+      "row_id": "india_sms:2132",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "fc134ecef19aff44a712df2c694185da945f84a52c2609b18f513cf6acce7699"
+    },
+    {
+      "row_id": "india_sms:2133",
+      "group": "06d652d59823608a1712e1eacfec3936dd237814526fa6dee900d75b2b274d5d",
+      "text_hash": "06d652d59823608a1712e1eacfec3936dd237814526fa6dee900d75b2b274d5d"
+    },
+    {
+      "row_id": "india_sms:2134",
+      "group": "dcf91b8afaf9ceb9108682371f4f4b769f1a887549610743a6b73e0c65770586",
+      "text_hash": "dcf91b8afaf9ceb9108682371f4f4b769f1a887549610743a6b73e0c65770586"
+    },
+    {
+      "row_id": "india_sms:214",
+      "group": "0cc762435079bd526f8fa65df3ceec49f4a1d0cd1d04ae8590d9a775dbfbcce4",
+      "text_hash": "0cc762435079bd526f8fa65df3ceec49f4a1d0cd1d04ae8590d9a775dbfbcce4"
+    },
+    {
+      "row_id": "india_sms:2144",
+      "group": "21d3993e8886bc6d71abc1e04b63c147a93061314082627482d285ce55bcd823",
+      "text_hash": "21d3993e8886bc6d71abc1e04b63c147a93061314082627482d285ce55bcd823"
+    },
+    {
+      "row_id": "india_sms:215",
+      "group": "136bda80abb8e39d87b55d7e2b52721c5126ca3ef4f206b8c5c3429c27ae96e6",
+      "text_hash": "136bda80abb8e39d87b55d7e2b52721c5126ca3ef4f206b8c5c3429c27ae96e6"
+    },
+    {
+      "row_id": "india_sms:2154",
+      "group": "387f92f616a2ca9bf09aa8defc8548c7938b09ffca938e4b7a588e6aabd2d668",
+      "text_hash": "387f92f616a2ca9bf09aa8defc8548c7938b09ffca938e4b7a588e6aabd2d668"
+    },
+    {
+      "row_id": "india_sms:2156",
+      "group": "d425016754ec86edd1238ff85e90f5266e17bba231b5f20c4aa672c2575950de",
+      "text_hash": "d425016754ec86edd1238ff85e90f5266e17bba231b5f20c4aa672c2575950de"
+    },
+    {
+      "row_id": "india_sms:2161",
+      "group": "7b8c594ba60b5eebbf9742b47f7f4fca8dcb87268a6e5bdaa5c626071fa4ab34",
+      "text_hash": "7b8c594ba60b5eebbf9742b47f7f4fca8dcb87268a6e5bdaa5c626071fa4ab34"
+    },
+    {
+      "row_id": "india_sms:2164",
+      "group": "1a9cce6313e07cefa825f3346985ad27fca58dc2e2769cd874421c808a4ae6de",
+      "text_hash": "1a9cce6313e07cefa825f3346985ad27fca58dc2e2769cd874421c808a4ae6de"
+    },
+    {
+      "row_id": "india_sms:2165",
+      "group": "b5e3330999992ec7ea81cbae9e7cf17437b093b5aeb5ff817770f7cc305ff92a",
+      "text_hash": "b5e3330999992ec7ea81cbae9e7cf17437b093b5aeb5ff817770f7cc305ff92a"
+    },
+    {
+      "row_id": "india_sms:2166",
+      "group": "e600041e2d9253257ca4d073a89a5b56ff46a7c94213890fc298dd9867d259c9",
+      "text_hash": "e600041e2d9253257ca4d073a89a5b56ff46a7c94213890fc298dd9867d259c9"
+    },
+    {
+      "row_id": "india_sms:2168",
+      "group": "4239f17c1c3400fdaeddc9c411709b35cd6e40864a817ef7f30b396549fe4cc1",
+      "text_hash": "4239f17c1c3400fdaeddc9c411709b35cd6e40864a817ef7f30b396549fe4cc1"
+    },
+    {
+      "row_id": "india_sms:217",
+      "group": "3fde201e2f64a13bc9d552fca6156c12bede47212456242c84486a0cb8eb2f2e",
+      "text_hash": "3fde201e2f64a13bc9d552fca6156c12bede47212456242c84486a0cb8eb2f2e"
+    },
+    {
+      "row_id": "india_sms:2171",
+      "group": "4e57657c6f3dc715725867e5d0ded8f5886874e24426fc07bab6670d2948603e",
+      "text_hash": "4e57657c6f3dc715725867e5d0ded8f5886874e24426fc07bab6670d2948603e"
+    },
+    {
+      "row_id": "india_sms:2173",
+      "group": "58db386b6ed42209cd43daf85490c3dd895297ba1bbc4c09cbd2c9f596ab83c5",
+      "text_hash": "58db386b6ed42209cd43daf85490c3dd895297ba1bbc4c09cbd2c9f596ab83c5"
+    },
+    {
+      "row_id": "india_sms:2175",
+      "group": "3bc1b73077a56fd579a4cd8e2e4c0e70308b93c4903f2ea7cfac8a3a54ca0283",
+      "text_hash": "3bc1b73077a56fd579a4cd8e2e4c0e70308b93c4903f2ea7cfac8a3a54ca0283"
+    },
+    {
+      "row_id": "india_sms:2176",
+      "group": "da9601d612d38e7344f8034222211e420d6426a70bd1b6768cd9a0be3a9630d0",
+      "text_hash": "da9601d612d38e7344f8034222211e420d6426a70bd1b6768cd9a0be3a9630d0"
+    },
+    {
+      "row_id": "india_sms:2177",
+      "group": "540a78e9ff56397d04f9335cece38bd153e39849ef349984a8c3026afd4d4128",
+      "text_hash": "a7e48cf948e8b9623e0815a6318f9d57f75185c5033294edb160c75446fe7e33"
+    },
+    {
+      "row_id": "india_sms:2178",
+      "group": "2111ff9c8651fd49f3de16df9024e2b6067b2d2d7ab7a4e4383d651db3145c39",
+      "text_hash": "f446d5f9ce2b7f754048b6aa56d889e7c692feddfbd80581c339ec8f8396a1f5"
+    },
+    {
+      "row_id": "india_sms:218",
+      "group": "ec8319cb63c05d1d4b90f44634b0ca2224eb606fb144de7681daf76822966275",
+      "text_hash": "ec8319cb63c05d1d4b90f44634b0ca2224eb606fb144de7681daf76822966275"
+    },
+    {
+      "row_id": "india_sms:219",
+      "group": "58b027e7cf46d22929ff3576cfdd224fe4b405d3edecdab2810c04433642d910",
+      "text_hash": "58b027e7cf46d22929ff3576cfdd224fe4b405d3edecdab2810c04433642d910"
+    },
+    {
+      "row_id": "india_sms:2191",
+      "group": "d222b3c51ce02204283a3c7273e37a1fcfa7a849cb7ddab9df7e52820febfe85",
+      "text_hash": "d222b3c51ce02204283a3c7273e37a1fcfa7a849cb7ddab9df7e52820febfe85"
+    },
+    {
+      "row_id": "india_sms:2193",
+      "group": "81f8836143dca47b1de230e9268e04782fa976de915e9102b72c0b093f08894e",
+      "text_hash": "81f8836143dca47b1de230e9268e04782fa976de915e9102b72c0b093f08894e"
+    },
+    {
+      "row_id": "india_sms:2194",
+      "group": "08355d366275f65ffa8561fa95b113ea451ee63e160317ca822a09f08eda07c3",
+      "text_hash": "08355d366275f65ffa8561fa95b113ea451ee63e160317ca822a09f08eda07c3"
+    },
+    {
+      "row_id": "india_sms:2196",
+      "group": "1f8ff81df10c2ec85f728ebc67d77eadbe5418423e40361f871f71455b34a29f",
+      "text_hash": "6d351bb4c030ad1f0862879763930921e4297dba70ca57c3312419e660dd4038"
+    },
+    {
+      "row_id": "india_sms:2197",
+      "group": "edd30e644bec820781714132d1a5b0d55c34937c78b9bb09490febbc6ac01134",
+      "text_hash": "edd30e644bec820781714132d1a5b0d55c34937c78b9bb09490febbc6ac01134"
+    },
+    {
+      "row_id": "india_sms:2199",
+      "group": "716e6f2d9efab8046135a7a1c6192cf0b47ecbf35dda34391c1ad807fbb179ec",
+      "text_hash": "716e6f2d9efab8046135a7a1c6192cf0b47ecbf35dda34391c1ad807fbb179ec"
+    },
+    {
+      "row_id": "india_sms:2203",
+      "group": "e74e7fb9ae473a2b41088d893bdf74f3941b666e455e159a57d594d077128dcf",
+      "text_hash": "d8f57379da09ac90a0964e25643d13f9486c3c23096b4bf5c0858f64f32a97ed"
+    },
+    {
+      "row_id": "india_sms:2207",
+      "group": "62f0dba3d80d21c6aadbd799bb8643da117f00ed45dc92fea6d6a3abf3e7f2e6",
+      "text_hash": "62f0dba3d80d21c6aadbd799bb8643da117f00ed45dc92fea6d6a3abf3e7f2e6"
+    },
+    {
+      "row_id": "india_sms:2209",
+      "group": "00ae9877102d0a60240553567d8de0fdbe5cb372375da20a192833956f5b4b0c",
+      "text_hash": "00ae9877102d0a60240553567d8de0fdbe5cb372375da20a192833956f5b4b0c"
+    },
+    {
+      "row_id": "india_sms:2215",
+      "group": "3c0e62f1c58a09333aa3d1e2dabdf5ba36e7403e29667f59f0e8e376d9227f0e",
+      "text_hash": "3c0e62f1c58a09333aa3d1e2dabdf5ba36e7403e29667f59f0e8e376d9227f0e"
+    },
+    {
+      "row_id": "india_sms:2216",
+      "group": "9b06bdf981d75183cd6096250a44aa7ccd13c09bcaf04a854ba757361ad9f197",
+      "text_hash": "9b06bdf981d75183cd6096250a44aa7ccd13c09bcaf04a854ba757361ad9f197"
+    },
+    {
+      "row_id": "india_sms:2217",
+      "group": "f64c7f0567853bfbba15f02074d3ad3c12a5209eec6c708914933b59f290d72a",
+      "text_hash": "f64c7f0567853bfbba15f02074d3ad3c12a5209eec6c708914933b59f290d72a"
+    },
+    {
+      "row_id": "india_sms:2219",
+      "group": "a4f7ffab630cf977cca726766c8944ea756944d9a6395c0655a7131b1de61d13",
+      "text_hash": "a4f7ffab630cf977cca726766c8944ea756944d9a6395c0655a7131b1de61d13"
+    },
+    {
+      "row_id": "india_sms:222",
+      "group": "90f451cf64bb10a5b7dd2b7834ecef325b3e6bfaa9f0f0d1ce5ab21c81e580c5",
+      "text_hash": "90f451cf64bb10a5b7dd2b7834ecef325b3e6bfaa9f0f0d1ce5ab21c81e580c5"
+    },
+    {
+      "row_id": "india_sms:2226",
+      "group": "f30f52a1d46b1ea274321ed8ddf9b5c7e1803a4a7a0948a04666dfe60421268c",
+      "text_hash": "326b3a726e08beeb484f0bc3b3b125b094eccef969cfef5998cfd30cab054e4c"
+    },
+    {
+      "row_id": "india_sms:2227",
+      "group": "e82c2a66bcb6a3c172a1113b451fc013d1a516e6360833f27287c87db13f0ffb",
+      "text_hash": "e82c2a66bcb6a3c172a1113b451fc013d1a516e6360833f27287c87db13f0ffb"
+    },
+    {
+      "row_id": "india_sms:223",
+      "group": "a7549c7040919f91d4d24df00acd21afd8a596bc37b6d3fb309bc85685f90ae3",
+      "text_hash": "a7549c7040919f91d4d24df00acd21afd8a596bc37b6d3fb309bc85685f90ae3"
+    },
+    {
+      "row_id": "india_sms:2232",
+      "group": "12a860364b3b697f702e77d824679816038ff3d1388180a4c0293c104d6f6011",
+      "text_hash": "12a860364b3b697f702e77d824679816038ff3d1388180a4c0293c104d6f6011"
+    },
+    {
+      "row_id": "india_sms:2233",
+      "group": "b28683d755e3cb6cd21faeb2c48bf60e953a3839a3bb13a08d420e6e04e1841c",
+      "text_hash": "b28683d755e3cb6cd21faeb2c48bf60e953a3839a3bb13a08d420e6e04e1841c"
+    },
+    {
+      "row_id": "india_sms:2237",
+      "group": "60d79199bdc54f95e36f80b1e924ed3e60936f8831ecce332a9cec379d0b4647",
+      "text_hash": "60d79199bdc54f95e36f80b1e924ed3e60936f8831ecce332a9cec379d0b4647"
+    },
+    {
+      "row_id": "india_sms:2238",
+      "group": "aca647eee20ea06dc1eeec8874edc9d39ca367723e48d7f8327e3f6521011388",
+      "text_hash": "aca647eee20ea06dc1eeec8874edc9d39ca367723e48d7f8327e3f6521011388"
+    },
+    {
+      "row_id": "india_sms:2246",
+      "group": "538c234227868bb4f777fa7fa27e7d8f6412f5883941e657a1e1f45cd135429c",
+      "text_hash": "538c234227868bb4f777fa7fa27e7d8f6412f5883941e657a1e1f45cd135429c"
+    },
+    {
+      "row_id": "india_sms:2247",
+      "group": "d4b56b5ca45922399fc67c84c3630ecfb71b28ba475495a617daf9b8ad3f9521",
+      "text_hash": "d4b56b5ca45922399fc67c84c3630ecfb71b28ba475495a617daf9b8ad3f9521"
+    },
+    {
+      "row_id": "india_sms:2249",
+      "group": "538c234227868bb4f777fa7fa27e7d8f6412f5883941e657a1e1f45cd135429c",
+      "text_hash": "9a1e9bd42c0c0fc41e65d6dc04a35d0fe16706d5f749768d207226c49d8ac3f5"
+    },
+    {
+      "row_id": "india_sms:2255",
+      "group": "538c234227868bb4f777fa7fa27e7d8f6412f5883941e657a1e1f45cd135429c",
+      "text_hash": "bd61b47d23f566a35e010f61e46d4d514b1b6b422ecad9caeb0e47b5e3406964"
+    },
+    {
+      "row_id": "india_sms:2256",
+      "group": "538c234227868bb4f777fa7fa27e7d8f6412f5883941e657a1e1f45cd135429c",
+      "text_hash": "95539cede62d5832b25c92b6fde512d8c30cf7693e4f5325d791db5f33b4cac6"
+    },
+    {
+      "row_id": "india_sms:2258",
+      "group": "566e2d782af76b7a73a084fed6a0596543649d81402e572111082c67100db072",
+      "text_hash": "566e2d782af76b7a73a084fed6a0596543649d81402e572111082c67100db072"
+    },
+    {
+      "row_id": "india_sms:226",
+      "group": "fb02c75f19744150112a435195ff8a315f61c15e8e8748bbf27259727314c059",
+      "text_hash": "fb02c75f19744150112a435195ff8a315f61c15e8e8748bbf27259727314c059"
+    },
+    {
+      "row_id": "india_sms:2263",
+      "group": "538c234227868bb4f777fa7fa27e7d8f6412f5883941e657a1e1f45cd135429c",
+      "text_hash": "111a142ce6d23327652a552065bb3eebb9a27758b460c8ed26d06cf8fadf0e95"
+    },
+    {
+      "row_id": "india_sms:2266",
+      "group": "4575d9b1d631fb8076aa8606d41e739eb55177f752d7bb8538a87da7583caec2",
+      "text_hash": "4575d9b1d631fb8076aa8606d41e739eb55177f752d7bb8538a87da7583caec2"
+    },
+    {
+      "row_id": "india_sms:229",
+      "group": "d27477ac3568c23e52655f7dca98a2f7339f4edd451bf1b49b04ba32b7c2ed55",
+      "text_hash": "d27477ac3568c23e52655f7dca98a2f7339f4edd451bf1b49b04ba32b7c2ed55"
+    },
+    {
+      "row_id": "india_sms:230",
+      "group": "9e2a4eb5c55d582f4882ff2b529843d61f12b720f1617b1a1d0158fe4e0052e4",
+      "text_hash": "9e2a4eb5c55d582f4882ff2b529843d61f12b720f1617b1a1d0158fe4e0052e4"
+    },
+    {
+      "row_id": "india_sms:234",
+      "group": "daed0e5f820d1dbb4f37fd144a5fa56001789d068e417505a2ffcb3a7b660689",
+      "text_hash": "daed0e5f820d1dbb4f37fd144a5fa56001789d068e417505a2ffcb3a7b660689"
+    },
+    {
+      "row_id": "india_sms:237",
+      "group": "0b0e5790f424d3fa02679448d2ca8d6c0ce35bfc50ade634352ee07fc822d224",
+      "text_hash": "0b0e5790f424d3fa02679448d2ca8d6c0ce35bfc50ade634352ee07fc822d224"
+    },
+    {
+      "row_id": "india_sms:238",
+      "group": "7db3fbc44bccbd66740631a1b11f3e75f844307fb69ae0d7266a0bd8aa735015",
+      "text_hash": "7db3fbc44bccbd66740631a1b11f3e75f844307fb69ae0d7266a0bd8aa735015"
+    },
+    {
+      "row_id": "india_sms:239",
+      "group": "68d64114e6f6b1b75ddb8e8aabb057db4f1a8110739b81a51445e1c870ce53bf",
+      "text_hash": "68d64114e6f6b1b75ddb8e8aabb057db4f1a8110739b81a51445e1c870ce53bf"
+    },
+    {
+      "row_id": "india_sms:244",
+      "group": "a490667f2658cd1b9c501e5a61275a5f75ba30fe0cbf9fd204ddfd7e125ee67e",
+      "text_hash": "a490667f2658cd1b9c501e5a61275a5f75ba30fe0cbf9fd204ddfd7e125ee67e"
+    },
+    {
+      "row_id": "india_sms:252",
+      "group": "09b906a479baee18223a6f43f7dd9a61d7509d5b392549a97246a9828549351a",
+      "text_hash": "09b906a479baee18223a6f43f7dd9a61d7509d5b392549a97246a9828549351a"
+    },
+    {
+      "row_id": "india_sms:256",
+      "group": "0d5a710652ea43845963058225f8adebe6c20cb0cfaed5767dcfe75c54c367f8",
+      "text_hash": "0d5a710652ea43845963058225f8adebe6c20cb0cfaed5767dcfe75c54c367f8"
+    },
+    {
+      "row_id": "india_sms:258",
+      "group": "ce363cd85f068cc608f4f766007ee73abd692501eb1b24a9c3c06aae8d7ee03c",
+      "text_hash": "ce363cd85f068cc608f4f766007ee73abd692501eb1b24a9c3c06aae8d7ee03c"
+    },
+    {
+      "row_id": "india_sms:264",
+      "group": "2e2576f257bb309d2d7e778fcb4aa73957ed979463d14656f6f3d8813c0cb6ba",
+      "text_hash": "2e2576f257bb309d2d7e778fcb4aa73957ed979463d14656f6f3d8813c0cb6ba"
+    },
+    {
+      "row_id": "india_sms:268",
+      "group": "4fca2e5fbfb1f26fa937f6679ab54fb8148892b31a1f82c3ec9d603e01facc18",
+      "text_hash": "4fca2e5fbfb1f26fa937f6679ab54fb8148892b31a1f82c3ec9d603e01facc18"
+    },
+    {
+      "row_id": "india_sms:27",
+      "group": "722abe75ae0e7ea18fbd14106103decdd1fb93b5983c2955aed3877c084479bd",
+      "text_hash": "722abe75ae0e7ea18fbd14106103decdd1fb93b5983c2955aed3877c084479bd"
+    },
+    {
+      "row_id": "india_sms:273",
+      "group": "5a20f55931d7c2bf70074d2deee434cadc16936d1c362f24f03e6a9935cce418",
+      "text_hash": "5a20f55931d7c2bf70074d2deee434cadc16936d1c362f24f03e6a9935cce418"
+    },
+    {
+      "row_id": "india_sms:278",
+      "group": "3aa9b48e2d6536a3751377eb1569b703556a092a8b1d275209ca25974e62aca9",
+      "text_hash": "3aa9b48e2d6536a3751377eb1569b703556a092a8b1d275209ca25974e62aca9"
+    },
+    {
+      "row_id": "india_sms:28",
+      "group": "b867e27a2dbbe545db73ecf147a74c1d84f934d6b7aadefdf8ee548594318d87",
+      "text_hash": "b867e27a2dbbe545db73ecf147a74c1d84f934d6b7aadefdf8ee548594318d87"
+    },
+    {
+      "row_id": "india_sms:285",
+      "group": "0082286037cb48e121d852ffd764ced44ada303943c9f2010bfff239fd8d63ad",
+      "text_hash": "0082286037cb48e121d852ffd764ced44ada303943c9f2010bfff239fd8d63ad"
+    },
+    {
+      "row_id": "india_sms:288",
+      "group": "0759d189be45b63984f6d08c25229f84f74eaa973a3288952ff85c9c5c4c98b3",
+      "text_hash": "0759d189be45b63984f6d08c25229f84f74eaa973a3288952ff85c9c5c4c98b3"
+    },
+    {
+      "row_id": "india_sms:292",
+      "group": "e2d876dd6b7fa177fc60276bac3284f185507218b60d1156ceeeb9fb663c0f5f",
+      "text_hash": "e2d876dd6b7fa177fc60276bac3284f185507218b60d1156ceeeb9fb663c0f5f"
+    },
+    {
+      "row_id": "india_sms:293",
+      "group": "dde9eb91cad5a58ecc04ea591bfd8634529f7dad7e03a235f1831cd173d9f4f6",
+      "text_hash": "dde9eb91cad5a58ecc04ea591bfd8634529f7dad7e03a235f1831cd173d9f4f6"
+    },
+    {
+      "row_id": "india_sms:296",
+      "group": "565929f145de94a219d6c50cbc618b54c7f892df092d78af0c5c5562713cb317",
+      "text_hash": "565929f145de94a219d6c50cbc618b54c7f892df092d78af0c5c5562713cb317"
+    },
+    {
+      "row_id": "india_sms:299",
+      "group": "622fa9da19c9eba51523702516d94ce706aa7e0d20e02d153725a53e7ffd5fe7",
+      "text_hash": "622fa9da19c9eba51523702516d94ce706aa7e0d20e02d153725a53e7ffd5fe7"
+    },
+    {
+      "row_id": "india_sms:301",
+      "group": "a271ef3dc6d8717ba8961386db97644ea0d1cf2954e5882fc5467bbf454c9be0",
+      "text_hash": "a271ef3dc6d8717ba8961386db97644ea0d1cf2954e5882fc5467bbf454c9be0"
+    },
+    {
+      "row_id": "india_sms:302",
+      "group": "8254c329a92850f6d539dd376f4816ee2764517da5e0235514af433164480d7a",
+      "text_hash": "8254c329a92850f6d539dd376f4816ee2764517da5e0235514af433164480d7a"
+    },
+    {
+      "row_id": "india_sms:308",
+      "group": "b4c2ee0128a040a44f5abf4fc4048915be6b1f5116179007e115c09415896f86",
+      "text_hash": "b4c2ee0128a040a44f5abf4fc4048915be6b1f5116179007e115c09415896f86"
+    },
+    {
+      "row_id": "india_sms:309",
+      "group": "2aef149d08e5569e9970869d082a2965e5dfee94bb3b27aa3feaad9446002881",
+      "text_hash": "2aef149d08e5569e9970869d082a2965e5dfee94bb3b27aa3feaad9446002881"
+    },
+    {
+      "row_id": "india_sms:310",
+      "group": "a7de6794fcf368837e844795c4218437c6964a24a0a679f52bbf05b0a57cafec",
+      "text_hash": "e40b177893b492caaf9970dc136890b32aa4d9d25297de584578124492b08aa2"
+    },
+    {
+      "row_id": "india_sms:311",
+      "group": "f3ee5091ce151dec8878c750ce89445e7c2d37c4bba37ba7ff9297aecd8dc7f4",
+      "text_hash": "f3ee5091ce151dec8878c750ce89445e7c2d37c4bba37ba7ff9297aecd8dc7f4"
+    },
+    {
+      "row_id": "india_sms:315",
+      "group": "bd47683b5e9238545ee979db9df440d26ee0b82b71f644593ade16f793b07004",
+      "text_hash": "bd47683b5e9238545ee979db9df440d26ee0b82b71f644593ade16f793b07004"
+    },
+    {
+      "row_id": "india_sms:317",
+      "group": "1fb32220b2a27f691870f10a331aec78650d14810dc2b8cff0adabfbcf6e361d",
+      "text_hash": "1fb32220b2a27f691870f10a331aec78650d14810dc2b8cff0adabfbcf6e361d"
+    },
+    {
+      "row_id": "india_sms:32",
+      "group": "13756ff17e5f39f2448a932d29ea877abcfab3fdab5ad9a237ac02368e945387",
+      "text_hash": "13756ff17e5f39f2448a932d29ea877abcfab3fdab5ad9a237ac02368e945387"
+    },
+    {
+      "row_id": "india_sms:321",
+      "group": "ca8dc874a708006587405fe349da65229a29f0238d91a9e7b4f33e993fef40b1",
+      "text_hash": "ca8dc874a708006587405fe349da65229a29f0238d91a9e7b4f33e993fef40b1"
+    },
+    {
+      "row_id": "india_sms:323",
+      "group": "6bc7e5e26cab4e474e171d71010e223614c919e2004a9c79cd370b7b76b36839",
+      "text_hash": "6bc7e5e26cab4e474e171d71010e223614c919e2004a9c79cd370b7b76b36839"
+    },
+    {
+      "row_id": "india_sms:329",
+      "group": "722abe75ae0e7ea18fbd14106103decdd1fb93b5983c2955aed3877c084479bd",
+      "text_hash": "41051364e39aba68d954c4e1b635d3fcd029a015b04147e49974a05e8476fada"
+    },
+    {
+      "row_id": "india_sms:330",
+      "group": "32380c5e6598296df3628e079d902b86e59cc787efbb525f4ed31bdef36ee304",
+      "text_hash": "32380c5e6598296df3628e079d902b86e59cc787efbb525f4ed31bdef36ee304"
+    },
+    {
+      "row_id": "india_sms:332",
+      "group": "c6a7455420320d684157b00e2392497233460f849466a02c0e5c3e55cfa532b8",
+      "text_hash": "c6a7455420320d684157b00e2392497233460f849466a02c0e5c3e55cfa532b8"
+    },
+    {
+      "row_id": "india_sms:333",
+      "group": "a141fd9be06e402c30d51bbe2b1446a14b90f17618180b7d85f202dc9cd267ff",
+      "text_hash": "a141fd9be06e402c30d51bbe2b1446a14b90f17618180b7d85f202dc9cd267ff"
+    },
+    {
+      "row_id": "india_sms:336",
+      "group": "7ccdeb4ce28eb4677da4b27df0cd45d2e0809a2ab05c83b56b6d89d769a77d6d",
+      "text_hash": "7ccdeb4ce28eb4677da4b27df0cd45d2e0809a2ab05c83b56b6d89d769a77d6d"
+    },
+    {
+      "row_id": "india_sms:337",
+      "group": "5e80f9101e45953934ff34252fdff9867a5a13a5534cba96d2d8e2442b829804",
+      "text_hash": "5e80f9101e45953934ff34252fdff9867a5a13a5534cba96d2d8e2442b829804"
+    },
+    {
+      "row_id": "india_sms:345",
+      "group": "f4531701b81ec5a32ca83423969f1ff457339f8e9589ba852b18bdaa48cd6198",
+      "text_hash": "f4531701b81ec5a32ca83423969f1ff457339f8e9589ba852b18bdaa48cd6198"
+    },
+    {
+      "row_id": "india_sms:348",
+      "group": "fa6e8c261c3cadd16e8049f4b1c9bf4562eadc6cc21a47f2549846e4098dcf7a",
+      "text_hash": "fa6e8c261c3cadd16e8049f4b1c9bf4562eadc6cc21a47f2549846e4098dcf7a"
+    },
+    {
+      "row_id": "india_sms:349",
+      "group": "4aa207e3f8bf2b245917aaca1267027ead08668aa37bac9eab1f457f84a53b66",
+      "text_hash": "4aa207e3f8bf2b245917aaca1267027ead08668aa37bac9eab1f457f84a53b66"
+    },
+    {
+      "row_id": "india_sms:35",
+      "group": "e6eaea18e885e1078829b56df34896be5ab51439e8f0ba00cb1624b2c572c10e",
+      "text_hash": "e6eaea18e885e1078829b56df34896be5ab51439e8f0ba00cb1624b2c572c10e"
+    },
+    {
+      "row_id": "india_sms:350",
+      "group": "3414efadb65349e5f20416589ca352f4e1813fab554249c9c09a9df686717e11",
+      "text_hash": "3414efadb65349e5f20416589ca352f4e1813fab554249c9c09a9df686717e11"
+    },
+    {
+      "row_id": "india_sms:351",
+      "group": "f11fc6df1364ed163430645a4eb8b2025a37b4d7d35eeb2026c68b87a534c26a",
+      "text_hash": "f11fc6df1364ed163430645a4eb8b2025a37b4d7d35eeb2026c68b87a534c26a"
+    },
+    {
+      "row_id": "india_sms:352",
+      "group": "f55ad1626e8bee59c13462bc30b956fc08d5fca1c5080ba9033d089d6a1461f7",
+      "text_hash": "f55ad1626e8bee59c13462bc30b956fc08d5fca1c5080ba9033d089d6a1461f7"
+    },
+    {
+      "row_id": "india_sms:354",
+      "group": "0acec51b2293dcbc7214f1b093ec19e6fd90cb019017ae5dd374ebdb932b88b1",
+      "text_hash": "64084c1241d0e6d458c21b65e1e5393232c6a1ebbd4c4527590edc3918801963"
+    },
+    {
+      "row_id": "india_sms:36",
+      "group": "82064eda1e58c7fa43921d5edf2663c21ee757b1b17385dc4304242eee2ffce8",
+      "text_hash": "82064eda1e58c7fa43921d5edf2663c21ee757b1b17385dc4304242eee2ffce8"
+    },
+    {
+      "row_id": "india_sms:362",
+      "group": "91b3d627a09964dbff97d1ac74b0127be9435d8015283dd5ff242b47a2d7f917",
+      "text_hash": "91b3d627a09964dbff97d1ac74b0127be9435d8015283dd5ff242b47a2d7f917"
+    },
+    {
+      "row_id": "india_sms:364",
+      "group": "ff0a500f411a665f86de7ba7e2f561cf025730910e24efe5aca45d266ff04a9c",
+      "text_hash": "ff0a500f411a665f86de7ba7e2f561cf025730910e24efe5aca45d266ff04a9c"
+    },
+    {
+      "row_id": "india_sms:368",
+      "group": "f0c342ef1534e539d57fc793ac8b9183176624b8abd98b1b89ea1febf054a652",
+      "text_hash": "f0c342ef1534e539d57fc793ac8b9183176624b8abd98b1b89ea1febf054a652"
+    },
+    {
+      "row_id": "india_sms:37",
+      "group": "71d6ef263252fe2ec31cd091960c7b1d0024e203af882a810d6f9fdbd4b513ae",
+      "text_hash": "71d6ef263252fe2ec31cd091960c7b1d0024e203af882a810d6f9fdbd4b513ae"
+    },
+    {
+      "row_id": "india_sms:373",
+      "group": "cb4b0e6e90c139ffc19fc4f0ae927a93577bba6fae299f5f3a331cafeec100a0",
+      "text_hash": "cb4b0e6e90c139ffc19fc4f0ae927a93577bba6fae299f5f3a331cafeec100a0"
+    },
+    {
+      "row_id": "india_sms:376",
+      "group": "b68a8525d7095be5d3ec4c797b7111ece01c46d1185e4e0e72716fab12f51574",
+      "text_hash": "b68a8525d7095be5d3ec4c797b7111ece01c46d1185e4e0e72716fab12f51574"
+    },
+    {
+      "row_id": "india_sms:377",
+      "group": "b80ea7b7f4aab75f4be5be94ce1a037bd54e08d20b880aaa10df2dcb11bdfe77",
+      "text_hash": "b80ea7b7f4aab75f4be5be94ce1a037bd54e08d20b880aaa10df2dcb11bdfe77"
+    },
+    {
+      "row_id": "india_sms:379",
+      "group": "abc547333dee2133e8bf9a1393b33de4912113cc46a5c18028ebfc5d0abe031d",
+      "text_hash": "abc547333dee2133e8bf9a1393b33de4912113cc46a5c18028ebfc5d0abe031d"
+    },
+    {
+      "row_id": "india_sms:382",
+      "group": "2ddf14ffa85540c19c7cca9105d2b50f8ed67fba0088baab207103e41101c4a5",
+      "text_hash": "2ddf14ffa85540c19c7cca9105d2b50f8ed67fba0088baab207103e41101c4a5"
+    },
+    {
+      "row_id": "india_sms:383",
+      "group": "f2bcb1d9e55e359d395427d4748b409d612a81ce09358482116f2dbc0fa4e4e4",
+      "text_hash": "f2bcb1d9e55e359d395427d4748b409d612a81ce09358482116f2dbc0fa4e4e4"
+    },
+    {
+      "row_id": "india_sms:385",
+      "group": "737f1f7fa2fa9e79c067c7d890bb4669ffd0387d60d7e8abd7f378267aea729b",
+      "text_hash": "737f1f7fa2fa9e79c067c7d890bb4669ffd0387d60d7e8abd7f378267aea729b"
+    },
+    {
+      "row_id": "india_sms:387",
+      "group": "f11fc6df1364ed163430645a4eb8b2025a37b4d7d35eeb2026c68b87a534c26a",
+      "text_hash": "447441269c3f57f87df81851e0b707ff9fb12d6a3edb2b4bfa5b763e1015bac6"
+    },
+    {
+      "row_id": "india_sms:388",
+      "group": "048c2dbb2b88946ea6cff8d772fae713244d2c0baf7c0358ed47fbe95be3e879",
+      "text_hash": "048c2dbb2b88946ea6cff8d772fae713244d2c0baf7c0358ed47fbe95be3e879"
+    },
+    {
+      "row_id": "india_sms:389",
+      "group": "4bdfed5a37f2963a9260fa6999e2b309408e8d67f8b8ba9fe1f10039a41ee94a",
+      "text_hash": "4bdfed5a37f2963a9260fa6999e2b309408e8d67f8b8ba9fe1f10039a41ee94a"
+    },
+    {
+      "row_id": "india_sms:394",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a"
+    },
+    {
+      "row_id": "india_sms:395",
+      "group": "f6a868fe73e2aa2e7ced9de1344d4cbe0aca94af86bf8e131a7a3110a5b0c3d8",
+      "text_hash": "f6a868fe73e2aa2e7ced9de1344d4cbe0aca94af86bf8e131a7a3110a5b0c3d8"
+    },
+    {
+      "row_id": "india_sms:398",
+      "group": "bc7d9370cc33f983236783a37b98a282902f1dd92d0886ff907964f283de4adc",
+      "text_hash": "bc7d9370cc33f983236783a37b98a282902f1dd92d0886ff907964f283de4adc"
+    },
+    {
+      "row_id": "india_sms:4",
+      "group": "d3a2e087fd64c3dca2a063a1f539e37ed72bd870477d2ec5e1127c7163ce892e",
+      "text_hash": "d3a2e087fd64c3dca2a063a1f539e37ed72bd870477d2ec5e1127c7163ce892e"
+    },
+    {
+      "row_id": "india_sms:406",
+      "group": "8e12cac141092888b455b1042ce0f135b93f62d14079f9ac5799b4808829b581",
+      "text_hash": "8e12cac141092888b455b1042ce0f135b93f62d14079f9ac5799b4808829b581"
+    },
+    {
+      "row_id": "india_sms:410",
+      "group": "a79c2be2c942998c67f49724abfe05c18b8b99c649e43ca5bf7285fa44c9a225",
+      "text_hash": "a79c2be2c942998c67f49724abfe05c18b8b99c649e43ca5bf7285fa44c9a225"
+    },
+    {
+      "row_id": "india_sms:411",
+      "group": "18f8756826b630d5d6a455316e09d98dea028d890a0a665b438b00c412bf735c",
+      "text_hash": "18f8756826b630d5d6a455316e09d98dea028d890a0a665b438b00c412bf735c"
+    },
+    {
+      "row_id": "india_sms:412",
+      "group": "78597917d794118f056a6b4aeedffbb861f8775ebf964258e33d640282e96934",
+      "text_hash": "78597917d794118f056a6b4aeedffbb861f8775ebf964258e33d640282e96934"
+    },
+    {
+      "row_id": "india_sms:413",
+      "group": "1b9abd9e2235a5fac82f691d7fa6a02ba018f320198b4d0260989a17cc8290df",
+      "text_hash": "1b9abd9e2235a5fac82f691d7fa6a02ba018f320198b4d0260989a17cc8290df"
+    },
+    {
+      "row_id": "india_sms:416",
+      "group": "7ea4aa4691d3b5d365c6779342670d18b016c5b0a2ef416d91b6e1fca96013bc",
+      "text_hash": "7ea4aa4691d3b5d365c6779342670d18b016c5b0a2ef416d91b6e1fca96013bc"
+    },
+    {
+      "row_id": "india_sms:425",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "1d40288449a40db387bceba7d6c613541f3cb33765d054bd081fa57c827c3fc2"
+    },
+    {
+      "row_id": "india_sms:427",
+      "group": "db65c11b611749af7d6884cf74a346000dccb8d66f6b618a075bd2ce5d17dcd5",
+      "text_hash": "db65c11b611749af7d6884cf74a346000dccb8d66f6b618a075bd2ce5d17dcd5"
+    },
+    {
+      "row_id": "india_sms:428",
+      "group": "d07d613053313e112ae9c769f148e4dc00a04d45ce41535a15b14ef6630ad01f",
+      "text_hash": "d07d613053313e112ae9c769f148e4dc00a04d45ce41535a15b14ef6630ad01f"
+    },
+    {
+      "row_id": "india_sms:43",
+      "group": "bb2fe2908cd1f62f381f8e8e6be6606da3f16ffe22fae682aef357b9f8e39f60",
+      "text_hash": "bb2fe2908cd1f62f381f8e8e6be6606da3f16ffe22fae682aef357b9f8e39f60"
+    },
+    {
+      "row_id": "india_sms:434",
+      "group": "222c59a516efa5ba5d1017b2b75fb14b0b455fff08f7203467445fa7eb6ae7d1",
+      "text_hash": "222c59a516efa5ba5d1017b2b75fb14b0b455fff08f7203467445fa7eb6ae7d1"
+    },
+    {
+      "row_id": "india_sms:437",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "def85120c64c9095d885fdc4e602f139e9b4fe7508e6844651e7fbce216b785e"
+    },
+    {
+      "row_id": "india_sms:438",
+      "group": "56949279f48fd358b2208b51f9817925d299a40c360df4a7c77659d3518a630c",
+      "text_hash": "56949279f48fd358b2208b51f9817925d299a40c360df4a7c77659d3518a630c"
+    },
+    {
+      "row_id": "india_sms:439",
+      "group": "f85269205099f1470e63ea4a4c8114b40f0c8cdd3111eed795f86b9cfcab2bf2",
+      "text_hash": "f85269205099f1470e63ea4a4c8114b40f0c8cdd3111eed795f86b9cfcab2bf2"
+    },
+    {
+      "row_id": "india_sms:44",
+      "group": "d9f0e2f85af830534d7944b7968d7e843fd3536ef2180f39c6d7f21168edf3ca",
+      "text_hash": "d9f0e2f85af830534d7944b7968d7e843fd3536ef2180f39c6d7f21168edf3ca"
+    },
+    {
+      "row_id": "india_sms:448",
+      "group": "f05f17bbf827c700089ddbc675465897918f67ed42109167fcab9e7ad609f4b6",
+      "text_hash": "f05f17bbf827c700089ddbc675465897918f67ed42109167fcab9e7ad609f4b6"
+    },
+    {
+      "row_id": "india_sms:449",
+      "group": "bc7d9370cc33f983236783a37b98a282902f1dd92d0886ff907964f283de4adc",
+      "text_hash": "dc9be6a5a98b2a6ac4a4f674564dea0baafc687778a7dc7d87d6bc12902430be"
+    },
+    {
+      "row_id": "india_sms:45",
+      "group": "a5401750be506a9f24ca80a78670b386ca98523291b916452132184dd10c0c45",
+      "text_hash": "a5401750be506a9f24ca80a78670b386ca98523291b916452132184dd10c0c45"
+    },
+    {
+      "row_id": "india_sms:451",
+      "group": "381ad55051be2b92437410b209817f2477a54fb6298413f35b5a645d8af44b4b",
+      "text_hash": "381ad55051be2b92437410b209817f2477a54fb6298413f35b5a645d8af44b4b"
+    },
+    {
+      "row_id": "india_sms:453",
+      "group": "04c553baef31987c594ee9cb03f4603f4a39b5fa4f9b4290fe5d8f25be70eba3",
+      "text_hash": "04c553baef31987c594ee9cb03f4603f4a39b5fa4f9b4290fe5d8f25be70eba3"
+    },
+    {
+      "row_id": "india_sms:458",
+      "group": "923a0888477da755cc719bd0d5f43e007c899061f9043cff9ade504e489aea8c",
+      "text_hash": "923a0888477da755cc719bd0d5f43e007c899061f9043cff9ade504e489aea8c"
+    },
+    {
+      "row_id": "india_sms:459",
+      "group": "f11fc6df1364ed163430645a4eb8b2025a37b4d7d35eeb2026c68b87a534c26a",
+      "text_hash": "ded68f4f811b855653cbd9a3f1c0d95617e4749beeffd91635784082d2a09483"
+    },
+    {
+      "row_id": "india_sms:468",
+      "group": "9591cc019a5941fd3943562fd864b294f2dbcdca432a38eeaf74028d6ecbc39a",
+      "text_hash": "9591cc019a5941fd3943562fd864b294f2dbcdca432a38eeaf74028d6ecbc39a"
+    },
+    {
+      "row_id": "india_sms:469",
+      "group": "5b0df2f9c2d4ff36384a65bb49d77fdfed614ec7d427aa88fa6ad96c90366be4",
+      "text_hash": "5b0df2f9c2d4ff36384a65bb49d77fdfed614ec7d427aa88fa6ad96c90366be4"
+    },
+    {
+      "row_id": "india_sms:471",
+      "group": "9604bee3efd0a53c1a999efdaef7d267329246b67e45e5d3d969010a61cb5571",
+      "text_hash": "9604bee3efd0a53c1a999efdaef7d267329246b67e45e5d3d969010a61cb5571"
+    },
+    {
+      "row_id": "india_sms:472",
+      "group": "54e12b50ca1dfcb1eb01054211495302132633730aedd0a687e7412425e6c34b",
+      "text_hash": "54e12b50ca1dfcb1eb01054211495302132633730aedd0a687e7412425e6c34b"
+    },
+    {
+      "row_id": "india_sms:474",
+      "group": "079a1f6bcee2477f7aad36651e326e3f47aa592df8df01350018f33368bf0091",
+      "text_hash": "079a1f6bcee2477f7aad36651e326e3f47aa592df8df01350018f33368bf0091"
+    },
+    {
+      "row_id": "india_sms:476",
+      "group": "0dd7f2645a62776c1ac03eb49e312bc7be6ccf7fba6f8661ede691f9fdd9139d",
+      "text_hash": "f9b24198297df9a767f6ae2114924259115999fb3ac6a458e8364f27375e3eb3"
+    },
+    {
+      "row_id": "india_sms:478",
+      "group": "88657343572dd9d7d02deb681d0895144779201417205410fb5b09cb2b33c787",
+      "text_hash": "88657343572dd9d7d02deb681d0895144779201417205410fb5b09cb2b33c787"
+    },
+    {
+      "row_id": "india_sms:479",
+      "group": "f11fc6df1364ed163430645a4eb8b2025a37b4d7d35eeb2026c68b87a534c26a",
+      "text_hash": "c5a6de6295277657a26e612004e77480d2dad4e42df50a8ac21698b1a5653657"
+    },
+    {
+      "row_id": "india_sms:48",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2"
+    },
+    {
+      "row_id": "india_sms:483",
+      "group": "5da1ddb6e2510c8e3ebe24451636ce55d3fbf9c9ed89d159ab26790098e65705",
+      "text_hash": "5da1ddb6e2510c8e3ebe24451636ce55d3fbf9c9ed89d159ab26790098e65705"
+    },
+    {
+      "row_id": "india_sms:498",
+      "group": "79067ada761c1c66a9a0fc65dc04effa8e25ee0720a9fde019e9dd8c349124b7",
+      "text_hash": "79067ada761c1c66a9a0fc65dc04effa8e25ee0720a9fde019e9dd8c349124b7"
+    },
+    {
+      "row_id": "india_sms:5",
+      "group": "2cba1ab58cced6c83596abfa7ab6e8c8e43623ce472b419558da1cb2aa0f9257",
+      "text_hash": "2cba1ab58cced6c83596abfa7ab6e8c8e43623ce472b419558da1cb2aa0f9257"
+    },
+    {
+      "row_id": "india_sms:506",
+      "group": "4c5c2d804c24523560ae6e3a0fdb5d4cbc8ea0f72c0c846f865b96013ec5295f",
+      "text_hash": "4c5c2d804c24523560ae6e3a0fdb5d4cbc8ea0f72c0c846f865b96013ec5295f"
+    },
+    {
+      "row_id": "india_sms:507",
+      "group": "ddf802f4d6cbacf8923b20246f01ab7bbc2121c357ac777ec11153a3242609f3",
+      "text_hash": "ddf802f4d6cbacf8923b20246f01ab7bbc2121c357ac777ec11153a3242609f3"
+    },
+    {
+      "row_id": "india_sms:508",
+      "group": "ee8372bd7cc5d9f6eb34ec488b95d3c88bed25cfa86788188abc87e3d80aefb7",
+      "text_hash": "ee8372bd7cc5d9f6eb34ec488b95d3c88bed25cfa86788188abc87e3d80aefb7"
+    },
+    {
+      "row_id": "india_sms:51",
+      "group": "8e476c62dfc0a2775f14ac162f61cbbec70692853faac71202f67c2cd58d6d5e",
+      "text_hash": "8e476c62dfc0a2775f14ac162f61cbbec70692853faac71202f67c2cd58d6d5e"
+    },
+    {
+      "row_id": "india_sms:513",
+      "group": "cbe98c9e6508c180ed39a9af4ec3146c0f9f4bb86b3316e6c3537995d9ffbfec",
+      "text_hash": "cbe98c9e6508c180ed39a9af4ec3146c0f9f4bb86b3316e6c3537995d9ffbfec"
+    },
+    {
+      "row_id": "india_sms:518",
+      "group": "672564b6d19686c0e33e0230bbcb7692414ce1830a413df40f0d6847342a51da",
+      "text_hash": "672564b6d19686c0e33e0230bbcb7692414ce1830a413df40f0d6847342a51da"
+    },
+    {
+      "row_id": "india_sms:525",
+      "group": "872c787bcb6348e019fec42c95410c00b3260b34f18824c5defe6edb7c303b2c",
+      "text_hash": "872c787bcb6348e019fec42c95410c00b3260b34f18824c5defe6edb7c303b2c"
+    },
+    {
+      "row_id": "india_sms:526",
+      "group": "241686582a5c390f2d8b64275d2e2f29df3a4a03e53649921943b52f938b5ca9",
+      "text_hash": "241686582a5c390f2d8b64275d2e2f29df3a4a03e53649921943b52f938b5ca9"
+    },
+    {
+      "row_id": "india_sms:529",
+      "group": "77ef0e357e0ad3061a8aab73657467cb49e14f1830d42da27f17c2448f39767b",
+      "text_hash": "77ef0e357e0ad3061a8aab73657467cb49e14f1830d42da27f17c2448f39767b"
+    },
+    {
+      "row_id": "india_sms:53",
+      "group": "5627711582fd74ecdff67d5ba775e670d06fd77bbcbe029b574af06c2788db32",
+      "text_hash": "5627711582fd74ecdff67d5ba775e670d06fd77bbcbe029b574af06c2788db32"
+    },
+    {
+      "row_id": "india_sms:530",
+      "group": "ae87cf5643f372b87b5000449f24a57965bdc9aaade5b35aee1eaf86c4f9a5ab",
+      "text_hash": "ae87cf5643f372b87b5000449f24a57965bdc9aaade5b35aee1eaf86c4f9a5ab"
+    },
+    {
+      "row_id": "india_sms:54",
+      "group": "1a57633ff1ec17772ca55352dc62bdfce955a4b73812ea304e4a5ffdf12b8965",
+      "text_hash": "1a57633ff1ec17772ca55352dc62bdfce955a4b73812ea304e4a5ffdf12b8965"
+    },
+    {
+      "row_id": "india_sms:540",
+      "group": "ea2e405dead9ac0099335bb33035efff2865a68979dc8430ae6a34ac56627f3d",
+      "text_hash": "ea2e405dead9ac0099335bb33035efff2865a68979dc8430ae6a34ac56627f3d"
+    },
+    {
+      "row_id": "india_sms:541",
+      "group": "36d0ec28a88c6cf895a290c3b8a24720f24392371996f925329a5317ae436eec",
+      "text_hash": "36d0ec28a88c6cf895a290c3b8a24720f24392371996f925329a5317ae436eec"
+    },
+    {
+      "row_id": "india_sms:542",
+      "group": "97cd41f7742d2b8d9a8a86efc309061021b3791d65a77d2b9b30c333bf2851a6",
+      "text_hash": "97cd41f7742d2b8d9a8a86efc309061021b3791d65a77d2b9b30c333bf2851a6"
+    },
+    {
+      "row_id": "india_sms:547",
+      "group": "0e19941cc5cb576ac36e127f7d7234811d5acde045be2a117b069927b4e7fc94",
+      "text_hash": "0e19941cc5cb576ac36e127f7d7234811d5acde045be2a117b069927b4e7fc94"
+    },
+    {
+      "row_id": "india_sms:548",
+      "group": "6089d678e82cb47a7a4e575acc2118a996a6622f5dd9c3ed1c2f45209ed946f2",
+      "text_hash": "6089d678e82cb47a7a4e575acc2118a996a6622f5dd9c3ed1c2f45209ed946f2"
+    },
+    {
+      "row_id": "india_sms:549",
+      "group": "85197ad7ab9ce489ca8f16919b1dbac264bb6eee662c189bc7243279e0a33517",
+      "text_hash": "85197ad7ab9ce489ca8f16919b1dbac264bb6eee662c189bc7243279e0a33517"
+    },
+    {
+      "row_id": "india_sms:55",
+      "group": "a7de6794fcf368837e844795c4218437c6964a24a0a679f52bbf05b0a57cafec",
+      "text_hash": "a7de6794fcf368837e844795c4218437c6964a24a0a679f52bbf05b0a57cafec"
+    },
+    {
+      "row_id": "india_sms:550",
+      "group": "165129a0c70fbb8a09209a87f02dc11d3fa4791902e5ec2cb90d4739ca07b54f",
+      "text_hash": "165129a0c70fbb8a09209a87f02dc11d3fa4791902e5ec2cb90d4739ca07b54f"
+    },
+    {
+      "row_id": "india_sms:551",
+      "group": "aa9184ff8e1341ebbd1ffd758107e555ca32c8ba267aa76061d06a985eee6919",
+      "text_hash": "aa9184ff8e1341ebbd1ffd758107e555ca32c8ba267aa76061d06a985eee6919"
+    },
+    {
+      "row_id": "india_sms:552",
+      "group": "149be5b388857534d4509e05def8d31ac68cfeeb5e3b80aaffed54dc630124d2",
+      "text_hash": "149be5b388857534d4509e05def8d31ac68cfeeb5e3b80aaffed54dc630124d2"
+    },
+    {
+      "row_id": "india_sms:556",
+      "group": "fad59033d5e740ebd2e381537f5b2a303c9ff1808f239453167a7da8a1a4561a",
+      "text_hash": "fad59033d5e740ebd2e381537f5b2a303c9ff1808f239453167a7da8a1a4561a"
+    },
+    {
+      "row_id": "india_sms:558",
+      "group": "91ebb681d4303b4f24bdd6ffcf04bdc3a360b0ede2caaac9f4a46e56ef312108",
+      "text_hash": "91ebb681d4303b4f24bdd6ffcf04bdc3a360b0ede2caaac9f4a46e56ef312108"
+    },
+    {
+      "row_id": "india_sms:559",
+      "group": "5927deda4d24dfacb7fe54978d9114174d0102f07dc9d65195b09ea6a4ce05cc",
+      "text_hash": "5927deda4d24dfacb7fe54978d9114174d0102f07dc9d65195b09ea6a4ce05cc"
+    },
+    {
+      "row_id": "india_sms:56",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "48def71eb7a99ccc49a2766626ce846120f2f143a70cd3e9adbe54cb81cb3fe0"
+    },
+    {
+      "row_id": "india_sms:560",
+      "group": "e9289202d340ffe4838b0c213cfee3a0dbb2e8537af3c0c9212810c341a03a72",
+      "text_hash": "e9289202d340ffe4838b0c213cfee3a0dbb2e8537af3c0c9212810c341a03a72"
+    },
+    {
+      "row_id": "india_sms:565",
+      "group": "cedd5cb58d6fd2ae224e8bbb0648d4477a17a6bdd96968a5b0ed504e5ed80c7c",
+      "text_hash": "cedd5cb58d6fd2ae224e8bbb0648d4477a17a6bdd96968a5b0ed504e5ed80c7c"
+    },
+    {
+      "row_id": "india_sms:566",
+      "group": "441509e15e98fe870f2fbcc38fa1f3f9f2a5bf8ddccef994b283140748567cbb",
+      "text_hash": "441509e15e98fe870f2fbcc38fa1f3f9f2a5bf8ddccef994b283140748567cbb"
+    },
+    {
+      "row_id": "india_sms:570",
+      "group": "8c343dcb63de4ec81aac56c3fdb871e3c70d3920dd78d4435b89aec2b5ae6689",
+      "text_hash": "8c343dcb63de4ec81aac56c3fdb871e3c70d3920dd78d4435b89aec2b5ae6689"
+    },
+    {
+      "row_id": "india_sms:573",
+      "group": "94818b5be5a45401e00502ff6cc0e3b9c5c867e1870bbfc138e6841281edb5ef",
+      "text_hash": "94818b5be5a45401e00502ff6cc0e3b9c5c867e1870bbfc138e6841281edb5ef"
+    },
+    {
+      "row_id": "india_sms:578",
+      "group": "87a243d08f64719aa65eedb562b45e5391f2c4f40a48517b42b5c460db0a4224",
+      "text_hash": "87a243d08f64719aa65eedb562b45e5391f2c4f40a48517b42b5c460db0a4224"
+    },
+    {
+      "row_id": "india_sms:58",
+      "group": "735eeec4406690cd1406b1d71bdd92e88f73ad27feb1b9bfb8c66a4ec9b3e22e",
+      "text_hash": "735eeec4406690cd1406b1d71bdd92e88f73ad27feb1b9bfb8c66a4ec9b3e22e"
+    },
+    {
+      "row_id": "india_sms:581",
+      "group": "1eb681fbfad70322b4860cb5612a37ee67e2a936f9c889361f9965cf33e74726",
+      "text_hash": "1eb681fbfad70322b4860cb5612a37ee67e2a936f9c889361f9965cf33e74726"
+    },
+    {
+      "row_id": "india_sms:582",
+      "group": "80b766e25c24ccba75b2f596d52fbc8e44bea1e5487730f4f3bc92e2ea2ea5cc",
+      "text_hash": "80b766e25c24ccba75b2f596d52fbc8e44bea1e5487730f4f3bc92e2ea2ea5cc"
+    },
+    {
+      "row_id": "india_sms:584",
+      "group": "eed1d5789d21f741584abb03f2db715c11920365364259bc7fda2f4570599dd1",
+      "text_hash": "eed1d5789d21f741584abb03f2db715c11920365364259bc7fda2f4570599dd1"
+    },
+    {
+      "row_id": "india_sms:585",
+      "group": "6f3818ebba346bc7a9569e45717cc13d375e932cf859998ea1ba6b1b0a7ea7ad",
+      "text_hash": "6f3818ebba346bc7a9569e45717cc13d375e932cf859998ea1ba6b1b0a7ea7ad"
+    },
+    {
+      "row_id": "india_sms:591",
+      "group": "ff0056d0a7e615222d56a31a75728f1b9120d87d9a9f5de13c1f69c8eb1ae4e1",
+      "text_hash": "ff0056d0a7e615222d56a31a75728f1b9120d87d9a9f5de13c1f69c8eb1ae4e1"
+    },
+    {
+      "row_id": "india_sms:593",
+      "group": "8ec37492cdcf9552291615032929cf1251fd96e25081d52f8eb6adb441362c69",
+      "text_hash": "8ec37492cdcf9552291615032929cf1251fd96e25081d52f8eb6adb441362c69"
+    },
+    {
+      "row_id": "india_sms:594",
+      "group": "5dd6992df0841516d4be285f8570e3bc5689b19f5ec0ccf0a1bde8f7588cf26f",
+      "text_hash": "5dd6992df0841516d4be285f8570e3bc5689b19f5ec0ccf0a1bde8f7588cf26f"
+    },
+    {
+      "row_id": "india_sms:595",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "23f6748ac2fa98a9fc80fabd8468c2655879f383a31ef57d6bb2898a0b0b8d10"
+    },
+    {
+      "row_id": "india_sms:597",
+      "group": "d822bd6fb283a89d50a99725d1a353123b2fbb6daf21700f5eac0314918aabec",
+      "text_hash": "d822bd6fb283a89d50a99725d1a353123b2fbb6daf21700f5eac0314918aabec"
+    },
+    {
+      "row_id": "india_sms:60",
+      "group": "c5938afadfa8988e72ca4430c0ee251f2b3509e2f1af749e4a513a635186a653",
+      "text_hash": "c5938afadfa8988e72ca4430c0ee251f2b3509e2f1af749e4a513a635186a653"
+    },
+    {
+      "row_id": "india_sms:600",
+      "group": "b74f8b0dbb03a78fc946a7e0b994c6960fc43fdb0b11505819ede7c1a068ad4b",
+      "text_hash": "b74f8b0dbb03a78fc946a7e0b994c6960fc43fdb0b11505819ede7c1a068ad4b"
+    },
+    {
+      "row_id": "india_sms:601",
+      "group": "31e3db56bf2bbd67d26cd648475c289a765acf85068bde133391b234a7b251bc",
+      "text_hash": "31e3db56bf2bbd67d26cd648475c289a765acf85068bde133391b234a7b251bc"
+    },
+    {
+      "row_id": "india_sms:605",
+      "group": "ee69ec04d149594aac2acb446d737f207ed05542d674b419e385f3d3bd9ca38b",
+      "text_hash": "ee69ec04d149594aac2acb446d737f207ed05542d674b419e385f3d3bd9ca38b"
+    },
+    {
+      "row_id": "india_sms:607",
+      "group": "d983b4b1c7ca8ee146cff13d7b3b0995f27745b61a3b4cf27087dec194d40e50",
+      "text_hash": "d983b4b1c7ca8ee146cff13d7b3b0995f27745b61a3b4cf27087dec194d40e50"
+    },
+    {
+      "row_id": "india_sms:609",
+      "group": "bc9e3026143294a91a87ef9830f76b1762cad827b8b2d14ff0cb6dbe6ed64bb9",
+      "text_hash": "bc9e3026143294a91a87ef9830f76b1762cad827b8b2d14ff0cb6dbe6ed64bb9"
+    },
+    {
+      "row_id": "india_sms:610",
+      "group": "d7a422bf8e06b2912390690b57e5a019c170753fbd4417699856df6e8a25b124",
+      "text_hash": "d7a422bf8e06b2912390690b57e5a019c170753fbd4417699856df6e8a25b124"
+    },
+    {
+      "row_id": "india_sms:614",
+      "group": "0e9499aaeb195a4c7aac9e3b3d2f7eca32438ac333b80cba3774bd3b4ccc8f9a",
+      "text_hash": "0e9499aaeb195a4c7aac9e3b3d2f7eca32438ac333b80cba3774bd3b4ccc8f9a"
+    },
+    {
+      "row_id": "india_sms:615",
+      "group": "f11fc6df1364ed163430645a4eb8b2025a37b4d7d35eeb2026c68b87a534c26a",
+      "text_hash": "547f82c24ecf119bb91e9d9ffa32472ce97afb68430f303a73baa1ed802c87fc"
+    },
+    {
+      "row_id": "india_sms:616",
+      "group": "b18ad0aacc8228ae4e6f15aded2d548436effc19c342e69888ac80cb8c55f7f2",
+      "text_hash": "b18ad0aacc8228ae4e6f15aded2d548436effc19c342e69888ac80cb8c55f7f2"
+    },
+    {
+      "row_id": "india_sms:619",
+      "group": "f42cd7f62504bd7affdd7f461ea9e6bd6c39424dcb16ffd54d94c0ed87c1cd35",
+      "text_hash": "f42cd7f62504bd7affdd7f461ea9e6bd6c39424dcb16ffd54d94c0ed87c1cd35"
+    },
+    {
+      "row_id": "india_sms:620",
+      "group": "942b452772ebe84ec3d49b7b514b07ef03aec42d65803c868089779ca373f3ae",
+      "text_hash": "942b452772ebe84ec3d49b7b514b07ef03aec42d65803c868089779ca373f3ae"
+    },
+    {
+      "row_id": "india_sms:622",
+      "group": "abc474da4a33197a2e1ab27410ceb79f0856d6aeb912f03b31d0da95c1281700",
+      "text_hash": "abc474da4a33197a2e1ab27410ceb79f0856d6aeb912f03b31d0da95c1281700"
+    },
+    {
+      "row_id": "india_sms:624",
+      "group": "dea5c71fa2a408916d3c432a4f169214b26eb1c1bcfadeb2df4154a73792274a",
+      "text_hash": "dea5c71fa2a408916d3c432a4f169214b26eb1c1bcfadeb2df4154a73792274a"
+    },
+    {
+      "row_id": "india_sms:625",
+      "group": "fafc5dd70fcdf1fcd9858c1247fc496192f9d9d53c558263c7d44074d2447df3",
+      "text_hash": "fafc5dd70fcdf1fcd9858c1247fc496192f9d9d53c558263c7d44074d2447df3"
+    },
+    {
+      "row_id": "india_sms:627",
+      "group": "f55373f565aeda1afd6c3fa8a1094ae336dc9aa07dd060375f34f8691b1931d9",
+      "text_hash": "f55373f565aeda1afd6c3fa8a1094ae336dc9aa07dd060375f34f8691b1931d9"
+    },
+    {
+      "row_id": "india_sms:63",
+      "group": "4445e03ac482065aa6ca4cc1d79647f024ffe0810e9d27a1fc3fa8fe93be260d",
+      "text_hash": "4445e03ac482065aa6ca4cc1d79647f024ffe0810e9d27a1fc3fa8fe93be260d"
+    },
+    {
+      "row_id": "india_sms:630",
+      "group": "eae3073b0b0f4bb5c1d346e7397841d5b4623e35246291293392da02f291736e",
+      "text_hash": "eae3073b0b0f4bb5c1d346e7397841d5b4623e35246291293392da02f291736e"
+    },
+    {
+      "row_id": "india_sms:632",
+      "group": "3321bd5b37c98c4770375e8ae716a78c0b6fc2635cd849f5b0d66485bf657b64",
+      "text_hash": "3321bd5b37c98c4770375e8ae716a78c0b6fc2635cd849f5b0d66485bf657b64"
+    },
+    {
+      "row_id": "india_sms:641",
+      "group": "8d0c8e4b87e1d1603d2e5d81ac00b530e68a71caa4f704f0fcb88e543324b953",
+      "text_hash": "8d0c8e4b87e1d1603d2e5d81ac00b530e68a71caa4f704f0fcb88e543324b953"
+    },
+    {
+      "row_id": "india_sms:645",
+      "group": "53fb03b768af060fcd92c8e60b0c60f9944efc47d0e8f8e7c388a81362703cec",
+      "text_hash": "53fb03b768af060fcd92c8e60b0c60f9944efc47d0e8f8e7c388a81362703cec"
+    },
+    {
+      "row_id": "india_sms:65",
+      "group": "47521605dfcc32f8fb41ca7cfaf64862fb34a1b70fac5aa882442a64ef4af3e8",
+      "text_hash": "47521605dfcc32f8fb41ca7cfaf64862fb34a1b70fac5aa882442a64ef4af3e8"
+    },
+    {
+      "row_id": "india_sms:657",
+      "group": "5fb413a0e55bee49d091330109712f0ce4f4eff6c1fc6e383a5c908f554f0405",
+      "text_hash": "5fb413a0e55bee49d091330109712f0ce4f4eff6c1fc6e383a5c908f554f0405"
+    },
+    {
+      "row_id": "india_sms:659",
+      "group": "45877e9d374c23a1afe113574e9b5523e978dcf4286718a62c24ec230e568d24",
+      "text_hash": "45877e9d374c23a1afe113574e9b5523e978dcf4286718a62c24ec230e568d24"
+    },
+    {
+      "row_id": "india_sms:662",
+      "group": "a9d77cab24ce0ca8d916f5384bd2d283249eac978c0057e77ab60d8eab95cd29",
+      "text_hash": "a9d77cab24ce0ca8d916f5384bd2d283249eac978c0057e77ab60d8eab95cd29"
+    },
+    {
+      "row_id": "india_sms:663",
+      "group": "a80174b10032da204a788504a62ce668cc7360fef6eecdeb79a46bdb89c3bca6",
+      "text_hash": "a80174b10032da204a788504a62ce668cc7360fef6eecdeb79a46bdb89c3bca6"
+    },
+    {
+      "row_id": "india_sms:664",
+      "group": "13625e7b245b5522ba403949882fb160ec0e22a8920a05d302449967e5e26788",
+      "text_hash": "13625e7b245b5522ba403949882fb160ec0e22a8920a05d302449967e5e26788"
+    },
+    {
+      "row_id": "india_sms:667",
+      "group": "0a9839dc464121036cf5da6201e32c49b835d868e7f6a58d70cf0c0a5c6f74f8",
+      "text_hash": "0a9839dc464121036cf5da6201e32c49b835d868e7f6a58d70cf0c0a5c6f74f8"
+    },
+    {
+      "row_id": "india_sms:668",
+      "group": "91b3d627a09964dbff97d1ac74b0127be9435d8015283dd5ff242b47a2d7f917",
+      "text_hash": "ae9ed94d438f0c8365bc58f14f54ffaa90521becce5f571ba5c119dad00840bc"
+    },
+    {
+      "row_id": "india_sms:669",
+      "group": "d0ab7df5ac7bc0d717aaac175840d9d95bf67a6415340f581c34c777efbfa3be",
+      "text_hash": "d0ab7df5ac7bc0d717aaac175840d9d95bf67a6415340f581c34c777efbfa3be"
+    },
+    {
+      "row_id": "india_sms:671",
+      "group": "f425add47590d0058123f5c55aa553219d7b73b4c0ab5ff47176329cdaac8f8a",
+      "text_hash": "f425add47590d0058123f5c55aa553219d7b73b4c0ab5ff47176329cdaac8f8a"
+    },
+    {
+      "row_id": "india_sms:673",
+      "group": "9f23e3e72266d783e2c15f634f1d647561b41c1c353a89b250c4187914585125",
+      "text_hash": "9f23e3e72266d783e2c15f634f1d647561b41c1c353a89b250c4187914585125"
+    },
+    {
+      "row_id": "india_sms:674",
+      "group": "aa36a01c94a7c1a344f57158d41ebd4c684efbd13d81feb2e310f29242ca06ed",
+      "text_hash": "aa36a01c94a7c1a344f57158d41ebd4c684efbd13d81feb2e310f29242ca06ed"
+    },
+    {
+      "row_id": "india_sms:677",
+      "group": "9dad3c4872643dd2af81af6803f1c4648be5cb879671472d524dd510712ee544",
+      "text_hash": "9dad3c4872643dd2af81af6803f1c4648be5cb879671472d524dd510712ee544"
+    },
+    {
+      "row_id": "india_sms:68",
+      "group": "6a581ee901185606598bbd5369794c46dcf21ebf95955a46fb4a6244bb89e79f",
+      "text_hash": "6a581ee901185606598bbd5369794c46dcf21ebf95955a46fb4a6244bb89e79f"
+    },
+    {
+      "row_id": "india_sms:684",
+      "group": "f0a73029d75783efd493e56a36777eee76142fb409c6e0e6d5ca97003715ae9d",
+      "text_hash": "f0a73029d75783efd493e56a36777eee76142fb409c6e0e6d5ca97003715ae9d"
+    },
+    {
+      "row_id": "india_sms:687",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "d3d6119a68aade223f0a7aee8c749fd56ab3675921291dcc06ce6ab92a801f97"
+    },
+    {
+      "row_id": "india_sms:688",
+      "group": "e47d3b60c0a54f11aea6c260570576b8d67b46a588f50ad8d6d6e7c03eaf3168",
+      "text_hash": "e47d3b60c0a54f11aea6c260570576b8d67b46a588f50ad8d6d6e7c03eaf3168"
+    },
+    {
+      "row_id": "india_sms:690",
+      "group": "e8565e91adb6b5216d5438edc79736b9bac027121d6a31d87648e6878b2bed4e",
+      "text_hash": "e8565e91adb6b5216d5438edc79736b9bac027121d6a31d87648e6878b2bed4e"
+    },
+    {
+      "row_id": "india_sms:695",
+      "group": "146d4f99972be9f8847b974837c5ad5a929550189259caf54a93079a22762651",
+      "text_hash": "146d4f99972be9f8847b974837c5ad5a929550189259caf54a93079a22762651"
+    },
+    {
+      "row_id": "india_sms:70",
+      "group": "25908f446b0563bd3d5fe9d8c9cfb89819309d327f169aaee0cb1a342ae110dc",
+      "text_hash": "25908f446b0563bd3d5fe9d8c9cfb89819309d327f169aaee0cb1a342ae110dc"
+    },
+    {
+      "row_id": "india_sms:701",
+      "group": "8c2520c116f662f1ed0a065e134c76e6335624f620e5467422ebce4d3347b3c9",
+      "text_hash": "8c2520c116f662f1ed0a065e134c76e6335624f620e5467422ebce4d3347b3c9"
+    },
+    {
+      "row_id": "india_sms:702",
+      "group": "8b8cdd40ba6592accc769ca206278ab99eb8aff6d05cc8fda41cb4db437bec07",
+      "text_hash": "8b8cdd40ba6592accc769ca206278ab99eb8aff6d05cc8fda41cb4db437bec07"
+    },
+    {
+      "row_id": "india_sms:705",
+      "group": "f60f7256829bba0d48f33b1824599227e45e6b87c6250afc1a9854a80137886e",
+      "text_hash": "f60f7256829bba0d48f33b1824599227e45e6b87c6250afc1a9854a80137886e"
+    },
+    {
+      "row_id": "india_sms:710",
+      "group": "381ad55051be2b92437410b209817f2477a54fb6298413f35b5a645d8af44b4b",
+      "text_hash": "a0afe67f09acaaefce4bb2afdfc3e5141b8a407d9e3c76e0cb68b7153fc52992"
+    },
+    {
+      "row_id": "india_sms:714",
+      "group": "054f98bb12df034ba1fbe8b999b0928237e285b345365c438f7289a2ab6cf47f",
+      "text_hash": "054f98bb12df034ba1fbe8b999b0928237e285b345365c438f7289a2ab6cf47f"
+    },
+    {
+      "row_id": "india_sms:719",
+      "group": "19989005dbbaa90c37f1d82137aae5ef4970b614111fdf1d5de3216253d39029",
+      "text_hash": "19989005dbbaa90c37f1d82137aae5ef4970b614111fdf1d5de3216253d39029"
+    },
+    {
+      "row_id": "india_sms:72",
+      "group": "1631ec3912845215a8186294a2d67084952e834477417b44eb676a48f3e7e06c",
+      "text_hash": "1631ec3912845215a8186294a2d67084952e834477417b44eb676a48f3e7e06c"
+    },
+    {
+      "row_id": "india_sms:721",
+      "group": "1da51159861cbac4ceb2475b4e910f7cabee6d17a9d0edd0631b31e30731c615",
+      "text_hash": "1da51159861cbac4ceb2475b4e910f7cabee6d17a9d0edd0631b31e30731c615"
+    },
+    {
+      "row_id": "india_sms:728",
+      "group": "aa4578c6d88951687dcbbfeee83a38f43a330ee72f4d9a957638e5231b0f5207",
+      "text_hash": "aa4578c6d88951687dcbbfeee83a38f43a330ee72f4d9a957638e5231b0f5207"
+    },
+    {
+      "row_id": "india_sms:73",
+      "group": "f57850716fcf61ba600ec3f35407d366bde0ea7867beb9bdfb5800cab88335f3",
+      "text_hash": "f57850716fcf61ba600ec3f35407d366bde0ea7867beb9bdfb5800cab88335f3"
+    },
+    {
+      "row_id": "india_sms:732",
+      "group": "967903208a449dfb7d22a364a6934810f49f263cd519b195e6f0583d53e8105f",
+      "text_hash": "967903208a449dfb7d22a364a6934810f49f263cd519b195e6f0583d53e8105f"
+    },
+    {
+      "row_id": "india_sms:734",
+      "group": "c11e8e76e3fbf6d58f5f3a3bcda00e8cef5cb21248258ef811e6b6b8d378104e",
+      "text_hash": "c11e8e76e3fbf6d58f5f3a3bcda00e8cef5cb21248258ef811e6b6b8d378104e"
+    },
+    {
+      "row_id": "india_sms:741",
+      "group": "4681b4a83c4e809e818daa0aeedaf446a71008eac4435f764ac8a4c0887df264",
+      "text_hash": "4681b4a83c4e809e818daa0aeedaf446a71008eac4435f764ac8a4c0887df264"
+    },
+    {
+      "row_id": "india_sms:742",
+      "group": "ce363cd85f068cc608f4f766007ee73abd692501eb1b24a9c3c06aae8d7ee03c",
+      "text_hash": "dfad793445829abfa25ce029b41f539e6c33900ee95ffe2611e39ed45e766545"
+    },
+    {
+      "row_id": "india_sms:744",
+      "group": "09c2b1941e0912e5da7430d92e8647474ed7b779e46d38530ce6149c4e4e3efc",
+      "text_hash": "09c2b1941e0912e5da7430d92e8647474ed7b779e46d38530ce6149c4e4e3efc"
+    },
+    {
+      "row_id": "india_sms:748",
+      "group": "a9de25ab606a50a1a74f37c1fed5290f231754a640b1811cb4bf09aebcfc360e",
+      "text_hash": "a9de25ab606a50a1a74f37c1fed5290f231754a640b1811cb4bf09aebcfc360e"
+    },
+    {
+      "row_id": "india_sms:749",
+      "group": "3fb8e02cd4c4ada3404f4edacacb9b78f2e81c37fac61cf21dbcbfb6a5829048",
+      "text_hash": "3fb8e02cd4c4ada3404f4edacacb9b78f2e81c37fac61cf21dbcbfb6a5829048"
+    },
+    {
+      "row_id": "india_sms:750",
+      "group": "521d24e15ee3d9c305426b1585f281e10f63a81d56597ff1a6a91e96be79f92a",
+      "text_hash": "521d24e15ee3d9c305426b1585f281e10f63a81d56597ff1a6a91e96be79f92a"
+    },
+    {
+      "row_id": "india_sms:751",
+      "group": "9e789632e46265c90d7194d913eff39d45bb80fd35dff1dd00397cc5b318423f",
+      "text_hash": "9e789632e46265c90d7194d913eff39d45bb80fd35dff1dd00397cc5b318423f"
+    },
+    {
+      "row_id": "india_sms:752",
+      "group": "30109f9e0a923a96b765555b2f0e49ec65bdf11ab111b9763b523723e51e7303",
+      "text_hash": "30109f9e0a923a96b765555b2f0e49ec65bdf11ab111b9763b523723e51e7303"
+    },
+    {
+      "row_id": "india_sms:754",
+      "group": "e14217d0f4732488b2a4e0002dfb7a88cd627c9c62cc4f3995bf032e345d449b",
+      "text_hash": "e14217d0f4732488b2a4e0002dfb7a88cd627c9c62cc4f3995bf032e345d449b"
+    },
+    {
+      "row_id": "india_sms:756",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "4661d8bceefa219a7dd4033256a4e9df63ff1a0e9e3389f425d9a32bf970bdc7"
+    },
+    {
+      "row_id": "india_sms:757",
+      "group": "40ac9b2b69d076d5773c03485587196a0fe5fb1e75d69915e88f973794cf7347",
+      "text_hash": "40ac9b2b69d076d5773c03485587196a0fe5fb1e75d69915e88f973794cf7347"
+    },
+    {
+      "row_id": "india_sms:758",
+      "group": "e89407e1914eb74751b6654be6fb8a0237499cf8ce1424569df8a972d1b19bb2",
+      "text_hash": "696e915d4ffcba2f5e0bd37d5ea4d80341e80e883480856de8398b71120c0649"
+    },
+    {
+      "row_id": "india_sms:76",
+      "group": "a49b9703d0623dcd51098eff3c19666eec52f275f42cd9f7b862c69220e0015d",
+      "text_hash": "a49b9703d0623dcd51098eff3c19666eec52f275f42cd9f7b862c69220e0015d"
+    },
+    {
+      "row_id": "india_sms:766",
+      "group": "9ca39e6dcf5ee19937c5e2b7f74161cfde24a4167d8d1e9b7fe3615099990b4e",
+      "text_hash": "9ca39e6dcf5ee19937c5e2b7f74161cfde24a4167d8d1e9b7fe3615099990b4e"
+    },
+    {
+      "row_id": "india_sms:774",
+      "group": "4fe8b48cecdc29a059be455d49053b72acc0c54a77cabb89f194bdf4bac61809",
+      "text_hash": "4fe8b48cecdc29a059be455d49053b72acc0c54a77cabb89f194bdf4bac61809"
+    },
+    {
+      "row_id": "india_sms:775",
+      "group": "4c4def2515537585f8e03820941730663882bf58e4a4320970cfb93279a2a8e8",
+      "text_hash": "4c4def2515537585f8e03820941730663882bf58e4a4320970cfb93279a2a8e8"
+    },
+    {
+      "row_id": "india_sms:777",
+      "group": "90787e702276ef72382d53c9424a5df77952dbe313394a4a6dfcfa7b7aa131b8",
+      "text_hash": "90787e702276ef72382d53c9424a5df77952dbe313394a4a6dfcfa7b7aa131b8"
+    },
+    {
+      "row_id": "india_sms:78",
+      "group": "cb7f5eba025ebc5435fee756ab0e8fa084a2f8825237faab873e3b2a1da76c74",
+      "text_hash": "cb7f5eba025ebc5435fee756ab0e8fa084a2f8825237faab873e3b2a1da76c74"
+    },
+    {
+      "row_id": "india_sms:780",
+      "group": "a5478faa80a9510492ec5898825697ec902e0f825190d4337a1f02dc68e7ec70",
+      "text_hash": "a5478faa80a9510492ec5898825697ec902e0f825190d4337a1f02dc68e7ec70"
+    },
+    {
+      "row_id": "india_sms:781",
+      "group": "75b222b5128f4bbf02ccddbef9a54c8af044ebf271e00eb62a66f5b629b7284f",
+      "text_hash": "75b222b5128f4bbf02ccddbef9a54c8af044ebf271e00eb62a66f5b629b7284f"
+    },
+    {
+      "row_id": "india_sms:782",
+      "group": "bb42e5f8cdb361d4845c99f5f8547e9ad577e7060b415e97fc0a890e3825e5d9",
+      "text_hash": "bb42e5f8cdb361d4845c99f5f8547e9ad577e7060b415e97fc0a890e3825e5d9"
+    },
+    {
+      "row_id": "india_sms:784",
+      "group": "c7c31d4c61ac5dbe7f6e23d3e84a44cd146e8e8c85a4bc6f7de3c32d68a164ac",
+      "text_hash": "c7c31d4c61ac5dbe7f6e23d3e84a44cd146e8e8c85a4bc6f7de3c32d68a164ac"
+    },
+    {
+      "row_id": "india_sms:788",
+      "group": "eae3073b0b0f4bb5c1d346e7397841d5b4623e35246291293392da02f291736e",
+      "text_hash": "eb065bd2d256625d5c90b941c5d3d918e9759fd00c5ed685642f5343294d8a4b"
+    },
+    {
+      "row_id": "india_sms:789",
+      "group": "a74ecfbbbe45404dfee780699443cbfee1056fe07cd82d372c616c6be626e2f9",
+      "text_hash": "a74ecfbbbe45404dfee780699443cbfee1056fe07cd82d372c616c6be626e2f9"
+    },
+    {
+      "row_id": "india_sms:79",
+      "group": "cad6735a811bf8ef655d91407cfab34c9ac46cd0f221e01ddd3a726418dffbc1",
+      "text_hash": "cad6735a811bf8ef655d91407cfab34c9ac46cd0f221e01ddd3a726418dffbc1"
+    },
+    {
+      "row_id": "india_sms:797",
+      "group": "bee42e778837d85393c222be752cb1113c564c246f9b2f0388f2566f57140a00",
+      "text_hash": "bee42e778837d85393c222be752cb1113c564c246f9b2f0388f2566f57140a00"
+    },
+    {
+      "row_id": "india_sms:803",
+      "group": "c21b63a9c2f086b047bd1ad33637ac23356b36cd273fbcb885e07e8c3c09c7ca",
+      "text_hash": "c21b63a9c2f086b047bd1ad33637ac23356b36cd273fbcb885e07e8c3c09c7ca"
+    },
+    {
+      "row_id": "india_sms:806",
+      "group": "7f0352f604be3437190106baa195150f0f3d4b795b87a89edf6605c8bcb67e24",
+      "text_hash": "7f0352f604be3437190106baa195150f0f3d4b795b87a89edf6605c8bcb67e24"
+    },
+    {
+      "row_id": "india_sms:807",
+      "group": "360e4a5cb256badf9b83b0dc407bb85aec3d3fc63cf1eb1e6a8d53b3b3f1348f",
+      "text_hash": "360e4a5cb256badf9b83b0dc407bb85aec3d3fc63cf1eb1e6a8d53b3b3f1348f"
+    },
+    {
+      "row_id": "india_sms:809",
+      "group": "1e9a5efc15be2471c69ca894360548841ab2ddfe9e57c96b23afd63d85566438",
+      "text_hash": "1e9a5efc15be2471c69ca894360548841ab2ddfe9e57c96b23afd63d85566438"
+    },
+    {
+      "row_id": "india_sms:813",
+      "group": "76832211fa04f5d662f40a7dfaa2fda53b7e83df1da1d225a99661d3dd73023e",
+      "text_hash": "76832211fa04f5d662f40a7dfaa2fda53b7e83df1da1d225a99661d3dd73023e"
+    },
+    {
+      "row_id": "india_sms:814",
+      "group": "e17982a162f460fe384793c89603789801bc684c157ead8834d07511c9ac2647",
+      "text_hash": "e17982a162f460fe384793c89603789801bc684c157ead8834d07511c9ac2647"
+    },
+    {
+      "row_id": "india_sms:818",
+      "group": "6307cae05ac620f09095bbabc1541469cdc7b3b0ee084c9e6103fe1a153cb2d5",
+      "text_hash": "6307cae05ac620f09095bbabc1541469cdc7b3b0ee084c9e6103fe1a153cb2d5"
+    },
+    {
+      "row_id": "india_sms:82",
+      "group": "7444e6aa82b051babd8fc28899d8e0073119cd350bcdf0de66b7415ae485297b",
+      "text_hash": "7444e6aa82b051babd8fc28899d8e0073119cd350bcdf0de66b7415ae485297b"
+    },
+    {
+      "row_id": "india_sms:820",
+      "group": "ed59b593e04db735eeb2e3397903d5753584f0e9204b60eca8abc74ccb94db26",
+      "text_hash": "ed59b593e04db735eeb2e3397903d5753584f0e9204b60eca8abc74ccb94db26"
+    },
+    {
+      "row_id": "india_sms:825",
+      "group": "2396c6a694c7cf83b0e7b42dab67ced716b34c98d5ed1741250c1e23a9c70c3a",
+      "text_hash": "d3f38e0932197bfdbc45be9f802ef160b08b7b1b0a3116e55e814849ae99af97"
+    },
+    {
+      "row_id": "india_sms:828",
+      "group": "a3d375ae5495a22bfb7adc36eaa8eec3c3e759d124d252a24f8d110c82497107",
+      "text_hash": "a3d375ae5495a22bfb7adc36eaa8eec3c3e759d124d252a24f8d110c82497107"
+    },
+    {
+      "row_id": "india_sms:830",
+      "group": "816a6b6e31d22fc9ec32b702e3a4ed434a4699a041b407ed420294e0f3b5a59b",
+      "text_hash": "816a6b6e31d22fc9ec32b702e3a4ed434a4699a041b407ed420294e0f3b5a59b"
+    },
+    {
+      "row_id": "india_sms:835",
+      "group": "01a01a557ea89652871670e11f9320704f452f361df3138a59b5afc6269c97af",
+      "text_hash": "01a01a557ea89652871670e11f9320704f452f361df3138a59b5afc6269c97af"
+    },
+    {
+      "row_id": "india_sms:836",
+      "group": "860c9d15e70a0966b9842698c7d77a689001af95fcb4c651b02b1bde9fb17ad2",
+      "text_hash": "860c9d15e70a0966b9842698c7d77a689001af95fcb4c651b02b1bde9fb17ad2"
+    },
+    {
+      "row_id": "india_sms:837",
+      "group": "6ce841630515f3ddda94fa9c7a84918620a256443114b652223700d98efc8b5a",
+      "text_hash": "6ce841630515f3ddda94fa9c7a84918620a256443114b652223700d98efc8b5a"
+    },
+    {
+      "row_id": "india_sms:839",
+      "group": "ace3833b677d9bd3ab0f0cd9dd2e2cb6bbc09e298cc576652f46640cda10df1a",
+      "text_hash": "ace3833b677d9bd3ab0f0cd9dd2e2cb6bbc09e298cc576652f46640cda10df1a"
+    },
+    {
+      "row_id": "india_sms:842",
+      "group": "9c6c4858381b09e8c9188492464ba6400146b4c5ce5ccddca4fa06f4e19f3436",
+      "text_hash": "9c6c4858381b09e8c9188492464ba6400146b4c5ce5ccddca4fa06f4e19f3436"
+    },
+    {
+      "row_id": "india_sms:843",
+      "group": "e8c6b7f995bfa50705831553ae9cc702e655cd58a8c88fb72ed1caf59c9633c8",
+      "text_hash": "e8c6b7f995bfa50705831553ae9cc702e655cd58a8c88fb72ed1caf59c9633c8"
+    },
+    {
+      "row_id": "india_sms:845",
+      "group": "fff98e9239accb1e6235be116ae7db0c0fb1cd7eec2e7fbd5624f81a31f311a5",
+      "text_hash": "fff98e9239accb1e6235be116ae7db0c0fb1cd7eec2e7fbd5624f81a31f311a5"
+    },
+    {
+      "row_id": "india_sms:848",
+      "group": "9d66e851ad6240936cada54926273c1fe7b6c0aa8e1d1042eff2dbdd15c69b2f",
+      "text_hash": "9d66e851ad6240936cada54926273c1fe7b6c0aa8e1d1042eff2dbdd15c69b2f"
+    },
+    {
+      "row_id": "india_sms:849",
+      "group": "22a483564497b89bc94a7aef38e98d0cb8cb9b0deaf3081172900929c5e76ee7",
+      "text_hash": "22a483564497b89bc94a7aef38e98d0cb8cb9b0deaf3081172900929c5e76ee7"
+    },
+    {
+      "row_id": "india_sms:85",
+      "group": "f216cde0c2693c99fe2dde8cadf1ad3d41dcb30ff04dfb39f5bb4849c9be760b",
+      "text_hash": "f216cde0c2693c99fe2dde8cadf1ad3d41dcb30ff04dfb39f5bb4849c9be760b"
+    },
+    {
+      "row_id": "india_sms:850",
+      "group": "462c3dcf7d30e0b0a1d7dd7cb3f6085148a572c55d4ea196d27d5acfc458220c",
+      "text_hash": "462c3dcf7d30e0b0a1d7dd7cb3f6085148a572c55d4ea196d27d5acfc458220c"
+    },
+    {
+      "row_id": "india_sms:856",
+      "group": "4d5812f558c062b70c2e0664cc21cc84b48bb4ec880430dfe3f81669f8f939e9",
+      "text_hash": "4d5812f558c062b70c2e0664cc21cc84b48bb4ec880430dfe3f81669f8f939e9"
+    },
+    {
+      "row_id": "india_sms:858",
+      "group": "d31b2493f51dffe3fa00e24d7621127536fb9ceb68a5054976a32a4bc075afa6",
+      "text_hash": "d31b2493f51dffe3fa00e24d7621127536fb9ceb68a5054976a32a4bc075afa6"
+    },
+    {
+      "row_id": "india_sms:86",
+      "group": "94d285f6ee23a62f6c63054c38a6849f22886f8a5c231f58369fc985d5b84072",
+      "text_hash": "94d285f6ee23a62f6c63054c38a6849f22886f8a5c231f58369fc985d5b84072"
+    },
+    {
+      "row_id": "india_sms:862",
+      "group": "c9150217ad304c76ce9af1a1eb621fe8376b4eb5a2c22e3abd870ea1de119f0a",
+      "text_hash": "c9150217ad304c76ce9af1a1eb621fe8376b4eb5a2c22e3abd870ea1de119f0a"
+    },
+    {
+      "row_id": "india_sms:863",
+      "group": "e8c8221585c5c7e8a2d3dab83f0f1175ce7b55e62a3da0437efdac68a5992fae",
+      "text_hash": "e8c8221585c5c7e8a2d3dab83f0f1175ce7b55e62a3da0437efdac68a5992fae"
+    },
+    {
+      "row_id": "india_sms:866",
+      "group": "3395cebc8b6545b2bbf6c7045103fe1d966439ebcc45db708875ae5a91ece493",
+      "text_hash": "3395cebc8b6545b2bbf6c7045103fe1d966439ebcc45db708875ae5a91ece493"
+    },
+    {
+      "row_id": "india_sms:869",
+      "group": "ddada4666d374fba0347860e8beabd35c665ae74a5c985d3cf40541b6b99560e",
+      "text_hash": "ddada4666d374fba0347860e8beabd35c665ae74a5c985d3cf40541b6b99560e"
+    },
+    {
+      "row_id": "india_sms:871",
+      "group": "b734e959a783c66a6dc213a447f2af7e2a40be2363e12de6027c9c4b4863b025",
+      "text_hash": "b734e959a783c66a6dc213a447f2af7e2a40be2363e12de6027c9c4b4863b025"
+    },
+    {
+      "row_id": "india_sms:873",
+      "group": "6a2fa31d640d470e2666872f98e3851502000cf79cb8cb368b9af8b2f48b5b1d",
+      "text_hash": "6a2fa31d640d470e2666872f98e3851502000cf79cb8cb368b9af8b2f48b5b1d"
+    },
+    {
+      "row_id": "india_sms:874",
+      "group": "96f9bde6c1329bf28d1f20fd1e92c10f049ea51148f73bf53c65a95104896356",
+      "text_hash": "96f9bde6c1329bf28d1f20fd1e92c10f049ea51148f73bf53c65a95104896356"
+    },
+    {
+      "row_id": "india_sms:875",
+      "group": "40a70e142402f9c832e0afcc15e2d27b684a2d421b0cdd41a2211271e8d1a9b4",
+      "text_hash": "40a70e142402f9c832e0afcc15e2d27b684a2d421b0cdd41a2211271e8d1a9b4"
+    },
+    {
+      "row_id": "india_sms:876",
+      "group": "fcc1d4d3dc424574be3aab7141c78194eb9d0e6935e4c56a8a8b1662d42b857e",
+      "text_hash": "fcc1d4d3dc424574be3aab7141c78194eb9d0e6935e4c56a8a8b1662d42b857e"
+    },
+    {
+      "row_id": "india_sms:877",
+      "group": "ef0b03715dfc343b57afafb7d9cbdd30bc7d9753839825f542dd0743877514cb",
+      "text_hash": "ef0b03715dfc343b57afafb7d9cbdd30bc7d9753839825f542dd0743877514cb"
+    },
+    {
+      "row_id": "india_sms:880",
+      "group": "866c075f1f3e1eb34593efdabbbfdd1199445b2fefb90147887e3887ce0dc949",
+      "text_hash": "866c075f1f3e1eb34593efdabbbfdd1199445b2fefb90147887e3887ce0dc949"
+    },
+    {
+      "row_id": "india_sms:881",
+      "group": "7c39b0e8f9663c519bfc21074b819694d7be98ddb95646825e47657ee8544da6",
+      "text_hash": "7c39b0e8f9663c519bfc21074b819694d7be98ddb95646825e47657ee8544da6"
+    },
+    {
+      "row_id": "india_sms:887",
+      "group": "660647911193b715f0912540d7cea3a112df66496f1506c175cc7e40a4fecf49",
+      "text_hash": "660647911193b715f0912540d7cea3a112df66496f1506c175cc7e40a4fecf49"
+    },
+    {
+      "row_id": "india_sms:888",
+      "group": "e4237e433635673d37f4b592455db91e4fcf14ea4dff9f02185ea489a92d1a6e",
+      "text_hash": "e4237e433635673d37f4b592455db91e4fcf14ea4dff9f02185ea489a92d1a6e"
+    },
+    {
+      "row_id": "india_sms:89",
+      "group": "2c33dbcaa77d6cb7a8fa20e7f167c6b87836b968cca1f7961c070dd3fc792bd7",
+      "text_hash": "2c33dbcaa77d6cb7a8fa20e7f167c6b87836b968cca1f7961c070dd3fc792bd7"
+    },
+    {
+      "row_id": "india_sms:891",
+      "group": "d6397526961f3de6d93ba6edd2220e1f48c7c4b069bfa483f369c2cbe8c7530f",
+      "text_hash": "d6397526961f3de6d93ba6edd2220e1f48c7c4b069bfa483f369c2cbe8c7530f"
+    },
+    {
+      "row_id": "india_sms:9",
+      "group": "b4aad91b97d875d0de834c78bf6f6bd7f62535d08bf9c8e2b93e0fce476692b1",
+      "text_hash": "b4aad91b97d875d0de834c78bf6f6bd7f62535d08bf9c8e2b93e0fce476692b1"
+    },
+    {
+      "row_id": "india_sms:90",
+      "group": "db4f118bce180f109733f7c8cff73b7f981c78aecb518ce953c62e24a72754e5",
+      "text_hash": "db4f118bce180f109733f7c8cff73b7f981c78aecb518ce953c62e24a72754e5"
+    },
+    {
+      "row_id": "india_sms:902",
+      "group": "1b95bbd79eb328513ee4e0d71ba54ee2dddd285be33f93e3924a3cc77e4c383a",
+      "text_hash": "1b95bbd79eb328513ee4e0d71ba54ee2dddd285be33f93e3924a3cc77e4c383a"
+    },
+    {
+      "row_id": "india_sms:905",
+      "group": "e0a42a820cb223a1a9c5ba5beac7ed770d9946f757b3fbf7472df132e87c4b1e",
+      "text_hash": "e0a42a820cb223a1a9c5ba5beac7ed770d9946f757b3fbf7472df132e87c4b1e"
+    },
+    {
+      "row_id": "india_sms:906",
+      "group": "1fb32220b2a27f691870f10a331aec78650d14810dc2b8cff0adabfbcf6e361d",
+      "text_hash": "a6a76c0040926f36451711ce183558872c590350dc2f77d6ec66295f1e779022"
+    },
+    {
+      "row_id": "india_sms:91",
+      "group": "060b07bfadfb94f3a3b35f2773acad9ecfdcdbf79aafefc561095cec2977becc",
+      "text_hash": "060b07bfadfb94f3a3b35f2773acad9ecfdcdbf79aafefc561095cec2977becc"
+    },
+    {
+      "row_id": "india_sms:918",
+      "group": "1cb8c8804b260342b6cca00b53f721be04943141d95460b6b18e14bdae688591",
+      "text_hash": "1cb8c8804b260342b6cca00b53f721be04943141d95460b6b18e14bdae688591"
+    },
+    {
+      "row_id": "india_sms:922",
+      "group": "f11fc6df1364ed163430645a4eb8b2025a37b4d7d35eeb2026c68b87a534c26a",
+      "text_hash": "03b5c1bbb33eade37738c416433128cf361d5f978173caff61851b8d8d4ae538"
+    },
+    {
+      "row_id": "india_sms:923",
+      "group": "877e8d243735601fb200bff2429c5bd2f8db97c6eee7a8fcd2c123f0b30529b8",
+      "text_hash": "877e8d243735601fb200bff2429c5bd2f8db97c6eee7a8fcd2c123f0b30529b8"
+    },
+    {
+      "row_id": "india_sms:924",
+      "group": "34b05520c1e3b84ad835089fa8c4971e6310d17ff572d21da2bfc0965c0568bb",
+      "text_hash": "34b05520c1e3b84ad835089fa8c4971e6310d17ff572d21da2bfc0965c0568bb"
+    },
+    {
+      "row_id": "india_sms:927",
+      "group": "90d25b0763034c8bbf77443229c4550ce62ce1787ffe456f1d3fd3e0efc9d230",
+      "text_hash": "90d25b0763034c8bbf77443229c4550ce62ce1787ffe456f1d3fd3e0efc9d230"
+    },
+    {
+      "row_id": "india_sms:929",
+      "group": "dc816ce5074010d6a5d1b50a78d3a6efc913180fdb35949dc34002a3e788156b",
+      "text_hash": "dc816ce5074010d6a5d1b50a78d3a6efc913180fdb35949dc34002a3e788156b"
+    },
+    {
+      "row_id": "india_sms:938",
+      "group": "584b96c04e05e4e8ff2e8861051faa7135f8357917d768f71118447c59dde3fe",
+      "text_hash": "584b96c04e05e4e8ff2e8861051faa7135f8357917d768f71118447c59dde3fe"
+    },
+    {
+      "row_id": "india_sms:940",
+      "group": "5a8754645c3e6a0a2e37cdf4bfefc9057672835622f6e32d8d3f98c6584f28db",
+      "text_hash": "5a8754645c3e6a0a2e37cdf4bfefc9057672835622f6e32d8d3f98c6584f28db"
+    },
+    {
+      "row_id": "india_sms:942",
+      "group": "46070771252ad45e34f3f4993d6e24071e0926f35113bd90f973010db0ccf41c",
+      "text_hash": "46070771252ad45e34f3f4993d6e24071e0926f35113bd90f973010db0ccf41c"
+    },
+    {
+      "row_id": "india_sms:943",
+      "group": "64e40c53cf7fe9bd952b637116a223e7fbdfd3d2ddb893315fba4e4541f60281",
+      "text_hash": "64e40c53cf7fe9bd952b637116a223e7fbdfd3d2ddb893315fba4e4541f60281"
+    },
+    {
+      "row_id": "india_sms:947",
+      "group": "9e7bed8da06e9dffe843cebcd5bfb09302b0fe139fb533ce6577c322a4d3c3de",
+      "text_hash": "9e7bed8da06e9dffe843cebcd5bfb09302b0fe139fb533ce6577c322a4d3c3de"
+    },
+    {
+      "row_id": "india_sms:95",
+      "group": "f7046d60385e3c22ec3c2924b22257d92098772e70af3d6f3dcb189cd1cacf0b",
+      "text_hash": "f7046d60385e3c22ec3c2924b22257d92098772e70af3d6f3dcb189cd1cacf0b"
+    },
+    {
+      "row_id": "india_sms:952",
+      "group": "12b8fcc697fe2f0732fc8054107771e2b7580017d0550aaa9c57ebad65223234",
+      "text_hash": "12b8fcc697fe2f0732fc8054107771e2b7580017d0550aaa9c57ebad65223234"
+    },
+    {
+      "row_id": "india_sms:954",
+      "group": "9ffb6ee686f3fe6abf1bb9da78e34d1d8cbbe902967531f5b07f8fbc567226aa",
+      "text_hash": "9ffb6ee686f3fe6abf1bb9da78e34d1d8cbbe902967531f5b07f8fbc567226aa"
+    },
+    {
+      "row_id": "india_sms:956",
+      "group": "997fd09b1525ef0c91232cbba0b70b83b5ec4599be8e92c8e240e924192c3179",
+      "text_hash": "997fd09b1525ef0c91232cbba0b70b83b5ec4599be8e92c8e240e924192c3179"
+    },
+    {
+      "row_id": "india_sms:96",
+      "group": "8c28ff423c0780a9d06e5220b43707f14a4812ad3e8bdba079f25b3f6cca0277",
+      "text_hash": "8c28ff423c0780a9d06e5220b43707f14a4812ad3e8bdba079f25b3f6cca0277"
+    },
+    {
+      "row_id": "india_sms:960",
+      "group": "82fdf63b4e8d03ba68d0b16c38ea7987a1e70a0ba540a94b2f2da9ff95ac91f4",
+      "text_hash": "82fdf63b4e8d03ba68d0b16c38ea7987a1e70a0ba540a94b2f2da9ff95ac91f4"
+    },
+    {
+      "row_id": "india_sms:967",
+      "group": "df15a78ac55bbfd2f47b56d3e216ba912767dbf90255ff19ced3290e2c3a73f6",
+      "text_hash": "df15a78ac55bbfd2f47b56d3e216ba912767dbf90255ff19ced3290e2c3a73f6"
+    },
+    {
+      "row_id": "india_sms:97",
+      "group": "ed52b743c950169121ceecfe54debc6b1df8639b6253f80abadf8e9927139fe2",
+      "text_hash": "ed52b743c950169121ceecfe54debc6b1df8639b6253f80abadf8e9927139fe2"
+    },
+    {
+      "row_id": "india_sms:971",
+      "group": "b4fef7f13d495ef50a83e80227890a118cc1d244f0ea439eba94a6e844744362",
+      "text_hash": "b4fef7f13d495ef50a83e80227890a118cc1d244f0ea439eba94a6e844744362"
+    },
+    {
+      "row_id": "india_sms:973",
+      "group": "e9479579841197f3c9cddb863b1e10b857fbe807f1fb04510321daffc4cc0974",
+      "text_hash": "e9479579841197f3c9cddb863b1e10b857fbe807f1fb04510321daffc4cc0974"
+    },
+    {
+      "row_id": "india_sms:978",
+      "group": "0ab048fb71d0e95c77cee19b55f1911a058c775a8021ff1e8863f2d1750a902d",
+      "text_hash": "0ab048fb71d0e95c77cee19b55f1911a058c775a8021ff1e8863f2d1750a902d"
+    },
+    {
+      "row_id": "india_sms:979",
+      "group": "e74e7fb9ae473a2b41088d893bdf74f3941b666e455e159a57d594d077128dcf",
+      "text_hash": "b030d9183c9509e04e4f275be69eed2a18d1755babde2fb53e038f5752247572"
+    },
+    {
+      "row_id": "india_sms:981",
+      "group": "0b59d0ba1b2d5f82405bcf1de175e45a3b8a029a7aa6ec13ac4b82cfe04706bc",
+      "text_hash": "0b59d0ba1b2d5f82405bcf1de175e45a3b8a029a7aa6ec13ac4b82cfe04706bc"
+    },
+    {
+      "row_id": "india_sms:982",
+      "group": "c4a0445f1725435ea429cd7bb774b016f28d4a0a7277e5dc02fc950a9a89ef9f",
+      "text_hash": "c4a0445f1725435ea429cd7bb774b016f28d4a0a7277e5dc02fc950a9a89ef9f"
+    },
+    {
+      "row_id": "india_sms:983",
+      "group": "9b39934a5cf128d90a21b3f7ce2d159e79de62cf324f1d963306621c6f87ce4e",
+      "text_hash": "9b39934a5cf128d90a21b3f7ce2d159e79de62cf324f1d963306621c6f87ce4e"
+    },
+    {
+      "row_id": "india_sms:986",
+      "group": "8b6c87ea10f3af44465aa162386d4c9ca36322cb1662aace204d3dd10975e6cc",
+      "text_hash": "8b6c87ea10f3af44465aa162386d4c9ca36322cb1662aace204d3dd10975e6cc"
+    },
+    {
+      "row_id": "india_sms:987",
+      "group": "4e540fac01375bb4111203e7ac67af57101a2d91bab4e413c787ad7f7770b723",
+      "text_hash": "4e540fac01375bb4111203e7ac67af57101a2d91bab4e413c787ad7f7770b723"
+    },
+    {
+      "row_id": "india_sms:989",
+      "group": "2896f3833fdb04a9d189f20de324d7933b33a1b6df303194ea41b2e3af9f2839",
+      "text_hash": "2896f3833fdb04a9d189f20de324d7933b33a1b6df303194ea41b2e3af9f2839"
+    },
+    {
+      "row_id": "india_sms:994",
+      "group": "d1f0e7f324578265aac59578a31344c5601ce18c32aa7164a3bda1cb215c556f",
+      "text_hash": "d1f0e7f324578265aac59578a31344c5601ce18c32aa7164a3bda1cb215c556f"
+    },
+    {
+      "row_id": "india_sms:996",
+      "group": "d8a2819faa7dce5f492a352b7529aa948de73fceb912d43721e6b21be367f9e3",
+      "text_hash": "d8a2819faa7dce5f492a352b7529aa948de73fceb912d43721e6b21be367f9e3"
+    }
+  ],
+  "scope": "New external original SMS English/Hinglish only. SMS-ID/email-EN are historical reuse, not new independent holdouts. Email-ID absent."
+}

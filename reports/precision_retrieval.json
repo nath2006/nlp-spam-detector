@@ -1,0 +1,38 @@
+[
+  {
+    "id": "india_readme",
+    "url": "https://raw.githubusercontent.com/junioralive/india-spam-sms-classification/main/README.md",
+    "status": 200,
+    "bytes": 1806
+  },
+  {
+    "id": "india_license",
+    "url": "https://raw.githubusercontent.com/junioralive/india-spam-sms-classification/main/LICENSE",
+    "status": 200,
+    "bytes": 1068
+  },
+  {
+    "id": "india_csv",
+    "url": "https://raw.githubusercontent.com/junioralive/india-spam-sms-classification/main/dataset/spam_ham_india.csv",
+    "status": 200,
+    "bytes": 238896
+  },
+  {
+    "id": "id_email_card",
+    "url": "https://huggingface.co/datasets/chairulridjal/high-accuracy-email-classifier-indonesian/raw/main/README.md",
+    "status": 200,
+    "bytes": 3301
+  },
+  {
+    "id": "trec05_readme",
+    "url": "https://trec.nist.gov/data/spam/trec05p-1.tgz.README.txt",
+    "status": 200,
+    "bytes": 1468
+  },
+  {
+    "id": "shield_card",
+    "url": "https://huggingface.co/datasets/M-Arjun/SpamShield-Datasets/raw/main/README.md",
+    "status": 401,
+    "bytes": 137
+  }
+]

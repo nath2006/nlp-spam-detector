@@ -1,0 +1,1279 @@
+{
+  "selected": "lr_13",
+  "selection_utc": "2026-11-24T11:27:26.472315+00:00",
+  "plan_sha256": "5a4cc224f18a2fc68be16aa4ba4f8fefed024de3f5dacc2abd4309d10a3394ea",
+  "candidates_sha256": "43eac7427d2aab3776c7dde7ff00853a36a800f674db22ea26e0e1f7c9d6dff9",
+  "candidates": {
+    "lr_0": {
+      "spec": {
+        "C": 1,
+        "synthetic_weight": 0.1,
+        "balance_language_label": false,
+        "wide": false
+      },
+      "threshold": 0.6493181067969329,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9938837920489296,
+          "recall": 0.885558583106267,
+          "f1": 0.9365994236311239,
+          "f2": 0.9052924791086351,
+          "f0_5": 0.9701492537313433,
+          "confusion_matrix": [
+            [
+              1287,
+              2
+            ],
+            [
+              42,
+              325
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 2,
+          "false_negatives": 42,
+          "false_positive_rate": 0.0015515903801396431,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9734513274336283,
+          "recall": 0.9322033898305084,
+          "f1": 0.9523809523809523,
+          "f2": 0.9401709401709402,
+          "f0_5": 0.9649122807017544,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              8,
+              110
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 8,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_1": {
+      "spec": {
+        "C": 1,
+        "synthetic_weight": 0.1,
+        "balance_language_label": true,
+        "wide": false
+      },
+      "threshold": 0.6136213916606531,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.969187675070028,
+          "recall": 0.9427792915531336,
+          "f1": 0.9558011049723757,
+          "f2": 0.947945205479452,
+          "f0_5": 0.9637883008356546,
+          "confusion_matrix": [
+            [
+              1278,
+              11
+            ],
+            [
+              21,
+              346
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 11,
+          "false_negatives": 21,
+          "false_positive_rate": 0.008533747090768037,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9830508474576272,
+          "recall": 0.9830508474576272,
+          "f1": 0.9830508474576272,
+          "f2": 0.9830508474576272,
+          "f0_5": 0.9830508474576272,
+          "confusion_matrix": [
+            [
+              112,
+              2
+            ],
+            [
+              2,
+              116
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 2,
+          "false_negatives": 2,
+          "false_positive_rate": 0.017543859649122806,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_2": {
+      "spec": {
+        "C": 1,
+        "synthetic_weight": 1.0,
+        "balance_language_label": false,
+        "wide": false
+      },
+      "threshold": 0.6437484646247796,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9937888198757764,
+          "recall": 0.8719346049046321,
+          "f1": 0.9288824383164006,
+          "f2": 0.8938547486033519,
+          "f0_5": 0.9667673716012085,
+          "confusion_matrix": [
+            [
+              1287,
+              2
+            ],
+            [
+              47,
+              320
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 2,
+          "false_negatives": 47,
+          "false_positive_rate": 0.0015515903801396431,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9732142857142857,
+          "recall": 0.923728813559322,
+          "f1": 0.9478260869565217,
+          "f2": 0.9332191780821918,
+          "f0_5": 0.9628975265017667,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              9,
+              109
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 9,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_3": {
+      "spec": {
+        "C": 1,
+        "synthetic_weight": 1.0,
+        "balance_language_label": true,
+        "wide": false
+      },
+      "threshold": 0.6636459223212042,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9854227405247813,
+          "recall": 0.9209809264305178,
+          "f1": 0.952112676056338,
+          "f2": 0.9331860850358917,
+          "f0_5": 0.9718228867165037,
+          "confusion_matrix": [
+            [
+              1284,
+              5
+            ],
+            [
+              29,
+              338
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 5,
+          "false_negatives": 29,
+          "false_positive_rate": 0.003878975950349108,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 1.0,
+          "recall": 0.940677966101695,
+          "f1": 0.9694323144104804,
+          "f2": 0.9519725557461407,
+          "f0_5": 0.9875444839857651,
+          "confusion_matrix": [
+            [
+              114,
+              0
+            ],
+            [
+              7,
+              111
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 0,
+          "false_negatives": 7,
+          "false_positive_rate": 0.0,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_4": {
+      "spec": {
+        "C": 4,
+        "synthetic_weight": 0.1,
+        "balance_language_label": false,
+        "wide": false
+      },
+      "threshold": 0.6817053082575502,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9940298507462687,
+          "recall": 0.9073569482288828,
+          "f1": 0.9487179487179487,
+          "f2": 0.9234608985024958,
+          "f0_5": 0.9753954305799648,
+          "confusion_matrix": [
+            [
+              1287,
+              2
+            ],
+            [
+              34,
+              333
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 2,
+          "false_negatives": 34,
+          "false_positive_rate": 0.0015515903801396431,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9741379310344828,
+          "recall": 0.9576271186440678,
+          "f1": 0.9658119658119658,
+          "f2": 0.9608843537414966,
+          "f0_5": 0.9707903780068728,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              5,
+              113
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 5,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_5": {
+      "spec": {
+        "C": 4,
+        "synthetic_weight": 0.1,
+        "balance_language_label": true,
+        "wide": false
+      },
+      "threshold": 0.6054813911528517,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9720670391061452,
+          "recall": 0.9482288828337875,
+          "f1": 0.96,
+          "f2": 0.9529025191675794,
+          "f0_5": 0.9672040022234575,
+          "confusion_matrix": [
+            [
+              1279,
+              10
+            ],
+            [
+              19,
+              348
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 10,
+          "false_negatives": 19,
+          "false_positive_rate": 0.007757951900698216,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9830508474576272,
+          "recall": 0.9830508474576272,
+          "f1": 0.9830508474576272,
+          "f2": 0.9830508474576272,
+          "f0_5": 0.9830508474576272,
+          "confusion_matrix": [
+            [
+              112,
+              2
+            ],
+            [
+              2,
+              116
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 2,
+          "false_negatives": 2,
+          "false_positive_rate": 0.017543859649122806,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_6": {
+      "spec": {
+        "C": 4,
+        "synthetic_weight": 1.0,
+        "balance_language_label": false,
+        "wide": false
+      },
+      "threshold": 0.7172193110759366,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9939024390243902,
+          "recall": 0.888283378746594,
+          "f1": 0.9381294964028777,
+          "f2": 0.9075723830734966,
+          "f0_5": 0.9708159618820726,
+          "confusion_matrix": [
+            [
+              1287,
+              2
+            ],
+            [
+              41,
+              326
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 2,
+          "false_negatives": 41,
+          "false_positive_rate": 0.0015515903801396431,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9734513274336283,
+          "recall": 0.9322033898305084,
+          "f1": 0.9523809523809523,
+          "f2": 0.9401709401709402,
+          "f0_5": 0.9649122807017544,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              8,
+              110
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 8,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_7": {
+      "spec": {
+        "C": 4,
+        "synthetic_weight": 1.0,
+        "balance_language_label": true,
+        "wide": false
+      },
+      "threshold": 0.651822322570381,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9884726224783862,
+          "recall": 0.9346049046321526,
+          "f1": 0.9607843137254902,
+          "f2": 0.9449035812672176,
+          "f0_5": 0.9772079772079773,
+          "confusion_matrix": [
+            [
+              1285,
+              4
+            ],
+            [
+              24,
+              343
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 4,
+          "false_negatives": 24,
+          "false_positive_rate": 0.0031031807602792862,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9743589743589743,
+          "recall": 0.9661016949152542,
+          "f1": 0.9702127659574468,
+          "f2": 0.967741935483871,
+          "f0_5": 0.9726962457337884,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              4,
+              114
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 4,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_8": {
+      "spec": {
+        "C": 16,
+        "synthetic_weight": 0.1,
+        "balance_language_label": false,
+        "wide": false
+      },
+      "threshold": 0.7029394262859912,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9941520467836257,
+          "recall": 0.9264305177111717,
+          "f1": 0.9590973201692524,
+          "f2": 0.9392265193370166,
+          "f0_5": 0.9798270893371758,
+          "confusion_matrix": [
+            [
+              1287,
+              2
+            ],
+            [
+              27,
+              340
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 2,
+          "false_negatives": 27,
+          "false_positive_rate": 0.0015515903801396431,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9827586206896551,
+          "recall": 0.9661016949152542,
+          "f1": 0.9743589743589743,
+          "f2": 0.9693877551020408,
+          "f0_5": 0.979381443298969,
+          "confusion_matrix": [
+            [
+              112,
+              2
+            ],
+            [
+              4,
+              114
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 2,
+          "false_negatives": 4,
+          "false_positive_rate": 0.017543859649122806,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_9": {
+      "spec": {
+        "C": 16,
+        "synthetic_weight": 0.1,
+        "balance_language_label": true,
+        "wide": false
+      },
+      "threshold": 0.6053982980892167,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9722222222222222,
+          "recall": 0.9536784741144414,
+          "f1": 0.9628610729023384,
+          "f2": 0.9573304157549234,
+          "f0_5": 0.9684560044272275,
+          "confusion_matrix": [
+            [
+              1279,
+              10
+            ],
+            [
+              17,
+              350
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 10,
+          "false_negatives": 17,
+          "false_positive_rate": 0.007757951900698216,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9830508474576272,
+          "recall": 0.9830508474576272,
+          "f1": 0.9830508474576272,
+          "f2": 0.9830508474576272,
+          "f0_5": 0.9830508474576272,
+          "confusion_matrix": [
+            [
+              112,
+              2
+            ],
+            [
+              2,
+              116
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 2,
+          "false_negatives": 2,
+          "false_positive_rate": 0.017543859649122806,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_10": {
+      "spec": {
+        "C": 16,
+        "synthetic_weight": 1.0,
+        "balance_language_label": false,
+        "wide": false
+      },
+      "threshold": 0.7547218276326305,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9939759036144579,
+          "recall": 0.8991825613079019,
+          "f1": 0.944206008583691,
+          "f2": 0.9166666666666666,
+          "f0_5": 0.9734513274336283,
+          "confusion_matrix": [
+            [
+              1287,
+              2
+            ],
+            [
+              37,
+              330
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 2,
+          "false_negatives": 37,
+          "false_positive_rate": 0.0015515903801396431,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9741379310344828,
+          "recall": 0.9576271186440678,
+          "f1": 0.9658119658119658,
+          "f2": 0.9608843537414966,
+          "f0_5": 0.9707903780068728,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              5,
+              113
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 5,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_11": {
+      "spec": {
+        "C": 16,
+        "synthetic_weight": 1.0,
+        "balance_language_label": true,
+        "wide": false
+      },
+      "threshold": 0.6510250116722438,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9829059829059829,
+          "recall": 0.9400544959128065,
+          "f1": 0.9610027855153204,
+          "f2": 0.9483232545354591,
+          "f0_5": 0.974025974025974,
+          "confusion_matrix": [
+            [
+              1283,
+              6
+            ],
+            [
+              22,
+              345
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 6,
+          "false_negatives": 22,
+          "false_positive_rate": 0.004654771140418929,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9745762711864406,
+          "recall": 0.9745762711864406,
+          "f1": 0.9745762711864406,
+          "f2": 0.9745762711864406,
+          "f0_5": 0.9745762711864406,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              3,
+              115
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 3,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_12": {
+      "spec": {
+        "C": 4,
+        "synthetic_weight": 0.1,
+        "balance_language_label": false,
+        "wide": true
+      },
+      "threshold": 0.6748252174134669,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9970414201183432,
+          "recall": 0.9182561307901907,
+          "f1": 0.9560283687943263,
+          "f2": 0.9330011074197121,
+          "f0_5": 0.9802210587550901,
+          "confusion_matrix": [
+            [
+              1288,
+              1
+            ],
+            [
+              30,
+              337
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 1,
+          "false_negatives": 30,
+          "false_positive_rate": 0.0007757951900698216,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9743589743589743,
+          "recall": 0.9661016949152542,
+          "f1": 0.9702127659574468,
+          "f2": 0.967741935483871,
+          "f0_5": 0.9726962457337884,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              4,
+              114
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 4,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "lr_13": {
+      "spec": {
+        "C": 4,
+        "synthetic_weight": 0.1,
+        "balance_language_label": true,
+        "wide": true
+      },
+      "threshold": 0.5990758319506397,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9831932773109243,
+          "recall": 0.9564032697547684,
+          "f1": 0.9696132596685083,
+          "f2": 0.9616438356164384,
+          "f0_5": 0.9777158774373259,
+          "confusion_matrix": [
+            [
+              1283,
+              6
+            ],
+            [
+              16,
+              351
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 6,
+          "false_negatives": 16,
+          "false_positive_rate": 0.004654771140418929,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9747899159663865,
+          "recall": 0.9830508474576272,
+          "f1": 0.9789029535864979,
+          "f2": 0.9813874788494078,
+          "f0_5": 0.9764309764309764,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              2,
+              116
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 2,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "baseline_retuned": {
+      "spec": "pipeline unchanged; threshold validation-only",
+      "threshold": 0.8963677007261465,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9867109634551495,
+          "recall": 0.8092643051771117,
+          "f1": 0.8892215568862275,
+          "f2": 0.8394573205200678,
+          "f0_5": 0.9452577975811585,
+          "confusion_matrix": [
+            [
+              1285,
+              4
+            ],
+            [
+              70,
+              297
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 4,
+          "false_negatives": 70,
+          "false_positive_rate": 0.0031031807602792862,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9719626168224299,
+          "recall": 0.8813559322033898,
+          "f1": 0.9244444444444444,
+          "f2": 0.8981001727115717,
+          "f0_5": 0.9523809523809523,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              14,
+              104
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 14,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "active_retuned": {
+      "spec": "pipeline unchanged; threshold validation-only",
+      "threshold": 0.7172193110759366,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9939024390243902,
+          "recall": 0.888283378746594,
+          "f1": 0.9381294964028777,
+          "f2": 0.9075723830734966,
+          "f0_5": 0.9708159618820726,
+          "confusion_matrix": [
+            [
+              1287,
+              2
+            ],
+            [
+              41,
+              326
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 2,
+          "false_negatives": 41,
+          "false_positive_rate": 0.0015515903801396431,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9734513274336283,
+          "recall": 0.9322033898305084,
+          "f1": 0.9523809523809523,
+          "f2": 0.9401709401709402,
+          "f0_5": 0.9649122807017544,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              8,
+              110
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 8,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    },
+    "baseline_fixed": {
+      "threshold": 0.42144362248621786,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9405405405405406,
+          "recall": 0.9482288828337875,
+          "f1": 0.9443690637720489,
+          "f2": 0.9466811751904244,
+          "f0_5": 0.9420682187330807,
+          "confusion_matrix": [
+            [
+              1267,
+              22
+            ],
+            [
+              19,
+              348
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 22,
+          "false_negatives": 19,
+          "false_positive_rate": 0.017067494181536073,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.921875,
+          "recall": 1.0,
+          "f1": 0.959349593495935,
+          "f2": 0.9833333333333333,
+          "f0_5": 0.9365079365079365,
+          "confusion_matrix": [
+            [
+              104,
+              10
+            ],
+            [
+              0,
+              118
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 10,
+          "false_negatives": 0,
+          "false_positive_rate": 0.08771929824561403,
+          "constraint_eligible": true,
+          "target_met_empirical": false
+        }
+      }
+    },
+    "active_fixed": {
+      "threshold": 0.7172193110759366,
+      "by_group": {
+        "sms_en": {
+          "precision": 0.9939024390243902,
+          "recall": 0.888283378746594,
+          "f1": 0.9381294964028777,
+          "f2": 0.9075723830734966,
+          "f0_5": 0.9708159618820726,
+          "confusion_matrix": [
+            [
+              1287,
+              2
+            ],
+            [
+              41,
+              326
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 1289,
+            "spam": 367
+          },
+          "false_positives": 2,
+          "false_negatives": 41,
+          "false_positive_rate": 0.0015515903801396431,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        },
+        "sms_id": {
+          "precision": 0.9734513274336283,
+          "recall": 0.9322033898305084,
+          "f1": 0.9523809523809523,
+          "f2": 0.9401709401709402,
+          "f0_5": 0.9649122807017544,
+          "confusion_matrix": [
+            [
+              111,
+              3
+            ],
+            [
+              8,
+              110
+            ]
+          ],
+          "confusion_order": [
+            "ham",
+            "spam"
+          ],
+          "support": {
+            "ham": 114,
+            "spam": 118
+          },
+          "false_positives": 3,
+          "false_negatives": 8,
+          "false_positive_rate": 0.02631578947368421,
+          "constraint_eligible": true,
+          "target_met_empirical": true
+        }
+      }
+    }
+  },
+  "rank": [
+    0.9697270586061978,
+    0.9564032697547684,
+    0.9715156572329231,
+    -9,
+    "lr_13"
+  ],
+  "test_used_for_selection": false,
+  "diagnostic_used_for_selection": false,
+  "training_counts": {
+    "id_spam": 460,
+    "en_spam": 1670,
+    "en_ham": 4339,
+    "id_ham": 629
+  }
+}
